@@ -69,12 +69,45 @@ export default function ContactPage() {
             <div className="flex items-center gap-3">
               <span className="text-2xl">💼</span>
               <a 
-                href="https://linkedin.com/in/brodiegroch"
+                href="https://www.linkedin.com/in/brodiegroch/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 dark:text-blue-400 hover:underline"
               >
                 LinkedIn
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">📸</span>
+              <a 
+                href="https://www.instagram.com/brodiegroch/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Instagram
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">💻</span>
+              <a 
+                href="https://github.com/brodiegroch2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                GitHub
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🎵</span>
+              <a 
+                href="https://www.tiktok.com/@brodiegroch"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                TikTok
               </a>
             </div>
           </div>
