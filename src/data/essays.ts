@@ -18,7 +18,7 @@ export const essays: Essay[] = [
   {
     title: "The Strategic Blindspot: Why Canada Needs an AI Behavior Doctrine — Now",
     description: "A deep dive into Canada's position in the global AI landscape and strategic recommendations for national security.",
-    coverImage: "/ai-behavior-doctrine.png",
+    coverImage: "/essay-cover.svg",
     slug: "ai-behavior-doctrine",
     date: "2025-05-01",
     content: {
