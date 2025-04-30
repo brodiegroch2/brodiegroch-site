@@ -1,11 +1,22 @@
 'use client'
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900">
       <div className="max-w-4xl mx-auto px-4 py-12">
+        <div className="flex justify-center mb-8">
+          <Image
+            src="/profile-1024x985.png"
+            alt="Brodie Groch headshot"
+            width={160}
+            height={160}
+            className="rounded-full shadow-lg border-4 border-white dark:border-gray-800 object-cover"
+            priority
+          />
+        </div>
         <h1 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
           About Me
         </h1>

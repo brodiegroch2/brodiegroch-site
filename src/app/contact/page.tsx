@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function ContactPage() {
   const [email, setEmail] = useState('');
@@ -32,42 +33,49 @@ export default function ContactPage() {
           </p>
 
           <div className="space-y-6">
-            <p className="text-lg font-medium">You can contact me directly:</p>
+            <div className="flex items-center gap-4 mb-2">
+              <Image
+                src="/profile-1024x985.png"
+                alt="Brodie Groch headshot"
+                width={56}
+                height={56}
+                className="rounded-full shadow border-2 border-white dark:border-gray-800 object-cover"
+              />
+              <span className="font-semibold text-lg">Brodie Groch</span>
+            </div>
             
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">📩</span>
-                <a 
-                  href="mailto:brodie@brodiegroch.ca"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  brodie@brodiegroch.ca
-                </a>
-              </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">📩</span>
+              <a 
+                href="mailto:brodie@brodiegroch.ca"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                brodie@brodiegroch.ca
+              </a>
+            </div>
 
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">🐦</span>
-                <a 
-                  href="https://twitter.com/brodiegroch"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  @brodiegroch
-                </a>
-              </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🐦</span>
+              <a 
+                href="https://twitter.com/brodiegroch"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                @brodiegroch
+              </a>
+            </div>
 
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">💼</span>
-                <a 
-                  href="https://linkedin.com/in/brodiegroch"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  LinkedIn
-                </a>
-              </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">💼</span>
+              <a 
+                href="https://linkedin.com/in/brodiegroch"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
 
