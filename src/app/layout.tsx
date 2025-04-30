@@ -5,11 +5,17 @@ import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
   variable: "--font-inter",
 });
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  fallback: ["Georgia", "serif"],
   variable: "--font-source-serif",
 });
 
