@@ -111,7 +111,7 @@ export default function AboutPage() {
             You can reach me directly at <a href="mailto:brodie@brodiegroch.ca" className="text-blue-600 dark:text-blue-400 hover:underline">brodie@brodiegroch.ca</a>, or find my latest work on the Essays and Projects pages.
           </p>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 justify-center">
             <Link
               href="/contact"
               className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
