@@ -3,14 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  --foreground-rgb: 24, 32, 44;
   --background-rgb: 255, 255, 255;
+  --primary-blue: #2563eb;
+  --primary-blue-dark: #1e40af;
+  --accent-gray: #f3f4f6;
+  --card-shadow: 0 2px 16px 0 rgba(24,32,44,0.06);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-rgb: 17, 24, 39;
+    --primary-blue: #60a5fa;
+    --primary-blue-dark: #2563eb;
+    --accent-gray: #1e293b;
+    --card-shadow: 0 2px 16px 0 rgba(24,32,44,0.18);
   }
 }
 
@@ -19,21 +27,58 @@
     @apply text-text-light dark:text-text-dark;
     color: rgb(var(--foreground-rgb));
     background: rgb(var(--background-rgb));
+    font-family: var(--font-source-serif), serif;
+    letter-spacing: 0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-inter;
+    font-family: var(--font-inter), Inter, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
   p, li, a {
     @apply font-source-serif;
+    font-family: var(--font-source-serif), 'Source Serif 4', serif;
+    font-size: 1.08rem;
+    line-height: 1.7;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+    color: var(--primary-blue);
+    text-underline-offset: 2px;
+  }
+  a:hover, a:focus {
+    color: var(--primary-blue-dark);
+    text-decoration: underline;
+  }
+
+  button, .btn {
+    @apply transition-colors duration-200;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  button:focus, .btn:focus {
+    outline: 2px solid var(--primary-blue-dark);
+    outline-offset: 2px;
+  }
+
+  .card, .section {
+    background: var(--accent-gray);
+    box-shadow: var(--card-shadow);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
 .font-inter {
-  font-family: var(--font-inter);
+  font-family: var(--font-inter), Inter, sans-serif;
 }
 
 .font-source-serif {
-  font-family: var(--font-source-serif);
+  font-family: var(--font-source-serif), 'Source Serif 4', serif;
 }

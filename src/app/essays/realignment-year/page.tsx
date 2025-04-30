@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function RealignmentEssayPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900">
-      <article className="max-w-4xl mx-auto px-4 py-12">
+      <article className="card max-w-4xl mx-auto px-4 py-12">
         {/* Essay Header */}
         <header className="mb-12">
           <h1 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">

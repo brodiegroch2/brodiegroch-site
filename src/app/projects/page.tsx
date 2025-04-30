@@ -24,9 +24,9 @@ export default function Projects() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                className="card hover:shadow-xl transition-shadow"
               >
-                <div className="p-6">
+                <div className="p-0">
                   <h2 className="text-2xl font-semibold mb-3">{project.title}</h2>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
                     {project.description}
@@ -45,7 +45,7 @@ export default function Projects() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
                   >
                     View Project
                   </Link>

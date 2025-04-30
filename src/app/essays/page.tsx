@@ -14,7 +14,7 @@ export default function EssaysPage() {
 
         <div className="space-y-8">
           {/* Latest Essay */}
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
+          <div className="card">
             <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">Latest Essay</span>
             <h2 className="text-2xl font-bold mt-2 mb-4">
               <Link 
@@ -25,7 +25,7 @@ export default function EssaysPage() {
               </Link>
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              Canada's political system isn't drifting. It's repositioning — and 2026 is the breakpoint year for a full-scale ideological and structural shift.
+              Canada&apos;s political system isn&apos;t drifting. It&apos;s repositioning — and 2026 is the breakpoint year for a full-scale ideological and structural shift.
             </p>
             <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
               <span>May 2025</span>
@@ -35,7 +35,7 @@ export default function EssaysPage() {
           </div>
 
           {/* Previous Essay */}
-          <div className="bg-white dark:bg-gray-900 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
+          <div className="card bg-white dark:bg-gray-900">
             <h2 className="text-2xl font-bold mb-4">
               <Link 
                 href="/essays/ai-behavior-doctrine"
