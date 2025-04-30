@@ -1,52 +1,5 @@
-<<<<<<< HEAD
-import Link from 'next/link'
+'use client'
 
-const projects = [
-  {
-    title: 'AI Research',
-    description: 'Research and development in artificial intelligence and machine learning.',
-    link: 'https://github.com/yourusername/ai-research'
-  },
-  {
-    title: 'Web Development',
-    description: 'Modern web applications built with React and Next.js.',
-    link: 'https://github.com/yourusername/web-dev'
-  },
-  {
-    title: 'Data Analysis',
-    description: 'Data analysis and visualization projects.',
-    link: 'https://github.com/yourusername/data-analysis'
-  }
-]
-
-export default function ProjectsPage() {
-  return (
-    <main className="min-h-screen bg-white">
-      <div className="max-w-4xl mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold mb-8 text-center">Projects</h1>
-        
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block"
-            >
-              <div className="p-6 border rounded-lg hover:border-gray-300 transition-colors">
-                <h2 className="text-xl font-semibold mb-2 group-hover:text-blue-600">
-                  {project.title}
-                </h2>
-                <p className="text-gray-600">{project.description}</p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </main>
-  )
-=======
 import Link from "next/link";
 
 const projects = [
@@ -56,7 +9,18 @@ const projects = [
     technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
     link: "https://github.com/brodiegroch2/brodiegroch-site",
   },
-  // Add more projects here
+  {
+    title: "Election Simulation Engine",
+    description: "Building predictive models for Canadian federal election scenarios and outcomes",
+    technologies: ["Python", "Machine Learning", "Data Analysis"],
+    link: "/projects/election-simulation",
+  },
+  {
+    title: "AI Behavior Sandbox",
+    description: "A framework for testing and controlling AI behavior in policy contexts",
+    technologies: ["AI", "Policy Analysis", "Systems Design"],
+    link: "/projects/ai-behavior-sandbox",
+  }
 ];
 
 export default function Projects() {
@@ -114,5 +78,4 @@ export default function Projects() {
       </div>
     </div>
   );
->>>>>>> 20f8fbd99acaf6cea6600c9d722c1de033b7b743
 } 
