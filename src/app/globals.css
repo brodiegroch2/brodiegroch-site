@@ -2,8 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 17, 24, 39;
+  }
+}
+
 @layer base {
   body {
     @apply text-text-light dark:text-text-dark;
+    color: rgb(var(--foreground-rgb));
+    background: rgb(var(--background-rgb));
   }
-} 
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter;
+  }
+
+  p, li, a {
+    @apply font-source-serif;
+  }
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.font-source-serif {
+  font-family: var(--font-source-serif);
+}
