@@ -57,36 +57,10 @@ export default function Home() {
                 A deep dive into Canada&apos;s position in the global AI landscape and strategic recommendations for national security.
               </p>
               <Link
-                href="/essays/canadas-strategic-ai-dilemma"
+                href="/essays/ai-behavior-doctrine"
                 className="text-blue-600 dark:text-blue-400 hover:underline font-inter"
               >
                 Read Essay →
-              </Link>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-bold mb-2 font-inter">🧭 Election Simulation Engine</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4 font-source-serif">
-                A work in progress: Building predictive models for Canadian federal election scenarios and outcomes.
-              </p>
-              <Link
-                href="/projects/election-simulation"
-                className="text-blue-600 dark:text-blue-400 hover:underline font-inter"
-              >
-                View Project →
-              </Link>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-bold mb-2 font-inter">🧠 AI Behavior Sandboxes for Policy Risk</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4 font-source-serif">
-                A concept note exploring frameworks for testing and controlling AI behavior in policy contexts.
-              </p>
-              <Link
-                href="/projects/ai-behavior-sandbox"
-                className="text-blue-600 dark:text-blue-400 hover:underline font-inter"
-              >
-                Read Concept →
               </Link>
             </div>
           </div>

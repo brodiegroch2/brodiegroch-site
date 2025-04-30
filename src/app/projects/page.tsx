@@ -8,18 +8,6 @@ const projects = [
     description: "A modern portfolio website built with Next.js and Tailwind CSS",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
     link: "https://github.com/brodiegroch2/brodiegroch-site",
-  },
-  {
-    title: "Election Simulation Engine",
-    description: "Building predictive models for Canadian federal election scenarios and outcomes",
-    technologies: ["Python", "Machine Learning", "Data Analysis"],
-    link: "/projects/election-simulation",
-  },
-  {
-    title: "AI Behavior Sandbox",
-    description: "A framework for testing and controlling AI behavior in policy contexts",
-    technologies: ["AI", "Policy Analysis", "Systems Design"],
-    link: "/projects/ai-behavior-sandbox",
   }
 ];
 
