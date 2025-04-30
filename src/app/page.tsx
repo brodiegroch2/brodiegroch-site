@@ -22,26 +22,11 @@ export default function Home() {
               Read my latest essay
             </Link>
             <Link
-              href="/projects"
+              href="/about"
               className="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
             >
-              Explore current projects
+              Learn more about me
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Who I Am Section */}
-      <section className="container mx-auto px-4 py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 font-inter">Who I Am</h2>
-          <div className="space-y-6 text-gray-600 dark:text-gray-300 font-source-serif">
-            <p>
-              I operate at the edge of systems thinking, strategy, and execution. My work focuses on national resilience, AI behavior, political operations, and the modernization of public systems.
-            </p>
-            <p>
-              I&apos;m currently building a portfolio of small, sharp strategic projects — and seeking roles or collaborators that demand high-agency thinking and long-range impact.
-            </p>
           </div>
         </div>
       </section>
