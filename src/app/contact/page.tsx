@@ -73,7 +73,7 @@ export default function Contact() {
                 <h2 className="text-2xl font-semibold mb-4">Contact Information</h2>
                 <p className="text-gray-600 dark:text-gray-300">
                   Feel free to reach out to me through any of the following channels.
-                  I'll get back to you as soon as possible.
+                  I&apos;ll get back to you as soon as possible.
                 </p>
               </div>
 

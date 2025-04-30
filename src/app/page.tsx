@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -37,13 +36,13 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-4">
               <p className="text-gray-600 dark:text-gray-300">
-                I'm a passionate software engineer with expertise in full-stack development.
+                I&apos;m a passionate software engineer with expertise in full-stack development.
                 I love creating elegant solutions to complex problems and building
                 user-friendly applications that make a difference.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
                 My tech stack includes modern frameworks and tools like React, Next.js,
-                Node.js, and more. I'm always eager to learn new technologies and
+                Node.js, and more. I&apos;m always eager to learn new technologies and
                 best practices.
               </p>
             </div>
@@ -80,9 +79,9 @@ export default function Home() {
       {/* Contact Section */}
       <section className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">Let's Connect</h2>
+          <h2 className="text-3xl font-bold mb-8">Let&apos;s Connect</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-8">
-            I'm always open to discussing new projects, creative ideas, or
+            I&apos;m always open to discussing new projects, creative ideas, or
             opportunities to be part of your vision.
           </p>
           <Link
