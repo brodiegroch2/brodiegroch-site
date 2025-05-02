@@ -11,6 +11,8 @@ export default function ProfilePage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (password === '408621') {
+      // Set authorization in session storage
+      sessionStorage.setItem('profileAuthorized', 'true');
       router.push('/profile/private');
     } else {
       setError('Incorrect password');
