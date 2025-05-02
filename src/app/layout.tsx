@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/tab_icon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/@tab_icon.svg" type="image/svg+xml" />
       </head>
       <body className={`${inter.variable} ${sourceSerif.variable} antialiased min-h-screen bg-white dark:bg-gray-900`}>
         {/* Navigation */}
