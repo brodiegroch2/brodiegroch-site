@@ -24,7 +24,7 @@ export default function ProfilePage() {
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="card">
           <h1 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-            Protected Profile
+            Protected Portfolio
           </h1>
 
           <form onSubmit={handleSubmit} className="max-w-md mx-auto">
@@ -48,7 +48,7 @@ export default function ProfilePage() {
               type="submit"
               className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
-              Access Profile
+              Access Portfolio
             </button>
           </form>
         </div>
