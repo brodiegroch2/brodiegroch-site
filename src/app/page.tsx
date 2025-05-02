@@ -1,8 +1,14 @@
 'use client'
 
 import Link from "next/link";
+import { essays } from '@/data/essays';
 
 export default function Home() {
+  // Get the latest essay
+  const latestEssay = [...essays].sort((a, b) => 
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+  )[0];
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
@@ -35,12 +41,12 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8 font-inter text-center">Featured Work</h2>
           <div className="grid gap-8">
             <div className="card">
-              <h3 className="text-xl font-bold mb-2 font-inter">📘 Canada&apos;s Strategic AI Dilemma</h3>
+              <h3 className="text-xl font-bold mb-2 font-inter">📘 {latestEssay.title}</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-4 font-source-serif">
-                A deep dive into Canada&apos;s position in the global AI landscape and strategic recommendations for national security.
+                {latestEssay.description}
               </p>
               <Link
-                href="/essays/ai-behavior-doctrine"
+                href={`/essays/${latestEssay.slug}`}
                 className="text-blue-600 dark:text-blue-400 hover:underline font-inter font-semibold"
               >
                 Read Essay →
