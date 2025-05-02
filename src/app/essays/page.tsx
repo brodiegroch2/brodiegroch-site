@@ -5,6 +5,11 @@ import Image from 'next/image'
 import { essays } from '@/data/essays'
 
 export default function EssaysPage() {
+  // Sort essays by date in descending order
+  const sortedEssays = [...essays].sort((a, b) => 
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900">
       <div className="max-w-4xl mx-auto px-4 py-12">
@@ -13,46 +18,29 @@ export default function EssaysPage() {
         </h1>
 
         <div className="space-y-8">
-          {/* Latest Essay */}
-          <div className="card">
-            <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">Latest Essay</span>
-            <h2 className="text-2xl font-bold mt-2 mb-4">
-              <Link 
-                href="/essays/choice-engine"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              >
-                The Choice Engine: How Elections Rewired Canadian Culture — One Vote at a Time
-              </Link>
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-              A deep dive into how Canadian elections have shaped the nation's cultural evolution, from Confederation to the present day.
-            </p>
-            <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-              <span>May 2025</span>
-              <span>•</span>
-              <span>7-minute read</span>
+          {sortedEssays.map((essay, index) => (
+            <div key={essay.slug} className={`card ${index === 0 ? '' : 'bg-white dark:bg-gray-900'}`}>
+              {index === 0 && (
+                <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">Latest Essay</span>
+              )}
+              <h2 className={`text-2xl font-bold ${index === 0 ? 'mt-2' : ''} mb-4`}>
+                <Link 
+                  href={`/essays/${essay.slug}`}
+                  className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  {essay.title}
+                </Link>
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                {essay.description}
+              </p>
+              <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                <span>{new Date(essay.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+                <span>•</span>
+                <span>{index === 0 ? '7' : '8'}-minute read</span>
+              </div>
             </div>
-          </div>
-
-          {/* Previous Essay */}
-          <div className="card bg-white dark:bg-gray-900">
-            <h2 className="text-2xl font-bold mb-4">
-              <Link 
-                href="/essays/ai-behavior-doctrine"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              >
-                The Strategic Blindspot: Why Canada Needs an AI Behavior Doctrine — Now
-              </Link>
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-              A deep dive into Canada's position in the global AI landscape and strategic recommendations for national security.
-            </p>
-            <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-              <span>April 2025</span>
-              <span>•</span>
-              <span>8-minute read</span>
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="mt-12 flex gap-4 justify-center">
