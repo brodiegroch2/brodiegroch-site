@@ -18,19 +18,19 @@ export default function EssaysPage() {
             <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">Latest Essay</span>
             <h2 className="text-2xl font-bold mt-2 mb-4">
               <Link 
-                href="/essays/realignment-year"
+                href="/essays/choice-engine"
                 className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
-                The Realignment Year: Why 2026 Will Reshape Canadian Politics Forever
+                The Choice Engine: How Elections Rewired Canadian Culture — One Vote at a Time
               </Link>
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              Canada&apos;s political system isn&apos;t drifting. It&apos;s repositioning — and 2026 is the breakpoint year for a full-scale ideological and structural shift.
+              A deep dive into how Canadian elections have shaped the nation's cultural evolution, from Confederation to the present day.
             </p>
             <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
               <span>May 2025</span>
               <span>•</span>
-              <span>6-minute read</span>
+              <span>7-minute read</span>
             </div>
           </div>
 
@@ -45,7 +45,7 @@ export default function EssaysPage() {
               </Link>
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              As AI systems become more autonomous and influential, Canada needs a comprehensive doctrine for understanding and shaping AI behavior at a national scale.
+              A deep dive into Canada's position in the global AI landscape and strategic recommendations for national security.
             </p>
             <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
               <span>April 2025</span>

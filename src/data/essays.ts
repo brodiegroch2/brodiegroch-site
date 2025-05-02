@@ -16,6 +16,67 @@ export interface Essay {
 
 export const essays: Essay[] = [
   {
+    title: "The Choice Engine: How Elections Rewired Canadian Culture — One Vote at a Time",
+    description: "A deep dive into how Canadian elections have shaped the nation's cultural evolution, from Confederation to the present day.",
+    coverImage: "/essay-cover.svg",
+    slug: "choice-engine",
+    date: "2025-05-15",
+    content: {
+      introduction: "Every election isn't just a contest of policies — it's a collective simulation of what kind of country we want to be next.",
+      sections: [
+        {
+          title: "The Myth of Political Stability",
+          content: "Canadians are told we're politically boring. Stable. Predictable. But that's never really been true. What we call stability has actually been a constant rewiring of the national psyche — election by election, crisis by crisis, identity shift by identity shift. From colonial dominion to multicultural state, from conscription crises to culture wars, every time Canadians have stepped into the ballot box, they've voted not just on parties — but on what Canada is."
+        },
+        {
+          title: "1867–1911: Dominion Dreams and Anglo Order",
+          content: "Thought at the Time: 'We need order, expansion, and British strength.' Voters chose John A. Macdonald's Conservatives to unite the colonies. Policies like the National Policy (tariffs + railroads) built industry and nationalism. But they also entrenched white, Protestant power and Indigenous suppression. Direction Locked In: Colonial conservatism, expansionism, central government control."
+        },
+        {
+          title: "1917: The First Culture War Election",
+          content: "Thought at the Time: 'Do we fight together — or divide?' In WWI, the Conscription Crisis split English and French Canada. The Unionist (Conservative-Liberal) coalition won. But Quebec felt betrayed. Voter lines became cultural front lines. Direction Locked In: English-Canada unity over Quebec loyalty. The 'two solitudes' hardened."
+        },
+        {
+          title: "1945–1967: Postwar Prosperity and Social Consensus",
+          content: "Thought at the Time: 'We've earned peace. Let's build a better life.' Liberal governments rode the optimism of veterans and boomers. Voters supported national pension plans, citizenship laws, family allowances. The idea of shared responsibility embedded itself in Canadian identity. Direction Locked In: Social liberalism, safety nets, and national cohesion over division."
+        },
+        {
+          title: "1968–1982: The Trudeau Pivot — Rights Over Roots",
+          content: "Thought at the Time: 'Who are we — and who gets to decide?' Pierre Trudeau's Liberals reframed Canada as a rights-based, bilingual, multicultural project. Voters didn't just choose him — they chose the Charter, the flag, and a new national story. Direction Locked In: From cultural conformity to pluralism. The legal foundation of modern Canada was born."
+        },
+        {
+          title: "1984–1993: Free Trade and Fracture",
+          content: "Thought at the Time: 'Let's modernize. But at what cost?' Mulroney's Progressive Conservatives won big on free trade, privatization, and Quebec recognition. But backlash came fast: the GST, Meech Lake failure, and economic pain shattered old alliances. Direction Locked In: Globalization over protectionism. But also: deep voter cynicism."
+        },
+        {
+          title: "1993: The Great Political Reset",
+          content: "Thought at the Time: 'None of the old parties represent me anymore.' The Progressive Conservatives collapsed. The Bloc and Reform surged. Canadians didn't just shift preferences — they abandoned old loyalties. The Liberal sweep wasn't just a win. It was a vacuum fill. Direction Locked In: Fragmented federalism. Regional distrust. End of 'natural governing parties.'"
+        },
+        {
+          title: "2005: Rights Expansion and the Moral Divide",
+          content: "Thought at the Time: 'What kind of freedom matters more — religious or civil?' Same-sex marriage passed under Paul Martin's Liberals. It polarized parts of the electorate — but most Canadians stood by inclusion. It defined a generation's concept of modern Canadian values. Direction Locked In: Progressive rights as a non-negotiable feature of national identity."
+        },
+        {
+          title: "2006–2015: Conservative Era and Quiet Redirection",
+          content: "Thought at the Time: 'Let's be prudent. But not radical.' Stephen Harper's Conservatives didn't win by being extreme — they won by appealing to moderation + fear of Liberal excess. But their legacy (crime bills, oil development, proroguing Parliament) began to fray trust. Direction Locked In: Economic realism, security consciousness, and slow resistance to progressive speed."
+        },
+        {
+          title: "2015: The Big Hope Vote",
+          content: "Thought at the Time: 'It's time to feel proud of Canada again.' Trudeau's Liberals brought a wave: youth vote, openness, climate leadership, identity politics. For a moment, Canada saw itself as the progressive beacon of the West. Direction Locked In: Performative progressivism. National brand-building. High expectations."
+        },
+        {
+          title: "2022–2025: Fragmentation and Strategic Anxiety",
+          content: "Thought at the Time: 'Who's really in control here — the government, or the people?' From the Freedom Convoy to digital censorship bills, Canadians started asking how much power is too much? And who exactly is watching whom? 2025's election turned not just on inflation — but sovereignty. Not just affordability — but autonomy. Direction Locked In: Skepticism of power. Desire for a sovereign, independent, but balanced future. Expect realignment."
+        },
+        {
+          title: "What This Means: Elections as Cultural Leverage",
+          content: "Canadian elections don't just pick leaders. They pick what gets protected, who gets heard, and which version of history gets written. That's why understanding elections as cultural decision engines is critical. If you want to influence the future of Canada, you don't just run in elections. You design the frame of choice."
+        }
+      ],
+      conclusion: "I'm building a full-scale, interactive timeline of Canadian elections, policies, and the cultural consequences that followed. Because knowing who won is not enough. You need to know why people voted — and what they unknowingly voted into existence. This is the level of systems history we need if we want to shape what comes next."
+    }
+  },
+  {
     title: "The Strategic Blindspot: Why Canada Needs an AI Behavior Doctrine — Now",
     description: "A deep dive into Canada's position in the global AI landscape and strategic recommendations for national security.",
     coverImage: "/essay-cover.svg",
