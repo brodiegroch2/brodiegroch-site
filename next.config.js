@@ -3,6 +3,7 @@ const nextConfig = {
   output: 'standalone',
   reactStrictMode: true,
   swcMinify: true,
+  poweredByHeader: false,
   images: {
     domains: ['localhost'],
     remotePatterns: [
