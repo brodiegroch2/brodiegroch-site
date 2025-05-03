@@ -13,8 +13,18 @@ interface Project {
 const projects: Project[] = [
   {
     title: "AI Content Studio",
-    description: "A comprehensive platform for creating, managing, and optimizing AI-generated content. Features include content generation, editing, and publishing tools with advanced AI capabilities. Built with modern web technologies and designed for seamless user experience.",
-    technologies: ["Next.js", "TypeScript", "AI Integration", "Tailwind CSS", "OpenAI API"],
+    description: "A comprehensive web application for AI-powered content creation and management. Features include user authentication, document processing (PDF and Word), course management, and analytics. Built with Next.js 15.3.1, React 18, and TypeScript, featuring Stripe payments, NextAuth authentication, and OpenAI integration. The platform offers a modern dashboard interface with content management, analytics, and settings management capabilities.",
+    technologies: [
+      "Next.js 15.3.1",
+      "React 18",
+      "TypeScript",
+      "Tailwind CSS",
+      "NextAuth",
+      "Stripe",
+      "OpenAI API",
+      "PDF Processing",
+      "Headless UI"
+    ],
     link: "https://aicontentstudio.ca",
   },
   {
