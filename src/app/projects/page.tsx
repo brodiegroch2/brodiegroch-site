@@ -29,9 +29,9 @@ const projects: Project[] = [
   },
   {
     title: "Personal Portfolio",
-    description: "A modern portfolio website built with Next.js and Tailwind CSS",
-    technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
-    link: "https://github.com/brodiegroch2/brodiegroch-site",
+    description: "My personal website brodiegroch.ca showcasing my work, essays, and projects. Features a modern, responsive design with dark mode support, interactive project cards, and a clean user interface. The site includes sections for projects, essays, and contact information, all built with a focus on performance and user experience.",
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "React", "Dark Mode"],
+    link: "https://brodiegroch.ca",
   }
 ];
 
