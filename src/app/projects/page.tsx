@@ -15,7 +15,7 @@ const projects: Project[] = [
     title: "AI Content Studio",
     description: "A platform for creating and managing AI-generated content",
     technologies: ["Next.js", "TypeScript", "AI Integration"],
-    link: "/aicontentstudio",
+    link: "https://aicontentstudio.ca",
   },
   {
     title: "Personal Portfolio",
