@@ -1,8 +1,16 @@
 'use client'
 
 import Link from "next/link";
+import { useState } from "react";
 
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  link: string;
+}
+
+const projects: Project[] = [
   {
     title: "AI Content Studio",
     description: "A platform for creating and managing AI-generated content",
@@ -18,6 +26,8 @@ const projects = [
 ];
 
 export default function Projects() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4 py-20">
@@ -30,7 +40,8 @@ export default function Projects() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="card hover:shadow-xl transition-shadow"
+                className="card hover:shadow-xl transition-shadow cursor-pointer"
+                onClick={() => setSelectedProject(project)}
               >
                 <div className="p-0">
                   <h2 className="text-2xl font-semibold mb-3">{project.title}</h2>
@@ -52,6 +63,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     View Project
                   </Link>
@@ -70,6 +82,48 @@ export default function Projects() {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {selectedProject && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="flex justify-between items-start mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{selectedProject.title}</h2>
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
+              {selectedProject.description}
+            </p>
+            <div className="flex flex-wrap gap-2 mb-6">
+              {selectedProject.technologies.map((tech, techIndex) => (
+                <span
+                  key={techIndex}
+                  className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="flex justify-end">
+              <Link
+                href={selectedProject.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              >
+                View Project
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 } 
