@@ -4,6 +4,12 @@ import Link from "next/link";
 
 const projects = [
   {
+    title: "AI Content Studio",
+    description: "A platform for creating and managing AI-generated content",
+    technologies: ["Next.js", "TypeScript", "AI Integration"],
+    link: "/aicontentstudio",
+  },
+  {
     title: "Personal Portfolio",
     description: "A modern portfolio website built with Next.js and Tailwind CSS",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
