@@ -13,8 +13,8 @@ interface Project {
 const projects: Project[] = [
   {
     title: "AI Content Studio",
-    description: "A platform for creating and managing AI-generated content",
-    technologies: ["Next.js", "TypeScript", "AI Integration"],
+    description: "A comprehensive platform for creating, managing, and optimizing AI-generated content. Features include content generation, editing, and publishing tools with advanced AI capabilities. Built with modern web technologies and designed for seamless user experience.",
+    technologies: ["Next.js", "TypeScript", "AI Integration", "Tailwind CSS", "OpenAI API"],
     link: "https://aicontentstudio.ca",
   },
   {
