@@ -133,5 +133,42 @@ export const essays: Essay[] = [
       ],
       conclusion: "Canada must act now to develop a comprehensive AI behavior doctrine. The window of opportunity is closing, and the stakes couldn't be higher for our national security and technological sovereignty."
     }
+  },
+  {
+    title: "The Cheapest .CA Domain + WordPress Hosting Options (with Email) in CAD",
+    description: "A comprehensive comparison of the most affordable .CA domain and WordPress hosting packages available to Canadians, including detailed analysis of first-year costs, renewal rates, and key features.",
+    coverImage: "/essay-cover.svg",
+    slug: "cheapest-ca-domain",
+    date: "2025-05-20",
+    content: {
+      introduction: "Launching a website with a .ca domain doesn't need to be expensive—especially for Canadians looking to start a WordPress site with built-in email. Several providers offer competitively priced packages that bundle domain registration, WordPress-capable hosting, SSL, and email functionality. However, understanding the pricing structure is critical, particularly the gap between first-year promotional deals and renewal rates.",
+      sections: [
+        {
+          title: "Provider Comparison Summary",
+          content: "A detailed comparison of the top providers:\n\n- IONOS: ~$17–$20 first year, ~$135/year renewal\n- HostPapa: ~$35.40 first year, ~$108–$132/year renewal\n- GoDaddy: ~$65.88 first year, ~$307/year renewal\n- Hostinger: ~$47 first year, ~$110–$120/year renewal\n- WHC: ~$47 first year, ~$182/year renewal"
+        },
+        {
+          title: "IONOS: Cheapest First-Year Cost Overall",
+          content: "IONOS offers the lowest first-year price by far—just under $20 CAD. For that, users get a .ca domain, WordPress-optimized hosting, SSL, and a \"professional email\" account. The catch? This rate is a deeply discounted intro price requiring a 12-month term. After year one, hosting jumps to around $10/month and the domain renews separately, bringing your yearly total to about $135. For budget-conscious users launching a new site, IONOS is unbeatable upfront—but it's smart to plan for a provider switch or upgrade before the renewal date."
+        },
+        {
+          title: "HostPapa: Canadian Option with Competitive Value",
+          content: "Based in Canada and PIPEDA-compliant, HostPapa's Essentials plan costs $35.40 for the first year—assuming you commit to a 36-month plan. It includes a free .ca domain, 50 GB NVMe storage, multiple websites, email accounts, and SSL. Its Canadian data centers and bilingual support make it appealing for local users. However, the three-year commitment is mandatory to access the $2.95/month pricing. After that, renewal prices increase to roughly $108–$132/year, depending on the term. For users seeking a Canadian provider with solid specs and willing to prepay, HostPapa is a well-rounded choice."
+        },
+        {
+          title: "GoDaddy: Attractive Package, But High Renewal Costs",
+          content: "GoDaddy's Economy plan bundles hosting, a free .ca domain, and even a one-year Microsoft 365 email trial for about $65.88 CAD upfront. Storage and bandwidth are generous, and the setup is beginner-friendly. However, renewal rates are significantly higher—around $307/year, including domain and hosting. Additionally, the email service becomes paid after year one. This makes GoDaddy ideal only for short-term use or those who plan to migrate before renewal. Without proactive management, you'll face some of the steepest renewal costs in the market."
+        },
+        {
+          title: "Hostinger: Strong Features, Best for Multi-Year Commitments",
+          content: "Hostinger is a global provider known for feature-rich hosting at low introductory prices. For around $47 CAD, users receive 100 GB SSD storage, 100 email accounts, and the ability to host multiple websites—more than enough for most small businesses. The lowest pricing assumes a four-year term; if you go shorter, rates climb. Hosting renews at about $9.22/month, pushing annual cost into the $110–$120 range. Hostinger's nearest servers are in the U.S., but most Canadian users won't notice a performance drop. For users wanting flexibility, scalability, and good specs at low cost (and are okay with long commitments), Hostinger is a top contender."
+        },
+        {
+          title: "Web Hosting Canada (WHC): Best Long-Term Canadian Hosting",
+          content: "WHC is the go-to option for users who prioritize Canadian hosting, data residency, and support. The \"Pro\" plan, discounted to about $3.92/month (with a three-year prepay), gives you unlimited sites, unlimited email accounts, free SSL, and a .ca domain for the first year—all hosted in Canada. At renewal, the cost rises to roughly $182/year (including domain renewal). While not the cheapest, WHC stands out for those wanting everything under one roof, inside Canadian jurisdiction. It's ideal for freelancers or small businesses seeking a stable, Canada-based host with robust features."
+        }
+      ],
+      conclusion: "For the absolute cheapest way to start a Canadian WordPress site, IONOS wins with a total first-year cost of under $20 CAD. It includes everything you need—domain, hosting, email, SSL—but will cost significantly more in the second year. If you're comfortable switching providers after 12 months, it's a highly effective way to get online fast.\n\nHostPapa and WHC are ideal for those who want a reliable, long-term solution with Canadian servers and email bundled in. Hostinger offers superior value for users who want flexibility and scalability but don't need Canadian hosting. GoDaddy provides a lot upfront but becomes expensive fast.\n\nUltimately, your best choice depends on whether you prioritize lowest initial cost, long-term predictability, or local hosting. All options above are WordPress-compatible, .ca domain-ready, and come with essential features—just be sure to track when the renewal hits."
+    }
   }
 ]; 
