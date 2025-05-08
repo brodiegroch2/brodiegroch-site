@@ -12,6 +12,21 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "The Jersey Shoppe",
+    description: "A comprehensive business workflow system for managing custom sports jersey design, customization, and production. Features include AI-enhanced tooling, a structured business logic layer, and a visual design platform. The system integrates Electron-based desktop tools, automated design processes, and production tracking capabilities.",
+    technologies: [
+      "Electron",
+      "Node.js",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Canvas/DOM",
+      "AI Integration",
+      "Business Logic"
+    ],
+    link: "/projects/jersey-shoppe",
+  },
+  {
     title: "AI Content Studio",
     description: "A comprehensive web application for AI-powered content creation and management. Features include user authentication, document processing (PDF and Word), course management, and analytics. Built with Next.js 15.3.1, React 18, and TypeScript, featuring Stripe payments, NextAuth authentication, and OpenAI integration. The platform offers a modern dashboard interface with content management, analytics, and settings management capabilities.",
     technologies: [
