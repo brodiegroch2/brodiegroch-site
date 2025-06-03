@@ -53,12 +53,6 @@ export default function RootLayout({
                 <Link href="/essays" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                   Essays
                 </Link>
-                <Link href="/projects" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                  Projects
-                </Link>
-                <Link href="/now" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                  Now
-                </Link>
                 <Link href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                   Contact
                 </Link>
@@ -88,9 +82,6 @@ export default function RootLayout({
                 </Link>
                 <Link href="/essays" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                   Essays
-                </Link>
-                <Link href="/projects" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                  Projects
                 </Link>
                 <Link href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                   Contact
