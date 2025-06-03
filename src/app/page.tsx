@@ -1,6 +1,6 @@
 'use client'
 
-// Home page component - displays latest work and hero section
+// Home page component - displays latest work and hero section - refreshed deployment
 import Link from "next/link";
 import { essays } from '@/data/essays';
 
