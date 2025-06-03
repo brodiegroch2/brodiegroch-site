@@ -4,6 +4,7 @@ export interface Essay {
   coverImage: string;
   slug: string;
   date: string;
+  readTime: number;
   content: {
     introduction: string;
     sections: {
@@ -21,6 +22,7 @@ export const essays: Essay[] = [
     coverImage: "/essay-cover.svg",
     slug: "bearspaw-golf-evaluation",
     date: "2025-06-01",
+    readTime: 45,
     content: {
       introduction: "Bearspaw Golf & Country Club has undergone a dramatic turnaround since 2019, emerging from receivership to become one of Calgary's premier golf facilities. This analysis examines the club's financial restructuring, membership growth, and current enterprise value.",
       sections: [
@@ -62,6 +64,7 @@ export const essays: Essay[] = [
     coverImage: "/essay-cover.svg",
     slug: "choice-engine",
     date: "2025-05-15",
+    readTime: 45,
     content: {
       introduction: "Canada's political landscape has been shaped by a series of pivotal elections that have not only determined who governs but have fundamentally altered the nation's cultural fabric. This essay explores how these electoral moments have served as cultural decision engines, locking in new directions for Canadian society.",
       sections: [
@@ -111,6 +114,7 @@ export const essays: Essay[] = [
     coverImage: "/essay-cover.svg",
     slug: "realignment-year",
     date: "2025-05-01",
+    readTime: 45,
     content: {
       introduction: "Canada's political system isn't drifting. It's repositioning — and 2026 is the breakpoint year for a full-scale ideological and structural shift.",
       sections: [
@@ -148,6 +152,7 @@ export const essays: Essay[] = [
     coverImage: "/essay-cover.svg",
     slug: "ai-behavior-doctrine",
     date: "2025-04-15",
+    readTime: 45,
     content: {
       introduction: "As artificial intelligence continues to reshape our world, Canada finds itself at a critical juncture. This essay explores why Canada needs to develop a comprehensive AI behavior doctrine to navigate the complex intersection of technology, national security, and human values.",
       sections: [
@@ -181,6 +186,7 @@ export const essays: Essay[] = [
     coverImage: "/essay-cover.svg",
     slug: "cheapest-ca-domain",
     date: "2025-05-20",
+    readTime: 45,
     content: {
       introduction: "Launching a website with a .ca domain doesn't need to be expensive—especially for Canadians looking to start a WordPress site with built-in email. Several providers offer competitively priced packages that bundle domain registration, WordPress-capable hosting, SSL, and email functionality. However, understanding the pricing structure is critical, particularly the gap between first-year promotional deals and renewal rates.",
       sections: [
@@ -218,6 +224,7 @@ export const essays: Essay[] = [
     coverImage: "/essay-cover.svg",
     slug: "canada-labour-economic-model",
     date: "2025-06-15",
+    readTime: 45,
     content: {
       introduction: "Canada's contemporary economic strategy has prioritized gross domestic product (GDP) growth through rapid population increases and mass higher education attainment. This approach – heavily reliant on high immigration levels and credentialism – has succeeded in expanding aggregate GDP, yet has done little to raise real wages or improve productivity and prosperity on a per-person basis. Real GDP per capita has effectively stagnated in recent years. Statistics Canada reports that output per person declined in five of the six quarters up to late 2023, leaving real GDP per capita near its 2017 level. An influx of over 1.2 million people in 2023 (a 3.2% population rise, roughly equivalent to adding a city the size of Calgary) – driven by record permanent and temporary immigration – meant population growth far outpaced output, pushing GDP per capita 2.5% below its pre-pandemic level. In short, Canada is growing the economy in quantity, but not quality: total GDP rises while average incomes and productivity languish.",
       sections: [

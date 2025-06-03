@@ -38,7 +38,7 @@ export default function Home() {
       {/* Featured Content Section */}
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 font-inter text-center">Featured Work</h2>
+          <h2 className="text-3xl font-bold mb-8 font-inter text-center">Latest Work</h2>
           <div className="grid gap-8">
             <div className="card">
               <h3 className="text-xl font-bold mb-2 font-inter">📘 {latestEssay.title}</h3>
