@@ -1,5 +1,6 @@
 'use client'
 
+// Home page component - displays latest work and hero section
 import Link from "next/link";
 import { essays } from '@/data/essays';
 
