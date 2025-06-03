@@ -131,7 +131,7 @@ export default function ContactPage() {
               <div className="max-w-md mx-auto text-center">
                 <h2 className="text-2xl font-bold mb-4">Stay Updated</h2>
                 <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  Get notified when I publish new essays or launch strategic projects.
+                  Get notified when I publish new content or launch strategic projects.
                 </p>
                 
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -184,10 +184,10 @@ export default function ContactPage() {
                 Learn More About Me
               </Link>
               <Link
-                href="/essays"
+                href="/content"
                 className="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
               >
-                Read My Essays
+                Read My Content
               </Link>
             </div>
           </div>

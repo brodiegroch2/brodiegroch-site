@@ -25,7 +25,7 @@ export default function Home() {
             href="/essays"
             className="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold shadow hover:bg-blue-700 transition-colors"
           >
-            Read my latest essay
+            Read my latest content
           </Link>
           <Link
             href="/about"
@@ -50,7 +50,7 @@ export default function Home() {
                 href={`/essays/${latestEssay.slug}`}
                 className="text-blue-600 dark:text-blue-400 hover:underline font-inter font-semibold"
               >
-                Read Essay →
+                Read Content →
               </Link>
             </div>
           </div>

@@ -109,7 +109,7 @@ export default function AboutPage() {
             </p>
 
             <p className="mb-8">
-              You can reach me directly at <a href="mailto:brodie@brodiegroch.ca" className="text-blue-600 dark:text-blue-400 hover:underline">brodie@brodiegroch.ca</a>, or find my latest work on the Essays and Projects pages.
+              You can reach me directly at <a href="mailto:brodie@brodiegroch.ca" className="text-blue-600 dark:text-blue-400 hover:underline">brodie@brodiegroch.ca</a>, or find my latest work on the Content and Projects pages.
             </p>
 
             <div className="flex gap-4 justify-center mt-12">
@@ -120,10 +120,10 @@ export default function AboutPage() {
                 Get in Touch
               </Link>
               <Link
-                href="/essays"
+                href="/content"
                 className="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
               >
-                Read My Essays
+                Read My Content
               </Link>
             </div>
           </div>
