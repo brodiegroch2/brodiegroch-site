@@ -235,5 +235,39 @@ export const essays: Essay[] = [
       ],
       conclusion: "The current economic model in Canada, while successful in growing aggregate GDP, has failed to deliver meaningful improvements in individual prosperity and productivity. A shift toward more human-centered economic policies, including UBI and reduced work hours, could provide a path forward toward a more equitable and sustainable economic future."
     }
+  },
+  {
+    title: "The Silent Sabotage: How Boomer Work Models Undermine Millennial Capability",
+    description: "An analysis of how outdated workplace models are holding back Canada's most capable young professionals, with a detailed case study comparing traditional and modern approaches to work.",
+    date: "2025-06-01",
+    slug: "boomer-work-models",
+    readTime: 12,
+    coverImage: "/essay-cover.svg",
+    content: {
+      introduction: "In today's Canadian workforce, an uncomfortable truth lingers beneath the surface: many recent graduates are objectively more capable of delivering higher-impact work faster, cheaper, and more creatively than many of their senior counterparts. But instead of being rewarded for this, they're shut out, underpaid, or chronically overlooked. Meanwhile, aging professionals collect bloated salaries for outdated processes, protected by an outdated cultural model of 'experience' that no longer holds up.",
+      sections: [
+        {
+          title: "The Historical Context",
+          content: "This isn't just a generational gripe—it's a systemic flaw rooted in a historical anomaly unique to the Boomer generation. Every generation before Boomers earned prestige through credentials or labour value. But Boomers benefited from a rare economic climate: exploding GDP, cheap housing, stable jobs, and rapid institutional expansion. They rose to power without needing credentials or optimization. Time served became synonymous with value—not because it should have, but because it worked back then."
+        },
+        {
+          title: "Case Study: Gary vs. Aisha",
+          content: "A detailed comparison of two approaches to the same task in a mid-sized municipal infrastructure firm in Calgary, demonstrating the stark contrast between traditional and modern work methods. Gary, a 61-year-old Boomer with 30 years of experience, takes 3 weeks and costs $5,460 to produce vague insights. Aisha, a 24-year-old graduate fluent in AI tools and modern analytics, delivers precise, implementable changes in 1 day at a cost of $224."
+        },
+        {
+          title: "The Truth We Don't Say",
+          content: "We're living through the most powerful era of personal leverage in human history. AI tools, data analytics, and open-source infrastructure have collapsed the time it takes to produce meaningful results. A task that took 8 hours a decade ago now takes 30 seconds with the right tools. But our systems haven't caught up. They still reward tenure over outcome, process over speed, and familiarity over boldness."
+        },
+        {
+          title: "The Cost to Canada",
+          content: "This isn't just unfair—it's economically devastating. Public sector bloats as productivity stagnates, younger workers disengage and seek opportunity abroad or online, housing and opportunity gaps widen, and institutional decay accelerates because innovation is locked out. Canada is cannibalizing its future to preserve the egos of its past."
+        },
+        {
+          title: "So What Do We Do?",
+          content: "We need to decouple time from value. I propose a new metric for performance: Civic Impact Score = (Outcome Quality × Societal Relevance × Speed) / Tool Leverage Factor. We should reward those who use tools to deliver faster, more relevant solutions, create systems that scale and adapt, and share their knowledge to uplift others. We must shift prestige from 'time served' to 'value delivered.'"
+        }
+      ],
+      conclusion: "Canada doesn't need more experience. It needs more execution. We must shift prestige from 'time served' to 'value delivered' and implement new metrics that reward those who use tools to deliver faster, more relevant solutions, create systems that scale and adapt, and share their knowledge to uplift others."
+    }
   }
 ]; 
