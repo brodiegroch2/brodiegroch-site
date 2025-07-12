@@ -1,57 +1,46 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import React from 'react';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-export default function Navigation(): React.JSX.Element {
+export default function Navigation() {
   const pathname = usePathname();
 
-  const isActive = (path: string): boolean => pathname === path;
+  const isActive = (path: string) => {
+    if (path === "/" && pathname === "/") return true;
+    if (path !== "/" && pathname.startsWith(path)) return true;
+    return false;
+  };
+
+  const getLinkClasses = (path: string) => {
+    const baseClasses = "transition-colors duration-200";
+    const activeClasses = "text-blue-600 dark:text-blue-400 font-semibold";
+    const inactiveClasses = "text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400";
+    
+    return `${baseClasses} ${isActive(path) ? activeClasses : inactiveClasses}`;
+  };
 
   return (
-    <nav className="bg-white dark:bg-gray-800 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link href="/" className="flex items-center">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+    <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="font-bold text-lg">
             Brodie Groch
-          </span>
-        </Link>
-        <div className="flex md:order-2">
-          <Link
-            href="/contact"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Contact Me
           </Link>
-        </div>
-        <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 dark:border-gray-700">
-            <li>
-              <Link
-                href="/"
-                className={`block py-2 pl-3 pr-4 rounded md:p-0 ${
-                  isActive('/') 
-                    ? 'text-white bg-blue-700 md:text-blue-700 md:bg-transparent dark:text-white' 
-                    : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
-                }`}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/projects"
-                className={`block py-2 pl-3 pr-4 rounded md:p-0 ${
-                  isActive('/projects')
-                    ? 'text-white bg-blue-700 md:text-blue-700 md:bg-transparent dark:text-white'
-                    : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
-                }`}
-              >
-                Projects
-              </Link>
-            </li>
-          </ul>
+          <div className="hidden md:flex space-x-8">
+            <Link href="/" className={getLinkClasses("/")}>
+              Home
+            </Link>
+            <Link href="/about" className={getLinkClasses("/about")}>
+              About
+            </Link>
+            <Link href="/essays" className={getLinkClasses("/essays")}>
+              Insights
+            </Link>
+            <Link href="/contact" className={getLinkClasses("/contact")}>
+              Contact
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

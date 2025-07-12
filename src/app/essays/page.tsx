@@ -22,7 +22,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 border-b border-gray-200 dark:border-gray-700">
+      <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 border-b border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4 py-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold mb-6 font-inter text-gray-900 dark:text-white">
@@ -118,7 +118,7 @@ export default function BlogPage() {
 
           {/* Newsletter Signup */}
           <div className="mt-20">
-            <div className="card bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 border border-blue-200 dark:border-gray-600">
+            <div className="card bg-gradient-to-r from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-700 border border-blue-200 dark:border-gray-600">
               <div className="text-center max-w-2xl mx-auto">
                 <h3 className="text-2xl font-bold mb-4 font-inter text-gray-900 dark:text-white">
                   Stay Updated

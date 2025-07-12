@@ -14,7 +14,7 @@ export default function Home() {
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-24 flex flex-col items-center text-center">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 font-inter bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 font-inter bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600">
           Strategic Systems Thinking for a Disrupted World
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 font-source-serif max-w-2xl">

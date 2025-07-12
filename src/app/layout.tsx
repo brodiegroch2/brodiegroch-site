@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import Link from "next/link";
+import Navigation from "@/components/Navigation";
 import "./globals.css";
 
 const inter = Inter({
@@ -37,29 +38,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${sourceSerif.variable} antialiased min-h-screen bg-white dark:bg-gray-900`}>
         {/* Navigation */}
-        <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between h-16">
-              <Link href="/" className="font-bold text-lg">
-                Brodie Groch
-              </Link>
-              <div className="hidden md:flex space-x-8">
-                <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                  Home
-                </Link>
-                <Link href="/about" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                  About
-                </Link>
-                <Link href="/essays" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                  Insights
-                </Link>
-                <Link href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                  Contact
-                </Link>
-              </div>
-            </div>
-          </div>
-        </nav>
+        <Navigation />
 
         {/* Main Content */}
         <main className="pt-16">
@@ -79,6 +58,9 @@ export default function RootLayout({
               <div className="flex space-x-6">
                 <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                   Home
+                </Link>
+                <Link href="/about" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                  About
                 </Link>
                 <Link href="/essays" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                   Insights
