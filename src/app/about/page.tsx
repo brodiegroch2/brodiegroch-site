@@ -38,15 +38,7 @@ export default function AboutPage() {
             </div>
 
             <div className="space-y-12">
-              {/* WHAT I'M BUILDING NOW */}
-              <div>
-                <h2 className="text-3xl font-bold mb-6 font-inter text-gray-900 dark:text-white">WHAT I&apos;M BUILDING NOW</h2>
-                <ol className="list-decimal pl-8 space-y-4">
-                  <li><strong>Autonomous Wildfire-Drone Stack</strong> – thermal imaging, mesh networking, edge-AI inference for early ignition detection.</li>
-                  <li><strong>Run the Riding™</strong> – no-code civic-ops app that lets Calgary-NW residents surface local issues in thirty seconds.</li>
-                  <li><strong>Process-Compression Playbooks</strong> – Python & ChatGPT driven templates that eliminate back-office latency for SMEs.</li>
-                </ol>
-              </div>
+
 
               {/* CORE THESIS */}
               <div>
