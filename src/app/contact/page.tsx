@@ -24,7 +24,10 @@ export default function ContactPage() {
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-24 flex flex-col items-center text-center">
-        <div className="flex items-center justify-center gap-4 mb-8">
+        <h1 className="text-5xl md:text-6xl font-bold mb-8 font-inter bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600">
+          CONTACT
+        </h1>
+        <div className="flex items-center justify-center gap-4">
           <Image
             src="/profile-1024x985.png"
             alt="Brodie Groch headshot"
@@ -41,9 +44,6 @@ export default function ContactPage() {
             </p>
           </div>
         </div>
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 font-inter bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600">
-          CONTACT
-        </h1>
       </section>
 
       {/* Content Section */}
