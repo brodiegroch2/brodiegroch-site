@@ -7,6 +7,7 @@ export const canadaLabourEconomicModel: Essay = {
   slug: "canada-labour-economic-model",
   date: "2025-06-15",
   readTime: 45,
+  icon: 'Briefcase',
   content: {
     introduction: "Canada's contemporary economic strategy has prioritized gross domestic product (GDP) growth through rapid population increases and mass higher education attainment. This approach – heavily reliant on high immigration levels and credentialism – has succeeded in expanding aggregate GDP, yet has done little to raise real wages or improve productivity and prosperity on a per-person basis. Real GDP per capita has effectively stagnated in recent years. Statistics Canada reports that output per person declined in five of the six quarters up to late 2023, leaving real GDP per capita near its 2017 level. An influx of over 1.2 million people in 2023 (a 3.2% population rise, roughly equivalent to adding a city the size of Calgary) – driven by record permanent and temporary immigration – meant population growth far outpaced output, pushing GDP per capita 2.5% below its pre-pandemic level. In short, Canada is growing the economy in quantity, but not quality: total GDP rises while average incomes and productivity languish.",
     sections: [

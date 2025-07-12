@@ -5,6 +5,7 @@ export interface Essay {
   slug: string;
   date: string;
   readTime: number;
+  icon?: string; // Lucide icon name as string
   content: {
     introduction: string;
     sections: {

@@ -7,6 +7,7 @@ export const canadaWildfireManagement: Essay = {
   slug: "canada-wildfire-management",
   date: "2025-07-12",
   readTime: 45,
+  icon: 'Flame',
   content: {
     introduction: "Canada is grappling with a wildfire crisis of unprecedented scale, exposing deep structural challenges in how we manage forests and fire. The past few years have seen record-breaking fires raging from coast to coast, straining emergency services and blanketing cities in smoke. This is not a one-off disaster but a symptom of systemic issues – ecological risk compounded by policy failures, skewed political incentives, and the heavy hand of the forestry industry. Tackling wildfires in 2025 and beyond requires understanding these intersecting factors. We need to scrutinize the data, question whose interests shape reforestation and land management, and evaluate whether current strategies are working. This analysis presents the latest wildfire figures, critiques Canada's wildfire strategy performance, examines how forestry lobbying influences reforestation choices, and amplifies perspectives from First Nations and rural experts. International comparisons (from California's fire-prone hills to Australia's bushfire adaptations) will help situate Canada's approach in a global context. The goal is to move past viewing wildfires as mere \"natural\" disasters and see them as a policy and governance challenge – one that demands structural change with cross-demographic resonance and political credibility.",
     sections: [

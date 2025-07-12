@@ -2,12 +2,22 @@
 import React from 'react'
 import Link from 'next/link'
 import { essays } from '@/data/essays'
+import * as LucideIcons from 'lucide-react';
 
 export default function BlogPage() {
   // Sort essays by date in descending order
   const sortedEssays = [...essays].sort((a, b) => 
     new Date(b.date).getTime() - new Date(a.date).getTime()
   );
+
+  // Helper to get icon component
+  const getIcon = (iconName?: string, isLarge: boolean = false) => {
+    if (!iconName) return null;
+    const LucideIcon = (LucideIcons as any)[iconName];
+    if (!LucideIcon) return null;
+    const sizeClass = isLarge ? "w-16 h-16" : "w-8 h-8";
+    return <LucideIcon className={`${sizeClass} text-blue-500 dark:text-blue-400 flex-shrink-0`} aria-hidden="true" />;
+  };
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
@@ -38,6 +48,15 @@ export default function BlogPage() {
                 <Link href={`/essays/${sortedEssays[0].slug}`} className="block">
                   <div className="max-w-4xl">
                     <div className="flex items-center gap-4 mb-4">
+                      {getIcon(sortedEssays[0].icon, true)}
+                      <h3 className="text-3xl font-bold font-inter text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        {sortedEssays[0].title}
+                      </h3>
+                    </div>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 font-source-serif text-lg leading-relaxed">
+                      {sortedEssays[0].description}
+                    </p>
+                    <div className="flex items-center gap-4 mb-6">
                       <span className="text-sm text-gray-500 dark:text-gray-400 font-inter">
                         {new Date(sortedEssays[0].date).toLocaleDateString('en-US', {
                           year: 'numeric',
@@ -49,12 +68,6 @@ export default function BlogPage() {
                         {sortedEssays[0].readTime} min read
                       </span>
                     </div>
-                    <h3 className="text-3xl font-bold mb-4 font-inter text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                      {sortedEssays[0].title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-6 font-source-serif text-lg leading-relaxed">
-                      {sortedEssays[0].description}
-                    </p>
                     <span className="inline-flex items-center text-blue-600 dark:text-blue-400 font-inter font-semibold hover:underline">
                       Read full article →
                     </span>
@@ -73,7 +86,16 @@ export default function BlogPage() {
               {sortedEssays.slice(1).map((essay, index) => (
                 <article key={index} className="card hover:shadow-lg transition-all duration-300 cursor-pointer group">
                   <Link href={`/essays/${essay.slug}`} className="block">
-                    <div className="flex items-center gap-4 mb-3">
+                    <div className="flex items-center gap-3 mb-3">
+                      {getIcon(essay.icon)}
+                      <h3 className="text-xl font-bold font-inter text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
+                        {essay.title}
+                      </h3>
+                    </div>
+                    <p className="text-gray-600 dark:text-gray-300 font-source-serif line-clamp-3 mb-4">
+                      {essay.description}
+                    </p>
+                    <div className="flex items-center gap-4 mb-4">
                       <span className="text-sm text-gray-500 dark:text-gray-400 font-inter">
                         {new Date(essay.date).toLocaleDateString('en-US', {
                           year: 'numeric',
@@ -85,12 +107,6 @@ export default function BlogPage() {
                         {essay.readTime} min read
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold mb-3 font-inter text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
-                      {essay.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300 font-source-serif line-clamp-3 mb-4">
-                      {essay.description}
-                    </p>
                     <span className="inline-flex items-center text-blue-600 dark:text-blue-400 font-inter font-semibold group-hover:underline">
                       Read more →
                     </span>

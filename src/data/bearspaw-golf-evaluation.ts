@@ -7,6 +7,7 @@ export const bearspawGolfEvaluation: Essay = {
   slug: "bearspaw-golf-evaluation",
   date: "2025-06-01",
   readTime: 45,
+  icon: 'Flag',
   content: {
     introduction: "Bearspaw Golf & Country Club has undergone a dramatic turnaround since 2019, emerging from receivership to become one of Calgary's premier golf facilities. This analysis examines the club's financial restructuring, membership growth, and current enterprise value.",
     sections: [
