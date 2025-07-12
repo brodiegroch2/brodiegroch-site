@@ -22,173 +22,218 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <div className="card">
-          <h1 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-            Reach Out
-          </h1>
-
-          <div className="prose prose-lg max-w-none dark:prose-invert">
-            <p className="text-xl mb-8">
-              I&apos;m always open to opportunities, interesting questions, or collaboration with serious builders and thinkers.
-            </p>
-
-            <div className="space-y-6">
-              <div className="flex items-center gap-4 mb-2">
-                <Image
-                  src="/profile-1024x985.png"
-                  alt="Brodie Groch headshot"
-                  width={56}
-                  height={56}
-                  className="rounded-full shadow border-2 border-white dark:border-gray-800 object-cover"
-                />
-                <span className="font-semibold text-lg">Brodie Groch</span>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">📩</span>
-                <a 
-                  href="mailto:brodie@brodiegroch.ca"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  brodie@brodiegroch.ca
-                </a>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">🐦</span>
-                <a 
-                  href="https://twitter.com/brodiegroch"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  @brodiegroch
-                </a>
-              </div>
-
-              {/* Social Links with Company Logos */}
-              <div className="flex gap-6 mt-6">
-                <a
-                  href="https://www.linkedin.com/in/brodiegroch/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" rx="6" fill="#0A66C2"/>
-                    <path d="M10.666 13.333h3.111v1.333h.045c.433-.82 1.492-1.687 3.073-1.687 3.29 0 3.895 2.165 3.895 4.983v5.037h-3.222v-4.47c0-1.066-.019-2.438-1.486-2.438-1.487 0-1.714 1.162-1.714 2.364v4.544h-3.222v-9.666zm-1.555-3.333a1.778 1.778 0 1 1 0-3.555 1.778 1.778 0 0 1 0 3.555zm1.611 13.333h-3.222v-9.666h3.222v9.666z" fill="#fff"/>
-                  </svg>
-                </a>
-                <a
-                  href="https://www.instagram.com/brodiegroch/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" rx="6" fill="#fff"/>
-                    <radialGradient id="ig-gradient" cx="16" cy="16" r="16" gradientUnits="userSpaceOnUse">
-                      <stop stopColor="#feda75"/>
-                      <stop offset="0.5" stopColor="#fa7e1e"/>
-                      <stop offset="1" stopColor="#d62976"/>
-                    </radialGradient>
-                    <rect width="32" height="32" rx="6" fill="url(#ig-gradient)"/>
-                    <path d="M16 11.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm0 7.92a3.12 3.12 0 1 1 0-6.24 3.12 3.12 0 0 1 0 6.24zm6.4-8.16a1.12 1.12 0 1 1-2.24 0 1.12 1.12 0 0 1 2.24 0zm3.2 1.12c-.07-1.48-.41-2.8-1.49-3.88C23.6 7.41 22.28 7.07 20.8 7c-1.48-.07-5.92-.07-7.4 0-1.48.07-2.8.41-3.88 1.49C7.41 8.4 7.07 9.72 7 11.2c-.07 1.48-.07 5.92 0 7.4.07 1.48.41 2.8 1.49 3.88 1.08 1.08 2.4 1.42 3.88 1.49 1.48.07 5.92.07 7.4 0 1.48-.07 2.8-.41 3.88-1.49 1.08-1.08 1.42-2.4 1.49-3.88.07-1.48.07-5.92 0-7.4zm-2.88 9.04a3.36 3.36 0 0 1-1.89 1.89c-1.31.52-4.42.4-5.63.4s-4.32.12-5.63-.4a3.36 3.36 0 0 1-1.89-1.89c-.52-1.31-.4-4.42-.4-5.63s-.12-4.32.4-5.63a3.36 3.36 0 0 1 1.89-1.89c1.31-.52 4.42-.4 5.63-.4s4.32-.12 5.63.4a3.36 3.36 0 0 1 1.89 1.89c.52 1.31.4 4.42.4 5.63s.12 4.32-.4 5.63z" fill="#fff"/>
-                  </svg>
-                </a>
-                <a
-                  href="https://github.com/brodiegroch2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" rx="6" fill="#181717"/>
-                    <path d="M16 7.333c-4.78 0-8.667 3.887-8.667 8.667 0 3.833 2.487 7.08 5.94 8.233.433.08.593-.187.593-.413 0-.2-.007-.727-.01-1.427-2.417.527-2.927-1.167-2.927-1.167-.393-.993-.96-1.257-.96-1.257-.787-.54.06-.53.06-.53.87.06 1.327.893 1.327.893.773 1.327 2.027.943 2.52.72.08-.56.3-.943.547-1.16-1.93-.22-3.967-.967-3.967-4.307 0-.953.34-1.733.893-2.347-.09-.22-.387-1.1.087-2.293 0 0 .727-.233 2.387.893.693-.193 1.44-.287 2.18-.29.74.003 1.487.097 2.18.29 1.66-1.127 2.387-.893 2.387-.893.473 1.193.177 2.073.087 2.293.553.613.893 1.393.893 2.347 0 3.347-2.04 4.083-3.98 4.3.307.267.58.793.58 1.6 0 1.157-.01 2.09-.01 2.377 0 .227.16.497.6.413C22.18 23.08 24.667 19.833 24.667 16c0-4.78-3.887-8.667-8.667-8.667z" fill="#fff"/>
-                  </svg>
-                </a>
-                <a
-                  href="https://www.tiktok.com/@brodiegroch"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="TikTok"
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" rx="6" fill="#000"/>
-                    <path d="M22.667 13.333c-1.84 0-3.333-1.493-3.333-3.333V8h-2.667v12c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2c.18 0 .36.02.533.06v-2.08A4.013 4.013 0 0 0 14 15.333c-2.207 0-4 1.793-4 4s1.793 4 4 4 4-1.793 4-4v-5.333c.8.533 1.76.866 2.667.866v-1.533z" fill="#fff"/>
-                  </svg>
-                </a>
+      {/* Hero Section */}
+      <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 border-b border-gray-200 dark:border-gray-700">
+        <div className="container mx-auto px-4 py-20">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-6xl font-bold mb-6 font-inter text-gray-900 dark:text-white">
+              CONTACT
+            </h1>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <Image
+                src="/profile-1024x985.png"
+                alt="Brodie Groch headshot"
+                width={80}
+                height={80}
+                className="rounded-full shadow-lg border-4 border-white dark:border-gray-800 object-cover"
+              />
+              <div className="text-left">
+                <p className="text-2xl font-bold font-inter text-gray-900 dark:text-white">
+                  Brodie Groch
+                </p>
+                <p className="text-lg text-gray-700 dark:text-gray-300 font-inter">
+                  Mechanical-Ops Systems Strategist
+                </p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
 
-            {/* Email Capture Card */}
-            <div className="mt-16">
-              <div className="max-w-md mx-auto text-center">
-                <h2 className="text-2xl font-bold mb-4">Stay Updated</h2>
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  Get notified when I publish new content or launch strategic projects.
-                </p>
-                
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="relative">
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your email"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                      required
-                    />
+      {/* Content Section */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="card bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
+            <div className="prose prose-lg max-w-none dark:prose-invert">
+              <div className="space-y-16">
+                {/* Direct Line Section */}
+                <section className="relative">
+                  <div className="absolute -left-4 top-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
+                  <div className="pl-8">
+                    <h2 className="text-3xl font-bold mb-8 font-inter text-gray-900 dark:text-white flex items-center gap-3">
+                      <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white text-sm font-bold">1</span>
+                      Direct Line
+                    </h2>
+                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-600 p-8 rounded-xl border border-blue-100 dark:border-gray-600">
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-white">
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                            </svg>
+                          </div>
+                          <a 
+                            href="mailto:brodie@brodiegroch.ca"
+                            className="text-lg text-blue-600 dark:text-blue-400 hover:underline font-semibold"
+                          >
+                            brodie@brodiegroch.ca
+                          </a>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white">
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                          </div>
+                          <a 
+                            href="https://linkedin.com/in/brodiegroch"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-lg text-blue-600 dark:text-blue-400 hover:underline font-semibold"
+                          >
+                            linkedin.com/in/brodiegroch
+                          </a>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 bg-black dark:bg-white rounded-lg flex items-center justify-center">
+                            <svg className="w-5 h-5 text-white dark:text-black" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                          </div>
+                          <a 
+                            href="https://twitter.com/brodiegroch"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-lg text-blue-600 dark:text-blue-400 hover:underline font-semibold"
+                          >
+                            @brodiegroch
+                          </a>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 bg-gray-500 rounded-lg flex items-center justify-center text-white">
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                          <span className="text-lg text-gray-700 dark:text-gray-300 font-semibold">
+                            Calgary • Field-deployable across Canada
+                          </span>
+                        </div>
+                      </div>
+                      <div className="mt-6 p-4 bg-blue-100 dark:bg-blue-900/20 rounded-lg">
+                        <p className="text-gray-700 dark:text-gray-300 font-medium">
+                          I reply fastest to concise, well-framed problems or partnership briefs.
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <button
-                    type="submit"
-                    disabled={status === 'loading'}
-                    className={`w-full px-6 py-3 rounded-lg font-medium transition-colors ${
-                      status === 'success'
-                        ? 'bg-green-600 text-white'
-                        : 'bg-blue-600 text-white hover:bg-blue-700'
-                    }`}
-                  >
-                    {status === 'loading' ? (
-                      <span className="flex items-center justify-center">
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Subscribing...
-                      </span>
-                    ) : status === 'success' ? (
-                      'Subscribed!'
-                    ) : (
-                      'Subscribe'
-                    )}
-                  </button>
-                </form>
-                
-                <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-                  No spam. Unsubscribe anytime.
-                </p>
-              </div>
-            </div>
+                </section>
 
-            <div className="mt-12 flex gap-4 justify-center">
-              <Link
-                href="/about"
-                className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Learn More About Me
-              </Link>
-              <Link
-                href="/content"
-                className="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
-              >
-                Read My Content
-              </Link>
+                {/* What I'm Open To Section */}
+                <section className="relative">
+                  <div className="absolute -left-4 top-0 w-2 h-full bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></div>
+                  <div className="pl-8">
+                    <h2 className="text-3xl font-bold mb-8 font-inter text-gray-900 dark:text-white flex items-center gap-3">
+                      <span className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center text-white text-sm font-bold">2</span>
+                      What I&apos;m Open To
+                    </h2>
+                    <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-700 dark:to-gray-600 p-8 rounded-xl border border-purple-100 dark:border-gray-600">
+                      <div className="space-y-4">
+                        <div className="flex items-start gap-4">
+                          <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-1">•</div>
+                          <p className="text-gray-700 dark:text-gray-300">Frontier-tech ops roles (drones, wildfire resilience, advanced manufacturing)</p>
+                        </div>
+                        <div className="flex items-start gap-4">
+                          <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-1">•</div>
+                          <p className="text-gray-700 dark:text-gray-300">Process-compression consulting (ERP, Lean, AI-assisted workflows)</p>
+                        </div>
+                        <div className="flex items-start gap-4">
+                          <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-1">•</div>
+                          <p className="text-gray-700 dark:text-gray-300">Joint R&D or grant proposals in critical infrastructure and field robotics</p>
+                        </div>
+                        <div className="flex items-start gap-4">
+                          <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-1">•</div>
+                          <p className="text-gray-700 dark:text-gray-300">Thought-level conversations with builders who value systems over slogans</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Newsletter Section */}
+                <section className="relative">
+                  <div className="absolute -left-4 top-0 w-2 h-full bg-gradient-to-b from-green-500 to-emerald-500 rounded-full"></div>
+                  <div className="pl-8">
+                    <h2 className="text-3xl font-bold mb-8 font-inter text-gray-900 dark:text-white flex items-center gap-3">
+                      <span className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center text-white text-sm font-bold">3</span>
+                      Stay on My Radar
+                    </h2>
+                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-gray-700 dark:to-gray-600 p-8 rounded-xl border border-green-100 dark:border-gray-600">
+                      <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                        Get a short, high-signal note when I ship a new build-log, white-paper, or tool.
+                      </p>
+                      
+                      <form onSubmit={handleSubmit} className="space-y-4">
+                        <div className="relative">
+                          <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="you@example.com"
+                            className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                            required
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          disabled={status === 'loading'}
+                          className={`w-full px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
+                            status === 'success'
+                              ? 'bg-green-600 text-white'
+                              : 'bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:from-green-700 hover:to-emerald-700 shadow-lg hover:shadow-xl transform hover:-translate-y-1'
+                          }`}
+                        >
+                          {status === 'loading' ? (
+                            <span className="flex items-center justify-center">
+                              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                              </svg>
+                              Subscribing...
+                            </span>
+                          ) : status === 'success' ? (
+                            'Subscribed!'
+                          ) : (
+                            'Subscribe'
+                          )}
+                        </button>
+                      </form>
+                      
+                      <p className="mt-4 text-sm text-gray-600 dark:text-gray-400 italic">
+                        *Zero fluff. Opt-out anytime.*
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+              {/* Call to Action */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
+                <Link
+                  href="/about"
+                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  Learn More About Me
+                </Link>
+                <Link
+                  href="/essays"
+                  className="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  Read My Content
+                </Link>
+              </div>
             </div>
           </div>
         </div>

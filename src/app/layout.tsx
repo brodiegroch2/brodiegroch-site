@@ -86,9 +86,6 @@ export default function RootLayout({
                 <Link href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                   Contact
                 </Link>
-                <Link href="/profile" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                  Portfolio
-                </Link>
               </div>
             </div>
           </div>
