@@ -8,6 +8,13 @@ export const bearspawGolfEvaluation: Essay = {
   date: "2025-06-01",
   readTime: 45,
   icon: 'Flag',
+  tldr: {
+    bullets: [
+      "Bearspaw Golf Club emerged from 2019 receivership under new ownership, completing a $25M clubhouse and growing membership from 110 to 325+ members.",
+      "The club operates as semi-private with $6K+ annual dues, generating revenue from membership, public play ($155/round), and F&B operations in the new 30K sq ft facility.",
+      "Current enterprise value estimated at $20-25M CAD, reflecting substantial real assets (200 acres + new clubhouse) and stabilized operations with path to profitability."
+    ]
+  },
   content: {
     introduction: "Bearspaw Golf & Country Club has undergone a dramatic turnaround since 2019, emerging from receivership to become one of Calgary's premier golf facilities. This analysis examines the club's financial restructuring, membership growth, and current enterprise value.",
     sections: [

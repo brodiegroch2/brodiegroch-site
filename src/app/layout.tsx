@@ -24,6 +24,42 @@ export const metadata: Metadata = {
   title: "Brodie Groch - Strategic Systems Thinking",
   description: "Strategic systems thinking for a disrupted world. Exploring technology, national security, and political transformation.",
   keywords: ["strategic thinking", "systems thinking", "national security", "AI", "political transformation"],
+  openGraph: {
+    title: "Brodie Groch - Strategic Systems Thinking",
+    description: "Strategic systems thinking for a disrupted world. Exploring technology, national security, and political transformation.",
+    url: "https://brodiegroch.ca",
+    siteName: "Brodie Groch",
+    images: [
+      {
+        url: "/profile-1024x985.png",
+        width: 1024,
+        height: 985,
+        alt: "Brodie Groch headshot",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Brodie Groch - Strategic Systems Thinking",
+    description: "Strategic systems thinking for a disrupted world. Exploring technology, national security, and political transformation.",
+    images: ["/profile-1024x985.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code",
+  },
 };
 
 export default function RootLayout({
@@ -37,11 +73,19 @@ export default function RootLayout({
         <link rel="icon" href="/@tab_icon.svg" type="image/svg+xml" />
       </head>
       <body className={`${inter.variable} ${sourceSerif.variable} antialiased min-h-screen bg-white dark:bg-gray-900`}>
+        {/* Skip Navigation */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-lg z-50"
+        >
+          Skip to main content
+        </a>
+        
         {/* Navigation */}
         <Navigation />
 
         {/* Main Content */}
-        <main className="pt-16">
+        <main id="main-content" className="pt-16">
           {children}
         </main>
 

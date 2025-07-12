@@ -1,0 +1,403 @@
+{
+  "personal": {
+    "fullName": "Brodie Groch",
+    "title": "Mechanical-Ops Systems Strategist",
+    "summary": "Hybrid mechanical-business strategist with dual fluency in hard engineering workflows and full-stack business operations. Bachelor of Management (UBCO) + in-progress Mechanical Engineering Technology diploma (SAIT) — a pairing that lets me move seamlessly from CAD benches and RPAS field ops to P&L dashboards and ERP roll-outs. Known for compressing time-to-outcome: 70%+ invoice-automation cuts, 30%+ logistics-error drops, 75% labor-hour reductions. Adept at translating messy, multi-actor systems into lean pipelines through Python, SolidWorks, SAP, Bubble.io, or simply disciplined SOP design. Seeking roles where systems thinking, data rigor, and hands-on execution converge — whether in product ops, technical project management, or operations engineering.\n\nCore Value Props\n• Process & workflow redesign • Cross-functional leadership • Data-driven decision-making\n• CAD-to-Cash pipeline insight • Technical-financial bilingualism • Rapid automation & prototyping. Holder of Alberta Class 5 driver's licence with reliable transportation for project-site visits.",
+    "email": "brodiejsgroch@gmail.com",
+    "phone": "(403) 797-2846",
+    "location": "Calgary, AB",
+    "linkedin": "https://www.linkedin.com/in/brodiegroch/"
+  },
+  "experience": [
+    {
+      "title": "Co-Founder & Operations Lead",
+      "company": "GOAT Distributors",
+      "location": "Calgary, AB",
+      "startDate": "July 2024",
+      "endDate": "May 2025",
+      "description": "Co-founded and led operations for a distribution company, managing full-stack systems, financial operations, and logistics workflows.",
+      "achievements": [
+        "Engineered full-stack internal systems for payments, inventory, and order tracking using no-code and low-code tools, cutting admin load by 70% and eliminating fulfillment bottlenecks",
+        "Oversaw $20K/month operating budget, executing vendor payments, managing cash flow, and ensuring financial visibility across logistics and procurement",
+        "Reduced delivery errors and fulfillment delays by over 30% by redesigning logistics workflows and implementing automated coordination systems",
+        "Negotiated supplier contracts and managed partner onboarding to support three product line launches and continuous inventory turnaround",
+        "Led legal, financial, and technical infrastructure setup, aligning operational strategy with CRA compliance and merchant platform standards"
+      ]
+    },
+    {
+      "title": "Business Consultant",
+      "company": "Tri³ Hardgear",
+      "location": "Calgary, AB",
+      "startDate": "May 2024",
+      "endDate": "January 2025",
+      "description": "Provided strategic business consulting services, focusing on process optimization, financial systems, and operational efficiency improvements.",
+      "achievements": [
+        "Designed and deployed an automated invoice generation system using Excel macros and integrated forms, reducing average processing time from 15 minutes to under 5 minutes",
+        "Reconciled aged accounts and cleared outstanding payments, recovering delayed revenue while creating standardized financial tracking systems",
+        "Audited internal workflows and purchase order systems, identifying over $10,000 in annual inefficiencies and proposing corrective action",
+        "Collaborated directly with leadership to modernize backend systems and client-facing processes, aligning financial operations with vendor and customer expectations",
+        "Delivered strategic recommendations on logistics, vendor coordination, and order processing that improved turnaround speed and reduced miscommunication across departments",
+        "Automated the creation and maintenance of technical documentation, saving dozens of hours of manual administrative work each quarter."
+      ]
+    },
+    {
+      "title": "Teaching Assistant – MGMT 422: Project Management",
+      "company": "The University of British Columbia",
+      "location": "Kelowna, BC",
+      "startDate": "January 2024",
+      "endDate": "April 2024",
+      "description": "Provided instructional support and mentorship for undergraduate project management course, teaching PMI frameworks and practical project management skills.",
+      "achievements": [
+        "Delivered weekly lab instruction to 60+ students based on PMI (Project Management Institute) frameworks, including scope definition, budgeting, risk mitigation, and scheduling",
+        "Provided one-on-one coaching to student teams on project planning, Gantt chart development, stakeholder analysis, and resource allocation using Microsoft Project",
+        "Identified and resolved curriculum inefficiencies, introducing applied case study examples that improved practical comprehension and final project outcomes",
+        "Supported assessment of group deliverables, ensuring consistency with PMI standards and course outcomes while maintaining academic rigor",
+        "Served as liaison between students and professor, contributing to a 15% overall class performance increase through focused support and feedback"
+      ]
+    },
+    {
+      "title": "Turfcare Crew Lead",
+      "company": "Glencoe Golf & Country Club",
+      "location": "Calgary, AB",
+      "startDate": "May 2019",
+      "endDate": "August 2021",
+      "description": "Led groundskeeping operations for a 27-hole championship golf course, supervising seasonal staff and managing turfcare equipment and maintenance schedules.",
+      "achievements": [
+        "Supervised groundskeeping operations across a 27-hole championship course, leading 6–10 seasonal staff in daily maintenance, task execution, and safety compliance",
+        "Reorganized crew workflows to improve task sequencing, reducing average daily maintenance time by 75% and minimizing equipment idle time",
+        "Operated and maintained commercial turfcare equipment including tractors, aerators, mowers, and chemical sprayers; ensured all assets met operational readiness and safety standards",
+        "Developed and enforced schedules, checklists, and contingency plans for inclement weather, balancing playability standards with environmental constraints",
+        "Recognized as Employee of the Year (2021) out of 180+ staff for leadership, initiative, and reliability under dynamic field conditions"
+      ]
+    },
+    {
+      "title": "Bartender",
+      "company": "The Cattle Baron",
+      "location": "Calgary, AB",
+      "startDate": "May 2022",
+      "endDate": "August 2022",
+      "description": "Operated full-service bar in high-volume steakhouse environment, managing customer service, inventory, and team training while maintaining compliance standards.",
+      "achievements": [
+        "Operated full-service bar in high-volume steakhouse environment, managing 100+ patrons per shift and consistently meeting upsell and customer satisfaction targets",
+        "Trained and mentored 3 new bartenders, streamlining onboarding by introducing standardized drink prep protocols and bar maintenance routines",
+        "Performed opening and closing procedures including cash reconciliation, stock rotation, and daily reporting, ensuring seamless handoffs between shifts",
+        "Designed and maintained inventory systems that minimized shrinkage and optimized product ordering, contributing to smoother service during peak hours",
+        "Maintained strict adherence to provincial liquor service laws and safety procedures, upholding responsible service standards while fostering positive guest experiences"
+      ]
+    },
+    {
+      "title": "Operations & Logistics Assistant",
+      "company": "Dez.in (Family-Owned)",
+      "location": "Calgary, AB",
+      "startDate": "April 2022",
+      "endDate": "August 2022",
+      "description": "Supported residential staging operations through logistics coordination, furniture transport, and warehouse management for family-owned business.",
+      "achievements": [
+        "Supported residential staging operations by packing, loading, and transporting furniture across multiple project sites; optimized truck layouts for safe and space-efficient transport",
+        "Coordinated day-to-day logistics including pickup schedules, site arrivals, and equipment movement, frequently adapting to shifting client timelines and layout constraints",
+        "Proposed systematized workflows for inventory tracking, warehouse organization, and setup protocols to improve operational consistency (concepts acknowledged, not yet implemented)",
+        "Gained hands-on experience in physical labor under high-demand timelines while contributing to team coordination and real-time problem solving on job sites"
+      ]
+    },
+    {
+      "title": "Volunteer – Outdoor Operations",
+      "company": "Rocky Ridge Royal Oak Community Association",
+      "location": "Calgary, AB",
+      "startDate": "November 2024",
+      "endDate": "December 2024",
+      "description": "Volunteered for community outdoor operations, maintaining public ice rink facilities and supporting seasonal recreational services for local residents.",
+      "achievements": [
+        "Maintained and resurfaced 8,000+ sq ft of public outdoor ice rink, ensuring safe, playable conditions through daily upkeep and temperature-sensitive scheduling",
+        "Coordinated tool setup, tear-down, and PPE usage for rotating volunteer crews, contributing to efficient shift transitions and injury prevention",
+        "Supported community seasonal operations that enabled recreational access for 1,000+ residents, helping uphold RRROCA's public service mandate",
+        "Troubleshot drainage and freeze-thaw complications under subzero conditions, reinforcing adaptability and problem-solving in field environments"
+      ]
+    },
+    {
+      "title": "Referee – Youth Sports (Hockey)",
+      "company": "Central Zone / Hockey Alberta",
+      "location": "Calgary, AB",
+      "startDate": "August 2014",
+      "endDate": "March 2016",
+      "description": "Officiated competitive youth hockey games, ensuring rule compliance, game integrity, and safety while developing strong decision-making and conflict resolution skills.",
+      "achievements": [
+        "Officiated competitive youth hockey games, ensuring rule compliance, game integrity, and safety for all participants in fast-paced, high-pressure environments",
+        "Mediated disputes between players and coaches with professionalism and impartiality, diffusing tension while maintaining authority on the ice",
+        "Conducted pre-game inspections of equipment and playing conditions to align with league safety and regulation standards",
+        "Maintained punctual attendance and travel readiness across rotating venues while balancing academic responsibilities",
+        "Developed strong decision-making, spatial awareness, and conflict resolution skills through direct, real-time enforcement of dynamic game scenarios"
+      ]
+    },
+    {
+      "title": "Volunteer – Community Programs",
+      "company": "St. Stephen's Catholic Church",
+      "location": "Calgary, AB",
+      "startDate": "Ongoing",
+      "endDate": "Seasonal",
+      "description": "Volunteered for community programs and outreach initiatives, coordinating volunteer roles and supporting various public-facing events and donation drives.",
+      "achievements": [
+        "Matched volunteers to suitable roles through informal skill assessments and availability coordination, improving event staffing efficiency",
+        "Collaborated with church leadership and special committees on event planning, logistics, and resource allocation for outreach programs",
+        "Supported a variety of public-facing initiatives including donation drives, holiday events, and facility prep, demonstrating adaptability and service-oriented teamwork",
+        "Exercised sound judgment and discretion while assisting with multi-generational community engagement activities"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Diploma – Mechanical Engineering Technology",
+      "institution": "Southern Alberta Institute of Technology (SAIT)",
+      "location": "Calgary, AB",
+      "graduationDate": "April 2027 (Expected)",
+      "status": "In Progress",
+      "relevantCourses": [
+        "Thermodynamics",
+        "Statics",
+        "Electro-Mechanical Systems",
+        "CAD/CAM"
+      ],
+      "achievements": [
+        "Lab-intensive focus on Thermodynamics, Statics, Electro-Mechanical Systems, and CAD/CAM",
+        "Selected into Fall 2025 cohort; maintaining upper-quartile standing",
+        "Completed REVIT-based coordination exercises and ASHRAE-compliant load-calculation labs, reinforcing HVAC design principles"
+      ]
+    },
+    {
+      "degree": "Bachelor of Management (Operations & Strategy)",
+      "institution": "University of British Columbia – Okanagan (UBCO)",
+      "location": "Kelowna, BC",
+      "graduationDate": "April 2024",
+      "status": "Conferred",
+      "relevantCourses": [
+        "Sustainability & Business",
+        "Business Conditions Analysis",
+        "Marketing Strategy",
+        "Change Leadership"
+      ],
+      "achievements": [
+        "Capstone: V-Metrics UX & Marketing — led stakeholder alignment; final grade 92%",
+        "Concentrations in Sustainability & Business, Business Conditions Analysis, Marketing Strategy, and Change Leadership",
+        "Graduated with strong analytical emphasis on data-driven decision-making and cross-functional project execution"
+      ]
+    },
+    {
+      "degree": "Mechanical Engineering Coursework",
+      "institution": "UBCO – Faculty of Applied Science",
+      "location": "Kelowna, BC",
+      "graduationDate": "2019 – 2020",
+      "status": "Completed",
+      "relevantCourses": [
+        "Engineering Drawing & CAD/CAM",
+        "Linear Algebra",
+        "Statics",
+        "Physics"
+      ],
+      "achievements": [
+        "Completed foundational engineering curriculum before strategic pivot to business management"
+      ]
+    },
+    {
+      "degree": "Alberta High School Diploma",
+      "institution": "St. Francis High School",
+      "location": "Calgary, AB",
+      "graduationDate": "June 2019",
+      "status": "Conferred",
+      "achievements": [
+        "Rutherford Scholarship (Top 5% provincial academic standing)"
+      ]
+    }
+  ],
+  "skills": {
+    "CAD & 3-D Modeling": {
+      "tools": ["SolidWorks", "AutoCAD", "Revit"],
+      "proficiency": "2-D/3-D part & assembly drawings, GD&T, rapid prototyping hand-off; BIM coordination"
+    },
+    "Programming & Scripting": {
+      "tools": ["Python", "MATLAB", "JavaScript", "VBA"],
+      "proficiency": "Process automation, data parsing, numerical analysis, Excel macro suites"
+    },
+    "Data Analysis & Visualization": {
+      "tools": ["Excel (Power Query, PivotTables, Macros)", "Google Sheets", "Tableau"],
+      "proficiency": "KPI dashboards, cost models, Monte-Carlo simulations, ad-hoc BI"
+    },
+    "Project & Collaboration": {
+      "tools": ["Microsoft Project", "MS Office 365", "Git/GitHub", "Teams/SharePoint"],
+      "proficiency": "Gantt scheduling, RACI matrices, version control, remote team workflows; submittal tracking, inventory reporting, supplier coordination, daily timesheets; Learning Management Systems (LMS administration)"
+    },
+    "ERP & Finance Systems": {
+      "tools": ["SAP FI/CO (junior)", "Microsoft Dynamics GP (Great Plains)", "QuickBooks Online"],
+      "proficiency": "A/P & A/R reconciliation, inventory valuations, custom reporting"
+    },
+    "Web / No- & Low-Code Platforms": {
+      "tools": ["Bubble.io", "Glide Apps", "Firebase", "Vercel", "HTML/CSS", "Stripe & REST APIs"],
+      "proficiency": "Internal tooling, client portals, payment-gateway integrations, CI/CD"
+    },
+    "Automation & Workflow": {
+      "tools": ["Zapier", "Airtable Automations", "Custom SQL queries"],
+      "proficiency": "Invoice generation, order-tracking pipelines, cross-platform data sync; leveraging ChatGPT for process analysis and decision support"
+    },
+    "Additive Manufacturing": {
+      "tools": ["Cura slicer", "Ender 3 V2 (PETG/PLA)"],
+      "proficiency": "Parameter optimization for structural PETG panels; routine printer maintenance"
+    },
+    "RPAS & Field Ops": {
+      "tools": ["DJI FlightHub", "Transport Canada RPAS regs"],
+      "proficiency": "Mission planning, VLOS compliance, basic aerial data capture"
+    }
+  },
+  "projects": [
+    {
+      "name": "Competitive Ice Hockey (2007 – 2020)",
+      "description": "Progressed from Novice to Junior B, averaging 10 hrs/week training & travel; sharpened high-pressure teamwork, split-second decision-making, and disciplined time-management alongside academics.",
+      "technologies": ["Bow River Bruins", "Junior B"],
+      "github": "",
+      "live": ""
+    },
+    {
+      "name": "Civic Tech Founder – \"Run the Riding™\" (2025)",
+      "description": "Built a no-code web app (Bubble.io + Google Sheets) for Calgary–NW constituents to log issues and view sentiment dashboards; deployed QR-code funnels and Zapier automations for real-time data sync.",
+      "technologies": ["Bubble.io", "Google Sheets", "Zapier", "QR Codes"],
+      "github": "",
+      "live": ""
+    },
+    {
+      "name": "Autonomous Wildfire-Drone R&D (2025 – Present)",
+      "description": "Prototyping a swarm-UAV system with thermal imaging, mesh networking, and edge-AI inference for early fire detection; accountable for system architecture, RPAS compliance, and data-pipeline design.",
+      "technologies": ["Thermal Imaging", "Mesh Networking", "Edge AI", "RPAS Compliance"],
+      "github": "",
+      "live": ""
+    },
+    {
+      "name": "3-D Printing & Rapid Prototyping (2024 – Present)",
+      "description": "Designed modular PETG wall/roof panels (Ender 3 V2, Cura) for a 7 ft × 8 ft trailer; optimized slicer parameters for strength-to-print-time ratios and documented results for future FEM analysis.",
+      "technologies": ["PETG", "Ender 3 V2", "Cura", "FEM Analysis"],
+      "github": "",
+      "live": ""
+    },
+    {
+      "name": "Tactical Canine Gear Micro-Store – \"The CYC\" (2024)",
+      "description": "Launched an affiliate e-commerce site (Vercel + Stripe links) with 10+ curated SKUs; manage SEO copy, analytics, and product-metadata JSON for rapid SKU rotations.",
+      "technologies": ["Vercel", "Stripe", "SEO", "E-commerce"],
+      "github": "",
+      "live": ""
+    },
+    {
+      "name": "Community Volunteer – Outdoor Rink Maintenance (Nov – Dec 2024)",
+      "description": "Resurfaced 8,000 sq ft public rink for RRROCA, coordinating PPE and tool setup for rotating crews; ensured safe conditions for 1,000+ users during peak season.",
+      "technologies": ["RRROCA", "PPE Coordination", "Facility Maintenance"],
+      "github": "",
+      "live": ""
+    },
+    {
+      "name": "Community Programs Volunteer – St. Stephen's Catholic Church (Intermittent)",
+      "description": "Matched volunteers to roles, assisted with logistics for donation drives & holiday events, and coordinated resources across multigenerational participant groups to maximize outreach impact.",
+      "technologies": ["Volunteer Coordination", "Event Logistics", "Community Outreach"],
+      "github": "",
+      "live": ""
+    },
+    {
+      "name": "Global & Field Experience",
+      "description": "Visited 7 countries and 50+ North American cities (incl. HI, CA, NY, AZ, BC, ON, Mexico, Jamaica, Dominican Republic); adept at rapid logistics planning, cross-cultural communication, and solo travel problem-solving.",
+      "technologies": ["International Travel", "Logistics Planning", "Cross-cultural Communication", "Solo Travel"],
+      "github": "",
+      "live": ""
+    },
+    {
+      "name": "Custom Sports Branding – Welland Jackfish All-Star Jersey (2018)",
+      "description": "Designed commemorative jersey adopted by the team; managed concept through final artwork, showcasing rapid ideation and stakeholder alignment.",
+      "technologies": ["Graphic Design", "Sports Branding", "Stakeholder Management", "Concept Development"],
+      "github": "",
+      "live": ""
+    },
+    {
+      "name": "CAPSTONE – V-Metrics UX & Marketing Strategy Enhancement",
+      "description": "Led UX redesign and go-to-market plan for a health-analytics platform. Simplified UI, introduced gamification, clarified privacy messaging, and crafted B2C/B2B content strategy with KPI dashboard (conversion, CAC).",
+      "technologies": ["UX Design", "Market Research", "Digital Marketing", "Data Analysis", "Project Management"],
+      "github": "",
+      "live": ""
+    },
+    {
+      "name": "Uber – Strategic Analysis & Disruptive Innovation Case",
+      "description": "Produced comprehensive 7-S and PESTEL assessment of Uber’s diversification (Eats, AVs) and pandemic pivots; delivered strategic roadmap for long-term margin lift.",
+      "technologies": ["Strategic Analysis", "PESTEL", "Disruptive Innovation", "Market Research"],
+      "github": "",
+      "live": ""
+    },
+    {
+      "name": "Harley-Davidson – Growth Challenges Study",
+      "description": "Executed VRIO and PESTLE review; proposed Gen-Z hybrid product line and rebranding tactics, informed by field visit to Kelowna dealership.",
+      "technologies": ["Competitive Analysis", "Brand Development", "Market Research", "Business Relationships"],
+      "github": "",
+      "live": ""
+    },
+    {
+      "name": "AMBIT by SOUL – Time-Management Social Initiative",
+      "description": "Conceptualised productivity app with crowdfunding model; mapped feature roadmap and social-media launch to reduce stress via task-prioritisation engine.",
+      "technologies": ["Project Management", "App Strategy", "Crowdfunding", "Time Management", "Social Marketing"],
+      "github": "",
+      "live": ""
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Red Cross Basic Life Support (BLS)",
+      "issuer": "Life Savers Canada",
+      "date": "July 2024",
+      "credentialId": ""
+    },
+    {
+      "name": "Hydrogen Sulfide (H₂S Alive)",
+      "issuer": "Workplace Safety Compliance",
+      "date": "March 2025",
+      "credentialId": ""
+    },
+    {
+      "name": "Pilot Certificate – RPAS (Basic Ops, VLOS)",
+      "issuer": "Transport Canada",
+      "date": "March 2022",
+      "credentialId": ""
+    },
+    {
+      "name": "Small UAS Certificate of Registration",
+      "issuer": "U.S. FAA",
+      "date": "December 2021",
+      "credentialId": ""
+    },
+    {
+      "name": "FEMA IS-0100.C – Incident Command System (ICS 100)",
+      "issuer": "FEMA",
+      "date": "July 2024",
+      "credentialId": ""
+    },
+    {
+      "name": "FEMA IS-0200.C – ICS for Initial Response (ICS 200)",
+      "issuer": "FEMA",
+      "date": "July 2024",
+      "credentialId": ""
+    },
+    {
+      "name": "FEMA IS-0230.E – Fundamentals of Emergency Management",
+      "issuer": "FEMA",
+      "date": "July 2024",
+      "credentialId": ""
+    },
+    {
+      "name": "FEMA IS-0320 – Wildfire Mitigation Basics",
+      "issuer": "FEMA",
+      "date": "July 2024",
+      "credentialId": ""
+    },
+    {
+      "name": "FireSmart 101 – Wildland-Urban Interface Protection",
+      "issuer": "FireSmart Canada",
+      "date": "July 2024",
+      "credentialId": ""
+    },
+    {
+      "name": "Alberta Class 5 Driver's Licence",
+      "issuer": "Gov. of Alberta",
+      "date": "Current",
+      "credentialId": ""
+    }
+  ]
+} 

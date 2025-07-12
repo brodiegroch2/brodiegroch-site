@@ -8,6 +8,13 @@ export const canadaWildfireManagement: Essay = {
   date: "2025-07-12",
   readTime: 45,
   icon: 'Flame',
+  tldr: {
+    bullets: [
+      "Canada's 2023 wildfire season burned 18M+ hectares—6x the long-term average—with escalating costs and ecological damage.",
+      "Forestry industry practices (monoculture conifer plantations, glyphosate use) have created highly flammable landscapes that amplify fire intensity.",
+      "Policy failures include chronic underfunding of prevention, reactive emergency management, and insufficient integration of Indigenous fire knowledge."
+    ]
+  },
   content: {
     introduction: "Canada is grappling with a wildfire crisis of unprecedented scale, exposing deep structural challenges in how we manage forests and fire. The past few years have seen record-breaking fires raging from coast to coast, straining emergency services and blanketing cities in smoke. This is not a one-off disaster but a symptom of systemic issues – ecological risk compounded by policy failures, skewed political incentives, and the heavy hand of the forestry industry. Tackling wildfires in 2025 and beyond requires understanding these intersecting factors. We need to scrutinize the data, question whose interests shape reforestation and land management, and evaluate whether current strategies are working. This analysis presents the latest wildfire figures, critiques Canada's wildfire strategy performance, examines how forestry lobbying influences reforestation choices, and amplifies perspectives from First Nations and rural experts. International comparisons (from California's fire-prone hills to Australia's bushfire adaptations) will help situate Canada's approach in a global context. The goal is to move past viewing wildfires as mere \"natural\" disasters and see them as a policy and governance challenge – one that demands structural change with cross-demographic resonance and political credibility.",
     sections: [
