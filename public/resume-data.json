@@ -112,16 +112,6 @@
   },
   "projects": [
     {
-      "name": "Autonomous Wildfire-Drone Stack",
-      "description": "Thermal imaging, mesh networking, and edge-AI inference for early ignition detection",
-      "technologies": ["Thermal Imaging", "Mesh Networking", "Edge AI", "RPAS Compliance"]
-    },
-    {
-      "name": "Run the Riding™ Civic Tech",
-      "description": "No-code civic-ops app for Calgary-NW residents to surface local issues",
-      "technologies": ["Bubble.io", "Google Sheets", "Zapier", "QR Codes"]
-    },
-    {
       "name": "Process-Compression Playbooks",
       "description": "Python & ChatGPT driven templates that eliminate back-office latency for SMEs",
       "technologies": ["Python", "ChatGPT API", "Process Automation", "SME Tools"]
