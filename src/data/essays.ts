@@ -23,10 +23,12 @@ export interface Essay {
 import { bearspawGolfEvaluation } from './bearspaw-golf-evaluation';
 import { canadaLabourEconomicModel } from './canada-labour-economic-model';
 import { canadaWildfireManagement } from './canada-wildfire-management';
+import { primeCollapseSolids } from './prime-collapse-solids';
 
 // Combine all essays into a single array
 export const essays: Essay[] = [
   canadaWildfireManagement,
   bearspawGolfEvaluation,
-  canadaLabourEconomicModel
+  canadaLabourEconomicModel,
+  primeCollapseSolids
 ]; 

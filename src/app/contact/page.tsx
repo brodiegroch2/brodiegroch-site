@@ -26,15 +26,15 @@ export default function ContactPage() {
       <section className="container mx-auto px-4 py-24 flex flex-col items-center text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-inter bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600">
           CONTACT
-        </h1>
+          </h1>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Image
-            src="/profile-1024x985.png"
-            alt="Brodie Groch headshot"
+                <Image
+                  src="/profile-1024x985.png"
+                  alt="Brodie Groch headshot"
             width={80}
             height={80}
             className="rounded-full shadow-lg border-4 border-white dark:border-gray-800 object-cover"
-          />
+                />
           <div className="text-center sm:text-left">
             <p className="text-xl md:text-2xl font-bold font-inter text-gray-900 dark:text-white">
               Brodie Groch
@@ -43,7 +43,7 @@ export default function ContactPage() {
               Mechanical-Ops Systems Strategist
             </p>
           </div>
-        </div>
+              </div>
       </section>
 
       {/* Content Section */}
@@ -62,13 +62,13 @@ export default function ContactPage() {
                         <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                       </svg>
                     </div>
-                    <a 
-                      href="mailto:brodie@brodiegroch.ca"
+                <a 
+                  href="mailto:brodie@brodiegroch.ca"
                       className="text-base md:text-lg text-blue-600 dark:text-blue-400 hover:underline font-semibold break-all"
-                    >
-                      brodie@brodiegroch.ca
-                    </a>
-                  </div>
+                >
+                  brodie@brodiegroch.ca
+                </a>
+              </div>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                     <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white flex-shrink-0">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -90,20 +90,20 @@ export default function ContactPage() {
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                       </svg>
                     </div>
-                    <a 
-                      href="https://twitter.com/brodiegroch"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                <a 
+                  href="https://twitter.com/brodiegroch"
+                  target="_blank"
+                  rel="noopener noreferrer"
                       className="text-base md:text-lg text-blue-600 dark:text-blue-400 hover:underline font-semibold"
-                    >
-                      @brodiegroch
-                    </a>
-                  </div>
+                >
+                  @brodiegroch
+                </a>
+              </div>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                     <div className="w-10 h-10 bg-gray-500 rounded-lg flex items-center justify-center text-white flex-shrink-0">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                      </svg>
+                  </svg>
                     </div>
                     <span className="text-base md:text-lg text-gray-700 dark:text-gray-300 font-semibold">
                       Calgary • Field-deployable across Canada
@@ -126,7 +126,7 @@ export default function ContactPage() {
                   <li>Joint R&D or grant proposals in critical infrastructure and field robotics</li>
                   <li>Thought-level conversations with builders who value systems over slogans</li>
                 </ul>
-              </div>
+            </div>
 
               {/* Newsletter Section */}
               <div>
@@ -206,6 +206,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
   );
 } 

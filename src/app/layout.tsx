@@ -107,7 +107,7 @@ export default function RootLayout({
                   About
                 </Link>
                 <Link href="/essays" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                  Insights
+                  Articles
                 </Link>
                 <Link href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                   Contact

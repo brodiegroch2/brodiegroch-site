@@ -29,12 +29,12 @@ export default function EssayPage({ params }: EssayPageProps) {
           <article className="lg:col-span-3">
             <h1 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">{title}</h1>
             <div className="text-gray-600 mb-6 md:mb-8 text-sm md:text-base">
-              {new Date(date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </div>
+        {new Date(date).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })}
+      </div>
             
             {/* TL;DR Section */}
             <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 md:p-6 mb-6 md:mb-8 rounded-r-lg">
@@ -48,18 +48,18 @@ export default function EssayPage({ params }: EssayPageProps) {
               </ul>
             </div>
             
-            <div className="prose prose-lg max-w-none">
+      <div className="prose prose-lg max-w-none">
               <div className="text-gray-700 leading-relaxed mb-6 md:mb-8 text-base md:text-lg">
                 <ReactMarkdown>{content.introduction}</ReactMarkdown>
               </div>
-              {content.sections.map((section: { title: string; content: string }, index: number) => (
+        {content.sections.map((section: { title: string; content: string }, index: number) => (
                 <section key={index} className="mb-6 md:mb-8">
                   <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">{section.title}</h2>
                   <div className="text-gray-700 leading-relaxed text-base md:text-lg">
                     <ReactMarkdown>{section.content}</ReactMarkdown>
                   </div>
-                </section>
-              ))}
+          </section>
+        ))}
               <div className="text-gray-700 leading-relaxed mt-6 md:mt-8 text-base md:text-lg">
                 <ReactMarkdown>{content.conclusion}</ReactMarkdown>
               </div>

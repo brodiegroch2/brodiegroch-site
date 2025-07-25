@@ -26,10 +26,10 @@ export default function BlogPage() {
         <div className="container mx-auto px-4 py-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold mb-6 font-inter text-gray-900 dark:text-white">
-              Insights
+              Articles
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 font-source-serif max-w-2xl mx-auto">
-              Strategic insights on technology, politics, and the systems that shape our world.
+              Strategic articles on technology, politics, and the systems that shape our world.
             </p>
           </div>
         </div>
@@ -93,8 +93,8 @@ export default function BlogPage() {
                       </h3>
                     </div>
                     <p className="text-gray-600 dark:text-gray-300 font-source-serif line-clamp-3 mb-4">
-                      {essay.description}
-                    </p>
+                {essay.description}
+              </p>
                     <div className="flex items-center gap-4 mb-4">
                       <span className="text-sm text-gray-500 dark:text-gray-400 font-inter">
                         {new Date(essay.date).toLocaleDateString('en-US', {
@@ -110,7 +110,7 @@ export default function BlogPage() {
                     <span className="inline-flex items-center text-blue-600 dark:text-blue-400 font-inter font-semibold group-hover:underline">
                       Read more →
                     </span>
-                  </Link>
+              </Link>
                 </article>
               ))}
             </div>

@@ -46,11 +46,8 @@ export default function Navigation() {
             <Link href="/about" className={getLinkClasses("/about")}>
               About
             </Link>
-            <Link href="/resume" className={getLinkClasses("/resume")}>
-              Résumé
-            </Link>
             <Link href="/essays" className={getLinkClasses("/essays")}>
-              Insights
+              Articles
             </Link>
             <Link href="/contact" className={getLinkClasses("/contact")}>
               Contact
@@ -107,18 +104,11 @@ export default function Navigation() {
               About
             </Link>
             <Link
-              href="/resume"
-              className={`block px-3 py-2 rounded-md text-base font-medium ${getLinkClasses("/resume")}`}
-              onClick={closeMobileMenu}
-            >
-              Résumé
-            </Link>
-            <Link
               href="/essays"
               className={`block px-3 py-2 rounded-md text-base font-medium ${getLinkClasses("/essays")}`}
               onClick={closeMobileMenu}
             >
-              Insights
+              Articles
             </Link>
             <Link
               href="/contact"

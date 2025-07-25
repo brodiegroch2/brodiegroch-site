@@ -20,7 +20,7 @@ export default function AboutPage() {
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 font-inter bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600">
           ABOUT ME
-        </h1>
+          </h1>
         <p className="text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 md:mb-10 font-source-serif max-w-2xl">
           Systems × Mechanics × Execution
         </p>
@@ -34,7 +34,7 @@ export default function AboutPage() {
               <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 font-source-serif leading-relaxed">
                 I&apos;m Brodie Groch, a Calgary-based Mechanical-Ops Systems Strategist.
                 My lane is where physical infrastructure, field robotics, and real-time ops software intersect. I build repeatable processes that cut waste (70 %+), slash errors (30 %+), and turn raw data into decisive action—whether that&apos;s automating invoices for a hardware startup or prototyping wildfire-drone swarms.
-              </p>
+            </p>
             </div>
 
             <div className="space-y-8 md:space-y-12">
@@ -48,7 +48,7 @@ export default function AboutPage() {
                 </blockquote>
                 <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 font-inter">
                   That&apos;s the leverage I chase: turn chaos into self-healing systems that scale beyond direct control.
-                </p>
+            </p>
               </div>
 
               {/* BACKGROUND SNAPSHOT */}
@@ -59,7 +59,7 @@ export default function AboutPage() {
                   <li><strong>Diploma in Mechanical Engineering Technology (in progress)</strong> – SAIT, 2027</li>
                   <li><strong>Co-Founder, GOAT Distributors</strong> – engineered full-stack ops platform; cut admin load 70 %</li>
                   <li><strong>Field credentials:</strong> RPAS Pilot (Transport Canada), H₂S Alive, Red Cross BLS</li>
-                </ul>
+            </ul>
               </div>
 
               {/* WHY I CARE */}
@@ -80,7 +80,7 @@ export default function AboutPage() {
                 </p>
                 <p className="text-base md:text-lg text-gray-700 dark:text-gray-300">
                   Full project logs live on the Content and Projects pages.
-                </p>
+            </p>
               </div>
             </div>
 
@@ -131,6 +131,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
   );
 } 
