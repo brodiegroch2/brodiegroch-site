@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 interface Course {
   "Course ID": string;
@@ -81,6 +82,11 @@ export default function CoursesPage() {
                     <strong>Current Grade:</strong> {course["Course Average Weighted Grade"]}%
                   </div>
                 )}
+                <div className="course-actions">
+                  <Link href={`/courses/${course["Course ID"]}`} className="view-details-btn">
+                    View Details
+                  </Link>
+                </div>
               </div>
             ))
           )}

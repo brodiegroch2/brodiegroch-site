@@ -1,0 +1,83 @@
+{
+  "name": "UniHUB",
+  "version": "1.0.0",
+  "description": "A comprehensive student management application for tracking courses, assignments, grades, and academic progress.",
+  "author": "Brodie Groch",
+  "created": "2025-01-27",
+  "lastUpdated": "2025-01-27",
+  "features": [
+    "Course Management",
+    "Assignment Tracking",
+    "Grade Calculation",
+    "Progress Monitoring",
+    "Dashboard Analytics",
+    "Deadline Management",
+    "Quick Links",
+    "Responsive Design"
+  ],
+  "technologies": [
+    "HTML5",
+    "CSS3",
+    "JavaScript (ES6+)",
+    "JSON",
+    "SVG Icons"
+  ],
+  "pages": [
+    "Dashboard.html",
+    "Courses.html",
+    "course.html",
+    "Deliverables.html",
+    "Schedule.html",
+    "Quick Links.html",
+    "To Do.html"
+  ],
+  "dataFiles": [
+    "Courses.json",
+    "Deliverables.json",
+    "Schedule.json",
+    "Quick Links.json"
+  ],
+  "assets": [
+    "styles.css",
+    "navigation.js",
+    "favicon.svg",
+    "images/"
+  ],
+  "academicYear": "2025-2026",
+  "semester": "Fall 2025",
+  "institution": "SAIT (Southern Alberta Institute of Technology)",
+  "program": "Engineering Technology",
+  "courses": [
+    "COMP 213 - Computing for Engineering Technology",
+    "MECH 205 - Electro-Mechanical Systems",
+    "STCS 255 - Engineering Statics",
+    "THRM 200 - Introduction to Thermodynamics",
+    "MATH 238 - Mathematics for Engineering & Technology I",
+    "MECH 200 - Mechanical Engineering Technology Concepts"
+  ],
+  "gradingScale": {
+    "A+": "95-100%",
+    "A": "85-94%",
+    "B+": "80-84%",
+    "B": "75-79%",
+    "C+": "70-74%",
+    "C": "65-69%",
+    "D": "60-64%",
+    "F": "0-59%"
+  },
+  "settings": {
+    "theme": "dark",
+    "itemsPerPage": 4,
+    "deadlineRange": 30,
+    "weightedAverage": true,
+    "pagination": true,
+    "svgIcons": true
+  },
+  "stats": {
+    "totalCourses": 6,
+    "totalCredits": 15,
+    "activeAssignments": 94,
+    "completedAssignments": 12,
+    "currentAverage": "97%"
+  }
+}
