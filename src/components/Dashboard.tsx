@@ -657,14 +657,14 @@ export default function Dashboard() {
     <div className="dashboard-sections">
       <div className="dashboard-section course-performance">
         <h2 className="section-title">Course Performance</h2>
-        <div className="performance-chart">
+        <div id="course-performance-chart" className="performance-chart">
           <div className="empty-state">Loading course performance...</div>
         </div>
       </div>
       
       <div className="dashboard-section progress-overview">
         <h2 className="section-title">Progress Overview</h2>
-        <div className="progress-overview">
+        <div id="progress-overview" className="progress-overview">
           <div className="empty-state">Loading progress overview...</div>
         </div>
       </div>
