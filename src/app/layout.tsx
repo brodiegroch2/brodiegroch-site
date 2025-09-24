@@ -1,5 +1,6 @@
 import PasswordProtection from '@/components/PasswordProtection';
 import Navigation from '@/components/Navigation';
+import './globals.css';
 
 export default function RootLayout({
   children,
