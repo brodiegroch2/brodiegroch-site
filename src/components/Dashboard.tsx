@@ -22,6 +22,7 @@ interface Deliverable {
   "Weight %": string;
   "Grade %": string;
   "Letter Grade": string;
+  "Status"?: string;
 }
 
 export default function Dashboard() {
