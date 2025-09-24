@@ -44,7 +44,7 @@ export default function PasswordProtection({ children }: PasswordProtectionProps
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === 'password123') {
+    if (password === '$408621geidorB') {
       setIsAuthenticated(true);
       sessionStorage.setItem('authenticated', 'true');
       setError('');
