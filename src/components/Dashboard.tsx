@@ -36,6 +36,9 @@ export default function Dashboard() {
     upcomingDeadlines: 0,
     averageGrade: '0%'
   });
+  const [recentActivityPage, setRecentActivityPage] = useState(0);
+  const [upcomingDeadlinesPage, setUpcomingDeadlinesPage] = useState(0);
+  const itemsPerPage = 4;
 
   useEffect(() => {
     // Load data
@@ -66,6 +69,14 @@ export default function Dashboard() {
 
     loadData();
   }, []);
+
+  // Update sections when pagination state changes
+  useEffect(() => {
+    if (deliverables.length > 0) {
+      updateRecentActivity(deliverables);
+      updateUpcomingDeadlines(deliverables);
+    }
+  }, [recentActivityPage, upcomingDeadlinesPage, deliverables]);
 
   const calculateStats = (coursesData: Course[], deliverablesData: Deliverable[]) => {
     // Count active courses
@@ -177,20 +188,31 @@ export default function Dashboard() {
 
   const updateRecentActivity = (deliverablesData: Deliverable[]) => {
     const container = document.getElementById('recent-activity');
+    const pagination = document.getElementById('recent-activity-pagination');
+    const prevBtn = document.getElementById('recent-activity-prev') as HTMLButtonElement;
+    const nextBtn = document.getElementById('recent-activity-next') as HTMLButtonElement;
+    const pageInfo = document.getElementById('recent-activity-page-info');
+    
     if (!container) return;
 
-    // Get recent deliverables (last 10)
-    const recentDeliverables = deliverablesData
-      .filter(d => d['Close Date'])
-      .sort((a, b) => new Date(b['Close Date']).getTime() - new Date(a['Close Date']).getTime())
-      .slice(0, 10);
+    // Get recently graded items
+    const gradedItems = deliverablesData.filter(deliverable => 
+      deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
+      deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded'
+    ).sort((a, b) => new Date(b['Close Date']).getTime() - new Date(a['Close Date']).getTime());
 
-    if (recentDeliverables.length === 0) {
+    if (gradedItems.length === 0) {
       container.innerHTML = '<div class="empty-state">No recent activity</div>';
+      if (pagination) pagination.style.display = 'none';
       return;
     }
 
-    container.innerHTML = recentDeliverables.map(deliverable => `
+    const totalPages = Math.ceil(gradedItems.length / itemsPerPage);
+    const startIndex = recentActivityPage * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const currentItems = gradedItems.slice(startIndex, endIndex);
+
+    container.innerHTML = currentItems.map(deliverable => `
       <div class="activity-item">
         <div class="activity-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -202,32 +224,56 @@ export default function Dashboard() {
           <div class="activity-title">${deliverable['Deliverable']}</div>
           <div class="activity-subtitle">${deliverable['Course ID']} • ${new Date(deliverable['Close Date']).toLocaleDateString()}</div>
         </div>
-        <div class="activity-status ${deliverable['Grade %'] ? 'completed' : 'pending'}">
-          ${deliverable['Grade %'] ? 'Completed' : 'Pending'}
+        <div class="activity-status completed">
+          ${deliverable['Grade %']}%
         </div>
       </div>
     `).join('');
+
+    // Update pagination
+    if (pagination && prevBtn && nextBtn && pageInfo) {
+      if (totalPages > 1) {
+        pagination.style.display = 'flex';
+        prevBtn.disabled = recentActivityPage === 0;
+        nextBtn.disabled = recentActivityPage >= totalPages - 1;
+        pageInfo.textContent = `${recentActivityPage + 1} of ${totalPages}`;
+      } else {
+        pagination.style.display = 'none';
+      }
+    }
   };
 
   const updateUpcomingDeadlines = (deliverablesData: Deliverable[]) => {
     const container = document.getElementById('upcoming-deadlines-list');
+    const pagination = document.getElementById('upcoming-deadlines-pagination');
+    const prevBtn = document.getElementById('upcoming-deadlines-prev') as HTMLButtonElement;
+    const nextBtn = document.getElementById('upcoming-deadlines-next') as HTMLButtonElement;
+    const pageInfo = document.getElementById('upcoming-deadlines-page-info');
+    
     if (!container) return;
 
     const now = new Date();
+    const nextMonth = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
     const upcomingDeadlines = deliverablesData.filter(deliverable => {
       const dueDate = new Date(deliverable['Close Date']);
       const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
                       deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
       const isSubmitted = deliverable['Status'] === 'submitted';
-      return dueDate > now && !isGraded && !isSubmitted && deliverable['Close Date'];
+      return dueDate >= now && dueDate <= nextMonth && !isGraded && !isSubmitted && deliverable['Close Date'];
     }).sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime());
 
     if (upcomingDeadlines.length === 0) {
       container.innerHTML = '<div class="empty-state">No upcoming deadlines</div>';
+      if (pagination) pagination.style.display = 'none';
       return;
     }
 
-    container.innerHTML = upcomingDeadlines.slice(0, 5).map(deliverable => {
+    const totalPages = Math.ceil(upcomingDeadlines.length / itemsPerPage);
+    const startIndex = upcomingDeadlinesPage * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const currentItems = upcomingDeadlines.slice(startIndex, endIndex);
+
+    container.innerHTML = currentItems.map(deliverable => {
       const dueDate = new Date(deliverable['Close Date']);
       const daysUntilDue = Math.ceil((dueDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
       
@@ -249,6 +295,18 @@ export default function Dashboard() {
         </div>
       `;
     }).join('');
+
+    // Update pagination
+    if (pagination && prevBtn && nextBtn && pageInfo) {
+      if (totalPages > 1) {
+        pagination.style.display = 'flex';
+        prevBtn.disabled = upcomingDeadlinesPage === 0;
+        nextBtn.disabled = upcomingDeadlinesPage >= totalPages - 1;
+        pageInfo.textContent = `${upcomingDeadlinesPage + 1} of ${totalPages}`;
+      } else {
+        pagination.style.display = 'none';
+      }
+    }
   };
 
   const updateCoursePerformance = (coursesData: Course[], deliverablesData: Deliverable[]) => {
@@ -367,6 +425,27 @@ export default function Dashboard() {
     if (percentage >= 75) return 'grade-average';
     if (percentage >= 65) return 'grade-below-average';
     return 'grade-poor';
+  };
+
+  // Pagination handlers
+  const handleRecentActivityPrev = () => {
+    if (recentActivityPage > 0) {
+      setRecentActivityPage(recentActivityPage - 1);
+    }
+  };
+
+  const handleRecentActivityNext = () => {
+    setRecentActivityPage(recentActivityPage + 1);
+  };
+
+  const handleUpcomingDeadlinesPrev = () => {
+    if (upcomingDeadlinesPage > 0) {
+      setUpcomingDeadlinesPage(upcomingDeadlinesPage - 1);
+    }
+  };
+
+  const handleUpcomingDeadlinesNext = () => {
+    setUpcomingDeadlinesPage(upcomingDeadlinesPage + 1);
   };
 
   return (
@@ -552,25 +631,25 @@ export default function Dashboard() {
     <div className="dashboard-sections">
       <div className="dashboard-section">
         <h2 className="section-title">Recent Activity</h2>
-        <div className="activity-list">
+        <div id="recent-activity" className="activity-list">
           <div className="empty-state">Loading recent activity...</div>
         </div>
-        <div className="pagination" style={{ display: 'none' }}>
-          <button className="pagination-btn" disabled>Previous</button>
-          <span className="pagination-info"></span>
-          <button className="pagination-btn">Next</button>
+        <div id="recent-activity-pagination" className="pagination" style={{ display: 'none' }}>
+          <button id="recent-activity-prev" className="pagination-btn" disabled onClick={handleRecentActivityPrev}>Previous</button>
+          <span id="recent-activity-page-info" className="pagination-info"></span>
+          <button id="recent-activity-next" className="pagination-btn" onClick={handleRecentActivityNext}>Next</button>
         </div>
       </div>
       
       <div className="dashboard-section">
         <h2 className="section-title">Upcoming Deadlines</h2>
-        <div className="deadlines-list">
+        <div id="upcoming-deadlines-list" className="deadlines-list">
           <div className="empty-state">Loading upcoming deadlines...</div>
         </div>
-        <div className="pagination" style={{ display: 'none' }}>
-          <button className="pagination-btn" disabled>Previous</button>
-          <span className="pagination-info"></span>
-          <button className="pagination-btn">Next</button>
+        <div id="upcoming-deadlines-pagination" className="pagination" style={{ display: 'none' }}>
+          <button id="upcoming-deadlines-prev" className="pagination-btn" disabled onClick={handleUpcomingDeadlinesPrev}>Previous</button>
+          <span id="upcoming-deadlines-page-info" className="pagination-info"></span>
+          <button id="upcoming-deadlines-next" className="pagination-btn" onClick={handleUpcomingDeadlinesNext}>Next</button>
         </div>
       </div>
     </div>
