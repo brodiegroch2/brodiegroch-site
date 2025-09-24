@@ -10,13 +10,36 @@ export default function PasswordProtection({ children }: PasswordProtectionProps
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [isCheckingIP, setIsCheckingIP] = useState(true);
 
   useEffect(() => {
     // Check if user is already authenticated (stored in sessionStorage)
     const authStatus = sessionStorage.getItem('authenticated');
     if (authStatus === 'true') {
       setIsAuthenticated(true);
+      setIsCheckingIP(false);
+      return;
     }
+
+    // Check IP address to bypass password for specific IP
+    const checkIP = async () => {
+      try {
+        const response = await fetch('https://ipinfo.io/ip');
+        const userIP = await response.text();
+        const allowedIP = '161.184.170.120'; // Your current IP address
+        
+        if (userIP.trim() === allowedIP) {
+          setIsAuthenticated(true);
+          sessionStorage.setItem('authenticated', 'true');
+        }
+      } catch (error) {
+        console.log('Could not check IP address');
+      } finally {
+        setIsCheckingIP(false);
+      }
+    };
+
+    checkIP();
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -33,6 +56,30 @@ export default function PasswordProtection({ children }: PasswordProtectionProps
 
   if (isAuthenticated) {
     return <>{children}</>;
+  }
+
+  // Show loading state while checking IP
+  if (isCheckingIP) {
+    return (
+      <div style={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#f3f4f6',
+        padding: '20px'
+      }}>
+        <div style={{
+          backgroundColor: 'white',
+          borderRadius: '8px',
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          padding: '32px',
+          textAlign: 'center'
+        }}>
+          <p style={{ color: '#6b7280', margin: 0 }}>Checking access...</p>
+        </div>
+      </div>
+    );
   }
 
   return (
