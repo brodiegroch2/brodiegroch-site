@@ -56,7 +56,7 @@ export default function SchedulePage() {
     : schedule.filter(item => item["Day of Week"] === filter);
 
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  const availableDays = [...new Set(schedule.map(item => item["Day of Week"]))];
+  const availableDays = Array.from(new Set(schedule.map(item => item["Day of Week"])));
 
   const formatTime = (dateTimeString: string) => {
     if (!dateTimeString) return 'Not specified';

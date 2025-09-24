@@ -38,7 +38,7 @@ export default function DeliverablesPage() {
     ? deliverables 
     : deliverables.filter(d => d["Category"] === filter);
 
-  const categories = [...new Set(deliverables.map(d => d["Category"]))];
+  const categories = Array.from(new Set(deliverables.map(d => d["Category"])));
 
   const formatDate = (dateString: string) => {
     if (!dateString) return 'Not specified';
