@@ -38,6 +38,8 @@ export default function Dashboard() {
   });
   const [recentActivityPage, setRecentActivityPage] = useState(0);
   const [upcomingDeadlinesPage, setUpcomingDeadlinesPage] = useState(0);
+  const [recentActivityTotalPages, setRecentActivityTotalPages] = useState(0);
+  const [upcomingDeadlinesTotalPages, setUpcomingDeadlinesTotalPages] = useState(0);
   const itemsPerPage = 4;
 
   useEffect(() => {
@@ -208,6 +210,7 @@ export default function Dashboard() {
     }
 
     const totalPages = Math.ceil(gradedItems.length / itemsPerPage);
+    setRecentActivityTotalPages(totalPages);
     const startIndex = recentActivityPage * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const currentItems = gradedItems.slice(startIndex, endIndex);
@@ -234,8 +237,7 @@ export default function Dashboard() {
     if (pagination && prevBtn && nextBtn && pageInfo) {
       if (totalPages > 1) {
         pagination.style.display = 'flex';
-        prevBtn.disabled = recentActivityPage === 0;
-        nextBtn.disabled = recentActivityPage >= totalPages - 1;
+        // Don't set disabled directly on DOM - let React handle it
         pageInfo.textContent = `${recentActivityPage + 1} of ${totalPages}`;
       } else {
         pagination.style.display = 'none';
@@ -269,6 +271,7 @@ export default function Dashboard() {
     }
 
     const totalPages = Math.ceil(upcomingDeadlines.length / itemsPerPage);
+    setUpcomingDeadlinesTotalPages(totalPages);
     const startIndex = upcomingDeadlinesPage * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const currentItems = upcomingDeadlines.slice(startIndex, endIndex);
@@ -300,8 +303,7 @@ export default function Dashboard() {
     if (pagination && prevBtn && nextBtn && pageInfo) {
       if (totalPages > 1) {
         pagination.style.display = 'flex';
-        prevBtn.disabled = upcomingDeadlinesPage === 0;
-        nextBtn.disabled = upcomingDeadlinesPage >= totalPages - 1;
+        // Don't set disabled directly on DOM - let React handle it
         pageInfo.textContent = `${upcomingDeadlinesPage + 1} of ${totalPages}`;
       } else {
         pagination.style.display = 'none';
@@ -635,9 +637,9 @@ export default function Dashboard() {
           <div className="empty-state">Loading recent activity...</div>
         </div>
         <div id="recent-activity-pagination" className="pagination" style={{ display: 'none' }}>
-          <button id="recent-activity-prev" className="pagination-btn" disabled onClick={handleRecentActivityPrev}>Previous</button>
+          <button id="recent-activity-prev" className="pagination-btn" disabled={recentActivityPage === 0} onClick={handleRecentActivityPrev}>Previous</button>
           <span id="recent-activity-page-info" className="pagination-info"></span>
-          <button id="recent-activity-next" className="pagination-btn" onClick={handleRecentActivityNext}>Next</button>
+          <button id="recent-activity-next" className="pagination-btn" disabled={recentActivityPage >= recentActivityTotalPages - 1} onClick={handleRecentActivityNext}>Next</button>
         </div>
       </div>
       
@@ -647,9 +649,9 @@ export default function Dashboard() {
           <div className="empty-state">Loading upcoming deadlines...</div>
         </div>
         <div id="upcoming-deadlines-pagination" className="pagination" style={{ display: 'none' }}>
-          <button id="upcoming-deadlines-prev" className="pagination-btn" disabled onClick={handleUpcomingDeadlinesPrev}>Previous</button>
+          <button id="upcoming-deadlines-prev" className="pagination-btn" disabled={upcomingDeadlinesPage === 0} onClick={handleUpcomingDeadlinesPrev}>Previous</button>
           <span id="upcoming-deadlines-page-info" className="pagination-info"></span>
-          <button id="upcoming-deadlines-next" className="pagination-btn" onClick={handleUpcomingDeadlinesNext}>Next</button>
+          <button id="upcoming-deadlines-next" className="pagination-btn" disabled={upcomingDeadlinesPage >= upcomingDeadlinesTotalPages - 1} onClick={handleUpcomingDeadlinesNext}>Next</button>
         </div>
       </div>
     </div>
