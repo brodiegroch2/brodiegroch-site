@@ -34,9 +34,27 @@ export default function DeliverablesPage() {
     loadDeliverables();
   }, []);
 
-  const filteredDeliverables = filter === 'all' 
+  const filteredDeliverables = (filter === 'all' 
     ? deliverables 
-    : deliverables.filter(d => d["Category"] === filter);
+    : deliverables.filter(d => d["Category"] === filter))
+    .sort((a, b) => {
+      const hasGradeA = a['Grade %'] && a['Grade %'] !== '' && a['Grade %'] !== 'Not specified' && a['Grade %'] !== 'Not graded';
+      const hasGradeB = b['Grade %'] && b['Grade %'] !== '' && b['Grade %'] !== 'Not specified' && b['Grade %'] !== 'Not graded';
+      
+      // If one is graded and one isn't, put graded at bottom
+      if (hasGradeA && !hasGradeB) return 1;
+      if (!hasGradeA && hasGradeB) return -1;
+      
+      // If both are graded or both are ungraded, sort by due date
+      const dateA = a['Close Date'] || '';
+      const dateB = b['Close Date'] || '';
+      
+      if (!dateA && !dateB) return 0;
+      if (!dateA) return 1;
+      if (!dateB) return -1;
+      
+      return new Date(dateA).getTime() - new Date(dateB).getTime();
+    });
 
   const categories = Array.from(new Set(deliverables.map(d => d["Category"])));
 

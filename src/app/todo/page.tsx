@@ -33,10 +33,21 @@ export default function TodoPage() {
     loadDeliverables();
   }, []);
 
-  // Filter for deliverables without due dates
-  const undatedDeliverables = deliverables.filter(deliverable => 
-    !deliverable["Close Date"] || deliverable["Close Date"] === ""
-  );
+  // Filter for deliverables without due dates and sort them
+  const undatedDeliverables = deliverables
+    .filter(deliverable => 
+      !deliverable["Close Date"] || deliverable["Close Date"] === "" || deliverable["Close Date"] === "Not specified"
+    )
+    .sort((a, b) => {
+      const courseA = a['Course ID'] || '';
+      const courseB = b['Course ID'] || '';
+      if (courseA !== courseB) {
+        return courseA.localeCompare(courseB);
+      }
+      const deliverableA = a['Deliverable'] || '';
+      const deliverableB = b['Deliverable'] || '';
+      return deliverableA.localeCompare(deliverableB);
+    });
 
   if (loading) {
     return (
