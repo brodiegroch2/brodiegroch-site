@@ -1,4 +1,5 @@
 import PasswordProtection from '@/components/PasswordProtection';
+import Navigation from '@/components/Navigation';
 
 export default function RootLayout({
   children,
@@ -9,7 +10,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <PasswordProtection>
-          {children}
+          <Navigation />
+          <main className="main-content">
+            {children}
+          </main>
         </PasswordProtection>
       </body>
     </html>

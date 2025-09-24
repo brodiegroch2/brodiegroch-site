@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 interface Course {
   "Course ID": string;
@@ -243,7 +244,7 @@ export default function Dashboard() {
       <div className="quick-actions-section">
         <h2 className="section-title">Quick Actions</h2>
         <div className="quick-actions-grid">
-          <a href="/courses" className="quick-action-card">
+          <Link href="/courses" className="quick-action-card">
             <div className="quick-action-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -254,9 +255,9 @@ export default function Dashboard() {
               <h3>View Courses</h3>
               <p>Manage your course information</p>
             </div>
-          </a>
+          </Link>
           
-          <a href="/deliverables" className="quick-action-card">
+          <Link href="/deliverables" className="quick-action-card">
             <div className="quick-action-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -267,9 +268,9 @@ export default function Dashboard() {
               <h3>Assignments</h3>
               <p>Track your deliverables</p>
             </div>
-          </a>
+          </Link>
           
-          <a href="/schedule" className="quick-action-card">
+          <Link href="/schedule" className="quick-action-card">
             <div className="quick-action-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
@@ -282,9 +283,9 @@ export default function Dashboard() {
               <h3>Schedule</h3>
               <p>View your class schedule</p>
             </div>
-          </a>
+          </Link>
           
-          <a href="/quick-links" className="quick-action-card">
+          <Link href="/quick-links" className="quick-action-card">
             <div className="quick-action-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -295,7 +296,7 @@ export default function Dashboard() {
               <h3>Quick Links</h3>
               <p>Access important resources</p>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
