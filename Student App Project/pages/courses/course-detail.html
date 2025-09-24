@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - UniHUB</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="back-button">
+            <a href="index.html" class="back-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 8px; vertical-align: middle;"><path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to Courses</a>
+        </div>
+        
+        <h1 class="page-title" id="course-title">Course Details</h1>
+        <p class="page-subtitle" id="course-subtitle">Detailed information about this course</p>
+        
+        <div class="data-section">
+            <h2 class="section-title">Course Information</h2>
+            <div id="course-details-container">
+                <div class="empty-state">
+                    Loading course details...
+                </div>
+            </div>
+        </div>
+
+        <div class="data-section">
+            <h2 class="section-title">Course Deliverables</h2>
+            <div id="deliverables-container">
+                <div class="empty-state">
+                    Loading deliverables...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/navigation.js"></script>
+    <script>
+
+        // Get course ID from URL parameters
+        function getCourseId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+
+        // Load and display course details
+        async function loadCourseDetails() {
+            const courseId = getCourseId();
+            
+            if (!courseId) {
+                document.getElementById('course-details-container').innerHTML = 
+                    '<div class="empty-state">No course ID provided. Please select a course from the courses page.</div>';
+                return;
+            }
+
+            try {
+                // Try to fetch data from JSON files
+                const [coursesResponse, deliverablesResponse] = await Promise.all([
+                    fetch('../../assets/data/courses.json'),
+                    fetch('../../assets/data/deliverables.json')
+                ]);
+                
+                if (!coursesResponse.ok || !deliverablesResponse.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                
+                const courses = await coursesResponse.json();
+                const deliverables = await deliverablesResponse.json();
+                
+                const course = courses.find(c => c['Course ID'] === courseId);
+                
+                if (!course) {
+                    document.getElementById('course-details-container').innerHTML = 
+                        '<div class="empty-state">Course not found. Please check the course ID and try again.</div>';
+                    return;
+                }
+
+                displayCourseDetails(course, deliverables);
+                displayCourseDeliverables(courseId, deliverables);
+            } catch (error) {
+                console.error('Error loading course details:', error);
+                document.getElementById('course-details-container').innerHTML = 
+                    '<div class="empty-state">Error loading course details. Please make sure you are using Live Server or check your file paths.</div>';
+            }
+        }
+
+        function displayCourseDetails(course, deliverables) {
+            // Calculate weighted average grade
+            const courseDeliverables = deliverables.filter(deliverable => 
+                deliverable['Course ID'] === course['Course ID']
+            );
+            
+            const weightedAverage = calculateWeightedAverage(courseDeliverables);
+            
+            // Calculate completion percentage based on weight
+            const totalWeight = courseDeliverables.reduce((sum, deliverable) => {
+                const weight = parseFloat(deliverable['Weight %']) || 0;
+                return sum + weight;
+            }, 0);
+            
+            const completedWeight = courseDeliverables.reduce((sum, deliverable) => {
+                const weight = parseFloat(deliverable['Weight %']) || 0;
+                const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
+                                deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
+                const isSubmitted = deliverable['Status'] === 'submitted';
+                
+                if (isGraded || isSubmitted) {
+                    return sum + weight;
+                }
+                return sum;
+            }, 0);
+            
+            const completionPercentage = totalWeight > 0 ? 
+                ((completedWeight / totalWeight) * 100).toFixed(1) : 0;
+            
+            // Calculate weighted average (completion % × average grade)
+            const averageGradeValue = parseFloat(weightedAverage.replace('%', '')) || 0;
+            const weightedAverageValue = ((completionPercentage / 100) * averageGradeValue).toFixed(1);
+            
+            // Update page title and subtitle
+            document.getElementById('course-title').textContent = course['Course Name'] || 'Course Details';
+            document.getElementById('course-subtitle').textContent = `${course['Course ID'] || 'Unknown'} - Detailed Information`;
+
+            const container = document.getElementById('course-details-container');
+            
+            container.innerHTML = `
+                <div class="course-detail-page">
+                    <div class="course-header-large">
+                        <div class="course-id-large">${course['Course ID'] || 'Not specified'}</div>
+                        <div class="course-credits-large">${course['Credit Hours'] || 'Not specified'} Credits</div>
+                    </div>
+                    
+                    <div class="course-title-large">${course['Course Name'] || 'Not specified'}</div>
+                    
+                    <div class="course-description-large">
+                        <h3>Course Description</h3>
+                        <p>${course['Course Description'] || 'No description available for this course.'}</p>
+                    </div>
+                    
+                    <div class="course-stats">
+                        <div class="stat-card">
+                            <div class="pie-chart-label">Average Grade</div>
+                            <div class="pie-chart-container">
+                                <div class="pie-chart" style="background: conic-gradient(#2196F3 0deg ${parseFloat(weightedAverage.replace('%', '')) * 3.6}deg, rgba(33, 150, 243, 0.2) ${parseFloat(weightedAverage.replace('%', '')) * 3.6}deg 360deg);">
+                                    <div class="pie-chart-text">${weightedAverage}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="pie-chart-label">Completion</div>
+                            <div class="pie-chart-container">
+                                <div class="pie-chart" style="background: conic-gradient(#4CAF50 0deg ${completionPercentage * 3.6}deg, rgba(76, 175, 80, 0.2) ${completionPercentage * 3.6}deg 360deg);">
+                                    <div class="pie-chart-text">${completionPercentage}%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="pie-chart-label">Weighted Average</div>
+                            <div class="pie-chart-container">
+                                <div class="pie-chart" style="background: conic-gradient(#FF9800 0deg ${weightedAverageValue * 3.6}deg, rgba(255, 152, 0, 0.2) ${weightedAverageValue * 3.6}deg 360deg);">
+                                    <div class="pie-chart-text">${weightedAverageValue}%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="professor-section">
+                        <h3>Instructor Information</h3>
+                        <div class="professor-card">
+                            <div class="professor-name-large">${course['Professor/Teacher Name'] || 'Not specified'}</div>
+                            ${course['Professor/Teacher Email'] && course['Professor/Teacher Email'] !== 'Not specified' ? 
+                                `<a href="mailto:${course['Professor/Teacher Email']}" class="professor-email-large">${course['Professor/Teacher Email']}</a>` : 
+                                '<div class="professor-email-large">No email provided</div>'
+                            }
+                        </div>
+                    </div>
+                    
+                    ${course['Course ID'] === 'MATH 238' ? `
+                    <div class="course-resources-section">
+                        <h3>Course Resources</h3>
+                        <div class="quick-actions">
+                            <a href="https://www.pearson.com/en-ca/higher-education/products-services/mylab/login-mylab.html" target="_blank" class="action-card">
+                                <div class="action-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 9l-6 6-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                <div class="action-text">Pearson MyLab</div>
+                            </a>
+                        </div>
+                    </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        function calculateWeightedAverage(deliverables) {
+            let totalWeightedPoints = 0;
+            let totalWeight = 0;
+            let gradedCount = 0;
+            
+            deliverables.forEach(deliverable => {
+                const weight = parseFloat(deliverable['Weight %']) || 0;
+                const grade = parseFloat(deliverable['Grade %']);
+                
+                if (!isNaN(grade) && grade > 0) {
+                    totalWeightedPoints += (grade * weight);
+                    totalWeight += weight;
+                    gradedCount++;
+                }
+            });
+            
+            if (totalWeight === 0) {
+                return 'No grades available';
+            }
+            
+            const average = totalWeightedPoints / totalWeight;
+            return `${average.toFixed(1)}%`;
+        }
+
+        function displayCourseDeliverables(courseId, deliverables) {
+            const container = document.getElementById('deliverables-container');
+            
+            // Filter deliverables for this specific course and sort by due date
+            const courseDeliverables = deliverables.filter(deliverable => 
+                deliverable['Course ID'] === courseId
+            ).sort((a, b) => {
+                // Sort by due date, with empty dates at the end
+                const dateA = a['Close Date'] || '';
+                const dateB = b['Close Date'] || '';
+                
+                if (!dateA && !dateB) return 0;
+                if (!dateA) return 1;
+                if (!dateB) return -1;
+                
+                return new Date(dateA) - new Date(dateB);
+            });
+            
+            if (courseDeliverables.length === 0) {
+                container.innerHTML = '<div class="empty-state">No deliverables found for this course.</div>';
+                return;
+            }
+
+            container.innerHTML = `
+                <div class="deliverables-grid">
+                    ${courseDeliverables.map(deliverable => {
+                        const hasGrade = deliverable['Grade %'] && deliverable['Grade %'] !== '' && deliverable['Grade %'] !== 'Not graded';
+                        const cardClass = hasGrade ? 'deliverable-card graded' : 'deliverable-card';
+                        
+                        return `
+                        <div class="${cardClass}">
+                            <div class="deliverable-header">
+                                <div class="deliverable-category">${deliverable['Category'] || 'Assignment'}</div>
+                                <div class="deliverable-weight">${deliverable['Weight %'] || '0'}%</div>
+                            </div>
+                            
+                            <div class="deliverable-title">${deliverable['Deliverable'] || 'Untitled Deliverable'}</div>
+                            
+                            <div class="deliverable-dates">
+                                <div class="date-item">
+                                    <span class="date-label">Opens:</span>
+                                    <span class="date-value">${deliverable['Open Date'] || 'Not specified'}</span>
+                                </div>
+                                <div class="date-item">
+                                    <span class="date-label">Due:</span>
+                                    <span class="date-value">${deliverable['Close Date'] || 'Not specified'}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="deliverable-grades">
+                                <div class="grade-item">
+                                    <span class="grade-label">Grade:</span>
+                                    <span class="grade-value">${deliverable['Grade %'] || 'Not graded'}</span>
+                                </div>
+                                <div class="grade-item">
+                                    <span class="grade-label">Letter:</span>
+                                    <span class="grade-value">${deliverable['Letter Grade'] || 'Not graded'}</span>
+                                </div>
+                            </div>
+                        </div>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+        }
+
+        // Load course details when page loads
+        document.addEventListener('DOMContentLoaded', loadCourseDetails);
+    </script>
+</body>
+</html>

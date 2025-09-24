@@ -1,0 +1,22 @@
+[
+  {
+    "Site Name": "Brightspace (D2L)",
+    "Address": "https://d2l.sait.ca/",
+    "Link_image_id": "images/Brightspace_featured-1024x1024.png"
+  },
+  {
+    "Site Name": "Microsoft MyApps",
+    "Address": "https://myapps.microsoft.com/",
+    "Link_image_id": "images/logo-256x256.png"
+  },
+  {
+    "Site Name": "MySAIT",
+    "Address": "https://mysait.ca/",
+    "Link_image_id": "images/sait_logo_transparent.png"
+  },
+  {
+    "Site Name": "Pearson MyLab",
+    "Address": "https://www.pearson.com/en-ca/higher-education/products-services/mylab/login-mylab.html",
+    "Link_image_id": "images/pearson mylab.png"
+  }
+]

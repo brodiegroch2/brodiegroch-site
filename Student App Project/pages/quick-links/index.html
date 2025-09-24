@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Links - UniHUB</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Quick Links</h1>
+        <p class="page-subtitle">Access your frequently used resources and tools</p>
+        
+        <div class="data-section">
+            <h2 class="section-title">Quick Access Links</h2>
+            <div id="links-container" class="dashboard-grid">
+                <div class="empty-state">
+                    No quick links available. Load data from Quick Links.json to display quick access links.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/navigation.js"></script>
+    <script>
+        // Embedded data - works with both Live Server and direct file opening
+        const quickLinksData = [
+          {
+            "Site Name": "Brightspace (D2L)",
+            "Address": "https://learn.sait.ca/",
+            "Link_image_id": "Brightspace_featured-1024x1024.png"
+          },
+          {
+            "Site Name": "Microsoft MyApps",
+            "Address": "https://myapps.microsoft.com/",
+            "Link_image_id": "logo-256x256.png"
+          },
+          {
+            "Site Name": "MySAIT",
+            "Address": "https://mysait.ca/",
+            "Link_image_id": "sait_logo_transparent.png"
+          },
+          {
+            "Site Name": "Pearson MyLab",
+            "Address": "https://www.pearson.com/en-ca/higher-education/products-services/mylab/login-mylab.html",
+            "Link_image_id": "pearson mylab.png"
+          }
+        ];
+
+        // Load and display quick links data - now works with both Live Server and direct file opening
+        function loadQuickLinks() {
+            try {
+                displayQuickLinks(quickLinksData);
+            } catch (error) {
+                console.error('Error loading quick links:', error);
+                document.getElementById('links-container').innerHTML = 
+                    '<div class="empty-state">Error loading quick links data. Please check that the data is properly embedded.</div>';
+            }
+        }
+
+        function displayQuickLinks(links) {
+            const container = document.getElementById('links-container');
+            
+            if (!links || links.length === 0 || (links.length === 1 && Object.values(links[0]).every(val => val === ""))) {
+                container.innerHTML = '<div class="empty-state">No quick links available. Add link information to Quick Links.json to display here.</div>';
+                return;
+            }
+
+            container.innerHTML = links.map(link => {
+                // Generate app icon based on site name
+                const getAppIcon = (siteName) => {
+                    if (siteName.toLowerCase().includes('brightspace') || siteName.toLowerCase().includes('d2l')) {
+                        return 'B';
+                    } else if (siteName.toLowerCase().includes('microsoft')) {
+                        return 'M';
+                    } else if (siteName.toLowerCase().includes('sait')) {
+                        return 'S';
+                    } else if (siteName.toLowerCase().includes('pearson') || siteName.toLowerCase().includes('mylab')) {
+                        return 'P';
+                    }
+                    return siteName.charAt(0).toUpperCase();
+                };
+
+                const imageId = link['Link_image_id'] || '';
+                const hasImage = imageId && imageId !== 'No image' && imageId !== '';
+
+                return `
+                    <div class="app-card">
+                        <a href="${link['Address'] || '#'}" target="_blank">
+                            <div class="app-icon">
+                                ${hasImage ? 
+                                    `<img src="../../assets/images/${imageId}" alt="${link['Site Name'] || ''}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                     <div class="fallback-icon" style="display: none;">${getAppIcon(link['Site Name'] || '')}</div>` :
+                                    `<div class="fallback-icon">${getAppIcon(link['Site Name'] || '')}</div>`
+                                }
+                            </div>
+                            <div class="app-title">${link['Site Name'] || 'Not specified'}</div>
+                            <div class="app-url">${link['Address'] || 'Not specified'}</div>
+                            <div class="app-image-id">${link['Link_image_id'] || 'No image'}</div>
+                        </a>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Load quick links when page loads
+        document.addEventListener('DOMContentLoaded', loadQuickLinks);
+    </script>
+</body>
+</html>

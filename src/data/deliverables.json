@@ -1,0 +1,945 @@
+[
+  {
+    "Course ID": "MECH 205",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 2a: Electronic Principles",
+    "Open Date": "Sep 5, 2025 10:10 AM",
+    "Close Date": "Sep 21, 2025 11:59 PM",
+    "Weight %": "1.67",
+    "Grade %": "97.14",
+    "Letter Grade": "A+"
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 2b: Series & Parallel Circuits",
+    "Open Date": "Sep 7, 2025 11:59 PM",
+    "Close Date": "Sep 28, 2025 11:59 PM",
+    "Weight %": "1.67",
+    "Grade %": "96.67",
+    "Letter Grade": "A+"
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 2c: Ohm's & Power Laws",
+    "Open Date": "Sep 12, 2025 7:59 AM",
+    "Close Date": "Oct 5, 2025 11:59 PM",
+    "Weight %": "1.67",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 1a: Boolean 1 (Number Systems)",
+    "Open Date": "Sep 21, 2025 11:59 PM",
+    "Close Date": "Oct 12, 2025 11:59 PM",
+    "Weight %": "1.67",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 1b: Boolean Logic",
+    "Open Date": "Sep 28, 2025 11:59 PM",
+    "Close Date": "Oct 19, 2025 11:59 PM",
+    "Weight %": "1.67",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 3a: Electrical Symbols",
+    "Open Date": "Oct 5, 2025 11:59 PM",
+    "Close Date": "Oct 26, 2025 11:59 PM",
+    "Weight %": "1.67",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 3b: Relay Control Systems",
+    "Open Date": "Oct 12, 2025 11:59 PM",
+    "Close Date": "Nov 2, 2025 11:59 PM",
+    "Weight %": "1.67",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 4: Pneumatic Symbols",
+    "Open Date": "Oct 19, 2025 11:59 PM",
+    "Close Date": "Nov 9, 2025 11:59 PM",
+    "Weight %": "1.67",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 5: Pneumatic Control",
+    "Open Date": "Nov 2, 2025 11:59 PM",
+    "Close Date": "Nov 23, 2025 11:59 PM",
+    "Weight %": "1.67",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 8: PLC Fundamentals",
+    "Open Date": "Nov 9, 2025 11:59 PM",
+    "Close Date": "Nov 30, 2025 11:59 PM",
+    "Weight %": "1.67",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 9: PLC Programming",
+    "Open Date": "Nov 16, 2025 11:59 PM",
+    "Close Date": "Dec 7, 2025 11:59 PM",
+    "Weight %": "1.67",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 10: Robotics Fundamentals",
+    "Open Date": "Dec 7, 2025 11:59 PM",
+    "Close Date": "Dec 16, 2025 11:59 PM",
+    "Weight %": "1.67",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 1: Basic Circuits & Ohm's Law",
+    "Open Date": "Aug 28, 2025 11:59 PM",
+    "Close Date": "Sep 28, 2025 11:59 PM",
+    "Weight %": "3",
+    "Grade %": "89.78",
+    "Letter Grade": "A+"
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 2a: Kirchhoff's Laws (Series/Parallel)",
+    "Open Date": "Sep 7, 2025 11:59 PM",
+    "Close Date": "Sep 28, 2025 11:59 PM",
+    "Weight %": "3",
+    "Grade %": "88.78",
+    "Letter Grade": "A"
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 2b: Kirchhoff's Laws (Mixed Circuits)",
+    "Open Date": "Sep 10, 2025 9:26 AM",
+    "Close Date": "Oct 5, 2025 11:59 PM",
+    "Weight %": "3",
+    "Grade %": "96.16",
+    "Letter Grade": "A+"
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 3a: Electrical Control Systems",
+    "Open Date": "Sep 21, 2025 11:59 PM",
+    "Close Date": "Oct 12, 2025 11:59 PM",
+    "Weight %": "3",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 3b: Basic Sensors",
+    "Open Date": "Sep 28, 2025 11:59 PM",
+    "Close Date": "Oct 19, 2025 11:59 PM",
+    "Weight %": "4",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 3c Pre-Lab Quiz",
+    "Open Date": "Oct 5, 2025 11:59 PM",
+    "Close Date": "Nov 2, 2025 11:59 PM",
+    "Weight %": "1",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 3c: Overhead Door Project",
+    "Open Date": "Oct 5, 2025 11:59 PM",
+    "Close Date": "Nov 2, 2025 11:59 PM",
+    "Weight %": "3",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 4: Pneumatic Systems",
+    "Open Date": "Oct 12, 2025 11:59 PM",
+    "Close Date": "Nov 2, 2025 11:59 PM",
+    "Weight %": "3",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 5: Pneumatic Control",
+    "Open Date": "Oct 19, 2025 11:59 PM",
+    "Close Date": "Nov 9, 2025 11:59 PM",
+    "Weight %": "4",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 6: Electro-Pneumatic Systems",
+    "Open Date": "Oct 26, 2025 11:59 PM",
+    "Close Date": "Nov 16, 2025 11:59 PM",
+    "Weight %": "3",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 7 Pre-Lab Quiz",
+    "Open Date": "Nov 2, 2025 11:59 PM",
+    "Close Date": "Nov 23, 2025 11:59 PM",
+    "Weight %": "1",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 7: Airlock Pneumatic Doors",
+    "Open Date": "Nov 2, 2025 11:59 PM",
+    "Close Date": "Nov 23, 2025 11:59 PM",
+    "Weight %": "6",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 8: PLC Introduction",
+    "Open Date": "Nov 9, 2025 11:59 PM",
+    "Close Date": "Nov 30, 2025 11:59 PM",
+    "Weight %": "3",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 9 Pre-Lab Quiz",
+    "Open Date": "Nov 16, 2025 11:59 PM",
+    "Close Date": "Dec 11, 2025 11:59 PM",
+    "Weight %": "1",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Lab",
+    "Deliverable": "Lab 9: Final PLC Project",
+    "Open Date": "Nov 16, 2025 11:59 PM",
+    "Close Date": "Dec 11, 2025 11:59 PM",
+    "Weight %": "6",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Exam",
+    "Deliverable": "Midterm Exam",
+    "Open Date": "",
+    "Close Date": "",
+    "Weight %": "12",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 205",
+    "Category": "Exam",
+    "Deliverable": "Final Exam",
+    "Open Date": "Dec 12, 2025 12:00 AM",
+    "Close Date": "Dec 17, 2025 11:59 PM",
+    "Weight %": "18",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "THRM 200",
+    "Category": "Assignment",
+    "Deliverable": "Assignment 1",
+    "Open Date": "Sep 1, 2025 12:00 AM",
+    "Close Date": "Sep 28, 2025 11:59 PM",
+    "Weight %": "3.34",
+    "Grade %": "100",
+    "Letter Grade": "A+"
+  },
+  {
+    "Course ID": "THRM 200",
+    "Category": "Assignment",
+    "Deliverable": "Assignment 2",
+    "Open Date": "Sep 22, 2025 12:00 AM",
+    "Close Date": "Oct 19, 2025 11:59 PM",
+    "Weight %": "3.34",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "THRM 200",
+    "Category": "Assignment",
+    "Deliverable": "Assignment 3",
+    "Open Date": "Sep 29, 2025 12:00 AM",
+    "Close Date": "Nov 2, 2025 11:59 PM",
+    "Weight %": "3.34",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "THRM 200",
+    "Category": "Assignment",
+    "Deliverable": "Assignment 4",
+    "Open Date": "Oct 20, 2025 12:00 AM",
+    "Close Date": "Nov 23, 2025 11:59 PM",
+    "Weight %": "3.34",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "THRM 200",
+    "Category": "Assignment",
+    "Deliverable": "Assignment 5",
+    "Open Date": "Nov 3, 2025 12:00 AM",
+    "Close Date": "Nov 30, 2025 11:59 PM",
+    "Weight %": "3.34",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "THRM 200",
+    "Category": "Assignment",
+    "Deliverable": "Assignment 6",
+    "Open Date": "Nov 17, 2025 12:00 AM",
+    "Close Date": "Dec 7, 2025 11:59 PM",
+    "Weight %": "3.30",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "THRM 200",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 1",
+    "Open Date": "Sep 8, 2025 12:00 AM",
+    "Close Date": "Sep 28, 2025 11:59 PM",
+    "Weight %": "3.34",
+    "Grade %": "100",
+    "Letter Grade": "A+"
+  },
+  {
+    "Course ID": "THRM 200",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 2",
+    "Open Date": "Sep 22, 2025 12:00 AM",
+    "Close Date": "Oct 19, 2025 11:59 PM",
+    "Weight %": "3.34",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "THRM 200",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 3",
+    "Open Date": "Sep 29, 2025 12:00 AM",
+    "Close Date": "Nov 2, 2025 11:59 PM",
+    "Weight %": "3.34",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "THRM 200",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 4",
+    "Open Date": "Oct 20, 2025 12:00 AM",
+    "Close Date": "Nov 23, 2025 11:59 PM",
+    "Weight %": "3.34",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "THRM 200",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 5",
+    "Open Date": "Nov 3, 2025 12:00 AM",
+    "Close Date": "Nov 30, 2025 11:59 PM",
+    "Weight %": "3.34",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "THRM 200",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 6",
+    "Open Date": "Nov 17, 2025 12:00 AM",
+    "Close Date": "Dec 7, 2025 11:59 PM",
+    "Weight %": "3.30",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "THRM 200",
+    "Category": "Exam",
+    "Deliverable": "Midterm Exam",
+    "Open Date": "",
+    "Close Date": "",
+    "Weight %": "30",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "THRM 200",
+    "Category": "Exam",
+    "Deliverable": "Final Exam",
+    "Open Date": "Dec 12, 2025 12:00 AM",
+    "Close Date": "Dec 17, 2025 11:59 PM",
+    "Weight %": "30",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 200",
+    "Category": "Project",
+    "Deliverable": "Project 1",
+    "Open Date": "",
+    "Close Date": "Tue Sep 23, 2025 11:59 PM",
+    "Weight %": "15",
+    "Grade %": "",
+    "Letter Grade": "",
+    "Status": "submitted"
+  },
+  {
+    "Course ID": "MECH 200",
+    "Category": "Project",
+    "Deliverable": "Project 2",
+    "Open Date": "",
+    "Close Date": "Tue Oct 21, 2025 11:59 PM",
+    "Weight %": "17",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 200",
+    "Category": "Project",
+    "Deliverable": "Project 3",
+    "Open Date": "",
+    "Close Date": "Tue Nov 25, 2025 11:59 PM",
+    "Weight %": "20",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 200",
+    "Category": "Sketch",
+    "Deliverable": "Sketch 1",
+    "Open Date": "",
+    "Close Date": "Tue Sep 30, 2025 11:59 PM (kept Brightspace date)",
+    "Weight %": "6",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 200",
+    "Category": "Sketch",
+    "Deliverable": "Sketch 2",
+    "Open Date": "",
+    "Close Date": "Fri Oct 31, 2025 (in-class/submit by 11:59 PM)",
+    "Weight %": "6",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 200",
+    "Category": "Sketch",
+    "Deliverable": "Sketch 3",
+    "Open Date": "",
+    "Close Date": "Fri Nov 28, 2025 (in-class/submit by 11:59 PM)",
+    "Weight %": "6",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 200",
+    "Category": "Exam",
+    "Deliverable": "Theory Final Part 1",
+    "Open Date": "",
+    "Close Date": "Wed Oct 15, 2025 (in-class)",
+    "Weight %": "7.5",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 200",
+    "Category": "Exam",
+    "Deliverable": "Sketch Final Part 1",
+    "Open Date": "",
+    "Close Date": "Fri Oct 10, 2025 (in-class)",
+    "Weight %": "7.5",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 200",
+    "Category": "Exam",
+    "Deliverable": "Theory Final Part 2",
+    "Open Date": "",
+    "Close Date": "Wed Dec 3, 2025 (in-class)",
+    "Weight %": "7.5",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MECH 200",
+    "Category": "Exam",
+    "Deliverable": "Sketch Final Part 2",
+    "Open Date": "",
+    "Close Date": "Fri Nov 21, 2025 (in-class)",
+    "Weight %": "7.5",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Assignment/Quiz",
+    "Deliverable": "Assignment 1",
+    "Open Date": "",
+    "Close Date": "Sep 14, 2025 11:59 PM",
+    "Weight %": "1.43",
+    "Grade %": "",
+    "Letter Grade": "",
+    "Status": "submitted"
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Assignment/Quiz",
+    "Deliverable": "Assignment 2",
+    "Open Date": "",
+    "Close Date": "Sep 28, 2025 11:59 PM",
+    "Weight %": "1.43",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Assignment/Quiz",
+    "Deliverable": "Assignment 3",
+    "Open Date": "",
+    "Close Date": "Oct 12, 2025 11:59 PM",
+    "Weight %": "1.43",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Assignment/Quiz",
+    "Deliverable": "Assignment 4",
+    "Open Date": "",
+    "Close Date": "Oct 26, 2025 11:59 PM",
+    "Weight %": "1.43",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Assignment/Quiz",
+    "Deliverable": "Assignment 5",
+    "Open Date": "",
+    "Close Date": "Nov 9, 2025 11:59 PM",
+    "Weight %": "1.43",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Assignment/Quiz",
+    "Deliverable": "Assignment 6",
+    "Open Date": "",
+    "Close Date": "Nov 23, 2025 11:59 PM",
+    "Weight %": "1.43",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Assignment/Quiz",
+    "Deliverable": "Assignment 7",
+    "Open Date": "",
+    "Close Date": "Dec 7, 2025 11:59 PM",
+    "Weight %": "1.43",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Lab",
+    "Deliverable": "Lab 1 – Force Table",
+    "Open Date": "",
+    "Close Date": "",
+    "Weight %": "3",
+    "Grade %": "",
+    "Letter Grade": "",
+    "Status": "submitted"
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Lab",
+    "Deliverable": "Lab 2 – Two Force Crane",
+    "Open Date": "",
+    "Close Date": "",
+    "Weight %": "3",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Lab",
+    "Deliverable": "Lab 3 – Beam",
+    "Open Date": "",
+    "Close Date": "",
+    "Weight %": "3",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Lab",
+    "Deliverable": "Lab 4 – Three Force Crane",
+    "Open Date": "",
+    "Close Date": "",
+    "Weight %": "3",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Lab",
+    "Deliverable": "Lab 6 – Truss",
+    "Open Date": "",
+    "Close Date": "",
+    "Weight %": "3",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Test",
+    "Deliverable": "Test 1",
+    "Open Date": "Oct 1, 2025 12:00 PM",
+    "Close Date": "Oct 1, 2025 12:50 PM",
+    "Weight %": "7.5",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Test",
+    "Deliverable": "Test 2",
+    "Open Date": "",
+    "Close Date": "",
+    "Weight %": "7.5",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Exam",
+    "Deliverable": "Midterm",
+    "Open Date": "",
+    "Close Date": "",
+    "Weight %": "30",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "STCS 255",
+    "Category": "Exam",
+    "Deliverable": "Final Exam",
+    "Open Date": "Dec 12, 2025 12:00 AM",
+    "Close Date": "Dec 17, 2025 11:59 PM",
+    "Weight %": "30",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "COMP 213",
+    "Category": "Assignment",
+    "Deliverable": "Computer Skills Assignment",
+    "Open Date": "Sep 4, 2025 12:01 AM",
+    "Close Date": "Sep 16, 2025 11:59 PM",
+    "Weight %": "13",
+    "Grade %": "100",
+    "Letter Grade": "A+"
+  },
+  {
+    "Course ID": "COMP 213",
+    "Category": "Assignment",
+    "Deliverable": "Spreadsheets Assignment",
+    "Open Date": "Oct 20, 2025 (start of Week 8)",
+    "Close Date": "Oct 24, 2025 11:59 PM",
+    "Weight %": "20",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "COMP 213",
+    "Category": "Assignment",
+    "Deliverable": "Word Processing Assignment",
+    "Open Date": "Nov 17, 2025 (start of Week 11)",
+    "Close Date": "Nov 21, 2025 11:59 PM",
+    "Weight %": "15",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "COMP 213",
+    "Category": "Assignment",
+    "Deliverable": "Visualization Assignment",
+    "Open Date": "Nov 3, 2025 (start of Week 10)",
+    "Close Date": "Nov 7, 2025 11:59 PM",
+    "Weight %": "11",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "COMP 213",
+    "Category": "Assignment",
+    "Deliverable": "Project Scheduling Assignment",
+    "Open Date": "Dec 8, 2025 (start of Week 14)",
+    "Close Date": "Dec 12, 2025 11:59 PM",
+    "Weight %": "11",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "COMP 213",
+    "Category": "Exam",
+    "Deliverable": "Computer Skills Exam",
+    "Open Date": "Sep 18, 2025 12:15 PM",
+    "Close Date": "Sep 18, 2025 1:00 PM",
+    "Weight %": "6",
+    "Grade %": "96",
+    "Letter Grade": "A+"
+  },
+  {
+    "Course ID": "COMP 213",
+    "Category": "Exam",
+    "Deliverable": "Spreadsheets Exam",
+    "Open Date": "Oct 27, 2025 (Week 9)",
+    "Close Date": "Oct 31, 2025 11:59 PM",
+    "Weight %": "7",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "COMP 213",
+    "Category": "Exam",
+    "Deliverable": "Word Processing Exam",
+    "Open Date": "Nov 24, 2025 (Week 12)",
+    "Close Date": "Nov 28, 2025 11:59 PM",
+    "Weight %": "7",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "COMP 213",
+    "Category": "Exam",
+    "Deliverable": "Project Management Concepts Exam",
+    "Open Date": "Dec 8, 2025 (Week 14)",
+    "Close Date": "Dec 12, 2025 11:59 PM",
+    "Weight %": "5",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "COMP 213",
+    "Category": "Core Ability",
+    "Deliverable": "Small Assignment 1 – Malware",
+    "Open Date": "",
+    "Close Date": "Sep 13, 2025 11:59 PM",
+    "Weight %": "2.5",
+    "Grade %": "100",
+    "Letter Grade": "A+"
+  },
+  {
+    "Course ID": "COMP 213",
+    "Category": "Core Ability",
+    "Deliverable": "Small Assignment 2 – IIoT Discussion",
+    "Open Date": "",
+    "Close Date": "Sep 21, 2025 11:59 PM",
+    "Weight %": "2.5",
+    "Grade %": "100",
+    "Letter Grade": "A+"
+  },
+  {
+    "Course ID": "MATH 238",
+    "Category": "Assignment",
+    "Deliverable": "Assignment 1",
+    "Open Date": "",
+    "Close Date": "Sep 28, 2025 11:59 PM",
+    "Weight %": "2.5",
+    "Grade %": "100",
+    "Letter Grade": "A+"
+  },
+  {
+    "Course ID": "MATH 238",
+    "Category": "Assignment",
+    "Deliverable": "Assignment 2",
+    "Open Date": "",
+    "Close Date": "Oct 26, 2025 11:59 PM",
+    "Weight %": "2.5",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MATH 238",
+    "Category": "Assignment",
+    "Deliverable": "Assignment 3",
+    "Open Date": "",
+    "Close Date": "Nov 30, 2025 11:59 PM",
+    "Weight %": "2.5",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MATH 238",
+    "Category": "Assignment",
+    "Deliverable": "Assignment 4",
+    "Open Date": "",
+    "Close Date": "Dec 7, 2025 11:59 PM",
+    "Weight %": "2.5",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MATH 238",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 1",
+    "Open Date": "Sep 14, 2025 4:37 PM",
+    "Close Date": "Sep 14, 2025 4:52 PM",
+    "Weight %": "2",
+    "Grade %": "96.55",
+    "Letter Grade": "A+"
+  },
+  {
+    "Course ID": "MATH 238",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 2",
+    "Open Date": "",
+    "Close Date": "",
+    "Weight %": "2",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MATH 238",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 3",
+    "Open Date": "",
+    "Close Date": "",
+    "Weight %": "2",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MATH 238",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 4",
+    "Open Date": "",
+    "Close Date": "",
+    "Weight %": "2",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MATH 238",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 5",
+    "Open Date": "",
+    "Close Date": "",
+    "Weight %": "2",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MATH 238",
+    "Category": "Quiz",
+    "Deliverable": "Quiz 6",
+    "Open Date": "",
+    "Close Date": "",
+    "Weight %": "2",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MATH 238",
+    "Category": "Test",
+    "Deliverable": "Test 1 – Derivatives",
+    "Open Date": "Oct 3, 2025 2:00 PM",
+    "Close Date": "Oct 3, 2025 3:50 PM (110 min, Ch. 23.1–23.9, Room TBA)",
+    "Weight %": "10",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MATH 238",
+    "Category": "Test",
+    "Deliverable": "Test 2 – Integration",
+    "Open Date": "",
+    "Close Date": "Dec 5, 2025 11:59 PM",
+    "Weight %": "10",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MATH 238",
+    "Category": "Exam",
+    "Deliverable": "Midterm Exam",
+    "Open Date": "",
+    "Close Date": "Oct 31, 2025 11:59 PM",
+    "Weight %": "30",
+    "Grade %": "",
+    "Letter Grade": ""
+  },
+  {
+    "Course ID": "MATH 238",
+    "Category": "Exam",
+    "Deliverable": "Final Exam",
+    "Open Date": "Dec 12, 2025 12:00 AM",
+    "Close Date": "Dec 17, 2025 11:59 PM",
+    "Weight %": "40",
+    "Grade %": "",
+    "Letter Grade": ""
+  }
+]

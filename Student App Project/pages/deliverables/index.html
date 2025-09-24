@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliverables - UniHUB</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Deliverables</h1>
+        <p class="page-subtitle">Track assignments, projects, and course deliverables</p>
+        
+        <div class="data-section">
+            <h2 class="section-title">Assignment Information</h2>
+            <div id="deliverables-container" class="deliverables-grid">
+                <div class="empty-state">
+                    No deliverables data available. Load data from Deliverables.json to display assignment information.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/navigation.js"></script>
+    <script>
+        // Embedded data - works with both Live Server and direct file opening
+        const deliverablesData = [
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 2a: Electronic Principles",
+            "Open Date": "Sep 5, 2025 10:10 AM",
+            "Close Date": "Sep 21, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "97.14",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 2b: Series & Parallel Circuits",
+            "Open Date": "Sep 7, 2025 11:59 PM",
+            "Close Date": "Sep 28, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "96.67",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 2c: Ohm's & Power Laws",
+            "Open Date": "Sep 12, 2025 7:59 AM",
+            "Close Date": "Oct 5, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 1: Basic Circuits & Ohm's Law",
+            "Open Date": "Aug 28, 2025 11:59 PM",
+            "Close Date": "Sep 28, 2025 11:59 PM",
+            "Weight %": "3",
+            "Grade %": "89.78",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 2a: Kirchhoff's Laws (Series/Parallel)",
+            "Open Date": "Sep 7, 2025 11:59 PM",
+            "Close Date": "Sep 28, 2025 11:59 PM",
+            "Weight %": "3",
+            "Grade %": "88.78",
+            "Letter Grade": "A"
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 2b: Kirchhoff's Laws (Mixed Circuits)",
+            "Open Date": "Sep 10, 2025 9:26 AM",
+            "Close Date": "Oct 5, 2025 11:59 PM",
+            "Weight %": "3",
+            "Grade %": "96.16",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Assignment",
+            "Deliverable": "Assignment 1",
+            "Open Date": "Sep 1, 2025 12:00 AM",
+            "Close Date": "Sep 28, 2025 11:59 PM",
+            "Weight %": "3.34",
+            "Grade %": "100",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Assignment",
+            "Deliverable": "Assignment 2",
+            "Open Date": "Sep 22, 2025 12:00 AM",
+            "Close Date": "Oct 19, 2025 11:59 PM",
+            "Weight %": "3.34",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 1",
+            "Open Date": "Sep 8, 2025 12:00 AM",
+            "Close Date": "Sep 28, 2025 11:59 PM",
+            "Weight %": "3.34",
+            "Grade %": "100",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 2",
+            "Open Date": "Sep 22, 2025 12:00 AM",
+            "Close Date": "Oct 19, 2025 11:59 PM",
+            "Weight %": "3.34",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 200",
+            "Category": "Project",
+            "Deliverable": "Project 1",
+            "Open Date": "",
+            "Close Date": "Tue Sep 23, 2025 11:59 PM",
+            "Weight %": "15",
+            "Grade %": "",
+            "Letter Grade": "",
+            "Status": "submitted"
+          },
+          {
+            "Course ID": "MECH 200",
+            "Category": "Project",
+            "Deliverable": "Project 2",
+            "Open Date": "",
+            "Close Date": "Tue Oct 21, 2025 11:59 PM",
+            "Weight %": "17",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Assignment/Quiz",
+            "Deliverable": "Assignment 1",
+            "Open Date": "",
+            "Close Date": "Sep 14, 2025 11:59 PM",
+            "Weight %": "1.43",
+            "Grade %": "",
+            "Letter Grade": "",
+            "Status": "submitted"
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Assignment/Quiz",
+            "Deliverable": "Assignment 2",
+            "Open Date": "",
+            "Close Date": "Sep 28, 2025 11:59 PM",
+            "Weight %": "1.43",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "COMP 213",
+            "Category": "Assignment",
+            "Deliverable": "Computer Skills Assignment",
+            "Open Date": "Sep 4, 2025 12:01 AM",
+            "Close Date": "Sep 16, 2025 11:59 PM",
+            "Weight %": "13",
+            "Grade %": "100",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "COMP 213",
+            "Category": "Assignment",
+            "Deliverable": "Spreadsheets Assignment",
+            "Open Date": "Oct 20, 2025 (start of Week 8)",
+            "Close Date": "Oct 24, 2025 11:59 PM",
+            "Weight %": "20",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "COMP 213",
+            "Category": "Exam",
+            "Deliverable": "Computer Skills Exam",
+            "Open Date": "Sep 18, 2025 12:15 PM",
+            "Close Date": "Sep 18, 2025 1:00 PM",
+            "Weight %": "6",
+            "Grade %": "96",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 1",
+            "Open Date": "Sep 14, 2025 4:37 PM",
+            "Close Date": "Sep 14, 2025 4:52 PM",
+            "Weight %": "2",
+            "Grade %": "96.55",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Assignment",
+            "Deliverable": "Assignment 1",
+            "Open Date": "",
+            "Close Date": "Sep 28, 2025 11:59 PM",
+            "Weight %": "2.5",
+            "Grade %": "100",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Test",
+            "Deliverable": "Test 1 – Derivatives",
+            "Open Date": "Oct 3, 2025 2:00 PM",
+            "Close Date": "Oct 3, 2025 3:50 PM (110 min, Ch. 23.1–23.9, Room TBA)",
+            "Weight %": "10",
+            "Grade %": "",
+            "Letter Grade": ""
+          }
+        ];
+
+        // Load and display deliverables data - now works with both Live Server and direct file opening
+        function loadDeliverables() {
+            try {
+                displayDeliverables(deliverablesData);
+            } catch (error) {
+                console.error('Error loading deliverables:', error);
+                document.getElementById('deliverables-container').innerHTML = 
+                    '<div class="empty-state">Error loading deliverables data. Please check that the data is properly embedded.</div>';
+            }
+        }
+
+        function displayDeliverables(deliverables) {
+            const container = document.getElementById('deliverables-container');
+            
+            if (!deliverables || deliverables.length === 0 || (deliverables.length === 1 && Object.values(deliverables[0]).every(val => val === ""))) {
+                container.innerHTML = '<div class="empty-state">No deliverables data available. Add assignment information to Deliverables.json to display here.</div>';
+                return;
+            }
+
+            // Sort deliverables: ungraded by due date first, then graded at bottom
+            const sortedDeliverables = deliverables.sort((a, b) => {
+                const hasGradeA = a['Grade %'] && a['Grade %'] !== '' && a['Grade %'] !== 'Not specified' && a['Grade %'] !== 'Not graded';
+                const hasGradeB = b['Grade %'] && b['Grade %'] !== '' && b['Grade %'] !== 'Not specified' && b['Grade %'] !== 'Not graded';
+                
+                // If one is graded and one isn't, put graded at bottom
+                if (hasGradeA && !hasGradeB) return 1;
+                if (!hasGradeA && hasGradeB) return -1;
+                
+                // If both are graded or both are ungraded, sort by due date
+                const dateA = a['Close Date'] || '';
+                const dateB = b['Close Date'] || '';
+                
+                if (!dateA && !dateB) return 0;
+                if (!dateA) return 1;
+                if (!dateB) return -1;
+                
+                return new Date(dateA) - new Date(dateB);
+            });
+
+            container.innerHTML = `
+                <div class="deliverables-grid">
+                    ${sortedDeliverables.map(deliverable => {
+                        const hasGrade = deliverable['Grade %'] && deliverable['Grade %'] !== '' && deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
+                        const isSubmitted = deliverable['Status'] === 'submitted';
+                        let cardClass = 'deliverable-card';
+                        if (hasGrade) {
+                            cardClass += ' graded';
+                        } else if (isSubmitted) {
+                            cardClass += ' submitted';
+                        }
+                        
+                        return `
+                        <div class="${cardClass}">
+                            <div class="deliverable-header">
+                                <div class="deliverable-category">${deliverable['Category'] || 'Assignment'}</div>
+                                <div class="deliverable-weight">${deliverable['Weight %'] || '0'}%</div>
+                            </div>
+                            
+                            <div class="deliverable-title">${deliverable['Deliverable'] || 'Untitled Deliverable'}</div>
+                            <div class="deliverable-course">${deliverable['Course ID'] || 'Unknown Course'}</div>
+                            
+                            <div class="deliverable-dates">
+                                <div class="date-item">
+                                    <span class="date-label">Opens:</span>
+                                    <span class="date-value">${deliverable['Open Date'] || 'Not specified'}</span>
+                                </div>
+                                <div class="date-item">
+                                    <span class="date-label">Due:</span>
+                                    <span class="date-value">${deliverable['Close Date'] || 'Not specified'}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="deliverable-grades">
+                                <div class="grade-item">
+                                    <span class="grade-label">Grade:</span>
+                                    <span class="grade-value">${deliverable['Grade %'] || 'Not graded'}</span>
+                                </div>
+                                <div class="grade-item">
+                                    <span class="grade-label">Letter:</span>
+                                    <span class="grade-value">${deliverable['Letter Grade'] || 'Not graded'}</span>
+                                </div>
+                            </div>
+                        </div>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+        }
+
+        // Load deliverables when page loads
+        document.addEventListener('DOMContentLoaded', loadDeliverables);
+    </script>
+</body>
+</html>

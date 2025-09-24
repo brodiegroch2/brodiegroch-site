@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - UniHUB</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="welcome-section">
+                    <h1 class="hero-title">Welcome back, Brodie! <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-left: 8px; vertical-align: middle;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></h1>
+                    <p class="hero-subtitle">Here's what's happening in your academic journey today</p>
+                </div>
+                <div class="countdown-section">
+                    <div class="countdown-card">
+                        <div class="countdown-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <div class="countdown-content">
+                            <div class="countdown-label">Next Due Date</div>
+                            <div class="countdown-timer" id="countdown-timer">
+                                <div class="time-unit">
+                                    <span class="time-value" id="days">--</span>
+                                    <span class="time-label">Days</span>
+                                </div>
+                                <div class="time-separator">:</div>
+                                <div class="time-unit">
+                                    <span class="time-value" id="hours">--</span>
+                                    <span class="time-label">Hours</span>
+                                </div>
+                                <div class="time-separator">:</div>
+                                <div class="time-unit">
+                                    <span class="time-value" id="minutes">--</span>
+                                    <span class="time-label">Mins</span>
+                                </div>
+                            </div>
+                            <div class="countdown-assignment" id="countdown-assignment">Loading...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Enhanced Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card primary">
+                <div class="stat-icon-wrapper">
+                    <div class="stat-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="stat-glow"></div>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number" id="total-courses">0</div>
+                    <div class="stat-label">Active Courses</div>
+                    <div class="stat-trend">+2 this semester</div>
+                </div>
+            </div>
+            
+            <div class="stat-card success">
+                <div class="stat-icon-wrapper">
+                    <div class="stat-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg></div>
+                    <div class="stat-glow"></div>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number" id="completed-deliverables">0</div>
+                    <div class="stat-label">Completed</div>
+                    <div class="stat-trend">Great progress!</div>
+                </div>
+            </div>
+            
+            <div class="stat-card warning">
+                <div class="stat-icon-wrapper">
+                    <div class="stat-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="stat-glow"></div>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number" id="upcoming-deadlines">0</div>
+                    <div class="stat-label">Due This Week</div>
+                    <div class="stat-trend">Stay focused!</div>
+                </div>
+            </div>
+            
+            <div class="stat-card info">
+                <div class="stat-icon-wrapper">
+                    <div class="stat-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="stat-glow"></div>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number" id="average-grade">0%</div>
+                    <div class="stat-label">Average Grade</div>
+                    <div class="stat-trend">Excellent work!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions Section -->
+        <div class="quick-actions-section">
+            <h2 class="section-title">Quick Actions</h2>
+            <div class="quick-actions-grid">
+                <a href="pages/courses/" class="quick-action-card courses">
+                    <div class="action-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="action-content">
+                        <div class="action-title">View Courses</div>
+                        <div class="action-subtitle">Manage your classes</div>
+                    </div>
+                    <div class="action-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </a>
+                
+                <a href="pages/deliverables/" class="quick-action-card assignments">
+                    <div class="action-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="action-content">
+                        <div class="action-title">Assignments</div>
+                        <div class="action-subtitle">Track your work</div>
+                    </div>
+                    <div class="action-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </a>
+                
+                <a href="pages/schedule/" class="quick-action-card schedule">
+                    <div class="action-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="action-content">
+                        <div class="action-title">Schedule</div>
+                        <div class="action-subtitle">View your classes</div>
+                    </div>
+                    <div class="action-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </a>
+                
+                <a href="pages/quick-links/" class="quick-action-card links">
+                    <div class="action-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="action-content">
+                        <div class="action-title">Quick Links</div>
+                        <div class="action-subtitle">Access tools</div>
+                    </div>
+                    <div class="action-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </a>
+            </div>
+        </div>
+
+        <div class="dashboard-sections">
+            <div class="dashboard-section">
+                <h2 class="section-title">Recent Activity</h2>
+                <div id="recent-activity" class="activity-list">
+                    <div class="empty-state">Loading recent activity...</div>
+                </div>
+                <div id="recent-activity-pagination" class="pagination" style="display: none;">
+                    <button id="recent-activity-prev" class="pagination-btn" disabled>Previous</button>
+                    <span id="recent-activity-page-info" class="pagination-info"></span>
+                    <button id="recent-activity-next" class="pagination-btn">Next</button>
+                </div>
+            </div>
+            
+            <div class="dashboard-section">
+                <h2 class="section-title">Upcoming Deadlines</h2>
+                <div id="upcoming-deadlines-list" class="deadlines-list">
+                    <div class="empty-state">Loading upcoming deadlines...</div>
+                </div>
+                <div id="upcoming-deadlines-pagination" class="pagination" style="display: none;">
+                    <button id="upcoming-deadlines-prev" class="pagination-btn" disabled>Previous</button>
+                    <span id="upcoming-deadlines-page-info" class="pagination-info"></span>
+                    <button id="upcoming-deadlines-next" class="pagination-btn">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-sections">
+            <div class="dashboard-section course-performance">
+                <h2 class="section-title">Course Performance</h2>
+                <div id="course-performance-chart" class="performance-chart">
+                    <div class="empty-state">Loading course performance...</div>
+                </div>
+            </div>
+            
+            <div class="dashboard-section progress-overview">
+                <h2 class="section-title">Progress Overview</h2>
+                <div id="progress-overview" class="progress-overview">
+                    <div class="empty-state">Loading progress overview...</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="assets/js/navigation.js"></script>
+    <script>
+        // Embedded data - works with both Live Server and direct file opening
+        const coursesData = [
+          {
+            "Course ID": "COMP 213",
+            "Course Name": "Computing for Engineering Technology",
+            "Course Average Weighted Grade": "",
+            "Credit Hours": "3",
+            "Course Description": "This applied computer course provides students with critical electronic communications, data and file management skills, along with a strong focus on using common productivity applications to format, calculate, analyze, visualize, and present or report data and information. Industry standard project management principles are implemented throughout the course from a digital perspective, so students can have an appreciation for how computing skills relate to real world business processes.",
+            "Professor/Teacher Name": "Rasleen Sidhu",
+            "Professor/Teacher Email": "rasleen.sidhu@sait.ca"
+          },
+          {
+            "Course ID": "MECH 205",
+            "Course Name": "Electro-Mechanical Systems",
+            "Course Average Weighted Grade": "",
+            "Credit Hours": "3",
+            "Course Description": "Electro-mechanical Systems is an introductory course to the world of automation for manufacturing. The course includes theory and lab activities involving pneumatic, electrical, electro-pneumatic, robotics, and computer control applications. The course design is for the beginner who is new to the various control systems and will benefit all Mechanical Engineering Technologists in the workplace as many companies adopt automation for sustainable growth of evolving and competitive manufacturing industries. Cross-referenced to the National Technology Benchmarks (NTB).",
+            "Professor/Teacher Name": "Richard Arndt",
+            "Professor/Teacher Email": "richard.arndt@sait.ca"
+          },
+          {
+            "Course ID": "STCS 255",
+            "Course Name": "Engineering Statics",
+            "Course Average Weighted Grade": "",
+            "Credit Hours": "1.5",
+            "Course Description": "This course covers components and resultants of vectors, two-force members, free-body diagrams, equations of equilibrium, equilibrium of concurrent force systems and pulley systems, moments and couples, equilibrium of non concurrent force systems, truss analysis using method of joints and method of sections, and frame analysis using method of members.",
+            "Professor/Teacher Name": "Borzumehr Toloui",
+            "Professor/Teacher Email": "borzumehr.toloui@sait.ca"
+          },
+          {
+            "Course ID": "THRM 200",
+            "Course Name": "Introduction to Thermodynamics",
+            "Course Average Weighted Grade": "",
+            "Credit Hours": "1.5",
+            "Course Description": "The study of energy in its many forms involves thermodynamic principles. Basic concepts of work, heat, flow and non-flow systems, and equations of state, perfect gases and properties of pure substances. The first law of thermodynamics is applied to practical systems like compressors, turbines, nozzles and other practical system to implement the concept of energy conversion. Basic power cycles will be analyzed and the performance merit to be determined. The various modes of heat transfer will be practiced and applied to simple situations. Cross-referenced to the National Technology Benchmarks (NTB).",
+            "Professor/Teacher Name": "Christopher Taggart",
+            "Professor/Teacher Email": "christopher.taggart@sait.ca"
+          },
+          {
+            "Course ID": "MATH 238",
+            "Course Name": "Mathematics for Engineering & Technology I",
+            "Course Average Weighted Grade": "",
+            "Credit Hours": "3",
+            "Course Description": "This course enables the student to apply the basic knowledge of algebra and introductory calculus to resolve applied scientific and technological problems. Applications include linear motion, areas under curves, and volumes of revolution.",
+            "Professor/Teacher Name": "Oluwafemi Alli",
+            "Professor/Teacher Email": "femi.alli@sait.ca"
+          },
+          {
+            "Course ID": "MECH 200",
+            "Course Name": "Mechanical Engineering Technology Concepts",
+            "Course Average Weighted Grade": "",
+            "Credit Hours": "3",
+            "Course Description": "This design course introduces the basic building blocks required for the common core and the three specializations. Using wide-ranging, flexible design reasoning the learner will learn how to set up problems based on a good understanding of the underlying principles, choose a plan to solve them, and present the results. Cross-referenced to the National Technology Benchmarks (NTB).",
+            "Professor/Teacher Name": "Shaw Kinjo",
+            "Professor/Teacher Email": "shaw.kinjo@sait.ca"
+          }
+        ];
+
+        const deliverablesData = [
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 2a: Electronic Principles",
+            "Open Date": "Sep 5, 2025 10:10 AM",
+            "Close Date": "Sep 21, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "97.14",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 2b: Series & Parallel Circuits",
+            "Open Date": "Sep 7, 2025 11:59 PM",
+            "Close Date": "Sep 28, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "96.67",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 2c: Ohm's & Power Laws",
+            "Open Date": "Sep 12, 2025 7:59 AM",
+            "Close Date": "Oct 5, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 1a: Boolean 1 (Number Systems)",
+            "Open Date": "Sep 21, 2025 11:59 PM",
+            "Close Date": "Oct 12, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 1b: Boolean Logic",
+            "Open Date": "Sep 28, 2025 11:59 PM",
+            "Close Date": "Oct 19, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 3a: Electrical Symbols",
+            "Open Date": "Oct 5, 2025 11:59 PM",
+            "Close Date": "Oct 26, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 3b: Relay Control Systems",
+            "Open Date": "Oct 12, 2025 11:59 PM",
+            "Close Date": "Nov 2, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 4: Pneumatic Symbols",
+            "Open Date": "Oct 19, 2025 11:59 PM",
+            "Close Date": "Nov 9, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 5: Pneumatic Control",
+            "Open Date": "Nov 2, 2025 11:59 PM",
+            "Close Date": "Nov 23, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 8: PLC Fundamentals",
+            "Open Date": "Nov 9, 2025 11:59 PM",
+            "Close Date": "Nov 30, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 9: PLC Programming",
+            "Open Date": "Nov 16, 2025 11:59 PM",
+            "Close Date": "Dec 7, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 10: Robotics Fundamentals",
+            "Open Date": "Dec 7, 2025 11:59 PM",
+            "Close Date": "Dec 16, 2025 11:59 PM",
+            "Weight %": "1.67",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 1: Basic Circuits & Ohm's Law",
+            "Open Date": "Aug 28, 2025 11:59 PM",
+            "Close Date": "Sep 28, 2025 11:59 PM",
+            "Weight %": "3",
+            "Grade %": "89.78",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 2a: Kirchhoff's Laws (Series/Parallel)",
+            "Open Date": "Sep 7, 2025 11:59 PM",
+            "Close Date": "Sep 28, 2025 11:59 PM",
+            "Weight %": "3",
+            "Grade %": "88.78",
+            "Letter Grade": "A"
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 2b: Kirchhoff's Laws (Mixed Circuits)",
+            "Open Date": "Sep 10, 2025 9:26 AM",
+            "Close Date": "Oct 5, 2025 11:59 PM",
+            "Weight %": "3",
+            "Grade %": "96.16",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 3a: Electrical Control Systems",
+            "Open Date": "Sep 21, 2025 11:59 PM",
+            "Close Date": "Oct 12, 2025 11:59 PM",
+            "Weight %": "3",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 3b: Basic Sensors",
+            "Open Date": "Sep 28, 2025 11:59 PM",
+            "Close Date": "Oct 19, 2025 11:59 PM",
+            "Weight %": "4",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 3c Pre-Lab Quiz",
+            "Open Date": "Oct 5, 2025 11:59 PM",
+            "Close Date": "Nov 2, 2025 11:59 PM",
+            "Weight %": "1",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 3c: Overhead Door Project",
+            "Open Date": "Oct 5, 2025 11:59 PM",
+            "Close Date": "Nov 2, 2025 11:59 PM",
+            "Weight %": "3",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 4: Pneumatic Systems",
+            "Open Date": "Oct 12, 2025 11:59 PM",
+            "Close Date": "Nov 2, 2025 11:59 PM",
+            "Weight %": "3",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 5: Pneumatic Control",
+            "Open Date": "Oct 19, 2025 11:59 PM",
+            "Close Date": "Nov 9, 2025 11:59 PM",
+            "Weight %": "4",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 6: Electro-Pneumatic Systems",
+            "Open Date": "Oct 26, 2025 11:59 PM",
+            "Close Date": "Nov 16, 2025 11:59 PM",
+            "Weight %": "3",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 7 Pre-Lab Quiz",
+            "Open Date": "Nov 2, 2025 11:59 PM",
+            "Close Date": "Nov 23, 2025 11:59 PM",
+            "Weight %": "1",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 7: Airlock Pneumatic Doors",
+            "Open Date": "Nov 2, 2025 11:59 PM",
+            "Close Date": "Nov 23, 2025 11:59 PM",
+            "Weight %": "6",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 8: PLC Introduction",
+            "Open Date": "Nov 9, 2025 11:59 PM",
+            "Close Date": "Nov 30, 2025 11:59 PM",
+            "Weight %": "3",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 9 Pre-Lab Quiz",
+            "Open Date": "Nov 16, 2025 11:59 PM",
+            "Close Date": "Dec 11, 2025 11:59 PM",
+            "Weight %": "1",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Lab",
+            "Deliverable": "Lab 9: Final PLC Project",
+            "Open Date": "Nov 16, 2025 11:59 PM",
+            "Close Date": "Dec 11, 2025 11:59 PM",
+            "Weight %": "6",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Exam",
+            "Deliverable": "Midterm Exam",
+            "Open Date": "",
+            "Close Date": "",
+            "Weight %": "12",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 205",
+            "Category": "Exam",
+            "Deliverable": "Final Exam",
+            "Open Date": "Dec 12, 2025 12:00 AM",
+            "Close Date": "Dec 17, 2025 11:59 PM",
+            "Weight %": "18",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Assignment",
+            "Deliverable": "Assignment 1",
+            "Open Date": "Sep 1, 2025 12:00 AM",
+            "Close Date": "Sep 28, 2025 11:59 PM",
+            "Weight %": "3.34",
+            "Grade %": "100",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Assignment",
+            "Deliverable": "Assignment 2",
+            "Open Date": "Sep 22, 2025 12:00 AM",
+            "Close Date": "Oct 19, 2025 11:59 PM",
+            "Weight %": "3.34",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Assignment",
+            "Deliverable": "Assignment 3",
+            "Open Date": "Sep 29, 2025 12:00 AM",
+            "Close Date": "Nov 2, 2025 11:59 PM",
+            "Weight %": "3.34",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Assignment",
+            "Deliverable": "Assignment 4",
+            "Open Date": "Oct 20, 2025 12:00 AM",
+            "Close Date": "Nov 23, 2025 11:59 PM",
+            "Weight %": "3.34",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Assignment",
+            "Deliverable": "Assignment 5",
+            "Open Date": "Nov 3, 2025 12:00 AM",
+            "Close Date": "Nov 30, 2025 11:59 PM",
+            "Weight %": "3.34",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Assignment",
+            "Deliverable": "Assignment 6",
+            "Open Date": "Nov 17, 2025 12:00 AM",
+            "Close Date": "Dec 7, 2025 11:59 PM",
+            "Weight %": "3.30",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 1",
+            "Open Date": "Sep 8, 2025 12:00 AM",
+            "Close Date": "Sep 28, 2025 11:59 PM",
+            "Weight %": "3.34",
+            "Grade %": "100",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 2",
+            "Open Date": "Sep 22, 2025 12:00 AM",
+            "Close Date": "Oct 19, 2025 11:59 PM",
+            "Weight %": "3.34",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 3",
+            "Open Date": "Sep 29, 2025 12:00 AM",
+            "Close Date": "Nov 2, 2025 11:59 PM",
+            "Weight %": "3.34",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 4",
+            "Open Date": "Oct 20, 2025 12:00 AM",
+            "Close Date": "Nov 23, 2025 11:59 PM",
+            "Weight %": "3.34",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 5",
+            "Open Date": "Nov 3, 2025 12:00 AM",
+            "Close Date": "Nov 30, 2025 11:59 PM",
+            "Weight %": "3.34",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 6",
+            "Open Date": "Nov 17, 2025 12:00 AM",
+            "Close Date": "Dec 7, 2025 11:59 PM",
+            "Weight %": "3.30",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Exam",
+            "Deliverable": "Midterm Exam",
+            "Open Date": "",
+            "Close Date": "",
+            "Weight %": "30",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "THRM 200",
+            "Category": "Exam",
+            "Deliverable": "Final Exam",
+            "Open Date": "Dec 12, 2025 12:00 AM",
+            "Close Date": "Dec 17, 2025 11:59 PM",
+            "Weight %": "30",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 200",
+            "Category": "Project",
+            "Deliverable": "Project 1",
+            "Open Date": "",
+            "Close Date": "Tue Sep 23, 2025 11:59 PM",
+            "Weight %": "15",
+            "Grade %": "",
+            "Letter Grade": "",
+            "Status": "submitted"
+          },
+          {
+            "Course ID": "MECH 200",
+            "Category": "Project",
+            "Deliverable": "Project 2",
+            "Open Date": "",
+            "Close Date": "Tue Oct 21, 2025 11:59 PM",
+            "Weight %": "17",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 200",
+            "Category": "Project",
+            "Deliverable": "Project 3",
+            "Open Date": "",
+            "Close Date": "Tue Nov 25, 2025 11:59 PM",
+            "Weight %": "20",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 200",
+            "Category": "Sketch",
+            "Deliverable": "Sketch 1",
+            "Open Date": "",
+            "Close Date": "Tue Sep 30, 2025 11:59 PM (kept Brightspace date)",
+            "Weight %": "6",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 200",
+            "Category": "Sketch",
+            "Deliverable": "Sketch 2",
+            "Open Date": "",
+            "Close Date": "Fri Oct 31, 2025 (in-class/submit by 11:59 PM)",
+            "Weight %": "6",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 200",
+            "Category": "Sketch",
+            "Deliverable": "Sketch 3",
+            "Open Date": "",
+            "Close Date": "Fri Nov 28, 2025 (in-class/submit by 11:59 PM)",
+            "Weight %": "6",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 200",
+            "Category": "Exam",
+            "Deliverable": "Theory Final Part 1",
+            "Open Date": "",
+            "Close Date": "Wed Oct 15, 2025 (in-class)",
+            "Weight %": "7.5",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 200",
+            "Category": "Exam",
+            "Deliverable": "Sketch Final Part 1",
+            "Open Date": "",
+            "Close Date": "Fri Oct 10, 2025 (in-class)",
+            "Weight %": "7.5",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 200",
+            "Category": "Exam",
+            "Deliverable": "Theory Final Part 2",
+            "Open Date": "",
+            "Close Date": "Wed Dec 3, 2025 (in-class)",
+            "Weight %": "7.5",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MECH 200",
+            "Category": "Exam",
+            "Deliverable": "Sketch Final Part 2",
+            "Open Date": "",
+            "Close Date": "Fri Nov 21, 2025 (in-class)",
+            "Weight %": "7.5",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Assignment/Quiz",
+            "Deliverable": "Assignment 1",
+            "Open Date": "",
+            "Close Date": "Sep 14, 2025 11:59 PM",
+            "Weight %": "1.43",
+            "Grade %": "",
+            "Letter Grade": "",
+            "Status": "submitted"
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Assignment/Quiz",
+            "Deliverable": "Assignment 2",
+            "Open Date": "",
+            "Close Date": "Sep 28, 2025 11:59 PM",
+            "Weight %": "1.43",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Assignment/Quiz",
+            "Deliverable": "Assignment 3",
+            "Open Date": "",
+            "Close Date": "Oct 12, 2025 11:59 PM",
+            "Weight %": "1.43",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Assignment/Quiz",
+            "Deliverable": "Assignment 4",
+            "Open Date": "",
+            "Close Date": "Oct 26, 2025 11:59 PM",
+            "Weight %": "1.43",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Assignment/Quiz",
+            "Deliverable": "Assignment 5",
+            "Open Date": "",
+            "Close Date": "Nov 9, 2025 11:59 PM",
+            "Weight %": "1.43",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Assignment/Quiz",
+            "Deliverable": "Assignment 6",
+            "Open Date": "",
+            "Close Date": "Nov 23, 2025 11:59 PM",
+            "Weight %": "1.43",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Assignment/Quiz",
+            "Deliverable": "Assignment 7",
+            "Open Date": "",
+            "Close Date": "Dec 7, 2025 11:59 PM",
+            "Weight %": "1.43",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Lab",
+            "Deliverable": "Lab 1 – Force Table",
+            "Open Date": "",
+            "Close Date": "",
+            "Weight %": "3",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Lab",
+            "Deliverable": "Lab 2 – Two Force Crane",
+            "Open Date": "",
+            "Close Date": "",
+            "Weight %": "3",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Lab",
+            "Deliverable": "Lab 3 – Beam",
+            "Open Date": "",
+            "Close Date": "",
+            "Weight %": "3",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Lab",
+            "Deliverable": "Lab 4 – Three Force Crane",
+            "Open Date": "",
+            "Close Date": "",
+            "Weight %": "3",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Lab",
+            "Deliverable": "Lab 6 – Truss",
+            "Open Date": "",
+            "Close Date": "",
+            "Weight %": "3",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Test",
+            "Deliverable": "Test 1",
+            "Open Date": "Oct 1, 2025 12:00 PM",
+            "Close Date": "Oct 1, 2025 12:50 PM",
+            "Weight %": "7.5",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Test",
+            "Deliverable": "Test 2",
+            "Open Date": "",
+            "Close Date": "",
+            "Weight %": "7.5",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Exam",
+            "Deliverable": "Midterm",
+            "Open Date": "",
+            "Close Date": "",
+            "Weight %": "30",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "STCS 255",
+            "Category": "Exam",
+            "Deliverable": "Final Exam",
+            "Open Date": "Dec 12, 2025 12:00 AM",
+            "Close Date": "Dec 17, 2025 11:59 PM",
+            "Weight %": "30",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "COMP 213",
+            "Category": "Assignment",
+            "Deliverable": "Computer Skills Assignment",
+            "Open Date": "Sep 4, 2025 12:01 AM",
+            "Close Date": "Sep 16, 2025 11:59 PM",
+            "Weight %": "13",
+            "Grade %": "100",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "COMP 213",
+            "Category": "Assignment",
+            "Deliverable": "Spreadsheets Assignment",
+            "Open Date": "Oct 20, 2025 (start of Week 8)",
+            "Close Date": "Oct 24, 2025 11:59 PM",
+            "Weight %": "20",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "COMP 213",
+            "Category": "Assignment",
+            "Deliverable": "Word Processing Assignment",
+            "Open Date": "Nov 17, 2025 (start of Week 11)",
+            "Close Date": "Nov 21, 2025 11:59 PM",
+            "Weight %": "15",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "COMP 213",
+            "Category": "Assignment",
+            "Deliverable": "Visualization Assignment",
+            "Open Date": "Nov 3, 2025 (start of Week 10)",
+            "Close Date": "Nov 7, 2025 11:59 PM",
+            "Weight %": "11",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "COMP 213",
+            "Category": "Assignment",
+            "Deliverable": "Project Scheduling Assignment",
+            "Open Date": "Dec 8, 2025 (start of Week 14)",
+            "Close Date": "Dec 12, 2025 11:59 PM",
+            "Weight %": "11",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "COMP 213",
+            "Category": "Exam",
+            "Deliverable": "Computer Skills Exam",
+            "Open Date": "Sep 18, 2025 12:15 PM",
+            "Close Date": "Sep 18, 2025 1:00 PM",
+            "Weight %": "6",
+            "Grade %": "96",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "COMP 213",
+            "Category": "Exam",
+            "Deliverable": "Spreadsheets Exam",
+            "Open Date": "Oct 27, 2025 (Week 9)",
+            "Close Date": "Oct 31, 2025 11:59 PM",
+            "Weight %": "7",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "COMP 213",
+            "Category": "Exam",
+            "Deliverable": "Word Processing Exam",
+            "Open Date": "Nov 24, 2025 (Week 12)",
+            "Close Date": "Nov 28, 2025 11:59 PM",
+            "Weight %": "7",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "COMP 213",
+            "Category": "Exam",
+            "Deliverable": "Project Management Concepts Exam",
+            "Open Date": "Dec 8, 2025 (Week 14)",
+            "Close Date": "Dec 12, 2025 11:59 PM",
+            "Weight %": "5",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "COMP 213",
+            "Category": "Core Ability",
+            "Deliverable": "Small Assignment 1 – Malware",
+            "Open Date": "",
+            "Close Date": "Sep 13, 2025 11:59 PM",
+            "Weight %": "2.5",
+            "Grade %": "100",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "COMP 213",
+            "Category": "Core Ability",
+            "Deliverable": "Small Assignment 2 – IIoT Discussion",
+            "Open Date": "",
+            "Close Date": "Sep 21, 2025 11:59 PM",
+            "Weight %": "2.5",
+            "Grade %": "100",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Assignment",
+            "Deliverable": "Assignment 1",
+            "Open Date": "",
+            "Close Date": "Sep 28, 2025 11:59 PM",
+            "Weight %": "2.5",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Assignment",
+            "Deliverable": "Assignment 2",
+            "Open Date": "",
+            "Close Date": "Oct 26, 2025 11:59 PM",
+            "Weight %": "2.5",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Assignment",
+            "Deliverable": "Assignment 3",
+            "Open Date": "",
+            "Close Date": "Nov 30, 2025 11:59 PM",
+            "Weight %": "2.5",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Assignment",
+            "Deliverable": "Assignment 4",
+            "Open Date": "",
+            "Close Date": "Dec 7, 2025 11:59 PM",
+            "Weight %": "2.5",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 1",
+            "Open Date": "Sep 14, 2025 4:37 PM",
+            "Close Date": "Sep 14, 2025 4:52 PM",
+            "Weight %": "2",
+            "Grade %": "96.55",
+            "Letter Grade": "A+"
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 2",
+            "Open Date": "",
+            "Close Date": "",
+            "Weight %": "2",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 3",
+            "Open Date": "",
+            "Close Date": "",
+            "Weight %": "2",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 4",
+            "Open Date": "",
+            "Close Date": "",
+            "Weight %": "2",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 5",
+            "Open Date": "",
+            "Close Date": "",
+            "Weight %": "2",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Quiz",
+            "Deliverable": "Quiz 6",
+            "Open Date": "",
+            "Close Date": "",
+            "Weight %": "2",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Test",
+            "Deliverable": "Test 1 – Derivatives",
+            "Open Date": "Oct 3, 2025 2:00 PM",
+            "Close Date": "Oct 3, 2025 3:50 PM (110 min, Ch. 23.1–23.9, Room TBA)",
+            "Weight %": "10",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Test",
+            "Deliverable": "Test 2 – Integration",
+            "Open Date": "",
+            "Close Date": "Dec 5, 2025 11:59 PM",
+            "Weight %": "10",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Exam",
+            "Deliverable": "Midterm Exam",
+            "Open Date": "",
+            "Close Date": "Oct 31, 2025 11:59 PM",
+            "Weight %": "30",
+            "Grade %": "",
+            "Letter Grade": ""
+          },
+          {
+            "Course ID": "MATH 238",
+            "Category": "Exam",
+            "Deliverable": "Final Exam",
+            "Open Date": "Dec 12, 2025 12:00 AM",
+            "Close Date": "Dec 17, 2025 11:59 PM",
+            "Weight %": "40",
+            "Grade %": "",
+            "Letter Grade": ""
+          }
+        ];
+
+        // Load dashboard data - now works with both Live Server and direct file opening
+        function loadDashboardData() {
+            try {
+                updateStats(coursesData, deliverablesData);
+                updateRecentActivity(deliverablesData);
+                updateUpcomingDeadlines(deliverablesData);
+                updateCoursePerformance(coursesData, deliverablesData);
+                updateProgressOverview(coursesData, deliverablesData);
+                updateCountdown(deliverablesData);
+            } catch (error) {
+                console.error('Error loading dashboard data:', error);
+                showServerRequiredMessage();
+            }
+        }
+        
+        function showServerRequiredMessage() {
+            // This function is kept for compatibility but should not be called anymore
+            console.log('Server required message function called - this should not happen with embedded data');
+        }
+
+        function updateStats(courses, deliverables) {
+            // Count active courses
+            const activeCourses = courses.filter(course => 
+                course['Course ID'] && course['Course ID'] !== ''
+            ).length;
+            document.getElementById('total-courses').textContent = activeCourses;
+
+
+            // Count completed deliverables (graded OR submitted)
+            const completedDeliverables = deliverables.filter(deliverable => {
+                const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
+                                deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
+                const isSubmitted = deliverable['Status'] === 'submitted';
+                return isGraded || isSubmitted;
+            }).length;
+            const totalDeliverables = deliverables.filter(deliverable => 
+                deliverable['Course ID'] && deliverable['Course ID'] !== ''
+            ).length;
+            document.getElementById('completed-deliverables').textContent = `${completedDeliverables}/${totalDeliverables}`;
+
+            // Count upcoming deadlines (next 7 days) - exclude already graded items and submitted items
+            const now = new Date();
+            const nextWeek = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+            const upcomingDeadlines = deliverables.filter(deliverable => {
+                const dueDate = new Date(deliverable['Close Date']);
+                const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
+                                deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
+                const isSubmitted = deliverable['Status'] === 'submitted';
+                return dueDate >= now && dueDate <= nextWeek && !isGraded && !isSubmitted;
+            }).length;
+            document.getElementById('upcoming-deadlines').textContent = upcomingDeadlines;
+
+            // Calculate weighted average grade based on course averages and credit hours
+            let totalWeightedGrade = 0;
+            let totalCredits = 0;
+            
+            courses.forEach(course => {
+                const courseId = course['Course ID'];
+                const creditHours = parseFloat(course['Credit Hours']) || 0;
+                
+                if (!courseId || creditHours === 0) return;
+                
+                // Get all deliverables for this course
+                const courseDeliverables = deliverables.filter(deliverable => 
+                    deliverable['Course ID'] === courseId
+                );
+                
+                // Get graded deliverables for this course
+                const gradedDeliverables = courseDeliverables.filter(deliverable => {
+                    const grade = deliverable['Grade %'];
+                    return grade && grade !== '' && grade !== 'Not specified' && grade !== 'Not graded' && !isNaN(parseFloat(grade));
+                });
+                
+                // Only include courses that have at least one graded assignment
+                if (gradedDeliverables.length > 0) {
+                    const courseTotalGrade = gradedDeliverables.reduce((sum, deliverable) => {
+                        return sum + parseFloat(deliverable['Grade %']);
+                    }, 0);
+                    const courseAverage = courseTotalGrade / gradedDeliverables.length;
+                    
+                    // Weight by credit hours
+                    totalWeightedGrade += courseAverage * creditHours;
+                    totalCredits += creditHours;
+                }
+            });
+            
+            if (totalCredits > 0) {
+                const weightedAverage = (totalWeightedGrade / totalCredits).toFixed(1);
+                document.getElementById('average-grade').textContent = `${weightedAverage}%`;
+            } else {
+                document.getElementById('average-grade').textContent = 'N/A';
+            }
+        }
+
+        // Pagination state
+        let recentActivityPage = 0;
+        let upcomingDeadlinesPage = 0;
+        const itemsPerPage = 4;
+
+        function updateRecentActivity(deliverables) {
+            const container = document.getElementById('recent-activity');
+            const pagination = document.getElementById('recent-activity-pagination');
+            const prevBtn = document.getElementById('recent-activity-prev');
+            const nextBtn = document.getElementById('recent-activity-next');
+            const pageInfo = document.getElementById('recent-activity-page-info');
+            
+            // Get recently graded items
+            const gradedItems = deliverables.filter(deliverable => 
+                deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
+                deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded'
+            );
+
+            if (gradedItems.length === 0) {
+                container.innerHTML = '<div class="empty-state">No recent activity</div>';
+                pagination.style.display = 'none';
+                return;
+            }
+
+            const totalPages = Math.ceil(gradedItems.length / itemsPerPage);
+            const startIndex = recentActivityPage * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const currentItems = gradedItems.slice(startIndex, endIndex);
+
+            container.innerHTML = currentItems.map(item => `
+                <div class="activity-item">
+                    <div class="activity-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg></div>
+                    <div class="activity-content">
+                        <div class="activity-title">${item['Deliverable'] || 'Assignment'}</div>
+                        <div class="activity-details">${item['Course ID']} • ${item['Grade %']}% (${item['Letter Grade']})</div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Update pagination
+            if (totalPages > 1) {
+                pagination.style.display = 'flex';
+                prevBtn.disabled = recentActivityPage === 0;
+                nextBtn.disabled = recentActivityPage >= totalPages - 1;
+                pageInfo.textContent = `${recentActivityPage + 1} of ${totalPages}`;
+            } else {
+                pagination.style.display = 'none';
+            }
+        }
+
+        function updateUpcomingDeadlines(deliverables) {
+            const container = document.getElementById('upcoming-deadlines-list');
+            const pagination = document.getElementById('upcoming-deadlines-pagination');
+            const prevBtn = document.getElementById('upcoming-deadlines-prev');
+            const nextBtn = document.getElementById('upcoming-deadlines-next');
+            const pageInfo = document.getElementById('upcoming-deadlines-page-info');
+            
+            // Get upcoming deadlines (next 30 days for better pagination) - exclude already graded items and submitted items
+            const now = new Date();
+            const nextMonth = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
+            const upcomingDeadlines = deliverables.filter(deliverable => {
+                const dueDate = new Date(deliverable['Close Date']);
+                const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
+                                deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
+                const isSubmitted = deliverable['Status'] === 'submitted';
+                return dueDate >= now && dueDate <= nextMonth && !isGraded && !isSubmitted;
+            }).sort((a, b) => new Date(a['Close Date']) - new Date(b['Close Date']));
+
+            if (upcomingDeadlines.length === 0) {
+                container.innerHTML = '<div class="empty-state">No upcoming deadlines</div>';
+                pagination.style.display = 'none';
+                return;
+            }
+
+            const totalPages = Math.ceil(upcomingDeadlines.length / itemsPerPage);
+            const startIndex = upcomingDeadlinesPage * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const currentItems = upcomingDeadlines.slice(startIndex, endIndex);
+
+            container.innerHTML = currentItems.map(item => `
+                <div class="deadline-item">
+                    <div class="deadline-date">${new Date(item['Close Date']).toLocaleDateString()}</div>
+                    <div class="deadline-content">
+                        <div class="deadline-title">${item['Deliverable'] || 'Assignment'}</div>
+                        <div class="deadline-course">${item['Course ID']}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Update pagination
+            if (totalPages > 1) {
+                pagination.style.display = 'flex';
+                prevBtn.disabled = upcomingDeadlinesPage === 0;
+                nextBtn.disabled = upcomingDeadlinesPage >= totalPages - 1;
+                pageInfo.textContent = `${upcomingDeadlinesPage + 1} of ${totalPages}`;
+            } else {
+                pagination.style.display = 'none';
+            }
+        }
+
+        function updateCoursePerformance(courses, deliverables) {
+            const container = document.getElementById('course-performance-chart');
+            
+            const courseAverages = {};
+            
+            // Calculate average for each course
+            courses.forEach(course => {
+                const courseId = course['Course ID'];
+                if (!courseId) return;
+                
+                const courseDeliverables = deliverables.filter(deliverable => 
+                    deliverable['Course ID'] === courseId
+                );
+                
+                const gradedDeliverables = courseDeliverables.filter(deliverable => {
+                    const grade = deliverable['Grade %'];
+                    return grade && grade !== '' && grade !== 'Not specified' && grade !== 'Not graded' && !isNaN(parseFloat(grade));
+                });
+                
+                if (gradedDeliverables.length > 0) {
+                    const totalGrade = gradedDeliverables.reduce((sum, deliverable) => {
+                        return sum + parseFloat(deliverable['Grade %']);
+                    }, 0);
+                    const averageGrade = (totalGrade / gradedDeliverables.length).toFixed(1);
+                    courseAverages[courseId] = {
+                        average: averageGrade,
+                        courseName: course['Course Name'],
+                        gradedCount: gradedDeliverables.length,
+                        totalCount: courseDeliverables.length
+                    };
+                }
+            });
+            
+            if (Object.keys(courseAverages).length === 0) {
+                container.innerHTML = '<div class="empty-state">No graded assignments yet</div>';
+                return;
+            }
+            
+            container.innerHTML = Object.entries(courseAverages).map(([courseId, data]) => `
+                <div class="course-performance-item">
+                    <div class="course-performance-header">
+                        <div class="course-performance-id">${courseId}</div>
+                        <div class="course-performance-average ${getGradeClass(data.average)}">${data.average}%</div>
+                    </div>
+                    <div class="course-performance-name">${data.courseName}</div>
+                    <div class="course-performance-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${data.average}%"></div>
+                        </div>
+                        <div class="course-performance-stats">${data.gradedCount}/${data.totalCount} assignments graded</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        
+        function updateProgressOverview(courses, deliverables) {
+            const container = document.getElementById('progress-overview');
+            
+            const now = new Date();
+            const semesterEnd = new Date('2025-12-20'); // Approximate semester end
+            const semesterStart = new Date('2025-09-01'); // Approximate semester start
+            const totalDays = semesterEnd - semesterStart;
+            const daysPassed = now - semesterStart;
+            const semesterProgress = Math.min(100, Math.max(0, (daysPassed / totalDays) * 100));
+            
+            const totalDeliverables = deliverables.length;
+            const completedDeliverables = deliverables.filter(d => 
+                d['Grade %'] && d['Grade %'] !== '' && 
+                d['Grade %'] !== 'Not specified' && d['Grade %'] !== 'Not graded'
+            ).length;
+            const completionProgress = totalDeliverables > 0 ? (completedDeliverables / totalDeliverables) * 100 : 0;
+            
+            container.innerHTML = `
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <div class="progress-title">Semester Progress</div>
+                        <div class="progress-percentage">${semesterProgress.toFixed(1)}%</div>
+                    </div>
+                    <div class="progress-bar-large">
+                        <div class="progress-fill-large" style="width: ${semesterProgress}%"></div>
+                    </div>
+                </div>
+                
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <div class="progress-title">Assignment Completion</div>
+                        <div class="progress-percentage">${completionProgress.toFixed(1)}%</div>
+                    </div>
+                    <div class="progress-bar-large">
+                        <div class="progress-fill-large completion" style="width: ${completionProgress}%"></div>
+                    </div>
+                    <div class="progress-stats">${completedDeliverables} of ${totalDeliverables} assignments completed</div>
+                </div>
+                
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <div class="progress-title">Days Remaining</div>
+                        <div class="progress-percentage">${Math.max(0, Math.ceil((semesterEnd - now) / (1000 * 60 * 60 * 24)))}</div>
+                    </div>
+                    <div class="progress-info">
+                        <div class="progress-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <div class="progress-text">Days until semester end</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function getGradeClass(percentage) {
+            if (percentage >= 95) return 'grade-excellent';
+            if (percentage >= 85) return 'grade-good';
+            if (percentage >= 75) return 'grade-average';
+            if (percentage >= 65) return 'grade-below-average';
+            return 'grade-poor';
+        }
+        
+        function getGradePercentage(letterGrade) {
+            const gradeMap = {
+                'A+': 95, 'A': 85, 'B+': 80, 'B': 75, 'C+': 70, 'C': 65, 'D': 60, 'F': 0
+            };
+            return gradeMap[letterGrade] || 0;
+        }
+
+        // Countdown functionality
+        let countdownInterval;
+        let nextDeadline = null;
+
+        function updateCountdown(deliverables) {
+            const now = new Date();
+            
+            // Find the next upcoming deadline that's not graded or submitted
+            const upcomingDeadlines = deliverables.filter(deliverable => {
+                const dueDate = new Date(deliverable['Close Date']);
+                const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
+                                deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
+                const isSubmitted = deliverable['Status'] === 'submitted';
+                return dueDate > now && !isGraded && !isSubmitted && deliverable['Close Date'];
+            }).sort((a, b) => new Date(a['Close Date']) - new Date(b['Close Date']));
+
+            if (upcomingDeadlines.length > 0) {
+                nextDeadline = upcomingDeadlines[0];
+                document.getElementById('countdown-assignment').textContent = 
+                    `${nextDeadline['Deliverable']} - ${nextDeadline['Course ID']}`;
+                
+                // Start countdown
+                startCountdown();
+            } else {
+                document.getElementById('countdown-assignment').textContent = 'No upcoming deadlines!';
+                document.getElementById('days').textContent = '--';
+                document.getElementById('hours').textContent = '--';
+                document.getElementById('minutes').textContent = '--';
+            }
+        }
+
+        function startCountdown() {
+            if (countdownInterval) {
+                clearInterval(countdownInterval);
+            }
+            
+            countdownInterval = setInterval(() => {
+                if (!nextDeadline) return;
+                
+                const now = new Date();
+                const dueDate = new Date(nextDeadline['Close Date']);
+                const timeDiff = dueDate - now;
+                
+                if (timeDiff <= 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('countdown-assignment').textContent = 'Deadline reached!';
+                    return;
+                }
+                
+                const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            }, 1000);
+        }
+
+        // Pagination event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            loadDashboardData();
+            
+            // Recent activity pagination
+            document.getElementById('recent-activity-prev').addEventListener('click', () => {
+                if (recentActivityPage > 0) {
+                    recentActivityPage--;
+                    loadDashboardData();
+                }
+            });
+            
+            document.getElementById('recent-activity-next').addEventListener('click', () => {
+                recentActivityPage++;
+                loadDashboardData();
+            });
+            
+            // Upcoming deadlines pagination
+            document.getElementById('upcoming-deadlines-prev').addEventListener('click', () => {
+                if (upcomingDeadlinesPage > 0) {
+                    upcomingDeadlinesPage--;
+                    loadDashboardData();
+                }
+            });
+            
+            document.getElementById('upcoming-deadlines-next').addEventListener('click', () => {
+                upcomingDeadlinesPage++;
+                loadDashboardData();
+            });
+        });
+    </script>
+</body>
+</html>

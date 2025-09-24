@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule - UniHUB</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Schedule</h1>
+        <p class="page-subtitle">View your class schedule and recurring events</p>
+        
+        <div class="data-section">
+            <h2 class="section-title">Schedule Information</h2>
+            
+            <!-- Day Filter Buttons -->
+            <div class="schedule-filters">
+                <button class="filter-btn" data-day="all">All Days</button>
+                <button class="filter-btn" data-day="Monday">Monday</button>
+                <button class="filter-btn" data-day="Tuesday">Tuesday</button>
+                <button class="filter-btn" data-day="Wednesday">Wednesday</button>
+                <button class="filter-btn" data-day="Thursday">Thursday</button>
+                <button class="filter-btn" data-day="Friday">Friday</button>
+            </div>
+            
+            <div id="schedule-container" class="data-grid">
+                <div class="empty-state">
+                    No schedule data available. Load data from Schedule.json to display schedule information.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/navigation.js"></script>
+    <script>
+        // Global variables for schedule data
+        let allScheduleData = [];
+        let allCoursesData = [];
+        let currentFilter = 'all';
+
+        // Get current day of the week
+        function getCurrentDay() {
+            const today = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            return days[today.getDay()];
+        }
+
+        // Embedded data - works with both Live Server and direct file opening
+        const scheduleData = [
+          {
+            "Course ID": "COMP 213",
+            "Day of Week": "Tuesday",
+            "Start Time": "2025-09-01 10:00",
+            "End Time": "2025-09-01 11:50",
+            "Location": "Stan Grad MC207",
+            "Recurring": "Yes",
+            "Period": "Weekly"
+          },
+          {
+            "Course ID": "COMP 213",
+            "Day of Week": "Thursday",
+            "Start Time": "2025-09-01 12:00",
+            "End Time": "2025-09-01 13:50",
+            "Location": "Senator Burns NH407",
+            "Recurring": "Yes",
+            "Period": "Weekly"
+          },
+          {
+            "Course ID": "MECH 205",
+            "Day of Week": "Monday",
+            "Start Time": "2025-09-01 08:00",
+            "End Time": "2025-09-01 10:50",
+            "Location": "Thomas Riley TT340",
+            "Recurring": "Yes",
+            "Period": "Weekly"
+          },
+          {
+            "Course ID": "MECH 205",
+            "Day of Week": "Thursday",
+            "Start Time": "2025-09-01 08:00",
+            "End Time": "2025-09-01 10:50",
+            "Location": "Thomas Riley TT201",
+            "Recurring": "Yes",
+            "Period": "Weekly"
+          },
+          {
+            "Course ID": "STCS 255",
+            "Day of Week": "Monday",
+            "Start Time": "2025-09-01 12:00",
+            "End Time": "2025-09-01 13:50",
+            "Location": "Senator Burns NJ307",
+            "Recurring": "Yes",
+            "Period": "Weekly"
+          },
+          {
+            "Course ID": "STCS 255",
+            "Day of Week": "Wednesday",
+            "Start Time": "2025-09-01 12:00",
+            "End Time": "2025-09-01 12:50",
+            "Location": "Senator Burns NJ301",
+            "Recurring": "Yes",
+            "Period": "Weekly"
+          },
+          {
+            "Course ID": "STCS 255",
+            "Day of Week": "Friday",
+            "Start Time": "2025-09-01 08:00",
+            "End Time": "2025-09-01 09:50",
+            "Location": "Senator Burns NJ312",
+            "Recurring": "No",
+            "Period": "One-time (Sep 12, Oct 10, Oct 24, Nov 7, Nov 21, Dec 5)"
+          },
+          {
+            "Course ID": "THRM 200",
+            "Day of Week": "Tuesday",
+            "Start Time": "2025-09-01 08:00",
+            "End Time": "2025-09-01 09:50",
+            "Location": "Thomas Riley TF209",
+            "Recurring": "Yes",
+            "Period": "Weekly"
+          },
+          {
+            "Course ID": "THRM 200",
+            "Day of Week": "Wednesday",
+            "Start Time": "2025-09-01 13:00",
+            "End Time": "2025-09-01 14:50",
+            "Location": "Thomas Riley TF209",
+            "Recurring": "Yes",
+            "Period": "Weekly"
+          },
+          {
+            "Course ID": "MATH 238",
+            "Day of Week": "Monday",
+            "Start Time": "2025-09-01 15:00",
+            "End Time": "2025-09-01 15:50",
+            "Location": "Senator Burns NK109",
+            "Recurring": "Yes",
+            "Period": "Weekly"
+          },
+          {
+            "Course ID": "MATH 238",
+            "Day of Week": "Wednesday",
+            "Start Time": "2025-09-01 08:00",
+            "End Time": "2025-09-01 09:50",
+            "Location": "Senator Burns NH101",
+            "Recurring": "Yes",
+            "Period": "Weekly"
+          },
+          {
+            "Course ID": "MATH 238",
+            "Day of Week": "Friday",
+            "Start Time": "2025-09-01 14:00",
+            "End Time": "2025-09-01 15:50",
+            "Location": "Senator Burns NR211",
+            "Recurring": "Yes",
+            "Period": "Weekly"
+          },
+          {
+            "Course ID": "MECH 200",
+            "Day of Week": "Tuesday",
+            "Start Time": "2025-09-01 13:00",
+            "End Time": "2025-09-01 14:50",
+            "Location": "Thomas Riley TF114A",
+            "Recurring": "Yes",
+            "Period": "Weekly"
+          },
+          {
+            "Course ID": "MECH 200",
+            "Day of Week": "Wednesday",
+            "Start Time": "2025-09-01 15:00",
+            "End Time": "2025-09-01 16:50",
+            "Location": "Aldred Centre CB020",
+            "Recurring": "Yes",
+            "Period": "Weekly"
+          },
+          {
+            "Course ID": "MECH 200",
+            "Day of Week": "Friday",
+            "Start Time": "2025-09-01 10:00",
+            "End Time": "2025-09-01 11:50",
+            "Location": "Aldred Centre CB022",
+            "Recurring": "Yes",
+            "Period": "Weekly"
+          }
+        ];
+
+        const coursesData = [
+          {
+            "Course ID": "COMP 213",
+            "Course Name": "Computing for Engineering Technology",
+            "Course Average Weighted Grade": "",
+            "Credit Hours": "3",
+            "Course Description": "This applied computer course provides students with critical electronic communications, data and file management skills, along with a strong focus on using common productivity applications to format, calculate, analyze, visualize, and present or report data and information. Industry standard project management principles are implemented throughout the course from a digital perspective, so students can have an appreciation for how computing skills relate to real world business processes.",
+            "Professor/Teacher Name": "Rasleen Sidhu",
+            "Professor/Teacher Email": "rasleen.sidhu@sait.ca"
+          },
+          {
+            "Course ID": "MECH 205",
+            "Course Name": "Electro-Mechanical Systems",
+            "Course Average Weighted Grade": "",
+            "Credit Hours": "3",
+            "Course Description": "Electro-mechanical Systems is an introductory course to the world of automation for manufacturing. The course includes theory and lab activities involving pneumatic, electrical, electro-pneumatic, robotics, and computer control applications. The course design is for the beginner who is new to the various control systems and will benefit all Mechanical Engineering Technologists in the workplace as many companies adopt automation for sustainable growth of evolving and competitive manufacturing industries. Cross-referenced to the National Technology Benchmarks (NTB).",
+            "Professor/Teacher Name": "Richard Arndt",
+            "Professor/Teacher Email": "richard.arndt@sait.ca"
+          },
+          {
+            "Course ID": "STCS 255",
+            "Course Name": "Engineering Statics",
+            "Course Average Weighted Grade": "",
+            "Credit Hours": "1.5",
+            "Course Description": "This course covers components and resultants of vectors, two-force members, free-body diagrams, equations of equilibrium, equilibrium of concurrent force systems and pulley systems, moments and couples, equilibrium of non concurrent force systems, truss analysis using method of joints and method of sections, and frame analysis using method of members.",
+            "Professor/Teacher Name": "Borzumehr Toloui",
+            "Professor/Teacher Email": "borzumehr.toloui@sait.ca"
+          },
+          {
+            "Course ID": "THRM 200",
+            "Course Name": "Introduction to Thermodynamics",
+            "Course Average Weighted Grade": "",
+            "Credit Hours": "1.5",
+            "Course Description": "The study of energy in its many forms involves thermodynamic principles. Basic concepts of work, heat, flow and non-flow systems, and equations of state, perfect gases and properties of pure substances. The first law of thermodynamics is applied to practical systems like compressors, turbines, nozzles and other practical system to implement the concept of energy conversion. Basic power cycles will be analyzed and the performance merit to be determined. The various modes of heat transfer will be practiced and applied to simple situations. Cross-referenced to the National Technology Benchmarks (NTB).",
+            "Professor/Teacher Name": "Christopher Taggart",
+            "Professor/Teacher Email": "christopher.taggart@sait.ca"
+          },
+          {
+            "Course ID": "MATH 238",
+            "Course Name": "Mathematics for Engineering & Technology I",
+            "Course Average Weighted Grade": "",
+            "Credit Hours": "3",
+            "Course Description": "This course enables the student to apply the basic knowledge of algebra and introductory calculus to resolve applied scientific and technological problems. Applications include linear motion, areas under curves, and volumes of revolution.",
+            "Professor/Teacher Name": "Oluwafemi Alli",
+            "Professor/Teacher Email": "femi.alli@sait.ca"
+          },
+          {
+            "Course ID": "MECH 200",
+            "Course Name": "Mechanical Engineering Technology Concepts",
+            "Course Average Weighted Grade": "",
+            "Credit Hours": "3",
+            "Course Description": "This design course introduces the basic building blocks required for the common core and the three specializations. Using wide-ranging, flexible design reasoning the learner will learn how to set up problems based on a good understanding of the underlying principles, choose a plan to solve them, and present the results. Cross-referenced to the National Technology Benchmarks (NTB).",
+            "Professor/Teacher Name": "Shaw Kinjo",
+            "Professor/Teacher Email": "shaw.kinjo@sait.ca"
+          }
+        ];
+
+        // Load and display schedule data - now works with both Live Server and direct file opening
+        function loadSchedule() {
+            try {
+                allScheduleData = scheduleData;
+                allCoursesData = coursesData;
+                
+                // Set current day as default filter
+                currentFilter = getCurrentDay();
+                displaySchedule(allScheduleData, allCoursesData, currentFilter);
+                bindFilterEvents();
+                updateActiveButton(currentFilter);
+            } catch (error) {
+                console.error('Error loading schedule:', error);
+                document.getElementById('schedule-container').innerHTML = 
+                    '<div class="empty-state">Error loading schedule data. Please check that the data is properly embedded.</div>';
+            }
+        }
+
+        function displaySchedule(schedule, courses, filterDay = 'all') {
+            const container = document.getElementById('schedule-container');
+            
+            // Apply appropriate CSS class based on filter
+            if (filterDay === 'all') {
+                container.className = 'data-grid';
+            } else {
+                container.className = 'data-grid list-view';
+            }
+            
+            // Filter schedule data based on selected day
+            let filteredSchedule = schedule;
+            if (filterDay !== 'all') {
+                filteredSchedule = schedule.filter(event => 
+                    event['Day of Week'] === filterDay
+                );
+            }
+            
+            if (!filteredSchedule || filteredSchedule.length === 0) {
+                if (filterDay === 'all') {
+                    container.innerHTML = '<div class="empty-state">No schedule data available. Add schedule information to Schedule.json to display here.</div>';
+                } else {
+                    container.innerHTML = `<div class="empty-state">No classes scheduled for ${filterDay}. Try selecting a different day or view all days.</div>`;
+                }
+                return;
+            }
+
+            // Create a map of course IDs to course names for quick lookup
+            const courseMap = {};
+            courses.forEach(course => {
+                courseMap[course['Course ID']] = course['Course Name'];
+            });
+
+            // Sort schedule by time for better organization
+            const sortedSchedule = filteredSchedule.sort((a, b) => {
+                const timeA = new Date(a['Start Time'] || '');
+                const timeB = new Date(b['Start Time'] || '');
+                return timeA - timeB;
+            });
+
+            if (filterDay === 'all') {
+                // Grid layout for "All Days" view
+                container.innerHTML = sortedSchedule.map(event => {
+                    const startTime = new Date(event['Start Time'] || '');
+                    const endTime = new Date(event['End Time'] || '');
+                    const courseId = event['Course ID'] || 'Not specified';
+                    const courseName = courseMap[courseId] || 'Course Name Not Available';
+                    
+                    const formatTime = (date) => {
+                        if (!date || isNaN(date.getTime())) return 'Not specified';
+                        return date.toLocaleTimeString('en-US', { 
+                            hour: '2-digit', 
+                            minute: '2-digit',
+                            hour12: true 
+                        });
+                    };
+                    
+                    const formatTimeRange = () => {
+                        const start = formatTime(startTime);
+                        const end = formatTime(endTime);
+                        return start !== 'Not specified' && end !== 'Not specified' ? `${start} - ${end}` : 'Time Not Specified';
+                    };
+                    
+                    return `
+                        <div class="data-item" onclick="navigateToCourse('${courseId}')">
+                            <div class="schedule-tile">
+                                <div class="schedule-tile-header">
+                                    <div class="schedule-course-id">${courseId}</div>
+                                    <div class="schedule-course-name">${courseName}</div>
+                                    <span class="schedule-day-badge">${event['Day of Week'] || 'Not specified'}</span>
+                                </div>
+                                
+                                <div class="schedule-tile-body">
+                                    <div class="schedule-time-info">
+                                        <div class="schedule-time-display">${formatTimeRange()}</div>
+                                    </div>
+                                    
+                                    <div class="schedule-location-info">
+                                        <div class="schedule-location-text"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; vertical-align: middle; margin-right: 4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>${event['Location'] || 'Location Not Specified'}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            } else {
+                // List layout for daily view
+                container.innerHTML = sortedSchedule.map(event => {
+                    const startTime = new Date(event['Start Time'] || '');
+                    const endTime = new Date(event['End Time'] || '');
+                    const courseId = event['Course ID'] || 'Not specified';
+                    const courseName = courseMap[courseId] || 'Course Name Not Available';
+                    
+                    const formatTime = (date) => {
+                        if (!date || isNaN(date.getTime())) return 'Not specified';
+                        return date.toLocaleTimeString('en-US', { 
+                            hour: '2-digit', 
+                            minute: '2-digit',
+                            hour12: true 
+                        });
+                    };
+                    
+                    const formatTimeRange = () => {
+                        const start = formatTime(startTime);
+                        const end = formatTime(endTime);
+                        return start !== 'Not specified' && end !== 'Not specified' ? `${start} - ${end}` : 'Time Not Specified';
+                    };
+                    
+                    const calculateDuration = () => {
+                        if (!startTime || !endTime || isNaN(startTime.getTime()) || isNaN(endTime.getTime())) {
+                            return '';
+                        }
+                        const durationMs = endTime.getTime() - startTime.getTime();
+                        const durationHours = Math.floor(durationMs / (1000 * 60 * 60));
+                        const durationMinutes = Math.floor((durationMs % (1000 * 60 * 60)) / (1000 * 60));
+                        
+                        if (durationHours > 0 && durationMinutes > 0) {
+                            return `${durationHours}h ${durationMinutes}m`;
+                        } else if (durationHours > 0) {
+                            return `${durationHours}h`;
+                        } else if (durationMinutes > 0) {
+                            return `${durationMinutes}m`;
+                        }
+                        return '';
+                    };
+                    
+                    const getClassStatus = () => {
+                        if (!startTime || !endTime || isNaN(startTime.getTime()) || isNaN(endTime.getTime())) {
+                            return '';
+                        }
+                        
+                        const now = new Date();
+                        const currentDay = now.getDay();
+                        const targetDay = getDayNumber(event['Day of Week']);
+                        
+                        // Only apply status if it's the correct day of the week
+                        if (currentDay !== targetDay) {
+                            return '';
+                        }
+                        
+                        // Create today's date with the class times
+                        const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), startTime.getHours(), startTime.getMinutes());
+                        const todayEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate(), endTime.getHours(), endTime.getMinutes());
+                        
+                        // Check if class is currently happening
+                        if (now >= todayStart && now <= todayEnd) {
+                            return 'current';
+                        }
+                        
+                        // Check if class is completed
+                        if (now > todayEnd) {
+                            return 'completed';
+                        }
+                        
+                        // Check if class is within 1 hour (upcoming)
+                        const oneHourBefore = new Date(todayStart.getTime() - (60 * 60 * 1000));
+                        if (now >= oneHourBefore && now < todayStart) {
+                            return 'upcoming';
+                        }
+                        
+                        return '';
+                    };
+                    
+                    const getDayNumber = (dayName) => {
+                        const days = {
+                            'Sunday': 0, 'Monday': 1, 'Tuesday': 2, 'Wednesday': 3,
+                            'Thursday': 4, 'Friday': 5, 'Saturday': 6
+                        };
+                        return days[dayName] || -1;
+                    };
+                    
+                    const statusClass = getClassStatus();
+                    
+                    return `
+                        <div class="schedule-list-item ${statusClass}" onclick="navigateToCourse('${courseId}')">
+                            <div class="schedule-list-content">
+                                <div class="schedule-list-left">
+                                    <div class="schedule-list-time">
+                                        <div style="font-size: 1.4rem; font-weight: 800; margin-bottom: 0.2rem;">${formatTime(startTime)}</div>
+                                        <div style="font-size: 0.9rem; opacity: 0.9;">${formatTime(endTime)}</div>
+                                    </div>
+                                    <div class="schedule-list-info">
+                                        <div class="schedule-list-course-id">${courseId}</div>
+                                        <div class="schedule-list-course-name">${courseName}</div>
+                                        <div class="schedule-list-location">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
+                                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                            ${event['Location'] || 'Location Not Specified'}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="schedule-list-right">
+                                    <div class="schedule-list-day">${event['Day of Week'] || 'Not specified'}</div>
+                                    ${calculateDuration() ? `<div class="schedule-list-duration">${calculateDuration()}</div>` : ''}
+                                    <div class="schedule-list-arrow">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+        }
+
+        function updateActiveButton(activeDay) {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to the current day button
+            filterButtons.forEach(btn => {
+                if (btn.getAttribute('data-day') === activeDay) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        function bindFilterEvents() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Get the filter day
+                    const filterDay = button.getAttribute('data-day');
+                    currentFilter = filterDay;
+                    
+                    // Update active button
+                    updateActiveButton(filterDay);
+                    
+                    // Filter and display schedule
+                    displaySchedule(allScheduleData, allCoursesData, filterDay);
+                });
+            });
+        }
+
+        function navigateToCourse(courseId) {
+            // Navigate to the course page with the course ID as a parameter
+            window.location.href = `../courses/course-detail.html?id=${encodeURIComponent(courseId)}`;
+        }
+
+        // Auto-refresh status colors every minute
+        function startStatusRefresh() {
+            setInterval(() => {
+                if (currentFilter !== 'all') {
+                    displaySchedule(allScheduleData, allCoursesData, currentFilter);
+                }
+            }, 60000); // Refresh every minute
+        }
+
+        // Load schedule when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSchedule();
+            startStatusRefresh();
+        });
+    </script>
+</body>
+</html>
