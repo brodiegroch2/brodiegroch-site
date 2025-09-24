@@ -29,6 +29,12 @@ export default function Dashboard() {
   const [deliverables, setDeliverables] = useState<Deliverable[]>([]);
   const [countdown, setCountdown] = useState({ days: '--', hours: '--', minutes: '--' });
   const [nextAssignment, setNextAssignment] = useState('Loading...');
+  const [stats, setStats] = useState({
+    totalCourses: 0,
+    completedDeliverables: '0/0',
+    upcomingDeadlines: 0,
+    averageGrade: '0%'
+  });
 
   useEffect(() => {
     // Load data
@@ -48,6 +54,10 @@ export default function Dashboard() {
         // Calculate stats
         calculateStats(coursesData, deliverablesData);
         calculateCountdown(deliverablesData);
+        updateRecentActivity(deliverablesData);
+        updateUpcomingDeadlines(deliverablesData);
+        updateCoursePerformance(coursesData, deliverablesData);
+        updateProgressOverview(coursesData, deliverablesData);
       } catch (error) {
         console.error('Error loading data:', error);
       }
@@ -57,25 +67,73 @@ export default function Dashboard() {
   }, []);
 
   const calculateStats = (coursesData: Course[], deliverablesData: Deliverable[]) => {
-    // Update DOM elements with calculated stats
-    const totalCourses = coursesData.length;
-    const completedDeliverables = deliverablesData.filter(d => d["Grade %"] && d["Grade %"] !== "").length;
-    const upcomingDeadlines = deliverablesData.filter(d => {
-      const closeDate = new Date(d["Close Date"]);
-      const now = new Date();
-      const weekFromNow = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
-      return closeDate > now && closeDate <= weekFromNow;
+    // Count active courses
+    const activeCourses = coursesData.filter(course => 
+      course['Course ID'] && course['Course ID'] !== ''
+    ).length;
+
+    // Count completed deliverables (graded OR submitted)
+    const completedDeliverables = deliverablesData.filter(deliverable => {
+      const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
+                      deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
+      const isSubmitted = deliverable['Status'] === 'submitted';
+      return isGraded || isSubmitted;
     }).length;
+    const totalDeliverables = deliverablesData.filter(deliverable => 
+      deliverable['Course ID'] && deliverable['Course ID'] !== ''
+    ).length;
+
+    // Count upcoming deadlines (next 7 days) - exclude already graded items and submitted items
+    const now = new Date();
+    const nextWeek = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+    const upcomingDeadlines = deliverablesData.filter(deliverable => {
+      const dueDate = new Date(deliverable['Close Date']);
+      const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
+                      deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
+      const isSubmitted = deliverable['Status'] === 'submitted';
+      return dueDate >= now && dueDate <= nextWeek && !isGraded && !isSubmitted;
+    }).length;
+
+    // Calculate weighted average grade based on course averages and credit hours
+    const courseAverages: { [key: string]: { average: number; creditHours: number } } = {};
     
-    // Calculate average grade
-    const gradedDeliverables = deliverablesData.filter(d => d["Grade %"] && d["Grade %"] !== "");
-    const totalWeightedGrade = gradedDeliverables.reduce((sum, d) => {
-      const grade = parseFloat(d["Grade %"]) || 0;
-      const weight = parseFloat(d["Weight %"]) || 0;
-      return sum + (grade * weight / 100);
-    }, 0);
-    const totalWeight = gradedDeliverables.reduce((sum, d) => sum + (parseFloat(d["Weight %"]) || 0), 0);
-    const averageGrade = totalWeight > 0 ? Math.round(totalWeightedGrade / totalWeight * 100) / 100 : 0;
+    coursesData.forEach(course => {
+      const courseId = course['Course ID'];
+      const courseDeliverables = deliverablesData.filter(d => d['Course ID'] === courseId);
+      const gradedDeliverables = courseDeliverables.filter(d => 
+        d['Grade %'] && d['Grade %'] !== '' && 
+        d['Grade %'] !== 'Not specified' && d['Grade %'] !== 'Not graded'
+      );
+      
+      if (gradedDeliverables.length > 0) {
+        const totalGrade = gradedDeliverables.reduce((sum, deliverable) => {
+          return sum + parseFloat(deliverable['Grade %']);
+        }, 0);
+        const averageGrade = totalGrade / gradedDeliverables.length;
+        courseAverages[courseId] = {
+          average: averageGrade,
+          creditHours: parseFloat(course['Credit Hours']) || 0
+        };
+      }
+    });
+
+    let weightedSum = 0;
+    let totalCreditHours = 0;
+    
+    Object.values(courseAverages).forEach(courseData => {
+      weightedSum += courseData.average * courseData.creditHours;
+      totalCreditHours += courseData.creditHours;
+    });
+
+    const averageGrade = totalCreditHours > 0 ? Math.round(weightedSum / totalCreditHours) : 0;
+
+    // Update state for display
+    setStats({
+      totalCourses: activeCourses,
+      completedDeliverables: `${completedDeliverables}/${totalDeliverables}`,
+      upcomingDeadlines: upcomingDeadlines,
+      averageGrade: `${averageGrade}%`
+    });
   };
 
   const calculateCountdown = (deliverablesData: Deliverable[]) => {
@@ -114,6 +172,200 @@ export default function Dashboard() {
       
       return () => clearInterval(interval);
     }
+  };
+
+  const updateRecentActivity = (deliverablesData: Deliverable[]) => {
+    const container = document.getElementById('recent-activity');
+    if (!container) return;
+
+    // Get recent deliverables (last 10)
+    const recentDeliverables = deliverablesData
+      .filter(d => d['Close Date'])
+      .sort((a, b) => new Date(b['Close Date']).getTime() - new Date(a['Close Date']).getTime())
+      .slice(0, 10);
+
+    if (recentDeliverables.length === 0) {
+      container.innerHTML = '<div class="empty-state">No recent activity</div>';
+      return;
+    }
+
+    container.innerHTML = recentDeliverables.map(deliverable => `
+      <div class="activity-item">
+        <div class="activity-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <polyline points="14,2 14,8 20,8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
+        <div class="activity-content">
+          <div class="activity-title">${deliverable['Deliverable']}</div>
+          <div class="activity-subtitle">${deliverable['Course ID']} • ${new Date(deliverable['Close Date']).toLocaleDateString()}</div>
+        </div>
+        <div class="activity-status ${deliverable['Grade %'] ? 'completed' : 'pending'}">
+          ${deliverable['Grade %'] ? 'Completed' : 'Pending'}
+        </div>
+      </div>
+    `).join('');
+  };
+
+  const updateUpcomingDeadlines = (deliverablesData: Deliverable[]) => {
+    const container = document.getElementById('upcoming-deadlines-list');
+    if (!container) return;
+
+    const now = new Date();
+    const upcomingDeadlines = deliverablesData.filter(deliverable => {
+      const dueDate = new Date(deliverable['Close Date']);
+      const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
+                      deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
+      const isSubmitted = deliverable['Status'] === 'submitted';
+      return dueDate > now && !isGraded && !isSubmitted && deliverable['Close Date'];
+    }).sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime());
+
+    if (upcomingDeadlines.length === 0) {
+      container.innerHTML = '<div class="empty-state">No upcoming deadlines</div>';
+      return;
+    }
+
+    container.innerHTML = upcomingDeadlines.slice(0, 5).map(deliverable => {
+      const dueDate = new Date(deliverable['Close Date']);
+      const daysUntilDue = Math.ceil((dueDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+      
+      return `
+        <div class="deadline-item">
+          <div class="deadline-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+              <polyline points="12,6 12,12 16,14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+          <div class="deadline-content">
+            <div class="deadline-title">${deliverable['Deliverable']}</div>
+            <div class="deadline-subtitle">${deliverable['Course ID']} • ${dueDate.toLocaleDateString()}</div>
+          </div>
+          <div class="deadline-countdown ${daysUntilDue <= 3 ? 'urgent' : ''}">
+            ${daysUntilDue} day${daysUntilDue !== 1 ? 's' : ''}
+          </div>
+        </div>
+      `;
+    }).join('');
+  };
+
+  const updateCoursePerformance = (coursesData: Course[], deliverablesData: Deliverable[]) => {
+    const container = document.getElementById('course-performance-chart');
+    if (!container) return;
+
+    const courseAverages: { [key: string]: { average: number; courseName: string; gradedCount: number; totalCount: number } } = {};
+    
+    coursesData.forEach(course => {
+      const courseId = course['Course ID'];
+      const courseDeliverables = deliverablesData.filter(d => d['Course ID'] === courseId);
+      const gradedDeliverables = courseDeliverables.filter(d => 
+        d['Grade %'] && d['Grade %'] !== '' && 
+        d['Grade %'] !== 'Not specified' && d['Grade %'] !== 'Not graded'
+      );
+      
+      if (gradedDeliverables.length > 0) {
+        const totalGrade = gradedDeliverables.reduce((sum, deliverable) => {
+          return sum + parseFloat(deliverable['Grade %']);
+        }, 0);
+        const averageGrade = (totalGrade / gradedDeliverables.length).toFixed(1);
+        courseAverages[courseId] = {
+          average: parseFloat(averageGrade),
+          courseName: course['Course Name'],
+          gradedCount: gradedDeliverables.length,
+          totalCount: courseDeliverables.length
+        };
+      }
+    });
+    
+    if (Object.keys(courseAverages).length === 0) {
+      container.innerHTML = '<div class="empty-state">No graded assignments yet</div>';
+      return;
+    }
+    
+    container.innerHTML = Object.entries(courseAverages).map(([courseId, data]) => `
+      <div class="course-performance-item">
+        <div class="course-performance-header">
+          <div class="course-performance-id">${courseId}</div>
+          <div class="course-performance-average ${getGradeClass(data.average)}">${data.average}%</div>
+        </div>
+        <div class="course-performance-name">${data.courseName}</div>
+        <div class="course-performance-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: ${data.average}%"></div>
+          </div>
+          <div class="course-performance-stats">${data.gradedCount}/${data.totalCount} assignments graded</div>
+        </div>
+      </div>
+    `).join('');
+  };
+
+  const updateProgressOverview = (coursesData: Course[], deliverablesData: Deliverable[]) => {
+    const container = document.getElementById('progress-overview');
+    if (!container) return;
+
+    const now = new Date();
+    const semesterEnd = new Date('2025-12-20'); // Approximate semester end
+    const semesterStart = new Date('2025-09-01'); // Approximate semester start
+    const totalDays = semesterEnd.getTime() - semesterStart.getTime();
+    const daysPassed = now.getTime() - semesterStart.getTime();
+    const semesterProgress = Math.min(100, Math.max(0, (daysPassed / totalDays) * 100));
+    
+    const totalDeliverables = deliverablesData.length;
+    const completedDeliverables = deliverablesData.filter(d => 
+      d['Grade %'] && d['Grade %'] !== '' && 
+      d['Grade %'] !== 'Not specified' && d['Grade %'] !== 'Not graded'
+    ).length;
+    const completionProgress = totalDeliverables > 0 ? (completedDeliverables / totalDeliverables) * 100 : 0;
+    
+    container.innerHTML = `
+      <div class="progress-item">
+        <div class="progress-header">
+          <div class="progress-title">Semester Progress</div>
+          <div class="progress-percentage">${semesterProgress.toFixed(1)}%</div>
+        </div>
+        <div class="progress-bar-large">
+          <div class="progress-fill-large" style="width: ${semesterProgress}%"></div>
+        </div>
+      </div>
+      
+      <div class="progress-item">
+        <div class="progress-header">
+          <div class="progress-title">Assignment Completion</div>
+          <div class="progress-percentage">${completionProgress.toFixed(1)}%</div>
+        </div>
+        <div class="progress-bar-large">
+          <div class="progress-fill-large completion" style="width: ${completionProgress}%"></div>
+        </div>
+        <div class="progress-stats">${completedDeliverables} of ${totalDeliverables} assignments completed</div>
+      </div>
+      
+      <div class="progress-item">
+        <div class="progress-header">
+          <div class="progress-title">Days Remaining</div>
+          <div class="progress-percentage">${Math.max(0, Math.ceil((semesterEnd.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)))}</div>
+        </div>
+        <div class="progress-info">
+          <div class="progress-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
+              <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+          <div class="progress-text">Days until semester end</div>
+        </div>
+      </div>
+    `;
+  };
+
+  const getGradeClass = (percentage: number) => {
+    if (percentage >= 95) return 'grade-excellent';
+    if (percentage >= 85) return 'grade-good';
+    if (percentage >= 75) return 'grade-average';
+    if (percentage >= 65) return 'grade-below-average';
+    return 'grade-poor';
   };
 
   return (
@@ -176,7 +428,7 @@ export default function Dashboard() {
             <div className="stat-glow"></div>
           </div>
           <div className="stat-content">
-            <div className="stat-number">{courses.length}</div>
+            <div className="stat-number">{stats.totalCourses}</div>
             <div className="stat-label">Active Courses</div>
             <div className="stat-trend">+2 this semester</div>
           </div>
@@ -193,7 +445,7 @@ export default function Dashboard() {
             <div className="stat-glow"></div>
           </div>
           <div className="stat-content">
-            <div className="stat-number">{deliverables.filter(d => d["Grade %"] && d["Grade %"] !== "").length}</div>
+            <div className="stat-number">{stats.completedDeliverables}</div>
             <div className="stat-label">Completed</div>
             <div className="stat-trend">Great progress!</div>
           </div>
@@ -210,12 +462,7 @@ export default function Dashboard() {
             <div className="stat-glow"></div>
           </div>
           <div className="stat-content">
-            <div className="stat-number">{deliverables.filter(d => {
-              const closeDate = new Date(d["Close Date"]);
-              const now = new Date();
-              const weekFromNow = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
-              return closeDate > now && closeDate <= weekFromNow;
-            }).length}</div>
+            <div className="stat-number">{stats.upcomingDeadlines}</div>
             <div className="stat-label">Due This Week</div>
             <div className="stat-trend">Stay focused!</div>
           </div>
@@ -233,7 +480,7 @@ export default function Dashboard() {
             <div className="stat-glow"></div>
           </div>
           <div className="stat-content">
-            <div className="stat-number">97%</div>
+            <div className="stat-number">{stats.averageGrade}</div>
             <div className="stat-label">Average Grade</div>
             <div className="stat-trend">Excellent work!</div>
           </div>
@@ -296,9 +543,52 @@ export default function Dashboard() {
               <h3>Quick Links</h3>
               <p>Access important resources</p>
             </div>
-          </Link>
+        </Link>
+      </div>
+    </div>
+
+    {/* Dashboard Sections */}
+    <div className="dashboard-sections">
+      <div className="dashboard-section">
+        <h2 className="section-title">Recent Activity</h2>
+        <div className="activity-list">
+          <div className="empty-state">Loading recent activity...</div>
+        </div>
+        <div className="pagination" style={{ display: 'none' }}>
+          <button className="pagination-btn" disabled>Previous</button>
+          <span className="pagination-info"></span>
+          <button className="pagination-btn">Next</button>
+        </div>
+      </div>
+      
+      <div className="dashboard-section">
+        <h2 className="section-title">Upcoming Deadlines</h2>
+        <div className="deadlines-list">
+          <div className="empty-state">Loading upcoming deadlines...</div>
+        </div>
+        <div className="pagination" style={{ display: 'none' }}>
+          <button className="pagination-btn" disabled>Previous</button>
+          <span className="pagination-info"></span>
+          <button className="pagination-btn">Next</button>
         </div>
       </div>
     </div>
-  );
+
+    <div className="dashboard-sections">
+      <div className="dashboard-section course-performance">
+        <h2 className="section-title">Course Performance</h2>
+        <div className="performance-chart">
+          <div className="empty-state">Loading course performance...</div>
+        </div>
+      </div>
+      
+      <div className="dashboard-section progress-overview">
+        <h2 className="section-title">Progress Overview</h2>
+        <div className="progress-overview">
+          <div className="empty-state">Loading progress overview...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
 }
