@@ -41,6 +41,33 @@ export default function QuickLinksPage() {
     return siteName.charAt(0).toUpperCase();
   };
 
+  const renderAppIcon = (link: any) => {
+    const imageId = link['Link_image_id'] || '';
+    const hasImage = imageId && imageId !== 'No image' && imageId !== '';
+    
+    if (hasImage) {
+      return (
+        <img 
+          src={`/images/${imageId}`} 
+          alt={link['Site Name'] || ''} 
+          className="app-image"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.style.display = 'none';
+            const fallback = target.nextElementSibling as HTMLElement;
+            if (fallback) fallback.style.display = 'flex';
+          }}
+        />
+      );
+    }
+    
+    return (
+      <div className="fallback-icon">
+        {getAppIcon(link['Site Name'] || '')}
+      </div>
+    );
+  };
+
   if (loading) {
     return (
       <div className="container">
