@@ -28,7 +28,7 @@ interface Deliverable {
 
 export default function CourseDetailPage() {
   const params = useParams();
-  const courseId = params.id as string;
+  const courseId = decodeURIComponent(params.id as string);
   
   const [course, setCourse] = useState<Course | null>(null);
   const [deliverables, setDeliverables] = useState<Deliverable[]>([]);
