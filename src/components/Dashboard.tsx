@@ -246,17 +246,15 @@ export default function Dashboard() {
       <div class="activity-item">
         <div class="activity-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
           </svg>
         </div>
         <div class="activity-content">
           <div class="activity-title">${deliverable['Deliverable']}</div>
-          <div class="activity-subtitle">${deliverable['Course ID']} • ${new Date(deliverable['Close Date']).toLocaleDateString()}</div>
+          <div class="activity-details">${deliverable['Course ID']} • ${new Date(deliverable['Close Date']).toLocaleDateString()}</div>
         </div>
-        <div class="activity-status completed">
-          ${deliverable['Grade %']}%
-        </div>
+        <div class="activity-grade">${deliverable['Grade %']}%</div>
       </div>
     `).join('');
 
@@ -309,19 +307,12 @@ export default function Dashboard() {
       
       return `
         <div class="deadline-item">
-          <div class="deadline-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-              <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
+          <div class="deadline-date">${dueDate.toLocaleDateString()}</div>
           <div class="deadline-content">
             <div class="deadline-title">${deliverable['Deliverable']}</div>
-            <div class="deadline-subtitle">${deliverable['Course ID']} • ${dueDate.toLocaleDateString()}</div>
+            <div class="deadline-course">${deliverable['Course ID']}</div>
           </div>
-          <div class="deadline-countdown ${daysUntilDue <= 3 ? 'urgent' : ''}">
-            ${daysUntilDue} day${daysUntilDue !== 1 ? 's' : ''}
-          </div>
+          <div class="deadline-countdown">${daysUntilDue} days</div>
         </div>
       `;
     }).join('');

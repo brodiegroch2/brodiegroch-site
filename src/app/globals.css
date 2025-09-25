@@ -1723,6 +1723,45 @@ body {
     margin-bottom: 0.25rem;
 }
 
+/* Dashboard Activity and Deadline Styles - Reference Implementation */
+.activity-details {
+    color: #808080;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.activity-grade {
+    color: #4caf50;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: auto;
+}
+
+.deadline-date {
+    color: #ff9800;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    background: rgba(255, 152, 0, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.deadline-course {
+    color: #808080;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.deadline-countdown {
+    color: #ff9800;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: auto;
+}
+
 .status-value {
     color: #4caf50;
     font-size: 0.9rem;
