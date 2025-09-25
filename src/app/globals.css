@@ -293,9 +293,11 @@ body {
         0 4px 20px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 180px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 120px;
+    gap: 1.5rem;
 }
 
 .stat-card.primary {
@@ -317,7 +319,7 @@ body {
 .stat-icon-wrapper {
     position: relative;
     display: inline-block;
-    margin-bottom: 1rem;
+    flex-shrink: 0;
 }
 
 .stat-icon {
@@ -359,7 +361,8 @@ body {
 .stat-content {
     position: relative;
     z-index: 2;
-    text-align: center;
+    text-align: left;
+    flex: 1;
 }
 
 .stat-number {
@@ -1734,10 +1737,13 @@ body {
     
     .stat-card {
         padding: 1rem;
+        gap: 1rem;
     }
     
     .stat-icon {
-        font-size: 1.5rem;
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
     }
     
     .stat-number {
