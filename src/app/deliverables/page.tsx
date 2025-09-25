@@ -95,6 +95,26 @@ export default function DeliverablesPage() {
     );
   };
 
+  const getDeliverableClasses = (deliverable: Deliverable) => {
+    const classes = ['deliverable-card'];
+    
+    // Check if submitted
+    if (deliverable['Status'] === 'submitted') {
+      classes.push('submitted');
+    }
+    
+    // Check if due within next week
+    const now = new Date();
+    const dueDate = new Date(deliverable['Close Date']);
+    const daysUntilDue = Math.ceil((dueDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+    
+    if (daysUntilDue >= 0 && daysUntilDue <= 7) {
+      classes.push('due-soon');
+    }
+    
+    return classes.join(' ');
+  };
+
   if (loading) {
     return (
       <div className="container">
@@ -158,12 +178,9 @@ export default function DeliverablesPage() {
           ) : (
             sortedDeliverables.map((deliverable, index) => {
               const hasGrade = deliverable['Grade %'] && deliverable['Grade %'] !== '' && deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
-              const isSubmitted = deliverable['Status'] === 'submitted';
-              let cardClass = 'deliverable-card';
+              let cardClass = getDeliverableClasses(deliverable);
               if (hasGrade) {
                 cardClass += ' graded';
-              } else if (isSubmitted) {
-                cardClass += ' submitted';
               }
               
               return (

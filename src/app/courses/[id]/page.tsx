@@ -165,6 +165,26 @@ export default function CourseDetailPage() {
     );
   };
 
+  const getDeliverableClasses = (deliverable: Deliverable) => {
+    const classes = ['deliverable-item', 'clickable-deliverable'];
+    
+    // Check if submitted
+    if (deliverable['Status'] === 'submitted') {
+      classes.push('submitted');
+    }
+    
+    // Check if due within next week
+    const now = new Date();
+    const dueDate = new Date(deliverable['Close Date']);
+    const daysUntilDue = Math.ceil((dueDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+    
+    if (daysUntilDue >= 0 && daysUntilDue <= 7) {
+      classes.push('due-soon');
+    }
+    
+    return classes.join(' ');
+  };
+
   if (loading) {
     return (
       <div className="container">
@@ -288,7 +308,7 @@ export default function CourseDetailPage() {
                     .filter(d => d['Status'] === 'pending')
                     .sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime())
                     .map((deliverable, index) => (
-                      <div key={index} className="deliverable-item clickable-deliverable" onClick={() => handleDeliverableClick(deliverable)}>
+                      <div key={index} className={getDeliverableClasses(deliverable)} onClick={() => handleDeliverableClick(deliverable)}>
                         <div className="deliverable-header">
                           <div className="deliverable-title">{deliverable['Deliverable']}</div>
                           <div className="deliverable-course">{deliverable['Course ID']}</div>
@@ -333,7 +353,7 @@ export default function CourseDetailPage() {
                     .filter(d => d['Status'] === 'submitted')
                     .sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime())
                     .map((deliverable, index) => (
-                      <div key={index} className="deliverable-item clickable-deliverable" onClick={() => handleDeliverableClick(deliverable)}>
+                      <div key={index} className={getDeliverableClasses(deliverable)} onClick={() => handleDeliverableClick(deliverable)}>
                         <div className="deliverable-header">
                           <div className="deliverable-title">{deliverable['Deliverable']}</div>
                           <div className="deliverable-course">{deliverable['Course ID']}</div>
@@ -378,7 +398,7 @@ export default function CourseDetailPage() {
                     .filter(d => d['Status'] === 'graded')
                     .sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime())
                     .map((deliverable, index) => (
-                      <div key={index} className="deliverable-item clickable-deliverable" onClick={() => handleDeliverableClick(deliverable)}>
+                      <div key={index} className={getDeliverableClasses(deliverable)} onClick={() => handleDeliverableClick(deliverable)}>
                         <div className="deliverable-header">
                           <div className="deliverable-title">{deliverable['Deliverable']}</div>
                           <div className="deliverable-course">{deliverable['Course ID']}</div>
