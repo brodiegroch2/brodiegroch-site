@@ -1040,6 +1040,20 @@ body {
     border-color: #4a9eff;
 }
 
+/* Remove underlines from schedule page links */
+.data-item {
+    text-decoration: none;
+    color: inherit;
+}
+
+.data-item:hover {
+    text-decoration: none;
+}
+
+.data-item * {
+    text-decoration: none;
+}
+
 /* Compact Schedule Tile */
 .schedule-tile {
     padding: 1.5rem;
