@@ -612,12 +612,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.action-icon svg {
-    width: 24px;
-    height: 24px;
-    color: #ffffff;
-}
-
 .action-content {
     flex: 1;
 }
@@ -1692,7 +1686,6 @@ body {
         font-size: 0.8rem;
     }
 }
-}
 @media (max-width: 480px) {
     .nav-container {
         padding: 0 0.75rem;
@@ -2683,15 +2676,6 @@ body {
     height: 3px;
     background: linear-gradient(90deg, #4a9eff, #6bb6ff);
     border-radius: 2px;
-}
-
-/* Performance Chart and Progress Overview */
-.performance-chart {
-    margin-top: 1rem;
-}
-
-.progress-overview {
-    margin-top: 1rem;
 }
 
 /* Empty State Styles */
