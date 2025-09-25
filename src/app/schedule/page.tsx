@@ -78,7 +78,12 @@ export default function SchedulePage() {
     });
 
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  const availableDays = Array.from(new Set(schedule.map(item => item["Day of Week"])));
+  const availableDays = Array.from(new Set(schedule.map(item => item["Day of Week"])))
+    .sort((a, b) => {
+      const indexA = days.indexOf(a);
+      const indexB = days.indexOf(b);
+      return indexA - indexB;
+    });
 
   const formatTime = (dateTimeString: string) => {
     if (!dateTimeString) return 'Not specified';
@@ -138,8 +143,9 @@ export default function SchedulePage() {
               key={day}
               className={`filter-btn ${filter === day ? 'active' : ''}`}
               onClick={() => setFilter(day)}
+              title={day} // Show full day name on hover
             >
-              {day}
+              {day.charAt(0)}
             </button>
           ))}
         </div>
