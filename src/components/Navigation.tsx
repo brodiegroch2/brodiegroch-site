@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function Navigation() {
@@ -19,15 +18,7 @@ export default function Navigation() {
   return (
     <nav className="main-nav">
       <div className="nav-container">
-        <Link href="/" className="nav-logo">
-          <Image 
-            src="/images/Logo.png" 
-            alt="UniHUB Logo" 
-            width={120} 
-            height={40}
-            priority
-          />
-        </Link>
+        <h1 className="nav-title">UniHUB</h1>
         <ul className="nav-links">
           {navLinks.map((link) => (
             <li key={link.href}>

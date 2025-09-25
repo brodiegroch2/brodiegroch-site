@@ -47,20 +47,11 @@ body {
     justify-content: space-between;
 }
 
-.nav-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
-
-.nav-logo:hover {
-    opacity: 0.8;
-}
-
-.nav-logo img {
-    height: 40px;
-    width: auto;
+.nav-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
 }
 
 .nav-links {
@@ -1695,7 +1686,6 @@ body {
         font-size: 0.8rem;
     }
 }
-}
 @media (max-width: 480px) {
     .nav-container {
         padding: 0 0.75rem;
@@ -1709,9 +1699,6 @@ body {
         font-size: 0.85rem;
     }
     
-    .nav-logo img {
-        height: 32px;
-    }
     
     .hero-title {
         font-size: 1.8rem;
