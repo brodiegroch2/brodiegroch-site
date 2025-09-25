@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import DeliverableEditModal from '@/components/DeliverableEditModal';
 
 interface Deliverable {
   "Course ID": string;
@@ -11,12 +12,15 @@ interface Deliverable {
   "Weight %": string;
   "Grade %": string;
   "Letter Grade": string;
-  "Status"?: string;
+  "GPA": string;
+  "Status": string;
 }
 
 export default function TodoPage() {
   const [deliverables, setDeliverables] = useState<Deliverable[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedDeliverable, setSelectedDeliverable] = useState<Deliverable | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const loadDeliverables = async () => {
@@ -33,6 +37,28 @@ export default function TodoPage() {
 
     loadDeliverables();
   }, []);
+
+  const handleDeliverableClick = (deliverable: Deliverable) => {
+    setSelectedDeliverable(deliverable);
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setSelectedDeliverable(null);
+  };
+
+  const handleDeliverableUpdate = (updatedDeliverable: Deliverable) => {
+    setDeliverables(prevDeliverables => 
+      prevDeliverables.map(deliverable => 
+        deliverable['Course ID'] === updatedDeliverable['Course ID'] &&
+        deliverable['Deliverable'] === updatedDeliverable['Deliverable'] &&
+        deliverable['Close Date'] === updatedDeliverable['Close Date']
+          ? updatedDeliverable
+          : deliverable
+      )
+    );
+  };
 
   // Filter for deliverables without due dates and sort them
   const undatedDeliverables = deliverables
@@ -80,7 +106,11 @@ export default function TodoPage() {
               const cardClass = hasGrade ? 'deliverable-card graded' : 'deliverable-card todo-card';
               
               return (
-                <div key={index} className={cardClass}>
+                <div 
+                  key={index} 
+                  className={`${cardClass} clickable-deliverable`}
+                  onClick={() => handleDeliverableClick(deliverable)}
+                >
                   <div className="deliverable-header">
                     <div className="deliverable-category">{deliverable['Category'] || 'Assignment'}</div>
                     <div className="deliverable-weight">{deliverable['Weight %'] || '0'}%</div>
@@ -127,6 +157,13 @@ export default function TodoPage() {
           )}
         </div>
       </div>
+
+      <DeliverableEditModal
+        deliverable={selectedDeliverable}
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        onSave={handleDeliverableUpdate}
+      />
     </div>
   );
 }
