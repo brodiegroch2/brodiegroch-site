@@ -12,80 +12,41 @@ export default function PasswordProtection({ children }: PasswordProtectionProps
   const [error, setError] = useState('');
   const [isCheckingIP, setIsCheckingIP] = useState(true);
 
-  // Generate device fingerprint
-  const generateDeviceFingerprint = () => {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    ctx?.textBaseline && (ctx.textBaseline = 'top');
-    ctx?.font && (ctx.font = '14px Arial');
-    ctx?.fillText && ctx.fillText('Device fingerprint', 2, 2);
-    
-    const fingerprint = [
-      navigator.userAgent,
-      navigator.language,
-      screen.width + 'x' + screen.height,
-      new Date().getTimezoneOffset(),
-      canvas.toDataURL()
-    ].join('|');
-    
-    return btoa(fingerprint).slice(0, 32); // Base64 encode and truncate
-  };
-
   useEffect(() => {
-    // Check if user is already authenticated (stored in sessionStorage)
-    const authStatus = sessionStorage.getItem('authenticated');
+    // Check if user is already authenticated (stored in localStorage for persistence)
+    const authStatus = localStorage.getItem('authenticated');
     if (authStatus === 'true') {
       setIsAuthenticated(true);
       setIsCheckingIP(false);
       return;
     }
 
-    // Check IP address and device fingerprint to bypass password
-    const checkDeviceAccess = async () => {
+    // Check IP address to bypass password for specific IP
+    const checkIP = async () => {
       try {
-        // Check IP address
         const response = await fetch('https://ipinfo.io/ip');
         const userIP = await response.text();
-        const allowedIPs = [
-          '161.184.170.120', // Your current IP address
-          // Add more IP addresses here for trusted devices
-          // '192.168.1.100', // Example: Home router IP
-          // '10.0.0.50',     // Example: Office network IP
-        ];
+        const allowedIP = '161.184.170.120'; // Your current IP address
         
-        // Check device fingerprint
-        const deviceFingerprint = generateDeviceFingerprint();
-        const allowedDevices = [
-          // Add device fingerprints here for trusted devices
-          // You can get these by logging the fingerprint on trusted devices
-          // Example: 'aGVsbG8gd29ybGQgdGhpcyBpcyBhIGZpbmdlcnByaW50'
-        ];
-        
-        // Allow access if IP matches OR device fingerprint matches
-        if (allowedIPs.includes(userIP.trim()) || allowedDevices.includes(deviceFingerprint)) {
+        if (userIP.trim() === allowedIP) {
           setIsAuthenticated(true);
-          sessionStorage.setItem('authenticated', 'true');
-          console.log('Device access granted:', { ip: userIP.trim(), fingerprint: deviceFingerprint });
-        } else {
-          console.log('Device not recognized:', { ip: userIP.trim(), fingerprint: deviceFingerprint });
-          // Uncomment the line below to see the fingerprint for adding new devices
-          // console.log('Add this fingerprint to allowedDevices:', deviceFingerprint);
+          localStorage.setItem('authenticated', 'true');
         }
       } catch (error) {
-        console.log('Could not check device access');
+        console.log('Could not check IP address');
       } finally {
         setIsCheckingIP(false);
       }
     };
 
-    checkDeviceAccess();
+    checkIP();
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (password === '$408621geidorB') {
       setIsAuthenticated(true);
-      sessionStorage.setItem('authenticated', 'true');
+      localStorage.setItem('authenticated', 'true');
       setError('');
     } else {
       setError('Incorrect password. Please try again.');
