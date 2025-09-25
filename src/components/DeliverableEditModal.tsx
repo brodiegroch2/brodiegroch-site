@@ -155,11 +155,13 @@ export default function DeliverableEditModal({
 
       const updatedDeliverable: Deliverable = {
         ...deliverable,
-        'Grade %': grade,
-        'Letter Grade': letterGrade,
-        'Status': status,
+        'Grade %': grade || '',
+        'Letter Grade': letterGrade || '',
+        'Status': status || 'pending',
         'Close Date': formattedDueDate
       };
+
+      console.log('Sending deliverable update:', updatedDeliverable);
 
       // Call the API to update the deliverable
       const response = await fetch('/api/data/deliverables', {
@@ -174,12 +176,13 @@ export default function DeliverableEditModal({
         onSave(updatedDeliverable);
         onClose();
       } else {
-        console.error('Failed to update deliverable');
-        alert('Failed to update deliverable. Please try again.');
+        const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+        console.error('Failed to update deliverable:', errorData);
+        alert(`Failed to update deliverable: ${errorData.error || 'Unknown error'}`);
       }
     } catch (error) {
       console.error('Error updating deliverable:', error);
-      alert('Error updating deliverable. Please try again.');
+      alert(`Error updating deliverable: ${error instanceof Error ? error.message : 'Unknown error'}`);
     } finally {
       setIsLoading(false);
     }
@@ -290,18 +293,6 @@ export default function DeliverableEditModal({
             )}
           </div>
 
-          <div className="form-group">
-            <label className="form-label" htmlFor="letterGrade">Letter Grade</label>
-            <input
-              id="letterGrade"
-              type="text"
-              value={letterGrade}
-              onChange={(e) => setLetterGrade(e.target.value)}
-              className="form-input"
-              placeholder="Auto-calculated from percentage"
-              readOnly
-            />
-          </div>
 
 
           <div className="form-group">
