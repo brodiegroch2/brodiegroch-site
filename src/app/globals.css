@@ -1901,6 +1901,7 @@ body {
         font-size: 0.8rem;
     }
 }
+
 @media (max-width: 480px) {
     .nav-container {
         padding: 0 0.75rem;
