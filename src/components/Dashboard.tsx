@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import DeliverableEditModal from './DeliverableEditModal';
-import { calculateCourseGPA } from '@/utils/gpaCalculator';
+import { calculateCourseGPA, calculateGradeAndGPA } from '@/utils/gpaCalculator';
 
 interface Course {
   "Course ID": string;
@@ -142,9 +142,9 @@ export default function Dashboard() {
 
     const averageGrade = totalCreditHours > 0 ? Math.round(weightedSum / totalCreditHours) : 0;
 
-    // Calculate overall GPA from all deliverables
-    const gpaStats = calculateCourseGPA(deliverablesData);
-    const overallGPA = gpaStats.gpa.toFixed(1);
+    // Calculate GPA based on average grade percentage using grading scale
+    const gradeResult = calculateGradeAndGPA(averageGrade);
+    const overallGPA = gradeResult.gradePoints.toFixed(1);
 
     // Update state for display
     setStats({
