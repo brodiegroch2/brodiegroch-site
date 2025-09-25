@@ -1327,6 +1327,8 @@ body {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 
 .course-card::before {
@@ -1345,6 +1347,15 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(74, 158, 255, 0.2);
     border-color: #4a9eff;
+    text-decoration: none;
+}
+
+.course-card:hover * {
+    text-decoration: none;
+}
+
+.course-card * {
+    text-decoration: none;
 }
 
 .course-header {
