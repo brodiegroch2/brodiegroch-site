@@ -2520,14 +2520,19 @@ body {
 /* Pagination Styles - Updated to Match Student App Project Reference */
 .pagination {
     display: flex !important;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    padding: 1rem 0;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    margin-top: 1.5rem !important;
+    padding: 1rem 0 !important;
+    visibility: visible !important;
 }
 
-.pagination-btn {
+.pagination-btn,
+#recent-activity-prev,
+#recent-activity-next,
+#upcoming-deadlines-prev,
+#upcoming-deadlines-next {
     background: #2d2d2d !important;
     border: 1px solid #404040 !important;
     border-radius: 25px !important;
@@ -2535,13 +2540,14 @@ body {
     color: #e0e0e0 !important;
     font-size: 0.9rem !important;
     font-weight: 600 !important;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    min-width: 100px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+    min-width: 100px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    font-family: inherit !important;
 }
 
 .pagination-btn::before {
@@ -2593,7 +2599,9 @@ body {
     display: none;
 }
 
-.pagination-info {
+.pagination-info,
+#recent-activity-page-info,
+#upcoming-deadlines-page-info {
     color: #b0b0b0 !important;
     font-size: 0.9rem !important;
     font-weight: 500 !important;
@@ -2601,6 +2609,7 @@ body {
     background: rgba(255, 255, 255, 0.05) !important;
     border-radius: 8px !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    display: inline-block !important;
 }
 
 /* Course Performance Styles */
@@ -3118,31 +3127,35 @@ body {
 }
 
 /* Performance Chart and Progress Overview */
-.performance-chart {
-    margin-top: 1rem;
+.performance-chart,
+#course-performance-chart {
+    margin-top: 1rem !important;
 }
 
-.progress-overview {
-    margin-top: 1rem;
+.progress-overview,
+#progress-overview {
+    margin-top: 1rem !important;
 }
 
 /* Ensure dashboard sections are properly styled */
-.dashboard-section.course-performance {
-    background: #1a1a1a;
-    border-radius: 20px;
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
+.dashboard-section.course-performance,
+.dashboard-sections .dashboard-section.course-performance {
+    background: #1a1a1a !important;
+    border-radius: 20px !important;
+    padding: 1.5rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    position: relative !important;
+    overflow: hidden !important;
 }
 
-.dashboard-section.progress-overview {
-    background: #1a1a1a;
-    border-radius: 20px;
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
+.dashboard-section.progress-overview,
+.dashboard-sections .dashboard-section.progress-overview {
+    background: #1a1a1a !important;
+    border-radius: 20px !important;
+    padding: 1.5rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    position: relative !important;
+    overflow: hidden !important;
 }
 
 /* Empty State Styles */
