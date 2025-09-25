@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import DeliverableEditModal from '@/components/DeliverableEditModal';
+import { calculateCourseGPA } from '@/utils/gpaCalculator';
 
 interface Course {
   "Course ID": string;
@@ -304,6 +305,10 @@ export default function CourseDetailPage() {
             <div className="course-detail">
               <div className="course-detail-label">Completion %</div>
               <div className="course-detail-value">{calculateCompletionPercentage(deliverables)}%</div>
+            </div>
+            <div className="course-detail">
+              <div className="course-detail-label">GPA</div>
+              <div className="course-detail-value">{calculateCourseGPA(deliverables).gpa}</div>
             </div>
           </div>
           

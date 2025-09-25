@@ -1,0 +1,74 @@
+[
+  {
+    "minPercentage": 90,
+    "maxPercentage": 100,
+    "letterGrade": "A+",
+    "gradePoints": 4.0
+  },
+  {
+    "minPercentage": 85,
+    "maxPercentage": 89,
+    "letterGrade": "A",
+    "gradePoints": 4.0
+  },
+  {
+    "minPercentage": 80,
+    "maxPercentage": 84,
+    "letterGrade": "A-",
+    "gradePoints": 3.7
+  },
+  {
+    "minPercentage": 77,
+    "maxPercentage": 79,
+    "letterGrade": "B+",
+    "gradePoints": 3.3
+  },
+  {
+    "minPercentage": 73,
+    "maxPercentage": 76,
+    "letterGrade": "B",
+    "gradePoints": 3.0
+  },
+  {
+    "minPercentage": 70,
+    "maxPercentage": 72,
+    "letterGrade": "B-",
+    "gradePoints": 2.7
+  },
+  {
+    "minPercentage": 67,
+    "maxPercentage": 69,
+    "letterGrade": "C+",
+    "gradePoints": 2.3
+  },
+  {
+    "minPercentage": 63,
+    "maxPercentage": 66,
+    "letterGrade": "C",
+    "gradePoints": 2.0
+  },
+  {
+    "minPercentage": 60,
+    "maxPercentage": 62,
+    "letterGrade": "C-",
+    "gradePoints": 1.7
+  },
+  {
+    "minPercentage": 55,
+    "maxPercentage": 59,
+    "letterGrade": "D+",
+    "gradePoints": 1.3
+  },
+  {
+    "minPercentage": 50,
+    "maxPercentage": 54,
+    "letterGrade": "D",
+    "gradePoints": 1.0
+  },
+  {
+    "minPercentage": 0,
+    "maxPercentage": 49,
+    "letterGrade": "F",
+    "gradePoints": 0.0
+  }
+]
