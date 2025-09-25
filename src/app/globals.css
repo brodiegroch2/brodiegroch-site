@@ -2319,7 +2319,7 @@ body {
 
 /* Pagination Styles - Updated to Match Student App Project Reference */
 .pagination {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     gap: 1rem;
@@ -2328,13 +2328,13 @@ body {
 }
 
 .pagination-btn {
-    background: #2d2d2d;
-    border: 1px solid #404040;
-    border-radius: 25px;
-    padding: 0.75rem 1.5rem;
-    color: #e0e0e0;
-    font-size: 0.9rem;
-    font-weight: 600;
+    background: #2d2d2d !important;
+    border: 1px solid #404040 !important;
+    border-radius: 25px !important;
+    padding: 0.75rem 1.5rem !important;
+    color: #e0e0e0 !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -2394,13 +2394,13 @@ body {
 }
 
 .pagination-info {
-    color: #b0b0b0;
-    font-size: 0.9rem;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #b0b0b0 !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    padding: 0.5rem 1rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Course Performance Styles */
@@ -2924,6 +2924,25 @@ body {
 
 .progress-overview {
     margin-top: 1rem;
+}
+
+/* Ensure dashboard sections are properly styled */
+.dashboard-section.course-performance {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-section.progress-overview {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
 /* Empty State Styles */
