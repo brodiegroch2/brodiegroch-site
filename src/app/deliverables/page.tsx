@@ -70,7 +70,13 @@ export default function DeliverablesPage() {
     if (!dateA) return 1;
     if (!dateB) return -1;
     
-    return new Date(dateA).getTime() - new Date(dateB).getTime();
+    const timeA = new Date(dateA).getTime();
+    const timeB = new Date(dateB).getTime();
+    // Handle invalid dates by putting them at the end
+    if (isNaN(timeA) && isNaN(timeB)) return 0;
+    if (isNaN(timeA)) return 1;
+    if (isNaN(timeB)) return -1;
+    return timeA - timeB;
   });
 
   const handleDeliverableClick = (deliverable: Deliverable) => {

@@ -341,7 +341,15 @@ export default function CourseDetailPage() {
             
             // Add pending column if it has deliverables
             if (pendingDeliverables.length > 0) {
-              const sortedPending = pendingDeliverables.sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime());
+              const sortedPending = pendingDeliverables.sort((a, b) => {
+                const dateA = new Date(a['Close Date']).getTime();
+                const dateB = new Date(b['Close Date']).getTime();
+                // Handle invalid dates by putting them at the end
+                if (isNaN(dateA) && isNaN(dateB)) return 0;
+                if (isNaN(dateA)) return 1;
+                if (isNaN(dateB)) return -1;
+                return dateA - dateB;
+              });
               const totalPendingPages = Math.ceil(sortedPending.length / itemsPerPage);
               const startPendingIndex = pendingPage * itemsPerPage;
               const endPendingIndex = startPendingIndex + itemsPerPage;
@@ -397,7 +405,15 @@ export default function CourseDetailPage() {
             
             // Add submitted column if it has deliverables
             if (submittedDeliverables.length > 0) {
-              const sortedSubmitted = submittedDeliverables.sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime());
+              const sortedSubmitted = submittedDeliverables.sort((a, b) => {
+                const dateA = new Date(a['Close Date']).getTime();
+                const dateB = new Date(b['Close Date']).getTime();
+                // Handle invalid dates by putting them at the end
+                if (isNaN(dateA) && isNaN(dateB)) return 0;
+                if (isNaN(dateA)) return 1;
+                if (isNaN(dateB)) return -1;
+                return dateA - dateB;
+              });
               const totalSubmittedPages = Math.ceil(sortedSubmitted.length / itemsPerPage);
               const startSubmittedIndex = submittedPage * itemsPerPage;
               const endSubmittedIndex = startSubmittedIndex + itemsPerPage;
@@ -453,7 +469,15 @@ export default function CourseDetailPage() {
             
             // Add graded column if it has deliverables
             if (gradedDeliverables.length > 0) {
-              const sortedGraded = gradedDeliverables.sort((a, b) => new Date(b['Close Date']).getTime() - new Date(a['Close Date']).getTime());
+              const sortedGraded = gradedDeliverables.sort((a, b) => {
+                const dateA = new Date(a['Close Date']).getTime();
+                const dateB = new Date(b['Close Date']).getTime();
+                // Handle invalid dates by putting them at the end
+                if (isNaN(dateA) && isNaN(dateB)) return 0;
+                if (isNaN(dateA)) return 1;
+                if (isNaN(dateB)) return -1;
+                return dateB - dateA; // Latest first for graded
+              });
               const totalGradedPages = Math.ceil(sortedGraded.length / itemsPerPage);
               const startGradedIndex = gradedPage * itemsPerPage;
               const endGradedIndex = startGradedIndex + itemsPerPage;
