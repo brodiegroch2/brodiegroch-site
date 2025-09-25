@@ -33,6 +33,7 @@ export default function DeliverableEditModal({
   const [letterGrade, setLetterGrade] = useState('');
   const [gpa, setGpa] = useState('');
   const [status, setStatus] = useState('pending');
+  const [dueDate, setDueDate] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -41,6 +42,23 @@ export default function DeliverableEditModal({
       setLetterGrade(deliverable['Letter Grade'] || '');
       setGpa(deliverable.GPA || '');
       setStatus(deliverable.Status || 'pending');
+      
+      // Parse the due date and convert to YYYY-MM-DD format for the date input
+      const closeDate = deliverable['Close Date'];
+      if (closeDate) {
+        try {
+          const date = new Date(closeDate);
+          if (!isNaN(date.getTime())) {
+            setDueDate(date.toISOString().split('T')[0]);
+          } else {
+            setDueDate('');
+          }
+        } catch (error) {
+          setDueDate('');
+        }
+      } else {
+        setDueDate('');
+      }
     }
   }, [deliverable]);
 
@@ -79,18 +97,75 @@ export default function DeliverableEditModal({
     }
   };
 
+  const handleDateChange = (newDate: string) => {
+    setDueDate(newDate);
+  };
+
+  const formatDateForDisplay = (dateString: string) => {
+    if (!dateString) return '';
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+    } catch (error) {
+      return dateString;
+    }
+  };
+
   const handleSave = async () => {
     if (!deliverable) return;
 
     setIsLoading(true);
     
     try {
+      // Format the new due date
+      let formattedDueDate = deliverable['Close Date'];
+      if (dueDate) {
+        try {
+          const date = new Date(dueDate);
+          if (!isNaN(date.getTime())) {
+            // Keep the original time if it exists, otherwise use 11:59 PM
+            const originalDate = new Date(deliverable['Close Date']);
+            const hasTime = !isNaN(originalDate.getTime()) && 
+                           (originalDate.getHours() !== 0 || originalDate.getMinutes() !== 0);
+            
+            if (hasTime) {
+              // Preserve original time
+              date.setHours(originalDate.getHours());
+              date.setMinutes(originalDate.getMinutes());
+            } else {
+              // Default to 11:59 PM
+              date.setHours(23);
+              date.setMinutes(59);
+            }
+            
+            formattedDueDate = date.toLocaleString('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit',
+              hour12: true
+            });
+          }
+        } catch (error) {
+          // Keep original date if formatting fails
+          formattedDueDate = deliverable['Close Date'];
+        }
+      }
+
       const updatedDeliverable: Deliverable = {
         ...deliverable,
         'Grade %': grade,
         'Letter Grade': letterGrade,
         'GPA': gpa,
-        'Status': status
+        'Status': status,
+        'Close Date': formattedDueDate
       };
 
       // Call the API to update the deliverable
@@ -123,6 +198,7 @@ export default function DeliverableEditModal({
     setLetterGrade('');
     setGpa('');
     setStatus('pending');
+    setDueDate('');
     onClose();
   };
 
@@ -158,8 +234,34 @@ export default function DeliverableEditModal({
           </div>
 
           <div className="form-group">
-            <label className="form-label">Due Date</label>
-            <div className="form-value">{deliverable['Close Date']}</div>
+            <label className="form-label" htmlFor="dueDate">Due Date</label>
+            <div className="date-input-container">
+              <input
+                id="dueDate"
+                type="date"
+                value={dueDate}
+                onChange={(e) => handleDateChange(e.target.value)}
+                className="form-input date-input"
+              />
+              <button
+                type="button"
+                className="calendar-btn"
+                onClick={() => document.getElementById('dueDate')?.focus()}
+                title="Open calendar"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" strokeWidth="2"/>
+                  <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" strokeWidth="2"/>
+                  <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" strokeWidth="2"/>
+                </svg>
+              </button>
+            </div>
+            {dueDate && (
+              <div className="date-preview">
+                New due date: {formatDateForDisplay(dueDate)}
+              </div>
+            )}
           </div>
 
           <div className="form-group">

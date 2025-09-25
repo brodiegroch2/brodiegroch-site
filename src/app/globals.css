@@ -3531,6 +3531,58 @@ body {
     font-weight: 500;
 }
 
+/* Date Picker Styles */
+.date-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.date-input-container .date-input {
+    padding-right: 3rem;
+    flex: 1;
+}
+
+.calendar-btn {
+    position: absolute;
+    right: 0.5rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calendar-btn:hover {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+.calendar-btn:active {
+    transform: scale(0.95);
+}
+
+.calendar-btn svg {
+    transition: transform 0.2s ease;
+}
+
+.calendar-btn:hover svg {
+    transform: scale(1.1);
+}
+
+.date-preview {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #3b82f6;
+    font-weight: 500;
+}
+
 /* Course Deliverables Columns */
 .deliverables-columns {
     display: grid;
