@@ -454,8 +454,8 @@ export default function Dashboard() {
     <div className="container">
       {/* Hero Section */}
       <div className="hero-section">
-        <div className="hero-content">
-          <div className="welcome-section">
+        <div className="hero-layout">
+          <div className="hero-welcome">
             <h1 className="hero-title">
               Welcome back, Brodie! 
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: 'inline-block', marginLeft: '8px', verticalAlign: 'middle'}}>
@@ -463,36 +463,6 @@ export default function Dashboard() {
               </svg>
             </h1>
             <p className="hero-subtitle">Here&apos;s what&apos;s happening in your academic journey today</p>
-          </div>
-          <div className="countdown-section">
-            <div className="countdown-card">
-              <div className="countdown-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                  <polyline points="12,6 12,12 16,14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <div className="countdown-content">
-                <div className="countdown-label">Next Due Date</div>
-                <div className="countdown-timer">
-                  <div className="time-unit">
-                    <span className="time-value">{countdown.days}</span>
-                    <span className="time-label">Days</span>
-                  </div>
-                  <div className="time-separator">:</div>
-                  <div className="time-unit">
-                    <span className="time-value">{countdown.hours}</span>
-                    <span className="time-label">Hours</span>
-                  </div>
-                  <div className="time-separator">:</div>
-                  <div className="time-unit">
-                    <span className="time-value">{countdown.minutes}</span>
-                    <span className="time-label">Mins</span>
-                  </div>
-                </div>
-                <div className="countdown-assignment">{nextAssignment}</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -608,6 +578,36 @@ export default function Dashboard() {
 
         {/* Stats Sidebar */}
         <div className="stats-sidebar">
+          {/* Countdown Card */}
+          <div className="countdown-card">
+            <div className="countdown-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                <polyline points="12,6 12,12 16,14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <div className="countdown-content">
+              <div className="countdown-label">Next Due Date</div>
+              <div className="countdown-timer">
+                <div className="time-unit">
+                  <span className="time-value">{countdown.days}</span>
+                  <span className="time-label">Days</span>
+                </div>
+                <div className="time-separator">:</div>
+                <div className="time-unit">
+                  <span className="time-value">{countdown.hours}</span>
+                  <span className="time-label">Hours</span>
+                </div>
+                <div className="time-separator">:</div>
+                <div className="time-unit">
+                  <span className="time-value">{countdown.minutes}</span>
+                  <span className="time-label">Mins</span>
+                </div>
+              </div>
+              <div className="countdown-assignment">{nextAssignment}</div>
+            </div>
+          </div>
+
           <div className="stat-card primary">
             <div className="stat-icon-wrapper">
               <div className="stat-icon">
