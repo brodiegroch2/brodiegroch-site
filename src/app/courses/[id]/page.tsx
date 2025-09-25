@@ -386,10 +386,6 @@ export default function CourseDetailPage() {
                             <span className="grade-label">Letter:</span>
                             <span className="grade-value">{deliverable['Letter Grade'] || 'Not graded'}</span>
                           </div>
-                          <div className="grade-item">
-                            <span className="grade-label">GPA:</span>
-                            <span className="grade-value">{deliverable.GPA || 'Not graded'}</span>
-                          </div>
                         </div>
                         <div className="deliverable-status">
                           <span className="status-label">Status:</span>
@@ -450,10 +446,6 @@ export default function CourseDetailPage() {
                             <span className="grade-label">Letter:</span>
                             <span className="grade-value">{deliverable['Letter Grade'] || 'Not graded'}</span>
                           </div>
-                          <div className="grade-item">
-                            <span className="grade-label">GPA:</span>
-                            <span className="grade-value">{deliverable.GPA || 'Not graded'}</span>
-                          </div>
                         </div>
                         <div className="deliverable-status">
                           <span className="status-label">Status:</span>
@@ -513,10 +505,6 @@ export default function CourseDetailPage() {
                           <div className="grade-item">
                             <span className="grade-label">Letter:</span>
                             <span className="grade-value">{deliverable['Letter Grade'] || 'Not graded'}</span>
-                          </div>
-                          <div className="grade-item">
-                            <span className="grade-label">GPA:</span>
-                            <span className="grade-value">{deliverable.GPA || 'Not graded'}</span>
                           </div>
                         </div>
                         <div className="deliverable-status">
