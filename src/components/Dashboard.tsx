@@ -24,7 +24,6 @@ interface Deliverable {
   "Weight %": string;
   "Grade %": string;
   "Letter Grade": string;
-  "GPA": string;
   "Status": string;
 }
 

@@ -12,7 +12,6 @@ interface Deliverable {
   "Weight %": string;
   "Grade %": string;
   "Letter Grade": string;
-  "GPA": string;
   "Status": string;
 }
 
@@ -31,7 +30,6 @@ export default function DeliverableEditModal({
 }: DeliverableEditModalProps) {
   const [grade, setGrade] = useState('');
   const [letterGrade, setLetterGrade] = useState('');
-  const [gpa, setGpa] = useState('');
   const [status, setStatus] = useState('pending');
   const [dueDate, setDueDate] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -40,7 +38,6 @@ export default function DeliverableEditModal({
     if (deliverable) {
       setGrade(deliverable['Grade %'] || '');
       setLetterGrade(deliverable['Letter Grade'] || '');
-      setGpa(deliverable.GPA || '');
       setStatus(deliverable.Status || 'pending');
       
       // Parse the due date and convert to YYYY-MM-DD format for the date input
@@ -65,15 +62,13 @@ export default function DeliverableEditModal({
   const handleGradeChange = (newGrade: string) => {
     setGrade(newGrade);
     
-    // Auto-calculate letter grade and GPA
+    // Auto-calculate letter grade
     if (newGrade && isValidGrade(newGrade)) {
-      const { letterGrade: calculatedLetterGrade, gpa: calculatedGpa } = calculateGradeAndGPA(newGrade);
+      const { letterGrade: calculatedLetterGrade } = calculateGradeAndGPA(newGrade);
       setLetterGrade(calculatedLetterGrade);
-      setGpa(calculatedGpa);
       setStatus('graded');
     } else {
       setLetterGrade('');
-      setGpa('');
       // Only change status to pending if grade is completely empty
       if (!newGrade || newGrade.trim() === '') {
         setStatus('pending');
@@ -84,7 +79,6 @@ export default function DeliverableEditModal({
   const handleClearGrade = () => {
     setGrade('');
     setLetterGrade('');
-    setGpa('');
     setStatus('pending');
   };
 
@@ -163,7 +157,6 @@ export default function DeliverableEditModal({
         ...deliverable,
         'Grade %': grade,
         'Letter Grade': letterGrade,
-        'GPA': gpa,
         'Status': status,
         'Close Date': formattedDueDate
       };
@@ -196,7 +189,6 @@ export default function DeliverableEditModal({
     // Reset form when closing
     setGrade('');
     setLetterGrade('');
-    setGpa('');
     setStatus('pending');
     setDueDate('');
     onClose();
@@ -311,18 +303,6 @@ export default function DeliverableEditModal({
             />
           </div>
 
-          <div className="form-group">
-            <label className="form-label" htmlFor="gpa">GPA Points</label>
-            <input
-              id="gpa"
-              type="text"
-              value={gpa}
-              onChange={(e) => setGpa(e.target.value)}
-              className="form-input"
-              placeholder="Auto-calculated from percentage"
-              readOnly
-            />
-          </div>
 
           <div className="form-group">
             <label className="form-label" htmlFor="status">Status</label>

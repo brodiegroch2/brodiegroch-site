@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import DeliverableEditModal from '@/components/DeliverableEditModal';
-import { calculateCourseGPA } from '@/utils/gpaCalculator';
 
 interface Course {
   "Course ID": string;
@@ -25,7 +24,6 @@ interface Deliverable {
   "Weight %": string;
   "Grade %": string;
   "Letter Grade": string;
-  "GPA": string;
   "Status": string;
 }
 
@@ -305,10 +303,6 @@ export default function CourseDetailPage() {
             <div className="course-detail">
               <div className="course-detail-label">Completion %</div>
               <div className="course-detail-value">{calculateCompletionPercentage(deliverables)}%</div>
-            </div>
-            <div className="course-detail">
-              <div className="course-detail-label">GPA</div>
-              <div className="course-detail-value">{calculateCourseGPA(deliverables).gpa.toFixed(1)}</div>
             </div>
           </div>
           
