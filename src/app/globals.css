@@ -119,7 +119,7 @@ body {
     line-height: 1.4;
 }
 
-/* Countdown Section */
+/* Countdown Section - Optimized for Compact Design */
 .countdown-section {
     display: flex;
     justify-content: center;
@@ -127,15 +127,17 @@ body {
 
 .countdown-card {
     background: #1a1a1a;
-    border-radius: 20px;
-    padding: 2rem;
+    border-radius: 16px;
+    padding: 1.25rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    min-width: 350px;
+    min-width: 400px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .countdown-card::before {
@@ -144,31 +146,38 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 3px;
     background: #4a9eff;
 }
 
 .countdown-icon {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    display: block;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    color: #4a9eff;
+}
+
+.countdown-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .countdown-label {
     color: #b0b0b0;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
 }
 
 .countdown-timer {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    gap: 0.4rem;
+    margin-bottom: 0.25rem;
 }
 
 .time-unit {
@@ -176,43 +185,43 @@ body {
     flex-direction: column;
     align-items: center;
     background: rgba(255, 255, 255, 0.05);
-    padding: 0.8rem;
-    border-radius: 12px;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    min-width: 60px;
+    min-width: 45px;
 }
 
 .time-value {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #4a9eff;
     line-height: 1;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
 }
 
 .time-label {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: #888888;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
 }
 
 .time-separator {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     color: #666666;
     font-weight: 700;
-    margin: 0 0.2rem;
+    margin: 0 0.1rem;
 }
 
 .countdown-assignment {
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    line-height: 1.3;
+    line-height: 1.2;
     background: rgba(74, 158, 255, 0.1);
-    padding: 0.8rem;
-    border-radius: 8px;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
     border: 1px solid rgba(74, 158, 255, 0.2);
 }
 
@@ -1806,7 +1815,14 @@ body {
     }
     
     .countdown-card {
-        min-width: 300px;
+        min-width: 350px;
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+    
+    .countdown-icon {
+        width: 28px;
+        height: 28px;
     }
     
     
@@ -1920,16 +1936,23 @@ body {
     }
     
     .countdown-card {
-        min-width: 280px;
-        padding: 1.5rem;
+        min-width: 300px;
+        padding: 0.75rem;
+        gap: 0.5rem;
     }
     
     .countdown-icon {
-        font-size: 2.5rem;
+        width: 24px;
+        height: 24px;
     }
     
     .time-value {
-        font-size: 1.4rem;
+        font-size: 1rem;
+    }
+    
+    .countdown-assignment {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.5rem;
     }
     
     .stats-grid {
