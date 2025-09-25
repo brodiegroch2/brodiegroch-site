@@ -162,15 +162,12 @@ export default function Dashboard() {
         const closeDate = new Date(d["Close Date"]);
         const isNotPastDue = closeDate > now;
         
-        // Check if it has a grade
+        // Check if it has a grade (exclude graded assignments)
         const hasGrade = d['Grade %'] && d['Grade %'] !== '' && 
                         d['Grade %'] !== 'Not specified' && d['Grade %'] !== 'Not graded';
         
-        // Check if it's submitted (if status field exists)
-        const isSubmitted = d['Status'] === 'submitted';
-        
-        // Include if it's not past due AND (doesn't have a grade OR isn't submitted)
-        return isNotPastDue && (!hasGrade || !isSubmitted);
+        // Include if it's not past due AND doesn't have a grade
+        return isNotPastDue && !hasGrade;
       })
       .sort((a, b) => new Date(a["Close Date"]).getTime() - new Date(b["Close Date"]).getTime());
 

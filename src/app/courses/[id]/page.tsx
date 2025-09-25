@@ -192,8 +192,8 @@ export default function CourseDetailPage() {
         </Link>
       </div>
       
-      <h1 className="page-title">{course["Course ID"]}</h1>
-      <p className="page-subtitle">{course["Course Name"]}</p>
+      <h1 className="page-title">{course["Course Name"]}</h1>
+      <p className="page-subtitle">{course["Course ID"]} - Detailed Information</p>
       
       <div className="data-section">
         <h2 className="section-title">Course Information</h2>
@@ -295,42 +295,55 @@ export default function CourseDetailPage() {
               No deliverables found for this course.
             </div>
           ) : (
-            deliverables.map((deliverable, index) => (
-              <div key={index} className={`deliverable-card ${getStatusColor(deliverable["Close Date"], deliverable["Grade %"])}`}>
-                <div className="deliverable-header">
-                  <h3 className="deliverable-name">{deliverable["Deliverable"]}</h3>
-                  <div className="deliverable-course">{deliverable["Course ID"]}</div>
-                </div>
+            deliverables
+              .sort((a, b) => {
+                // Sort by due date, with empty dates at the end
+                const dateA = a['Close Date'] || '';
+                const dateB = b['Close Date'] || '';
                 
-                <div className="deliverable-category">
-                  <span className="category-badge">{deliverable["Category"]}</span>
-                </div>
+                if (!dateA && !dateB) return 0;
+                if (!dateA) return 1;
+                if (!dateB) return -1;
                 
-                <div className="deliverable-dates">
-                  <div className="date-item">
-                    <strong>Open Date:</strong> {formatDate(deliverable["Open Date"])}
+                return new Date(dateA).getTime() - new Date(dateB).getTime();
+              })
+              .map((deliverable, index) => {
+                const hasGrade = deliverable['Grade %'] && deliverable['Grade %'] !== '' && deliverable['Grade %'] !== 'Not graded';
+                const cardClass = hasGrade ? 'deliverable-card graded' : 'deliverable-card';
+
+                return (
+                  <div key={index} className={cardClass}>
+                    <div className="deliverable-header">
+                      <div className="deliverable-category">{deliverable["Category"] || 'Assignment'}</div>
+                      <div className="deliverable-weight">{deliverable["Weight %"] || '0'}%</div>
+                    </div>
+                    
+                    <div className="deliverable-title">{deliverable["Deliverable"] || 'Untitled Deliverable'}</div>
+                    
+                    <div className="deliverable-dates">
+                      <div className="date-item">
+                        <span className="date-label">Opens:</span>
+                        <span className="date-value">{deliverable["Open Date"] || 'Not specified'}</span>
+                      </div>
+                      <div className="date-item">
+                        <span className="date-label">Due:</span>
+                        <span className="date-value">{deliverable["Close Date"] || 'Not specified'}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="deliverable-grades">
+                      <div className="grade-item">
+                        <span className="grade-label">Grade:</span>
+                        <span className="grade-value">{deliverable["Grade %"] || 'Not graded'}</span>
+                      </div>
+                      <div className="grade-item">
+                        <span className="grade-label">Letter:</span>
+                        <span className="grade-value">{deliverable["Letter Grade"] || 'Not graded'}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="date-item">
-                    <strong>Due Date:</strong> {formatDate(deliverable["Close Date"])}
-                  </div>
-                </div>
-                
-                <div className="deliverable-weight">
-                  <strong>Weight:</strong> {deliverable["Weight %"]}%
-                </div>
-                
-                {deliverable["Grade %"] && deliverable["Grade %"] !== '' ? (
-                  <div className="deliverable-grade">
-                    <div className="grade-percentage">{deliverable["Grade %"]}%</div>
-                    <div className="grade-letter">{deliverable["Letter Grade"]}</div>
-                  </div>
-                ) : (
-                  <div className="deliverable-status">
-                    <span className="status-text">Not Graded</span>
-                  </div>
-                )}
-              </div>
-            ))
+                );
+              })
           )}
         </div>
       </div>
