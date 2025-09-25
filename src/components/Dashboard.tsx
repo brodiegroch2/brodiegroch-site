@@ -68,7 +68,6 @@ export default function Dashboard() {
         updateUpcomingDeadlines(deliverablesData);
         updateCoursePerformance(coursesData, deliverablesData);
         updateProgressOverview(coursesData, deliverablesData);
-        updateCourseDeliverables(deliverablesData);
       } catch (error) {
         console.error('Error loading data:', error);
       }
@@ -460,78 +459,6 @@ export default function Dashboard() {
     `;
   };
 
-  const updateCourseDeliverables = (deliverablesData: Deliverable[]) => {
-    const container = document.getElementById('course-deliverables');
-    if (!container) return;
-
-    const pending = deliverablesData.filter(d => d['Status'] === 'pending');
-    const submitted = deliverablesData.filter(d => d['Status'] === 'submitted');
-    const graded = deliverablesData.filter(d => d['Status'] === 'graded');
-
-    const renderDeliverable = (deliverable: Deliverable) => `
-      <div class="deliverable-item clickable-deliverable" data-deliverable='${JSON.stringify(deliverable)}'>
-        <div class="deliverable-header">
-          <div class="deliverable-title">${deliverable['Deliverable']}</div>
-          <div class="deliverable-course">${deliverable['Course ID']}</div>
-        </div>
-        <div class="deliverable-dates">
-          <div class="date-item">
-            <span class="date-label">Due:</span>
-            <span class="date-value">${deliverable['Close Date'] || 'Not specified'}</span>
-          </div>
-        </div>
-        <div class="deliverable-grades">
-          <div class="grade-item">
-            <span class="grade-label">Grade:</span>
-            <span class="grade-value">${deliverable['Grade %'] || 'Not graded'}</span>
-          </div>
-          <div class="grade-item">
-            <span class="grade-label">Letter:</span>
-            <span class="grade-value">${deliverable['Letter Grade'] || 'Not graded'}</span>
-          </div>
-          <div class="grade-item">
-            <span class="grade-label">GPA:</span>
-            <span class="grade-value">${deliverable.GPA || 'Not graded'}</span>
-          </div>
-        </div>
-        <div class="deliverable-status">
-          <span class="status-label">Status:</span>
-          <span class="status-value status-${deliverable.Status || 'pending'}">${deliverable.Status || 'pending'}</span>
-        </div>
-      </div>
-    `;
-
-    container.innerHTML = `
-      <div class="deliverables-columns">
-        <div class="deliverables-column">
-          <h3 class="column-title">Pending</h3>
-          <div class="column-content">
-            ${pending.length === 0 ? '<div class="empty-state">No pending deliverables</div>' : pending.map(renderDeliverable).join('')}
-          </div>
-        </div>
-        <div class="deliverables-column">
-          <h3 class="column-title">Submitted</h3>
-          <div class="column-content">
-            ${submitted.length === 0 ? '<div class="empty-state">No submitted deliverables</div>' : submitted.map(renderDeliverable).join('')}
-          </div>
-        </div>
-        <div class="deliverables-column">
-          <h3 class="column-title">Graded</h3>
-          <div class="column-content">
-            ${graded.length === 0 ? '<div class="empty-state">No graded deliverables</div>' : graded.map(renderDeliverable).join('')}
-          </div>
-        </div>
-      </div>
-    `;
-
-    // Add click handlers to deliverable items
-    container.querySelectorAll('.clickable-deliverable').forEach(item => {
-      item.addEventListener('click', () => {
-        const deliverableData = JSON.parse(item.getAttribute('data-deliverable') || '{}');
-        handleDeliverableClick(deliverableData);
-      });
-    });
-  };
 
   const getGradeClass = (percentage: number) => {
     if (percentage >= 95) return 'grade-excellent';
@@ -838,14 +765,6 @@ export default function Dashboard() {
       </div>
     </div>
 
-    <div className="dashboard-sections">
-      <div className="dashboard-section course-deliverables">
-        <h2 className="section-title">Course Deliverables</h2>
-        <div id="course-deliverables" className="course-deliverables">
-          <div className="empty-state">Loading course deliverables...</div>
-        </div>
-      </div>
-    </div>
     
     <DeliverableEditModal
       deliverable={selectedDeliverable}

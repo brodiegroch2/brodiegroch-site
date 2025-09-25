@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import DeliverableEditModal from '@/components/DeliverableEditModal';
 
 interface Course {
   "Course ID": string;
@@ -23,7 +24,8 @@ interface Deliverable {
   "Weight %": string;
   "Grade %": string;
   "Letter Grade": string;
-  "Status"?: string;
+  "GPA": string;
+  "Status": string;
 }
 
 export default function CourseDetailPage() {
@@ -33,6 +35,8 @@ export default function CourseDetailPage() {
   const [course, setCourse] = useState<Course | null>(null);
   const [deliverables, setDeliverables] = useState<Deliverable[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedDeliverable, setSelectedDeliverable] = useState<Deliverable | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const loadData = async () => {
@@ -137,6 +141,28 @@ export default function CourseDetailPage() {
     }, 0);
     
     return totalWeight > 0 ? ((completedWeight / totalWeight) * 100).toFixed(1) : '0';
+  };
+
+  const handleDeliverableClick = (deliverable: Deliverable) => {
+    setSelectedDeliverable(deliverable);
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setSelectedDeliverable(null);
+  };
+
+  const handleDeliverableUpdate = (updatedDeliverable: Deliverable) => {
+    setDeliverables(prev => 
+      prev.map(deliverable => 
+        deliverable['Course ID'] === updatedDeliverable['Course ID'] &&
+        deliverable['Deliverable'] === updatedDeliverable['Deliverable'] &&
+        deliverable['Close Date'] === updatedDeliverable['Close Date']
+          ? updatedDeliverable
+          : deliverable
+      )
+    );
   };
 
   if (loading) {
@@ -246,58 +272,156 @@ export default function CourseDetailPage() {
 
       <div className="data-section">
         <h2 className="section-title">Course Deliverables</h2>
-        <div className="deliverables-list">
-          {deliverables.length === 0 ? (
-            <div className="empty-state">
-              No deliverables found for this course.
+        {deliverables.length === 0 ? (
+          <div className="empty-state">
+            No deliverables found for this course.
+          </div>
+        ) : (
+          <div className="deliverables-columns">
+            <div className="deliverables-column">
+              <h3 className="column-title">Pending</h3>
+              <div className="column-content">
+                {deliverables.filter(d => d['Status'] === 'pending').length === 0 ? (
+                  <div className="empty-state">No pending deliverables</div>
+                ) : (
+                  deliverables
+                    .filter(d => d['Status'] === 'pending')
+                    .sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime())
+                    .map((deliverable, index) => (
+                      <div key={index} className="deliverable-item clickable-deliverable" onClick={() => handleDeliverableClick(deliverable)}>
+                        <div className="deliverable-header">
+                          <div className="deliverable-title">{deliverable['Deliverable']}</div>
+                          <div className="deliverable-course">{deliverable['Course ID']}</div>
+                        </div>
+                        <div className="deliverable-dates">
+                          <div className="date-item">
+                            <span className="date-label">Due:</span>
+                            <span className="date-value">{deliverable['Close Date'] || 'Not specified'}</span>
+                          </div>
+                        </div>
+                        <div className="deliverable-grades">
+                          <div className="grade-item">
+                            <span className="grade-label">Grade:</span>
+                            <span className="grade-value">{deliverable['Grade %'] || 'Not graded'}</span>
+                          </div>
+                          <div className="grade-item">
+                            <span className="grade-label">Letter:</span>
+                            <span className="grade-value">{deliverable['Letter Grade'] || 'Not graded'}</span>
+                          </div>
+                          <div className="grade-item">
+                            <span className="grade-label">GPA:</span>
+                            <span className="grade-value">{deliverable.GPA || 'Not graded'}</span>
+                          </div>
+                        </div>
+                        <div className="deliverable-status">
+                          <span className="status-label">Status:</span>
+                          <span className="status-value status-${deliverable.Status || 'pending'}">{deliverable.Status || 'pending'}</span>
+                        </div>
+                      </div>
+                    ))
+                )}
+              </div>
             </div>
-          ) : (
-            deliverables
-              .sort((a, b) => {
-                // Sort by due date, with empty dates at the end
-                const dateA = a['Close Date'] || '';
-                const dateB = b['Close Date'] || '';
-                
-                if (!dateA && !dateB) return 0;
-                if (!dateA) return 1;
-                if (!dateB) return -1;
-                
-                return new Date(dateA).getTime() - new Date(dateB).getTime();
-              })
-              .map((deliverable, index) => {
-                const hasGrade = deliverable['Grade %'] && deliverable['Grade %'] !== '' && deliverable['Grade %'] !== 'Not graded';
-                const itemClass = hasGrade ? 'deliverable-item graded' : 'deliverable-item';
-
-                return (
-                  <div key={index} className={itemClass}>
-                    <div className="deliverable-header">
-                      <div className="deliverable-category">{deliverable["Category"] || 'Assignment'}</div>
-                      <div className="deliverable-weight">{deliverable["Weight %"] || '0'}%</div>
-                    </div>
-                    
-                    <div className="deliverable-title">{deliverable["Deliverable"] || 'Untitled Deliverable'}</div>
-                    
-                    <div className="deliverable-dates">
-                      <div className="date-item">
-                        <span className="date-label">Opens:</span>
-                        <span className="date-value">{deliverable["Open Date"] || 'Not specified'}</span>
+            
+            <div className="deliverables-column">
+              <h3 className="column-title">Submitted</h3>
+              <div className="column-content">
+                {deliverables.filter(d => d['Status'] === 'submitted').length === 0 ? (
+                  <div className="empty-state">No submitted deliverables</div>
+                ) : (
+                  deliverables
+                    .filter(d => d['Status'] === 'submitted')
+                    .sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime())
+                    .map((deliverable, index) => (
+                      <div key={index} className="deliverable-item clickable-deliverable" onClick={() => handleDeliverableClick(deliverable)}>
+                        <div className="deliverable-header">
+                          <div className="deliverable-title">{deliverable['Deliverable']}</div>
+                          <div className="deliverable-course">{deliverable['Course ID']}</div>
+                        </div>
+                        <div className="deliverable-dates">
+                          <div className="date-item">
+                            <span className="date-label">Due:</span>
+                            <span className="date-value">{deliverable['Close Date'] || 'Not specified'}</span>
+                          </div>
+                        </div>
+                        <div className="deliverable-grades">
+                          <div className="grade-item">
+                            <span className="grade-label">Grade:</span>
+                            <span className="grade-value">{deliverable['Grade %'] || 'Not graded'}</span>
+                          </div>
+                          <div className="grade-item">
+                            <span className="grade-label">Letter:</span>
+                            <span className="grade-value">{deliverable['Letter Grade'] || 'Not graded'}</span>
+                          </div>
+                          <div className="grade-item">
+                            <span className="grade-label">GPA:</span>
+                            <span className="grade-value">{deliverable.GPA || 'Not graded'}</span>
+                          </div>
+                        </div>
+                        <div className="deliverable-status">
+                          <span className="status-label">Status:</span>
+                          <span className="status-value status-${deliverable.Status || 'pending'}">{deliverable.Status || 'pending'}</span>
+                        </div>
                       </div>
-                      <div className="date-item">
-                        <span className="date-label">Due:</span>
-                        <span className="date-value">{deliverable["Close Date"] || 'Not specified'}</span>
+                    ))
+                )}
+              </div>
+            </div>
+            
+            <div className="deliverables-column">
+              <h3 className="column-title">Graded</h3>
+              <div className="column-content">
+                {deliverables.filter(d => d['Status'] === 'graded').length === 0 ? (
+                  <div className="empty-state">No graded deliverables</div>
+                ) : (
+                  deliverables
+                    .filter(d => d['Status'] === 'graded')
+                    .sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime())
+                    .map((deliverable, index) => (
+                      <div key={index} className="deliverable-item clickable-deliverable" onClick={() => handleDeliverableClick(deliverable)}>
+                        <div className="deliverable-header">
+                          <div className="deliverable-title">{deliverable['Deliverable']}</div>
+                          <div className="deliverable-course">{deliverable['Course ID']}</div>
+                        </div>
+                        <div className="deliverable-dates">
+                          <div className="date-item">
+                            <span className="date-label">Due:</span>
+                            <span className="date-value">{deliverable['Close Date'] || 'Not specified'}</span>
+                          </div>
+                        </div>
+                        <div className="deliverable-grades">
+                          <div className="grade-item">
+                            <span className="grade-label">Grade:</span>
+                            <span className="grade-value">{deliverable['Grade %'] || 'Not graded'}</span>
+                          </div>
+                          <div className="grade-item">
+                            <span className="grade-label">Letter:</span>
+                            <span className="grade-value">{deliverable['Letter Grade'] || 'Not graded'}</span>
+                          </div>
+                          <div className="grade-item">
+                            <span className="grade-label">GPA:</span>
+                            <span className="grade-value">{deliverable.GPA || 'Not graded'}</span>
+                          </div>
+                        </div>
+                        <div className="deliverable-status">
+                          <span className="status-label">Status:</span>
+                          <span className="status-value status-${deliverable.Status || 'pending'}">{deliverable.Status || 'pending'}</span>
+                        </div>
                       </div>
-                    </div>
-                    
-                    <div className="deliverable-grade">
-                      <span className="grade-label">Grade:</span>
-                      <span className="grade-value">{deliverable["Grade %"] || 'Not graded'}</span>
-                    </div>
-                  </div>
-                );
-              })
-          )}
-        </div>
+                    ))
+                )}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
+      
+      <DeliverableEditModal
+        deliverable={selectedDeliverable}
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        onSave={handleDeliverableUpdate}
+      />
     </div>
   );
 }
