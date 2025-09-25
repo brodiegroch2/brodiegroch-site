@@ -1962,6 +1962,7 @@ body {
     
     .stat-number {
         font-size: 1.8rem;
+    }
     
     .quick-actions-grid {
         grid-template-columns: 1fr;
