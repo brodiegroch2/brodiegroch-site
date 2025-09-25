@@ -2301,6 +2301,17 @@ body {
 }
 
 /* Deliverable Status Styling */
+.deliverable-item.graded {
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.deliverable-item.graded:hover {
+    border-color: #45a049;
+    background: rgba(76, 175, 80, 0.15);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
+}
+
 .deliverable-item.submitted {
     border-color: #9c27b0;
     background: rgba(156, 39, 176, 0.1);
@@ -2323,6 +2334,39 @@ body {
     box-shadow: 0 8px 25px rgba(255, 152, 0, 0.2);
 }
 
+.deliverable-item.graded.submitted {
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.15);
+}
+
+.deliverable-item.graded.submitted:hover {
+    border-color: #45a049;
+    background: rgba(76, 175, 80, 0.2);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.25);
+}
+
+.deliverable-item.graded.due-soon {
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.15);
+}
+
+.deliverable-item.graded.due-soon:hover {
+    border-color: #45a049;
+    background: rgba(76, 175, 80, 0.2);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.25);
+}
+
+.deliverable-item.graded.submitted.due-soon {
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.15);
+}
+
+.deliverable-item.graded.submitted.due-soon:hover {
+    border-color: #45a049;
+    background: rgba(76, 175, 80, 0.2);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.25);
+}
+
 .deliverable-item.submitted.due-soon {
     border-color: #9c27b0;
     background: rgba(156, 39, 176, 0.15);
@@ -2335,6 +2379,17 @@ body {
 }
 
 /* Deliverable Card Styling (for deliverables page) */
+.deliverable-card.graded {
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.deliverable-card.graded:hover {
+    border-color: #45a049;
+    background: rgba(76, 175, 80, 0.15);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
+}
+
 .deliverable-card.submitted {
     border-color: #9c27b0;
     background: rgba(156, 39, 176, 0.1);
@@ -2355,6 +2410,39 @@ body {
     border-color: #f57c00;
     background: rgba(255, 152, 0, 0.15);
     box-shadow: 0 8px 25px rgba(255, 152, 0, 0.2);
+}
+
+.deliverable-card.graded.submitted {
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.15);
+}
+
+.deliverable-card.graded.submitted:hover {
+    border-color: #45a049;
+    background: rgba(76, 175, 80, 0.2);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.25);
+}
+
+.deliverable-card.graded.due-soon {
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.15);
+}
+
+.deliverable-card.graded.due-soon:hover {
+    border-color: #45a049;
+    background: rgba(76, 175, 80, 0.2);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.25);
+}
+
+.deliverable-card.graded.submitted.due-soon {
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.15);
+}
+
+.deliverable-card.graded.submitted.due-soon:hover {
+    border-color: #45a049;
+    background: rgba(76, 175, 80, 0.2);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.25);
 }
 
 .deliverable-card.submitted.due-soon {

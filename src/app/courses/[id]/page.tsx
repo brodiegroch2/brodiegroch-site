@@ -172,12 +172,19 @@ export default function CourseDetailPage() {
   const getDeliverableClasses = (deliverable: Deliverable) => {
     const classes = ['deliverable-item', 'clickable-deliverable'];
     
-    // Check if submitted
+    // Check if graded (highest priority)
+    const hasGrade = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
+                    deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
+    if (hasGrade) {
+      classes.push('graded');
+    }
+    
+    // Check if submitted (medium priority)
     if (deliverable['Status'] === 'submitted') {
       classes.push('submitted');
     }
     
-    // Check if due within next week
+    // Check if due within next week (lowest priority)
     const now = new Date();
     const dueDate = new Date(deliverable['Close Date']);
     const daysUntilDue = Math.ceil((dueDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
