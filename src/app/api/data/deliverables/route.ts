@@ -17,6 +17,7 @@ export async function GET() {
 export async function PUT(request: NextRequest) {
   try {
     const updatedDeliverable = await request.json();
+    console.log('API received deliverable:', updatedDeliverable);
     
     // Read current data
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -28,7 +29,14 @@ export async function PUT(request: NextRequest) {
       item['Close Date'] === updatedDeliverable['Close Date']
     );
     
+    console.log('Found deliverable at index:', index);
+    
     if (index === -1) {
+      console.log('Deliverable not found. Looking for:', {
+        courseId: updatedDeliverable['Course ID'],
+        deliverable: updatedDeliverable['Deliverable'],
+        closeDate: updatedDeliverable['Close Date']
+      });
       return NextResponse.json({ error: 'Deliverable not found' }, { status: 404 });
     }
     
@@ -38,9 +46,10 @@ export async function PUT(request: NextRequest) {
     // Write back to file
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
     
+    console.log('Successfully updated deliverable');
     return NextResponse.json({ success: true, updatedDeliverable });
   } catch (error) {
     console.error('Error updating deliverable:', error);
-    return NextResponse.json({ error: 'Failed to update deliverable' }, { status: 500 });
+    return NextResponse.json({ error: `Failed to update deliverable: ${error instanceof Error ? error.message : 'Unknown error'}` }, { status: 500 });
   }
 }

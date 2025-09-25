@@ -114,6 +114,18 @@ export default function DeliverableEditModal({
   const handleSave = async () => {
     if (!deliverable) return;
 
+    // Validate that grade is provided when status is "graded"
+    if (status === 'graded' && (!grade || grade.trim() === '')) {
+      alert('Please enter a grade when selecting "Graded" status.');
+      return;
+    }
+
+    // Validate that the grade is valid when provided
+    if (status === 'graded' && grade && !isValidGrade(grade)) {
+      alert('Please enter a valid grade (e.g., 87, 87%, 87/100, 15/20).');
+      return;
+    }
+
     setIsLoading(true);
     
     try {
@@ -264,50 +276,67 @@ export default function DeliverableEditModal({
             <div className="form-value">{deliverable['Weight %']}%</div>
           </div>
 
+
+
+
           <div className="form-group">
-            <label className="form-label" htmlFor="grade">Grade</label>
-            <div className="grade-input-container">
-              <input
-                id="grade"
-                type="text"
-                value={grade}
-                onChange={(e) => handleGradeChange(e.target.value)}
-                className="form-input"
-                placeholder="Enter grade (e.g., 87, 87%, 87/100, 15/20)"
-              />
-              {grade && (
-                <button
-                  type="button"
-                  onClick={handleClearGrade}
-                  className="clear-grade-btn"
-                  title="Clear grade"
-                >
-                  ×
-                </button>
+            <label className="form-label">Status</label>
+            <div className="status-buttons">
+              <button
+                type="button"
+                className={`status-btn ${status === 'pending' ? 'active' : ''}`}
+                onClick={() => handleStatusChange('pending')}
+              >
+                Pending
+              </button>
+              <button
+                type="button"
+                className={`status-btn ${status === 'submitted' ? 'active' : ''}`}
+                onClick={() => handleStatusChange('submitted')}
+              >
+                Submitted
+              </button>
+              <button
+                type="button"
+                className={`status-btn ${status === 'graded' ? 'active' : ''}`}
+                onClick={() => handleStatusChange('graded')}
+              >
+                Graded
+              </button>
+            </div>
+          </div>
+
+          {status === 'graded' && (
+            <div className="form-group">
+              <label className="form-label" htmlFor="gradeForGraded">Grade (Required)</label>
+              <div className="grade-input-container">
+                <input
+                  id="gradeForGraded"
+                  type="text"
+                  value={grade}
+                  onChange={(e) => handleGradeChange(e.target.value)}
+                  className="form-input"
+                  placeholder="Enter grade (e.g., 87, 87%, 87/100, 15/20)"
+                  required
+                />
+                {grade && (
+                  <button
+                    type="button"
+                    onClick={handleClearGrade}
+                    className="clear-grade-btn"
+                    title="Clear grade"
+                  >
+                    ×
+                  </button>
+                )}
+              </div>
+              {grade && isValidGrade(grade) && (
+                <div className="grade-preview">
+                  Calculated: {formatGradeInput(grade)}
+                </div>
               )}
             </div>
-            {grade && isValidGrade(grade) && (
-              <div className="grade-preview">
-                Calculated: {formatGradeInput(grade)}
-              </div>
-            )}
-          </div>
-
-
-
-          <div className="form-group">
-            <label className="form-label" htmlFor="status">Status</label>
-            <select
-              id="status"
-              value={status}
-              onChange={(e) => handleStatusChange(e.target.value)}
-              className="form-select"
-            >
-              <option value="pending">Pending</option>
-              <option value="submitted">Submitted</option>
-              <option value="graded">Graded</option>
-            </select>
-          </div>
+          )}
         </div>
 
         <div className="modal-footer">
