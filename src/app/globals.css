@@ -1358,6 +1358,31 @@ body {
     text-decoration: none;
 }
 
+/* Course Card Status Classes */
+.course-card.completed {
+    border-left: 4px solid #4caf50;
+}
+
+.course-card.completed::before {
+    background: #4caf50;
+}
+
+.course-card.in-progress {
+    border-left: 4px solid #ff9800;
+}
+
+.course-card.in-progress::before {
+    background: #ff9800;
+}
+
+.course-card.not-started {
+    border-left: 4px solid #f44336;
+}
+
+.course-card.not-started::before {
+    background: #f44336;
+}
+
 .course-header {
     display: flex;
     justify-content: space-between;
