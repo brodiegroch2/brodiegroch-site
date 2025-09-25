@@ -18,9 +18,11 @@ interface Deliverable {
 
 export default function DeliverablesPage() {
   const [deliverables, setDeliverables] = useState<Deliverable[]>([]);
+  const [filteredDeliverables, setFilteredDeliverables] = useState<Deliverable[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedDeliverable, setSelectedDeliverable] = useState<Deliverable | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [statusFilter, setStatusFilter] = useState<string>('all');
 
   useEffect(() => {
     const loadDeliverables = async () => {
@@ -28,6 +30,7 @@ export default function DeliverablesPage() {
         const response = await fetch('/api/data/deliverables');
         const data = await response.json();
         setDeliverables(data);
+        setFilteredDeliverables(data);
       } catch (error) {
         console.error('Error loading deliverables:', error);
       } finally {
@@ -38,8 +41,20 @@ export default function DeliverablesPage() {
     loadDeliverables();
   }, []);
 
+  // Filter deliverables based on status
+  useEffect(() => {
+    if (statusFilter === 'all') {
+      setFilteredDeliverables(deliverables);
+    } else {
+      const filtered = deliverables.filter(deliverable => 
+        deliverable.Status === statusFilter
+      );
+      setFilteredDeliverables(filtered);
+    }
+  }, [deliverables, statusFilter]);
+
   // Sort deliverables: ungraded by due date first, then graded at bottom
-  const sortedDeliverables = deliverables.sort((a, b) => {
+  const sortedDeliverables = filteredDeliverables.sort((a, b) => {
     const hasGradeA = a['Grade %'] && a['Grade %'] !== '' && a['Grade %'] !== 'Not specified' && a['Grade %'] !== 'Not graded';
     const hasGradeB = b['Grade %'] && b['Grade %'] !== '' && b['Grade %'] !== 'Not specified' && b['Grade %'] !== 'Not graded';
     
@@ -96,6 +111,27 @@ export default function DeliverablesPage() {
     <div className="container">
       <h1 className="page-title">Deliverables</h1>
       <p className="page-subtitle">Track assignments, projects, and course deliverables</p>
+      
+      {/* Filter Controls */}
+      <div className="filter-section">
+        <div className="filter-controls">
+          <label htmlFor="status-filter" className="filter-label">Filter by Status:</label>
+          <select
+            id="status-filter"
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+            className="filter-select"
+          >
+            <option value="all">All Deliverables</option>
+            <option value="pending">Pending</option>
+            <option value="submitted">Submitted</option>
+            <option value="graded">Graded</option>
+          </select>
+          <div className="filter-count">
+            Showing {sortedDeliverables.length} of {deliverables.length} deliverables
+          </div>
+        </div>
+      </div>
       
       <div className="data-section">
         <h2 className="section-title">Assignment Information</h2>
