@@ -497,77 +497,10 @@ export default function Dashboard() {
         </div>
       </div>
       
-      {/* Enhanced Stats Grid */}
-      <div className="stats-grid">
-        <div className="stat-card primary">
-          <div className="stat-icon-wrapper">
-            <div className="stat-icon">
-              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div className="stat-glow"></div>
-          </div>
-          <div className="stat-content">
-            <div className="stat-number">{stats.totalCourses}</div>
-            <div className="stat-label">Active Courses</div>
-            <div className="stat-trend">+2 this semester</div>
-          </div>
-        </div>
-        
-        <div className="stat-card success">
-          <div className="stat-icon-wrapper">
-            <div className="stat-icon">
-              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-              </svg>
-            </div>
-            <div className="stat-glow"></div>
-          </div>
-          <div className="stat-content">
-            <div className="stat-number">{stats.completedDeliverables}</div>
-            <div className="stat-label">Completed</div>
-            <div className="stat-trend">Great progress!</div>
-          </div>
-        </div>
-        
-        <div className="stat-card warning">
-          <div className="stat-icon-wrapper">
-            <div className="stat-icon">
-              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                <polyline points="12,6 12,12 16,14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div className="stat-glow"></div>
-          </div>
-          <div className="stat-content">
-            <div className="stat-number">{stats.upcomingDeadlines}</div>
-            <div className="stat-label">Due This Week</div>
-            <div className="stat-trend">Stay focused!</div>
-          </div>
-        </div>
-        
-        <div className="stat-card info">
-          <div className="stat-icon-wrapper">
-            <div className="stat-icon">
-              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 20V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 20V4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M6 20v-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div className="stat-glow"></div>
-          </div>
-          <div className="stat-content">
-            <div className="stat-number">{stats.averageGrade}</div>
-            <div className="stat-label">Average Grade</div>
-            <div className="stat-trend">Excellent work!</div>
-          </div>
-        </div>
-      </div>
+      {/* Main Dashboard Layout */}
+      <div className="dashboard-layout">
+        {/* Main Content Area */}
+        <div className="main-content-area">
 
       {/* Quick Actions Section */}
       <div className="quick-actions-section">
@@ -670,7 +603,77 @@ export default function Dashboard() {
           <div className="empty-state">Loading progress overview...</div>
         </div>
       </div>
+        </div>
+        </div>
+
+        {/* Stats Sidebar */}
+        <div className="stats-sidebar">
+          <div className="stat-card primary">
+            <div className="stat-icon-wrapper">
+              <div className="stat-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <div className="stat-content">
+              <div className="stat-number">{stats.totalCourses}</div>
+              <div className="stat-label">Active Courses</div>
+              <div className="stat-trend">+2 this semester</div>
+            </div>
+          </div>
+          
+          <div className="stat-card success">
+            <div className="stat-icon-wrapper">
+              <div className="stat-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                </svg>
+              </div>
+            </div>
+            <div className="stat-content">
+              <div className="stat-number">{stats.completedDeliverables}</div>
+              <div className="stat-label">Completed</div>
+              <div className="stat-trend">Great progress!</div>
+            </div>
+          </div>
+          
+          <div className="stat-card warning">
+            <div className="stat-icon-wrapper">
+              <div className="stat-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                  <polyline points="12,6 12,12 16,14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <div className="stat-content">
+              <div className="stat-number">{stats.upcomingDeadlines}</div>
+              <div className="stat-label">Due This Week</div>
+              <div className="stat-trend">Stay focused!</div>
+            </div>
+          </div>
+          
+          <div className="stat-card info">
+            <div className="stat-icon-wrapper">
+              <div className="stat-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 20V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 20V4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M6 20v-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <div className="stat-content">
+              <div className="stat-number">{stats.averageGrade}</div>
+              <div className="stat-label">Average Grade</div>
+              <div className="stat-trend">Excellent work!</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
 }
