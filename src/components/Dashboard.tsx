@@ -452,10 +452,12 @@ export default function Dashboard() {
 
   return (
     <div className="container">
-      {/* Hero Section */}
-      <div className="hero-section">
-        <div className="hero-layout">
-          <div className="hero-welcome">
+      {/* Main Dashboard Layout */}
+      <div className="dashboard-layout">
+        {/* Main Content Area */}
+        <div className="main-content-area">
+          {/* Hero Welcome Section */}
+          <div className="hero-welcome-section">
             <h1 className="hero-title">
               Welcome back, Brodie! 
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: 'inline-block', marginLeft: '8px', verticalAlign: 'middle'}}>
@@ -464,13 +466,6 @@ export default function Dashboard() {
             </h1>
             <p className="hero-subtitle">Here&apos;s what&apos;s happening in your academic journey today</p>
           </div>
-        </div>
-      </div>
-      
-      {/* Main Dashboard Layout */}
-      <div className="dashboard-layout">
-        {/* Main Content Area */}
-        <div className="main-content-area">
 
       {/* Quick Actions Section */}
       <div className="quick-actions-section">
