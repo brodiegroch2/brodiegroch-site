@@ -27,7 +27,7 @@ export default function SchedulePage() {
   const [schedule, setSchedule] = useState<ScheduleItem[]>([]);
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState('');
 
   useEffect(() => {
     const loadData = async () => {
@@ -51,6 +51,22 @@ export default function SchedulePage() {
 
     loadData();
   }, []);
+
+  // Set filter to current day after data loads
+  useEffect(() => {
+    if (!loading && schedule.length > 0) {
+      const currentDay = getCurrentDay();
+      const availableDays = Array.from(new Set(schedule.map(item => item["Day of Week"])));
+      
+      // Only set to current day if it exists in the schedule data
+      if (availableDays.includes(currentDay)) {
+        setFilter(currentDay);
+      } else {
+        // Fallback to first available day if current day not found
+        setFilter(availableDays[0] || 'all');
+      }
+    }
+  }, [loading, schedule]);
 
   const filteredSchedule = (filter === 'all' 
     ? schedule 
