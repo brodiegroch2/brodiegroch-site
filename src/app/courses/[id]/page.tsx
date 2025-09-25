@@ -101,21 +101,20 @@ export default function CourseDetailPage() {
     
     deliverables.forEach(deliverable => {
       const weight = parseFloat(deliverable['Weight %']) || 0;
-      const grade = parseFloat(deliverable['Grade %']) || 0;
+      const grade = parseFloat(deliverable['Grade %']);
       
-      if (grade > 0 && deliverable['Grade %'] !== '' && 
-          deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded') {
-        totalWeightedPoints += (grade * weight / 100);
+      if (!isNaN(grade) && grade > 0) {
+        totalWeightedPoints += (grade * weight);
         totalWeight += weight;
         gradedCount++;
       }
     });
     
-    if (totalWeight === 0 || gradedCount === 0) {
-      return '0%';
+    if (totalWeight === 0) {
+      return 'No grades available';
     }
     
-    const average = (totalWeightedPoints / totalWeight) * 100;
+    const average = totalWeightedPoints / totalWeight;
     return `${average.toFixed(1)}%`;
   };
 
@@ -217,7 +216,9 @@ export default function CourseDetailPage() {
                 <div 
                   className="pie-chart" 
                   style={{
-                    background: `conic-gradient(#2196F3 0deg ${parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * 3.6}deg, rgba(33, 150, 243, 0.2) ${parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * 3.6}deg 360deg)`
+                    background: calculateWeightedAverage(deliverables) === 'No grades available' 
+                      ? 'rgba(33, 150, 243, 0.2)' 
+                      : `conic-gradient(#2196F3 0deg ${parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * 3.6}deg, rgba(33, 150, 243, 0.2) ${parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * 3.6}deg 360deg)`
                   }}
                 >
                   <div className="pie-chart-text">{calculateWeightedAverage(deliverables)}</div>
@@ -243,11 +244,16 @@ export default function CourseDetailPage() {
                 <div 
                   className="pie-chart" 
                   style={{
-                    background: `conic-gradient(#FF9800 0deg ${parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * parseFloat(calculateCompletionPercentage(deliverables)) / 100 * 3.6}deg, rgba(255, 152, 0, 0.2) ${parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * parseFloat(calculateCompletionPercentage(deliverables)) / 100 * 3.6}deg 360deg)`
+                    background: calculateWeightedAverage(deliverables) === 'No grades available'
+                      ? 'rgba(255, 152, 0, 0.2)'
+                      : `conic-gradient(#FF9800 0deg ${parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * parseFloat(calculateCompletionPercentage(deliverables)) / 100 * 3.6}deg, rgba(255, 152, 0, 0.2) ${parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * parseFloat(calculateCompletionPercentage(deliverables)) / 100 * 3.6}deg 360deg)`
                   }}
                 >
                   <div className="pie-chart-text">
-                    {(parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * parseFloat(calculateCompletionPercentage(deliverables)) / 100).toFixed(1)}%
+                    {calculateWeightedAverage(deliverables) === 'No grades available'
+                      ? 'No grades available'
+                      : `${(parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * parseFloat(calculateCompletionPercentage(deliverables)) / 100).toFixed(1)}%`
+                    }
                   </div>
                 </div>
               </div>
@@ -319,6 +325,7 @@ export default function CourseDetailPage() {
                     </div>
                     
                     <div className="deliverable-title">{deliverable["Deliverable"] || 'Untitled Deliverable'}</div>
+                    <div className="deliverable-course">{deliverable["Course ID"] || 'Unknown Course'}</div>
                     
                     <div className="deliverable-dates">
                       <div className="date-item">
