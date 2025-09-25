@@ -152,10 +152,25 @@ export default function Dashboard() {
 
   const calculateCountdown = (deliverablesData: Deliverable[]) => {
     const now = new Date();
+    
+    // Filter for deliverables that:
+    // 1. Haven't passed their due date yet
+    // 2. Don't have a grade (not graded yet)
+    // 3. Aren't submitted (if status exists)
     const upcomingDeliverables = deliverablesData
       .filter(d => {
         const closeDate = new Date(d["Close Date"]);
-        return closeDate > now;
+        const isNotPastDue = closeDate > now;
+        
+        // Check if it has a grade
+        const hasGrade = d['Grade %'] && d['Grade %'] !== '' && 
+                        d['Grade %'] !== 'Not specified' && d['Grade %'] !== 'Not graded';
+        
+        // Check if it's submitted (if status field exists)
+        const isSubmitted = d['Status'] === 'submitted';
+        
+        // Include if it's not past due AND (doesn't have a grade OR isn't submitted)
+        return isNotPastDue && (!hasGrade || !isSubmitted);
       })
       .sort((a, b) => new Date(a["Close Date"]).getTime() - new Date(b["Close Date"]).getTime());
 
@@ -178,6 +193,13 @@ export default function Dashboard() {
             hours: hours.toString().padStart(2, '0'),
             minutes: minutes.toString().padStart(2, '0')
           });
+        } else {
+          // If time has passed, set to 00:00:00
+          setCountdown({
+            days: '00',
+            hours: '00',
+            minutes: '00'
+          });
         }
       };
       
@@ -185,6 +207,14 @@ export default function Dashboard() {
       const interval = setInterval(updateCountdown, 60000); // Update every minute
       
       return () => clearInterval(interval);
+    } else {
+      // No upcoming ungraded/unsubmitted deliverables
+      setNextAssignment('No upcoming assignments');
+      setCountdown({
+        days: '--',
+        hours: '--',
+        minutes: '--'
+      });
     }
   };
 
