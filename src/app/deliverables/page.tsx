@@ -226,10 +226,6 @@ export default function DeliverablesPage() {
                       <span className="grade-label">Letter:</span>
                       <span className="grade-value">{deliverable['Letter Grade'] || 'Not graded'}</span>
                     </div>
-                    <div className="grade-item">
-                      <span className="grade-label">GPA:</span>
-                      <span className="grade-value">{deliverable.GPA || 'Not graded'}</span>
-                    </div>
                   </div>
                   
                   <div className="deliverable-status">
