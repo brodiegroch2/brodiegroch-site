@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import DeliverableEditModal from './DeliverableEditModal';
+import { calculateCourseGPA } from '@/utils/gpaCalculator';
 
 interface Course {
   "Course ID": string;
@@ -33,10 +34,10 @@ export default function Dashboard() {
   const [countdown, setCountdown] = useState({ days: '--', hours: '--', minutes: '--' });
   const [nextAssignment, setNextAssignment] = useState('Loading...');
   const [stats, setStats] = useState({
-    totalCourses: 0,
     completedDeliverables: '0/0',
     upcomingDeadlines: 0,
-    averageGrade: '0%'
+    averageGrade: '0%',
+    gpa: '0.00'
   });
   const [recentActivityPage, setRecentActivityPage] = useState(0);
   const [upcomingDeadlinesPage, setUpcomingDeadlinesPage] = useState(0);
@@ -85,10 +86,6 @@ export default function Dashboard() {
   }, [recentActivityPage, upcomingDeadlinesPage, deliverables]);
 
   const calculateStats = (coursesData: Course[], deliverablesData: Deliverable[]) => {
-    // Count active courses
-    const activeCourses = coursesData.filter(course => 
-      course['Course ID'] && course['Course ID'] !== ''
-    ).length;
 
     // Count completed deliverables (graded OR submitted)
     const completedDeliverables = deliverablesData.filter(deliverable => {
@@ -145,12 +142,16 @@ export default function Dashboard() {
 
     const averageGrade = totalCreditHours > 0 ? Math.round(weightedSum / totalCreditHours) : 0;
 
+    // Calculate overall GPA from all deliverables
+    const gpaStats = calculateCourseGPA(deliverablesData);
+    const overallGPA = gpaStats.gpa.toFixed(2);
+
     // Update state for display
     setStats({
-      totalCourses: activeCourses,
       completedDeliverables: `${completedDeliverables}/${totalDeliverables}`,
       upcomingDeadlines: upcomingDeadlines,
-      averageGrade: `${averageGrade}%`
+      averageGrade: `${averageGrade}%`,
+      gpa: overallGPA
     });
   };
 
@@ -569,22 +570,6 @@ export default function Dashboard() {
       
       {/* Enhanced Stats Grid */}
       <div className="stats-grid">
-        <div className="stat-card primary">
-          <div className="stat-icon-wrapper">
-            <div className="stat-icon">
-              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div className="stat-glow"></div>
-          </div>
-          <div className="stat-content">
-            <div className="stat-number">{stats.totalCourses}</div>
-            <div className="stat-label">Active Courses</div>
-          </div>
-        </div>
-        
         <div className="stat-card success">
           <div className="stat-icon-wrapper">
             <div className="stat-icon">
@@ -631,6 +616,21 @@ export default function Dashboard() {
           <div className="stat-content">
             <div className="stat-number">{stats.averageGrade}</div>
             <div className="stat-label">Average Grade</div>
+          </div>
+        </div>
+        
+        <div className="stat-card success">
+          <div className="stat-icon-wrapper">
+            <div className="stat-icon">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L15.09 8.26L22 9L15.09 9.74L12 16L8.91 9.74L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div className="stat-glow"></div>
+          </div>
+          <div className="stat-content">
+            <div className="stat-number">{stats.gpa}</div>
+            <div className="stat-label">GPA</div>
           </div>
         </div>
       </div>

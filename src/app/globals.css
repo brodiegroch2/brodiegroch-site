@@ -1365,7 +1365,7 @@ body {
 
 .course-details {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 0.75rem;
     margin-bottom: 1rem;
 }
@@ -2190,7 +2190,7 @@ body {
 
 .course-details {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
     margin: 1.5rem 0;
 }
