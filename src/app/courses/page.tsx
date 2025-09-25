@@ -72,7 +72,7 @@ export default function CoursesPage() {
     }
     
     const average = totalWeightedPoints / totalWeight;
-    return `${average.toFixed(1)}%`;
+    return `${Math.round(average)}%`;
   };
 
   const calculateCompletionPercentage = (courseDeliverables: Deliverable[]) => {
