@@ -3491,6 +3491,43 @@ body {
     gap: 1rem;
 }
 
+.column-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.column-pagination .pagination-btn {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: #e0e0e0;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.column-pagination .pagination-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.column-pagination .pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.column-pagination .pagination-info {
+    font-size: 0.875rem;
+    color: #888;
+    font-weight: 500;
+}
+
 @media (max-width: 768px) {
     .deliverables-columns {
         grid-template-columns: 1fr;

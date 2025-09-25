@@ -37,6 +37,10 @@ export default function CourseDetailPage() {
   const [loading, setLoading] = useState(true);
   const [selectedDeliverable, setSelectedDeliverable] = useState<Deliverable | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [pendingPage, setPendingPage] = useState(0);
+  const [submittedPage, setSubmittedPage] = useState(0);
+  const [gradedPage, setGradedPage] = useState(0);
+  const itemsPerPage = 5;
 
   useEffect(() => {
     const loadData = async () => {
@@ -185,6 +189,37 @@ export default function CourseDetailPage() {
     return classes.join(' ');
   };
 
+  // Pagination handlers
+  const handlePendingPrev = () => {
+    if (pendingPage > 0) {
+      setPendingPage(pendingPage - 1);
+    }
+  };
+
+  const handlePendingNext = () => {
+    setPendingPage(pendingPage + 1);
+  };
+
+  const handleSubmittedPrev = () => {
+    if (submittedPage > 0) {
+      setSubmittedPage(submittedPage - 1);
+    }
+  };
+
+  const handleSubmittedNext = () => {
+    setSubmittedPage(submittedPage + 1);
+  };
+
+  const handleGradedPrev = () => {
+    if (gradedPage > 0) {
+      setGradedPage(gradedPage - 1);
+    }
+  };
+
+  const handleGradedNext = () => {
+    setGradedPage(gradedPage + 1);
+  };
+
   if (loading) {
     return (
       <div className="container">
@@ -297,107 +332,26 @@ export default function CourseDetailPage() {
             No deliverables found for this course.
           </div>
         ) : (
-          <div className="deliverables-columns">
-            <div className="deliverables-column">
-              <h3 className="column-title">Pending</h3>
-              <div className="column-content">
-                {deliverables.filter(d => d['Status'] === 'pending').length === 0 ? (
-                  <div className="empty-state">No pending deliverables</div>
-                ) : (
-                  deliverables
-                    .filter(d => d['Status'] === 'pending')
-                    .sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime())
-                    .map((deliverable, index) => (
-                      <div key={index} className={getDeliverableClasses(deliverable)} onClick={() => handleDeliverableClick(deliverable)}>
-                        <div className="deliverable-header">
-                          <div className="deliverable-title">{deliverable['Deliverable']}</div>
-                          <div className="deliverable-course">{deliverable['Course ID']}</div>
-                        </div>
-                        <div className="deliverable-dates">
-                          <div className="date-item">
-                            <span className="date-label">Due:</span>
-                            <span className="date-value">{deliverable['Close Date'] || 'Not specified'}</span>
-                          </div>
-                        </div>
-                        <div className="deliverable-grades">
-                          <div className="grade-item">
-                            <span className="grade-label">Grade:</span>
-                            <span className="grade-value">{deliverable['Grade %'] || 'Not graded'}</span>
-                          </div>
-                          <div className="grade-item">
-                            <span className="grade-label">Letter:</span>
-                            <span className="grade-value">{deliverable['Letter Grade'] || 'Not graded'}</span>
-                          </div>
-                          <div className="grade-item">
-                            <span className="grade-label">GPA:</span>
-                            <span className="grade-value">{deliverable.GPA || 'Not graded'}</span>
-                          </div>
-                        </div>
-                        <div className="deliverable-status">
-                          <span className="status-label">Status:</span>
-                          <span className="status-value status-${deliverable.Status || 'pending'}">{deliverable.Status || 'pending'}</span>
-                        </div>
-                      </div>
-                    ))
-                )}
-              </div>
-            </div>
+          (() => {
+            const pendingDeliverables = deliverables.filter(d => d['Status'] === 'pending');
+            const submittedDeliverables = deliverables.filter(d => d['Status'] === 'submitted');
+            const gradedDeliverables = deliverables.filter(d => d['Status'] === 'graded');
             
-            <div className="deliverables-column">
-              <h3 className="column-title">Submitted</h3>
-              <div className="column-content">
-                {deliverables.filter(d => d['Status'] === 'submitted').length === 0 ? (
-                  <div className="empty-state">No submitted deliverables</div>
-                ) : (
-                  deliverables
-                    .filter(d => d['Status'] === 'submitted')
-                    .sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime())
-                    .map((deliverable, index) => (
-                      <div key={index} className={getDeliverableClasses(deliverable)} onClick={() => handleDeliverableClick(deliverable)}>
-                        <div className="deliverable-header">
-                          <div className="deliverable-title">{deliverable['Deliverable']}</div>
-                          <div className="deliverable-course">{deliverable['Course ID']}</div>
-                        </div>
-                        <div className="deliverable-dates">
-                          <div className="date-item">
-                            <span className="date-label">Due:</span>
-                            <span className="date-value">{deliverable['Close Date'] || 'Not specified'}</span>
-                          </div>
-                        </div>
-                        <div className="deliverable-grades">
-                          <div className="grade-item">
-                            <span className="grade-label">Grade:</span>
-                            <span className="grade-value">{deliverable['Grade %'] || 'Not graded'}</span>
-                          </div>
-                          <div className="grade-item">
-                            <span className="grade-label">Letter:</span>
-                            <span className="grade-value">{deliverable['Letter Grade'] || 'Not graded'}</span>
-                          </div>
-                          <div className="grade-item">
-                            <span className="grade-label">GPA:</span>
-                            <span className="grade-value">{deliverable.GPA || 'Not graded'}</span>
-                          </div>
-                        </div>
-                        <div className="deliverable-status">
-                          <span className="status-label">Status:</span>
-                          <span className="status-value status-${deliverable.Status || 'pending'}">{deliverable.Status || 'pending'}</span>
-                        </div>
-                      </div>
-                    ))
-                )}
-              </div>
-            </div>
+            const columns = [];
             
-            <div className="deliverables-column">
-              <h3 className="column-title">Graded</h3>
-              <div className="column-content">
-                {deliverables.filter(d => d['Status'] === 'graded').length === 0 ? (
-                  <div className="empty-state">No graded deliverables</div>
-                ) : (
-                  deliverables
-                    .filter(d => d['Status'] === 'graded')
-                    .sort((a, b) => new Date(b['Close Date']).getTime() - new Date(a['Close Date']).getTime())
-                    .map((deliverable, index) => (
+            // Add pending column if it has deliverables
+            if (pendingDeliverables.length > 0) {
+              const sortedPending = pendingDeliverables.sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime());
+              const totalPendingPages = Math.ceil(sortedPending.length / itemsPerPage);
+              const startPendingIndex = pendingPage * itemsPerPage;
+              const endPendingIndex = startPendingIndex + itemsPerPage;
+              const currentPendingItems = sortedPending.slice(startPendingIndex, endPendingIndex);
+              
+              columns.push(
+                <div key="pending" className="deliverables-column">
+                  <h3 className="column-title">Pending ({sortedPending.length})</h3>
+                  <div className="column-content">
+                    {currentPendingItems.map((deliverable, index) => (
                       <div key={index} className={getDeliverableClasses(deliverable)} onClick={() => handleDeliverableClick(deliverable)}>
                         <div className="deliverable-header">
                           <div className="deliverable-title">{deliverable['Deliverable']}</div>
@@ -428,11 +382,137 @@ export default function CourseDetailPage() {
                           <span className="status-value status-${deliverable.Status || 'pending'}">{deliverable.Status || 'pending'}</span>
                         </div>
                       </div>
-                    ))
-                )}
+                    ))}
+                  </div>
+                  {totalPendingPages > 1 && (
+                    <div className="column-pagination">
+                      <button className="pagination-btn" disabled={pendingPage === 0} onClick={handlePendingPrev}>Previous</button>
+                      <span className="pagination-info">{pendingPage + 1} of {totalPendingPages}</span>
+                      <button className="pagination-btn" disabled={pendingPage >= totalPendingPages - 1} onClick={handlePendingNext}>Next</button>
+                    </div>
+                  )}
+                </div>
+              );
+            }
+            
+            // Add submitted column if it has deliverables
+            if (submittedDeliverables.length > 0) {
+              const sortedSubmitted = submittedDeliverables.sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime());
+              const totalSubmittedPages = Math.ceil(sortedSubmitted.length / itemsPerPage);
+              const startSubmittedIndex = submittedPage * itemsPerPage;
+              const endSubmittedIndex = startSubmittedIndex + itemsPerPage;
+              const currentSubmittedItems = sortedSubmitted.slice(startSubmittedIndex, endSubmittedIndex);
+              
+              columns.push(
+                <div key="submitted" className="deliverables-column">
+                  <h3 className="column-title">Submitted ({sortedSubmitted.length})</h3>
+                  <div className="column-content">
+                    {currentSubmittedItems.map((deliverable, index) => (
+                      <div key={index} className={getDeliverableClasses(deliverable)} onClick={() => handleDeliverableClick(deliverable)}>
+                        <div className="deliverable-header">
+                          <div className="deliverable-title">{deliverable['Deliverable']}</div>
+                          <div className="deliverable-course">{deliverable['Course ID']}</div>
+                        </div>
+                        <div className="deliverable-dates">
+                          <div className="date-item">
+                            <span className="date-label">Due:</span>
+                            <span className="date-value">{deliverable['Close Date'] || 'Not specified'}</span>
+                          </div>
+                        </div>
+                        <div className="deliverable-grades">
+                          <div className="grade-item">
+                            <span className="grade-label">Grade:</span>
+                            <span className="grade-value">{deliverable['Grade %'] || 'Not graded'}</span>
+                          </div>
+                          <div className="grade-item">
+                            <span className="grade-label">Letter:</span>
+                            <span className="grade-value">{deliverable['Letter Grade'] || 'Not graded'}</span>
+                          </div>
+                          <div className="grade-item">
+                            <span className="grade-label">GPA:</span>
+                            <span className="grade-value">{deliverable.GPA || 'Not graded'}</span>
+                          </div>
+                        </div>
+                        <div className="deliverable-status">
+                          <span className="status-label">Status:</span>
+                          <span className="status-value status-${deliverable.Status || 'pending'}">{deliverable.Status || 'pending'}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {totalSubmittedPages > 1 && (
+                    <div className="column-pagination">
+                      <button className="pagination-btn" disabled={submittedPage === 0} onClick={handleSubmittedPrev}>Previous</button>
+                      <span className="pagination-info">{submittedPage + 1} of {totalSubmittedPages}</span>
+                      <button className="pagination-btn" disabled={submittedPage >= totalSubmittedPages - 1} onClick={handleSubmittedNext}>Next</button>
+                    </div>
+                  )}
+                </div>
+              );
+            }
+            
+            // Add graded column if it has deliverables
+            if (gradedDeliverables.length > 0) {
+              const sortedGraded = gradedDeliverables.sort((a, b) => new Date(b['Close Date']).getTime() - new Date(a['Close Date']).getTime());
+              const totalGradedPages = Math.ceil(sortedGraded.length / itemsPerPage);
+              const startGradedIndex = gradedPage * itemsPerPage;
+              const endGradedIndex = startGradedIndex + itemsPerPage;
+              const currentGradedItems = sortedGraded.slice(startGradedIndex, endGradedIndex);
+              
+              columns.push(
+                <div key="graded" className="deliverables-column">
+                  <h3 className="column-title">Graded ({sortedGraded.length})</h3>
+                  <div className="column-content">
+                    {currentGradedItems.map((deliverable, index) => (
+                      <div key={index} className={getDeliverableClasses(deliverable)} onClick={() => handleDeliverableClick(deliverable)}>
+                        <div className="deliverable-header">
+                          <div className="deliverable-title">{deliverable['Deliverable']}</div>
+                          <div className="deliverable-course">{deliverable['Course ID']}</div>
+                        </div>
+                        <div className="deliverable-dates">
+                          <div className="date-item">
+                            <span className="date-label">Due:</span>
+                            <span className="date-value">{deliverable['Close Date'] || 'Not specified'}</span>
+                          </div>
+                        </div>
+                        <div className="deliverable-grades">
+                          <div className="grade-item">
+                            <span className="grade-label">Grade:</span>
+                            <span className="grade-value">{deliverable['Grade %'] || 'Not graded'}</span>
+                          </div>
+                          <div className="grade-item">
+                            <span className="grade-label">Letter:</span>
+                            <span className="grade-value">{deliverable['Letter Grade'] || 'Not graded'}</span>
+                          </div>
+                          <div className="grade-item">
+                            <span className="grade-label">GPA:</span>
+                            <span className="grade-value">{deliverable.GPA || 'Not graded'}</span>
+                          </div>
+                        </div>
+                        <div className="deliverable-status">
+                          <span className="status-label">Status:</span>
+                          <span className="status-value status-${deliverable.Status || 'pending'}">{deliverable.Status || 'pending'}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {totalGradedPages > 1 && (
+                    <div className="column-pagination">
+                      <button className="pagination-btn" disabled={gradedPage === 0} onClick={handleGradedPrev}>Previous</button>
+                      <span className="pagination-info">{gradedPage + 1} of {totalGradedPages}</span>
+                      <button className="pagination-btn" disabled={gradedPage >= totalGradedPages - 1} onClick={handleGradedNext}>Next</button>
+                    </div>
+                  )}
+                </div>
+              );
+            }
+            
+            return (
+              <div className="deliverables-columns" style={{ gridTemplateColumns: `repeat(${columns.length}, 1fr)` }}>
+                {columns}
               </div>
-            </div>
-          </div>
+            );
+          })()
         )}
       </div>
       
