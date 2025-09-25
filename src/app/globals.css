@@ -1661,6 +1661,39 @@ body {
     font-size: 0.8rem;
     font-weight: 500;
     text-transform: uppercase;
+}
+
+/* Todo Page Styles */
+.todo-card {
+    border-left: 4px solid #ff9800;
+}
+
+.todo-highlight {
+    color: #ff9800 !important;
+    font-weight: 600;
+}
+
+.todo-note {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: rgba(255, 152, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 152, 0, 0.2);
+}
+
+.todo-icon {
+    color: #ff9800;
+    display: flex;
+    align-items: center;
+}
+
+.todo-text {
+    color: #ff9800;
+    font-size: 0.9rem;
+    font-weight: 500;
     letter-spacing: 0.5px;
     margin-bottom: 0.25rem;
 }

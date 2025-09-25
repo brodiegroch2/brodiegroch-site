@@ -201,7 +201,7 @@ export default function Dashboard() {
       };
       
       updateCountdown();
-      const interval = setInterval(updateCountdown, 60000); // Update every minute
+      const interval = setInterval(updateCountdown, 1000); // Update every second for real-time countdown
       
       return () => clearInterval(interval);
     } else {

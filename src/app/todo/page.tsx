@@ -72,36 +72,58 @@ export default function TodoPage() {
         <div className="deliverables-grid">
           {undatedDeliverables.length === 0 ? (
             <div className="empty-state">
-              No undated deliverables found. All assignments have due dates.
+              All deliverables have due dates! Great job staying organized.
             </div>
           ) : (
-            undatedDeliverables.map((deliverable, index) => (
-              <div key={index} className="deliverable-card todo-item">
-                <div className="deliverable-header">
-                  <h3 className="deliverable-name">{deliverable["Deliverable"]}</h3>
-                  <div className="deliverable-course">{deliverable["Course ID"]}</div>
+            undatedDeliverables.map((deliverable, index) => {
+              const hasGrade = deliverable['Grade %'] && deliverable['Grade %'] !== '' && deliverable['Grade %'] !== 'Not graded';
+              const cardClass = hasGrade ? 'deliverable-card graded' : 'deliverable-card todo-card';
+              
+              return (
+                <div key={index} className={cardClass}>
+                  <div className="deliverable-header">
+                    <div className="deliverable-category">{deliverable['Category'] || 'Assignment'}</div>
+                    <div className="deliverable-weight">{deliverable['Weight %'] || '0'}%</div>
+                  </div>
+                  
+                  <div className="deliverable-title">{deliverable['Deliverable'] || 'Untitled Deliverable'}</div>
+                  <div className="deliverable-course">{deliverable['Course ID'] || 'Unknown Course'}</div>
+                  
+                  <div className="deliverable-dates">
+                    <div className="date-item">
+                      <span className="date-label">Opens:</span>
+                      <span className="date-value">{deliverable['Open Date'] || 'Not specified'}</span>
+                    </div>
+                    <div className="date-item">
+                      <span className="date-label">Due:</span>
+                      <span className="date-value todo-highlight">No due date set</span>
+                    </div>
+                  </div>
+                  
+                  <div className="deliverable-grades">
+                    <div className="grade-item">
+                      <span className="grade-label">Grade:</span>
+                      <span className="grade-value">{deliverable['Grade %'] || 'Not graded'}</span>
+                    </div>
+                    <div className="grade-item">
+                      <span className="grade-label">Letter:</span>
+                      <span className="grade-value">{deliverable['Letter Grade'] || 'Not graded'}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="todo-note">
+                    <span className="todo-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
+                        <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                    <span className="todo-text">Needs due date</span>
+                  </div>
                 </div>
-                
-                <div className="deliverable-category">
-                  <span className="category-badge">{deliverable["Category"]}</span>
-                </div>
-                
-                <div className="deliverable-weight">
-                  <strong>Weight:</strong> {deliverable["Weight %"]}%
-                </div>
-                
-                <div className="todo-status">
-                  <div className="status-icon">⚠️</div>
-                  <div className="status-text">No Due Date Set</div>
-                </div>
-                
-                <div className="todo-action">
-                  <button className="action-btn">
-                    Set Due Date
-                  </button>
-                </div>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
       </div>
