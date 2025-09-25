@@ -115,7 +115,6 @@ export default function DeliverablesPage() {
       {/* Filter Controls */}
       <div className="filter-section">
         <div className="filter-controls">
-          <label className="filter-label">Filter by Status:</label>
           <div className="filter-buttons">
             <button
               className={`filter-btn ${statusFilter === 'all' ? 'active' : ''}`}
