@@ -1,5 +1,6 @@
 import PasswordProtection from '@/components/PasswordProtection';
 import Navigation from '@/components/Navigation';
+import MobileBottomNav from '@/components/MobileBottomNav';
 import './globals.css';
 
 export default function RootLayout({
@@ -15,9 +16,12 @@ export default function RootLayout({
       <body>
         <PasswordProtection>
           <Navigation />
-          <main className="main-content">
-            {children}
+          <main className="main-content app-content-with-bottom-nav">
+            <div className="page-transition">
+              {children}
+            </div>
           </main>
+          <MobileBottomNav />
         </PasswordProtection>
       </body>
     </html>

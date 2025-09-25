@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import DeliverableEditModal from '@/components/DeliverableEditModal';
+import PullToRefresh from '@/components/PullToRefresh';
+import { useAppToast } from '@/components/AppToast';
 
 interface Deliverable {
   "Course ID": string;
@@ -22,23 +24,35 @@ export default function DeliverablesPage() {
   const [selectedDeliverable, setSelectedDeliverable] = useState<Deliverable | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [statusFilter, setStatusFilter] = useState<string>('all');
+  const { showToast, ToastContainer } = useAppToast();
+
+  const loadDeliverables = async () => {
+    try {
+      const response = await fetch('/api/data/deliverables');
+      const data = await response.json();
+      setDeliverables(data);
+      setFilteredDeliverables(data);
+      return data;
+    } catch (error) {
+      console.error('Error loading deliverables:', error);
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const loadDeliverables = async () => {
-      try {
-        const response = await fetch('/api/data/deliverables');
-        const data = await response.json();
-        setDeliverables(data);
-        setFilteredDeliverables(data);
-      } catch (error) {
-        console.error('Error loading deliverables:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     loadDeliverables();
   }, []);
+
+  const handleRefresh = async () => {
+    try {
+      await loadDeliverables();
+      showToast('Deliverables refreshed!', 'success');
+    } catch (error) {
+      showToast('Failed to refresh deliverables', 'error');
+    }
+  };
 
   // Filter deliverables based on status
   useEffect(() => {
@@ -141,8 +155,11 @@ export default function DeliverablesPage() {
 
   return (
     <div className="container">
+      <ToastContainer />
       <h1 className="page-title">Deliverables</h1>
       <p className="page-subtitle">Track assignments, projects, and course deliverables</p>
+      
+      <PullToRefresh onRefresh={handleRefresh}>
       
       {/* Filter Controls */}
       <div className="filter-section">
@@ -240,6 +257,8 @@ export default function DeliverablesPage() {
           )}
         </div>
       </div>
+      
+      </PullToRefresh>
       
       <DeliverableEditModal
         deliverable={selectedDeliverable}
