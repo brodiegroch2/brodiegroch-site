@@ -6,7 +6,6 @@ import { useState, useEffect, useRef } from 'react';
 
 export default function Navigation() {
   const pathname = usePathname();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -22,18 +21,8 @@ export default function Navigation() {
     { href: '/quick-links', label: 'Quick Links' },
   ];
 
-  const allNavLinks = [...mainNavLinks, ...dropdownLinks];
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
   };
 
   // Close dropdown when clicking outside
@@ -103,52 +92,7 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <button 
-          className="mobile-menu-toggle"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle mobile menu"
-          aria-expanded={isMobileMenuOpen}
-        >
-          <span className={`hamburger-line ${isMobileMenuOpen ? 'active' : ''}`}></span>
-          <span className={`hamburger-line ${isMobileMenuOpen ? 'active' : ''}`}></span>
-          <span className={`hamburger-line ${isMobileMenuOpen ? 'active' : ''}`}></span>
-        </button>
       </div>
-
-      {/* Mobile Navigation Menu */}
-      {isMobileMenuOpen && (
-        <div className="mobile-nav-overlay" onClick={closeMobileMenu}>
-          <div className="mobile-nav-menu" onClick={(e) => e.stopPropagation()}>
-            <div className="mobile-nav-header">
-              <h2 className="mobile-nav-title">Navigation</h2>
-              <button 
-                className="mobile-nav-close"
-                onClick={closeMobileMenu}
-                aria-label="Close mobile menu"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-            </div>
-            
-            <ul className="mobile-nav-links">
-              {allNavLinks.map((link) => (
-                <li key={link.href}>
-                  <Link 
-                    href={link.href} 
-                    className={`mobile-nav-link ${pathname === link.href ? 'active' : ''}`}
-                    onClick={closeMobileMenu}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
     </nav>
   );
 }
