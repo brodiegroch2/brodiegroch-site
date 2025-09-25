@@ -396,7 +396,7 @@ export default function CourseDetailPage() {
                 ) : (
                   deliverables
                     .filter(d => d['Status'] === 'graded')
-                    .sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime())
+                    .sort((a, b) => new Date(b['Close Date']).getTime() - new Date(a['Close Date']).getTime())
                     .map((deliverable, index) => (
                       <div key={index} className={getDeliverableClasses(deliverable)} onClick={() => handleDeliverableClick(deliverable)}>
                         <div className="deliverable-header">
