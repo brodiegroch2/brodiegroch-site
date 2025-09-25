@@ -4774,8 +4774,13 @@ body {
 }
 
 /* App-like bottom navigation for mobile */
+.app-bottom-nav {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .app-bottom-nav {
+        display: flex;
         position: fixed;
         bottom: 0;
         left: 0;
@@ -4785,7 +4790,6 @@ body {
         backdrop-filter: blur(20px);
         padding: 0.75rem 0;
         z-index: 100;
-        display: flex;
         justify-content: space-around;
         align-items: center;
     }
