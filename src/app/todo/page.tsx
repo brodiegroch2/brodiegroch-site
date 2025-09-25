@@ -49,13 +49,20 @@ export default function TodoPage() {
 
   const handleDeliverableUpdate = (updatedDeliverable: Deliverable) => {
     setDeliverables(prevDeliverables => 
-      prevDeliverables.map(deliverable => 
-        deliverable['Course ID'] === updatedDeliverable['Course ID'] &&
-        deliverable['Deliverable'] === updatedDeliverable['Deliverable'] &&
-        deliverable['Open Date'] === updatedDeliverable['Open Date']
-          ? updatedDeliverable
-          : deliverable
-      )
+      prevDeliverables.map(deliverable => {
+        // Try multiple matching strategies
+        const courseMatch = deliverable['Course ID'] === updatedDeliverable['Course ID'];
+        const deliverableMatch = deliverable['Deliverable'] === updatedDeliverable['Deliverable'];
+        const openDateMatch = deliverable['Open Date'] === updatedDeliverable['Open Date'];
+        
+        // Primary match: Course ID + Deliverable + Open Date
+        const primaryMatch = courseMatch && deliverableMatch && openDateMatch;
+        
+        // Fallback match: Course ID + Deliverable (in case Open Date changed)
+        const fallbackMatch = courseMatch && deliverableMatch;
+        
+        return (primaryMatch || fallbackMatch) ? updatedDeliverable : deliverable;
+      })
     );
   };
 

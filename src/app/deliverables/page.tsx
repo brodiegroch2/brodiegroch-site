@@ -112,12 +112,20 @@ export default function DeliverablesPage() {
     
     setDeliverables(prev => {
       const updated = prev.map(deliverable => {
-        const isMatch = deliverable['Course ID'] === updatedDeliverable['Course ID'] &&
-                       deliverable['Deliverable'] === updatedDeliverable['Deliverable'] &&
-                       deliverable['Open Date'] === updatedDeliverable['Open Date'];
+        // Try multiple matching strategies
+        const courseMatch = deliverable['Course ID'] === updatedDeliverable['Course ID'];
+        const deliverableMatch = deliverable['Deliverable'] === updatedDeliverable['Deliverable'];
+        const openDateMatch = deliverable['Open Date'] === updatedDeliverable['Open Date'];
         
-        if (isMatch) {
+        // Primary match: Course ID + Deliverable + Open Date
+        const primaryMatch = courseMatch && deliverableMatch && openDateMatch;
+        
+        // Fallback match: Course ID + Deliverable (in case Open Date changed)
+        const fallbackMatch = courseMatch && deliverableMatch;
+        
+        if (primaryMatch || fallbackMatch) {
           console.log('Found matching deliverable:', deliverable);
+          console.log('Primary match:', primaryMatch, 'Fallback match:', fallbackMatch);
           console.log('Updating to:', updatedDeliverable);
           return updatedDeliverable;
         }
