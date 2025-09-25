@@ -577,15 +577,7 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.quick-action-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: #4a9eff;
-}
+/* Removed decorative top line */
 
 .quick-action-card:hover {
     transform: translateY(-4px) scale(1.02);
@@ -847,17 +839,7 @@ body {
     backdrop-filter: blur(10px);
 }
 
-.schedule-list-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: #4a9eff;
-    background-size: 200% 100%;
-    animation: shimmer 3s ease-in-out infinite;
-}
+/* Removed decorative top line */
 
 .schedule-list-item:hover {
     transform: translateY(-4px) scale(1.01);
@@ -1062,17 +1044,7 @@ body {
     min-height: 200px;
 }
 
-.data-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: #4a9eff;
-    background-size: 200% 100%;
-    animation: shimmer 3s ease-in-out infinite;
-}
+/* Removed decorative top line */
 
 .data-item:hover {
     transform: translateY(-6px) scale(1.03);
@@ -1225,17 +1197,7 @@ body {
     justify-content: flex-start;
 }
 
-.app-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: #4a9eff;
-    background-size: 200% 100%;
-    animation: shimmer 3s ease-in-out infinite;
-}
+/* Removed decorative top line */
 
 @keyframes shimmer {
     0% { background-position: -200% 0; }
@@ -1340,17 +1302,7 @@ body {
     color: inherit;
 }
 
-.course-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: #4a9eff;
-    background-size: 200% 100%;
-    animation: shimmer 3s ease-in-out infinite;
-}
+/* Removed decorative top line */
 
 .course-card:hover {
     transform: translateY(-2px);
@@ -1490,17 +1442,7 @@ body {
     cursor: pointer;
 }
 
-.deliverable-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: #4a9eff;
-    background-size: 200% 100%;
-    animation: shimmer 3s ease-in-out infinite;
-}
+/* Removed decorative top line */
 
 .deliverable-item:hover {
     transform: translateY(-2px);
