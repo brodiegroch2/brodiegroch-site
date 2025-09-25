@@ -1367,25 +1367,13 @@ body {
     text-decoration: none;
 }
 
-/* Course Card Status Classes */
-.course-card.completed {
-    border-left: 4px solid #4caf50;
-}
-
+/* Course Card Status Classes - Removed colored borders for consistency */
 .course-card.completed::before {
     background: #4caf50;
 }
 
-.course-card.in-progress {
-    border-left: 4px solid #ff9800;
-}
-
 .course-card.in-progress::before {
     background: #ff9800;
-}
-
-.course-card.not-started {
-    border-left: 4px solid #f44336;
 }
 
 .course-card.not-started::before {
@@ -2260,13 +2248,156 @@ body {
 }
 
 /* Course Detail Page Styles */
-.course-detail-page {
-    background: #1a1a1a;
-    border-radius: 20px;
-    padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+.course-detail-card {
+    background: #2d2d2d;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid #404040;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+}
+
+.course-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.course-detail {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.course-detail-label {
+    font-size: 0.85rem;
+    color: #b0b0b0;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.course-detail-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #4a9eff;
+}
+
+.course-professor {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.professor-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.professor-email {
+    color: #4a9eff;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.professor-email:hover {
+    color: #6bb6ff;
+    text-decoration: underline;
+}
+
+.course-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.deliverables-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.deliverable-item {
+    background: #2d2d2d;
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid #404040;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.deliverable-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(74, 158, 255, 0.1);
+    border-color: #4a9eff;
+}
+
+.deliverable-item.graded {
+    border-left: 4px solid #4caf50;
+}
+
+.deliverable-item.graded::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #4caf50;
+}
+
+.deliverable-dates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.date-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.date-label {
+    font-size: 0.8rem;
+    color: #b0b0b0;
+    font-weight: 500;
+}
+
+.date-value {
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.deliverable-grade {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grade-label {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    font-weight: 500;
+}
+
+.grade-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4a9eff;
 }
 
 .course-header-large {

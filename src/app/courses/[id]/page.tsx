@@ -196,98 +196,49 @@ export default function CourseDetailPage() {
       
       <div className="data-section">
         <h2 className="section-title">Course Information</h2>
-        <div className="course-detail-page">
-          <div className="course-header-large">
-            <div className="course-id-large">{course["Course ID"]}</div>
-            <div className="course-credits-large">{course["Credit Hours"]} Credits</div>
+        <div className="course-detail-card">
+          <div className="course-header">
+            <div className="course-id">{course["Course ID"]}</div>
+            <div className="course-credits">{course["Credit Hours"]} Credits</div>
           </div>
           
-          <div className="course-title-large">{course["Course Name"]}</div>
+          <div className="course-title">{course["Course Name"]}</div>
           
-          <div className="course-description-large">
-            <h3>Course Description</h3>
+          <div className="course-description">
             <p>{course["Course Description"]}</p>
           </div>
           
-          <div className="course-stats">
-            <div className="stat-card">
-              <div className="pie-chart-label">Average Grade</div>
-              <div className="pie-chart-container">
-                <div 
-                  className="pie-chart" 
-                  style={{
-                    background: calculateWeightedAverage(deliverables) === 'No grades available' 
-                      ? 'rgba(33, 150, 243, 0.2)' 
-                      : `conic-gradient(#2196F3 0deg ${parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * 3.6}deg, rgba(33, 150, 243, 0.2) ${parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * 3.6}deg 360deg)`
-                  }}
-                >
-                  <div className="pie-chart-text">{calculateWeightedAverage(deliverables)}</div>
-                </div>
-              </div>
+          <div className="course-details">
+            <div className="course-detail">
+              <div className="course-detail-label">Average Grade</div>
+              <div className="course-detail-value">{calculateWeightedAverage(deliverables)}</div>
             </div>
-            <div className="stat-card">
-              <div className="pie-chart-label">Completion</div>
-              <div className="pie-chart-container">
-                <div 
-                  className="pie-chart" 
-                  style={{
-                    background: `conic-gradient(#4CAF50 0deg ${parseFloat(calculateCompletionPercentage(deliverables)) * 3.6}deg, rgba(76, 175, 80, 0.2) ${parseFloat(calculateCompletionPercentage(deliverables)) * 3.6}deg 360deg)`
-                  }}
-                >
-                  <div className="pie-chart-text">{calculateCompletionPercentage(deliverables)}%</div>
-                </div>
-              </div>
-            </div>
-            <div className="stat-card">
-              <div className="pie-chart-label">Weighted Average</div>
-              <div className="pie-chart-container">
-                <div 
-                  className="pie-chart" 
-                  style={{
-                    background: calculateWeightedAverage(deliverables) === 'No grades available'
-                      ? 'rgba(255, 152, 0, 0.2)'
-                      : `conic-gradient(#FF9800 0deg ${parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * parseFloat(calculateCompletionPercentage(deliverables)) / 100 * 3.6}deg, rgba(255, 152, 0, 0.2) ${parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * parseFloat(calculateCompletionPercentage(deliverables)) / 100 * 3.6}deg 360deg)`
-                  }}
-                >
-                  <div className="pie-chart-text">
-                    {calculateWeightedAverage(deliverables) === 'No grades available'
-                      ? 'No grades available'
-                      : `${(parseFloat(calculateWeightedAverage(deliverables).replace('%', '')) * parseFloat(calculateCompletionPercentage(deliverables)) / 100).toFixed(1)}%`
-                    }
-                  </div>
-                </div>
-              </div>
+            <div className="course-detail">
+              <div className="course-detail-label">Completion %</div>
+              <div className="course-detail-value">{calculateCompletionPercentage(deliverables)}%</div>
             </div>
           </div>
           
-          <div className="professor-section">
-            <h3>Instructor Information</h3>
-            <div className="professor-card">
-              <div className="professor-name-large">{course["Professor/Teacher Name"]}</div>
-              {course["Professor/Teacher Email"] && course["Professor/Teacher Email"] !== 'Not specified' ? (
-                <a href={`mailto:${course["Professor/Teacher Email"]}`} className="professor-email-large">
-                  {course["Professor/Teacher Email"]}
-                </a>
-              ) : (
-                <div className="professor-email-large">No email provided</div>
-              )}
-            </div>
+          <div className="course-professor">
+            <div className="professor-name">{course["Professor/Teacher Name"]}</div>
+            {course["Professor/Teacher Email"] && course["Professor/Teacher Email"] !== 'Not specified' ? (
+              <a href={`mailto:${course["Professor/Teacher Email"]}`} className="professor-email">
+                {course["Professor/Teacher Email"]}
+              </a>
+            ) : (
+              <div className="professor-email">No email provided</div>
+            )}
           </div>
           
           {course["Course ID"] === 'MATH 238' && (
-            <div className="course-resources-section">
-              <h3>Course Resources</h3>
-              <div className="quick-actions">
-                <a href="https://www.pearson.com/en-ca/higher-education/products-services/mylab/login-mylab.html" target="_blank" className="action-card">
-                  <div className="action-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3 3v18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M18 9l-6 6-4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <div className="action-text">Pearson MyLab</div>
-                </a>
-              </div>
+            <div className="course-actions">
+              <a 
+                href="https://www.pearson.com/en-ca/higher-education/products-services/mylab/login-mylab.html" 
+                target="_blank" 
+                className="view-details-btn"
+              >
+                Pearson MyLab
+              </a>
             </div>
           )}
         </div>
@@ -295,7 +246,7 @@ export default function CourseDetailPage() {
 
       <div className="data-section">
         <h2 className="section-title">Course Deliverables</h2>
-        <div className="deliverables-grid">
+        <div className="deliverables-list">
           {deliverables.length === 0 ? (
             <div className="empty-state">
               No deliverables found for this course.
@@ -315,17 +266,16 @@ export default function CourseDetailPage() {
               })
               .map((deliverable, index) => {
                 const hasGrade = deliverable['Grade %'] && deliverable['Grade %'] !== '' && deliverable['Grade %'] !== 'Not graded';
-                const cardClass = hasGrade ? 'deliverable-card graded' : 'deliverable-card';
+                const itemClass = hasGrade ? 'deliverable-item graded' : 'deliverable-item';
 
                 return (
-                  <div key={index} className={cardClass}>
+                  <div key={index} className={itemClass}>
                     <div className="deliverable-header">
                       <div className="deliverable-category">{deliverable["Category"] || 'Assignment'}</div>
                       <div className="deliverable-weight">{deliverable["Weight %"] || '0'}%</div>
                     </div>
                     
                     <div className="deliverable-title">{deliverable["Deliverable"] || 'Untitled Deliverable'}</div>
-                    <div className="deliverable-course">{deliverable["Course ID"] || 'Unknown Course'}</div>
                     
                     <div className="deliverable-dates">
                       <div className="date-item">
@@ -338,15 +288,9 @@ export default function CourseDetailPage() {
                       </div>
                     </div>
                     
-                    <div className="deliverable-grades">
-                      <div className="grade-item">
-                        <span className="grade-label">Grade:</span>
-                        <span className="grade-value">{deliverable["Grade %"] || 'Not graded'}</span>
-                      </div>
-                      <div className="grade-item">
-                        <span className="grade-label">Letter:</span>
-                        <span className="grade-value">{deliverable["Letter Grade"] || 'Not graded'}</span>
-                      </div>
+                    <div className="deliverable-grade">
+                      <span className="grade-label">Grade:</span>
+                      <span className="grade-value">{deliverable["Grade %"] || 'Not graded'}</span>
                     </div>
                   </div>
                 );
