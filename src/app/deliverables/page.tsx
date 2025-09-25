@@ -93,7 +93,7 @@ export default function DeliverablesPage() {
       prev.map(deliverable => 
         deliverable['Course ID'] === updatedDeliverable['Course ID'] &&
         deliverable['Deliverable'] === updatedDeliverable['Deliverable'] &&
-        deliverable['Close Date'] === updatedDeliverable['Close Date']
+        deliverable['Open Date'] === updatedDeliverable['Open Date']
           ? updatedDeliverable
           : deliverable
       )
