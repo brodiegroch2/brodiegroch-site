@@ -3410,6 +3410,45 @@ body {
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
+.grade-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.grade-input-container .form-input {
+    padding-right: 2.5rem;
+}
+
+.clear-grade-btn {
+    position: absolute;
+    right: 0.5rem;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    transition: background-color 0.2s ease;
+}
+
+.clear-grade-btn:hover {
+    background: #c82333;
+}
+
+.grade-preview {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #28a745;
+    font-weight: 500;
+}
+
 .form-input::placeholder {
     color: #888;
 }

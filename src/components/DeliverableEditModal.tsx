@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
-import { calculateGradeAndGPA, isValidGrade } from '@/utils/gradeCalculator';
+import { calculateGradeAndGPA, isValidGrade, formatGradeInput } from '@/utils/gradeCalculator';
 
 interface Deliverable {
   "Course ID": string;
@@ -56,8 +56,18 @@ export default function DeliverableEditModal({
     } else {
       setLetterGrade('');
       setGpa('');
-      setStatus('pending');
+      // Only change status to pending if grade is completely empty
+      if (!newGrade || newGrade.trim() === '') {
+        setStatus('pending');
+      }
     }
+  };
+
+  const handleClearGrade = () => {
+    setGrade('');
+    setLetterGrade('');
+    setGpa('');
+    setStatus('pending');
   };
 
   const handleStatusChange = (newStatus: string) => {
@@ -65,9 +75,7 @@ export default function DeliverableEditModal({
     
     // If status is changed to pending and there's a grade, clear the grade
     if (newStatus === 'pending' && grade) {
-      setGrade('');
-      setLetterGrade('');
-      setGpa('');
+      handleClearGrade();
     }
   };
 
@@ -160,18 +168,32 @@ export default function DeliverableEditModal({
           </div>
 
           <div className="form-group">
-            <label className="form-label" htmlFor="grade">Grade %</label>
-            <input
-              id="grade"
-              type="number"
-              min="0"
-              max="100"
-              step="0.01"
-              value={grade}
-              onChange={(e) => handleGradeChange(e.target.value)}
-              className="form-input"
-              placeholder="Enter grade percentage"
-            />
+            <label className="form-label" htmlFor="grade">Grade</label>
+            <div className="grade-input-container">
+              <input
+                id="grade"
+                type="text"
+                value={grade}
+                onChange={(e) => handleGradeChange(e.target.value)}
+                className="form-input"
+                placeholder="Enter grade (e.g., 87, 87%, 87/100, 15/20)"
+              />
+              {grade && (
+                <button
+                  type="button"
+                  onClick={handleClearGrade}
+                  className="clear-grade-btn"
+                  title="Clear grade"
+                >
+                  ×
+                </button>
+              )}
+            </div>
+            {grade && isValidGrade(grade) && (
+              <div className="grade-preview">
+                Calculated: {formatGradeInput(grade)}
+              </div>
+            )}
           </div>
 
           <div className="form-group">
