@@ -129,7 +129,26 @@ export function calculateCourseGPA(deliverables: any[]): CourseGPAStats {
   });
   
   const gpa = totalCredits > 0 ? totalWeightedPoints / totalCredits : 0;
-  const letterGrade = getGradeFromPercentage(gpa * 25).letterGrade; // Convert GPA to percentage for letter grade
+  
+  // Calculate the weighted average percentage to get the correct letter grade
+  let totalWeightedPercentage = 0;
+  let totalWeight = 0;
+  
+  deliverables.forEach(deliverable => {
+    const grade = deliverable['Grade %'];
+    const weight = parseFloat(deliverable['Weight %']) || 0;
+    
+    if (grade && grade !== '' && grade !== 'Not specified' && grade !== 'Not graded') {
+      const parsedGrade = parseGradeInput(grade);
+      if (parsedGrade !== null) {
+        totalWeightedPercentage += parsedGrade * weight;
+        totalWeight += weight;
+      }
+    }
+  });
+  
+  const averagePercentage = totalWeight > 0 ? totalWeightedPercentage / totalWeight : 0;
+  const letterGrade = getGradeFromPercentage(averagePercentage).letterGrade;
   
   return {
     gpa: Math.round(gpa * 10) / 10, // Round to 1 decimal place
