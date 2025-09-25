@@ -144,7 +144,7 @@ export default function Dashboard() {
 
     // Calculate overall GPA from all deliverables
     const gpaStats = calculateCourseGPA(deliverablesData);
-    const overallGPA = gpaStats.gpa.toFixed(2);
+    const overallGPA = gpaStats.gpa.toFixed(1);
 
     // Update state for display
     setStats({

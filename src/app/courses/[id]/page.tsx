@@ -308,7 +308,7 @@ export default function CourseDetailPage() {
             </div>
             <div className="course-detail">
               <div className="course-detail-label">GPA</div>
-              <div className="course-detail-value">{calculateCourseGPA(deliverables).gpa}</div>
+              <div className="course-detail-value">{calculateCourseGPA(deliverables).gpa.toFixed(1)}</div>
             </div>
           </div>
           

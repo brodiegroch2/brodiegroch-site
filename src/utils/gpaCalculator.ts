@@ -132,7 +132,7 @@ export function calculateCourseGPA(deliverables: any[]): CourseGPAStats {
   const letterGrade = getGradeFromPercentage(gpa * 25).letterGrade; // Convert GPA to percentage for letter grade
   
   return {
-    gpa: Math.round(gpa * 100) / 100, // Round to 2 decimal places
+    gpa: Math.round(gpa * 10) / 10, // Round to 1 decimal place
     letterGrade,
     totalCredits,
     weightedPoints: totalWeightedPoints
