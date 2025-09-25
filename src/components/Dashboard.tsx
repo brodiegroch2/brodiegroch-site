@@ -369,7 +369,7 @@ export default function Dashboard() {
         }, 0);
         const averageGrade = Math.round(totalGrade / gradedDeliverables.length);
         courseAverages[courseId] = {
-          average: parseFloat(averageGrade),
+          average: averageGrade,
           courseName: course['Course Name'],
           gradedCount: gradedDeliverables.length,
           totalCount: courseDeliverables.length
