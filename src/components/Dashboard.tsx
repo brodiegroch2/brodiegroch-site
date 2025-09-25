@@ -512,7 +512,6 @@ export default function Dashboard() {
           <div className="stat-content">
             <div className="stat-number">{stats.totalCourses}</div>
             <div className="stat-label">Active Courses</div>
-            <div className="stat-trend">+2 this semester</div>
           </div>
         </div>
         
@@ -529,7 +528,6 @@ export default function Dashboard() {
           <div className="stat-content">
             <div className="stat-number">{stats.completedDeliverables}</div>
             <div className="stat-label">Completed</div>
-            <div className="stat-trend">Great progress!</div>
           </div>
         </div>
         
@@ -546,7 +544,6 @@ export default function Dashboard() {
           <div className="stat-content">
             <div className="stat-number">{stats.upcomingDeadlines}</div>
             <div className="stat-label">Due This Week</div>
-            <div className="stat-trend">Stay focused!</div>
           </div>
         </div>
         
@@ -564,7 +561,6 @@ export default function Dashboard() {
           <div className="stat-content">
             <div className="stat-number">{stats.averageGrade}</div>
             <div className="stat-label">Average Grade</div>
-            <div className="stat-trend">Excellent work!</div>
           </div>
         </div>
       </div>
