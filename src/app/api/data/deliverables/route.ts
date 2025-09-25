@@ -22,12 +22,30 @@ export async function PUT(request: NextRequest) {
     // Read current data
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     
-    // Find and update the deliverable
-    const index = data.findIndex((item: any) => 
+    // Find the deliverable using Course ID and Deliverable name (most stable identifiers)
+    // We'll try multiple approaches to find the deliverable
+    let index = data.findIndex((item: any) => 
       item['Course ID'] === updatedDeliverable['Course ID'] &&
       item['Deliverable'] === updatedDeliverable['Deliverable'] &&
-      item['Close Date'] === updatedDeliverable['Close Date']
+      item['Open Date'] === updatedDeliverable['Open Date']
     );
+    
+    // If not found, try with original Close Date (in case it wasn't changed)
+    if (index === -1) {
+      index = data.findIndex((item: any) => 
+        item['Course ID'] === updatedDeliverable['Course ID'] &&
+        item['Deliverable'] === updatedDeliverable['Deliverable'] &&
+        item['Close Date'] === updatedDeliverable['Close Date']
+      );
+    }
+    
+    // If still not found, try with just Course ID and Deliverable (most basic match)
+    if (index === -1) {
+      index = data.findIndex((item: any) => 
+        item['Course ID'] === updatedDeliverable['Course ID'] &&
+        item['Deliverable'] === updatedDeliverable['Deliverable']
+      );
+    }
     
     console.log('Found deliverable at index:', index);
     
@@ -35,6 +53,7 @@ export async function PUT(request: NextRequest) {
       console.log('Deliverable not found. Looking for:', {
         courseId: updatedDeliverable['Course ID'],
         deliverable: updatedDeliverable['Deliverable'],
+        openDate: updatedDeliverable['Open Date'],
         closeDate: updatedDeliverable['Close Date']
       });
       return NextResponse.json({ error: 'Deliverable not found' }, { status: 404 });
