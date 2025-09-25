@@ -115,18 +115,33 @@ export default function DeliverablesPage() {
       {/* Filter Controls */}
       <div className="filter-section">
         <div className="filter-controls">
-          <label htmlFor="status-filter" className="filter-label">Filter by Status:</label>
-          <select
-            id="status-filter"
-            value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value)}
-            className="filter-select"
-          >
-            <option value="all">All Deliverables</option>
-            <option value="pending">Pending</option>
-            <option value="submitted">Submitted</option>
-            <option value="graded">Graded</option>
-          </select>
+          <label className="filter-label">Filter by Status:</label>
+          <div className="filter-buttons">
+            <button
+              className={`filter-btn ${statusFilter === 'all' ? 'active' : ''}`}
+              onClick={() => setStatusFilter('all')}
+            >
+              All Deliverables
+            </button>
+            <button
+              className={`filter-btn ${statusFilter === 'pending' ? 'active' : ''}`}
+              onClick={() => setStatusFilter('pending')}
+            >
+              Pending
+            </button>
+            <button
+              className={`filter-btn ${statusFilter === 'submitted' ? 'active' : ''}`}
+              onClick={() => setStatusFilter('submitted')}
+            >
+              Submitted
+            </button>
+            <button
+              className={`filter-btn ${statusFilter === 'graded' ? 'active' : ''}`}
+              onClick={() => setStatusFilter('graded')}
+            >
+              Graded
+            </button>
+          </div>
           <div className="filter-count">
             Showing {sortedDeliverables.length} of {deliverables.length} deliverables
           </div>
