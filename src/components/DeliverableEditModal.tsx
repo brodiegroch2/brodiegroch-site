@@ -174,6 +174,7 @@ export default function DeliverableEditModal({
       };
 
       console.log('Sending deliverable update:', updatedDeliverable);
+      console.log('Original deliverable:', deliverable);
 
       // Call the API to update the deliverable
       const response = await fetch('/api/data/deliverables', {
@@ -185,6 +186,7 @@ export default function DeliverableEditModal({
       });
 
       if (response.ok) {
+        console.log('API call successful, calling onSave with:', updatedDeliverable);
         onSave(updatedDeliverable);
         onClose();
       } else {

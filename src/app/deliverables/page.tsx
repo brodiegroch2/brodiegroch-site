@@ -103,15 +103,30 @@ export default function DeliverablesPage() {
   };
 
   const handleDeliverableUpdate = (updatedDeliverable: Deliverable) => {
-    setDeliverables(prev => 
-      prev.map(deliverable => 
-        deliverable['Course ID'] === updatedDeliverable['Course ID'] &&
-        deliverable['Deliverable'] === updatedDeliverable['Deliverable'] &&
-        deliverable['Open Date'] === updatedDeliverable['Open Date']
-          ? updatedDeliverable
-          : deliverable
-      )
-    );
+    console.log('Updating deliverable in UI:', updatedDeliverable);
+    console.log('Looking for:', {
+      courseId: updatedDeliverable['Course ID'],
+      deliverable: updatedDeliverable['Deliverable'],
+      openDate: updatedDeliverable['Open Date']
+    });
+    
+    setDeliverables(prev => {
+      const updated = prev.map(deliverable => {
+        const isMatch = deliverable['Course ID'] === updatedDeliverable['Course ID'] &&
+                       deliverable['Deliverable'] === updatedDeliverable['Deliverable'] &&
+                       deliverable['Open Date'] === updatedDeliverable['Open Date'];
+        
+        if (isMatch) {
+          console.log('Found matching deliverable:', deliverable);
+          console.log('Updating to:', updatedDeliverable);
+          return updatedDeliverable;
+        }
+        return deliverable;
+      });
+      
+      console.log('Updated deliverables array:', updated);
+      return updated;
+    });
   };
 
   const getDeliverableClasses = (deliverable: Deliverable) => {
