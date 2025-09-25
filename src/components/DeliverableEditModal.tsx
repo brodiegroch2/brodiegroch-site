@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import { calculateGradeAndGPA, isValidGrade } from '@/utils/gradeCalculator';
 
 interface Deliverable {
   "Course ID": string;
@@ -11,6 +12,7 @@ interface Deliverable {
   "Weight %": string;
   "Grade %": string;
   "Letter Grade": string;
+  "GPA": string;
   "Status": string;
 }
 
@@ -29,6 +31,7 @@ export default function DeliverableEditModal({
 }: DeliverableEditModalProps) {
   const [grade, setGrade] = useState('');
   const [letterGrade, setLetterGrade] = useState('');
+  const [gpa, setGpa] = useState('');
   const [status, setStatus] = useState('pending');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -36,6 +39,7 @@ export default function DeliverableEditModal({
     if (deliverable) {
       setGrade(deliverable['Grade %'] || '');
       setLetterGrade(deliverable['Letter Grade'] || '');
+      setGpa(deliverable.GPA || '');
       setStatus(deliverable.Status || 'pending');
     }
   }, [deliverable]);
@@ -43,10 +47,15 @@ export default function DeliverableEditModal({
   const handleGradeChange = (newGrade: string) => {
     setGrade(newGrade);
     
-    // Auto-set status based on grade
-    if (newGrade && newGrade !== '' && newGrade !== 'Not specified' && newGrade !== 'Not graded') {
+    // Auto-calculate letter grade and GPA
+    if (newGrade && isValidGrade(newGrade)) {
+      const { letterGrade: calculatedLetterGrade, gpa: calculatedGpa } = calculateGradeAndGPA(newGrade);
+      setLetterGrade(calculatedLetterGrade);
+      setGpa(calculatedGpa);
       setStatus('graded');
     } else {
+      setLetterGrade('');
+      setGpa('');
       setStatus('pending');
     }
   };
@@ -58,6 +67,7 @@ export default function DeliverableEditModal({
     if (newStatus === 'pending' && grade) {
       setGrade('');
       setLetterGrade('');
+      setGpa('');
     }
   };
 
@@ -71,6 +81,7 @@ export default function DeliverableEditModal({
         ...deliverable,
         'Grade %': grade,
         'Letter Grade': letterGrade,
+        'GPA': gpa,
         'Status': status
       };
 
@@ -102,6 +113,7 @@ export default function DeliverableEditModal({
     // Reset form when closing
     setGrade('');
     setLetterGrade('');
+    setGpa('');
     setStatus('pending');
     onClose();
   };
@@ -170,7 +182,21 @@ export default function DeliverableEditModal({
               value={letterGrade}
               onChange={(e) => setLetterGrade(e.target.value)}
               className="form-input"
-              placeholder="Enter letter grade (e.g., A+, B-)"
+              placeholder="Auto-calculated from percentage"
+              readOnly
+            />
+          </div>
+
+          <div className="form-group">
+            <label className="form-label" htmlFor="gpa">GPA Points</label>
+            <input
+              id="gpa"
+              type="text"
+              value={gpa}
+              onChange={(e) => setGpa(e.target.value)}
+              className="form-input"
+              placeholder="Auto-calculated from percentage"
+              readOnly
             />
           </div>
 
