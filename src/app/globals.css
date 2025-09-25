@@ -2302,14 +2302,14 @@ body {
 
 /* Deliverable Status Styling */
 .deliverable-item.submitted {
-    border-color: #ffc107;
-    background: rgba(255, 193, 7, 0.1);
+    border-color: #9c27b0;
+    background: rgba(156, 39, 176, 0.1);
 }
 
 .deliverable-item.submitted:hover {
-    border-color: #ffb300;
-    background: rgba(255, 193, 7, 0.15);
-    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.2);
+    border-color: #8e24aa;
+    background: rgba(156, 39, 176, 0.15);
+    box-shadow: 0 8px 25px rgba(156, 39, 176, 0.2);
 }
 
 .deliverable-item.due-soon {
@@ -2324,14 +2324,14 @@ body {
 }
 
 .deliverable-item.submitted.due-soon {
-    border-color: #ff9800;
-    background: rgba(255, 152, 0, 0.15);
+    border-color: #9c27b0;
+    background: rgba(156, 39, 176, 0.15);
 }
 
 .deliverable-item.submitted.due-soon:hover {
-    border-color: #f57c00;
-    background: rgba(255, 152, 0, 0.2);
-    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.25);
+    border-color: #8e24aa;
+    background: rgba(156, 39, 176, 0.2);
+    box-shadow: 0 8px 25px rgba(156, 39, 176, 0.25);
 }
 
 /* Deliverable Card Styling (for deliverables page) */
