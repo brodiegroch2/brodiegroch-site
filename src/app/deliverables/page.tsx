@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import DeliverableEditModal from '@/components/DeliverableEditModal';
 
 interface Deliverable {
   "Course ID": string;
@@ -11,12 +12,14 @@ interface Deliverable {
   "Weight %": string;
   "Grade %": string;
   "Letter Grade": string;
-  "Status"?: string;
+  "Status": string;
 }
 
 export default function DeliverablesPage() {
   const [deliverables, setDeliverables] = useState<Deliverable[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedDeliverable, setSelectedDeliverable] = useState<Deliverable | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const loadDeliverables = async () => {
@@ -53,6 +56,28 @@ export default function DeliverablesPage() {
     
     return new Date(dateA).getTime() - new Date(dateB).getTime();
   });
+
+  const handleDeliverableClick = (deliverable: Deliverable) => {
+    setSelectedDeliverable(deliverable);
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setSelectedDeliverable(null);
+  };
+
+  const handleDeliverableUpdate = (updatedDeliverable: Deliverable) => {
+    setDeliverables(prev => 
+      prev.map(deliverable => 
+        deliverable['Course ID'] === updatedDeliverable['Course ID'] &&
+        deliverable['Deliverable'] === updatedDeliverable['Deliverable'] &&
+        deliverable['Close Date'] === updatedDeliverable['Close Date']
+          ? updatedDeliverable
+          : deliverable
+      )
+    );
+  };
 
   if (loading) {
     return (
@@ -91,7 +116,12 @@ export default function DeliverablesPage() {
               }
               
               return (
-                <div key={index} className={cardClass}>
+                <div 
+                  key={index} 
+                  className={`${cardClass} clickable-deliverable`}
+                  onClick={() => handleDeliverableClick(deliverable)}
+                  style={{ cursor: 'pointer' }}
+                >
                   <div className="deliverable-header">
                     <div className="deliverable-category">{deliverable['Category'] || 'Assignment'}</div>
                     <div className="deliverable-weight">{deliverable['Weight %'] || '0'}%</div>
@@ -121,12 +151,26 @@ export default function DeliverablesPage() {
                       <span className="grade-value">{deliverable['Letter Grade'] || 'Not graded'}</span>
                     </div>
                   </div>
+                  
+                  <div className="deliverable-status">
+                    <span className="status-label">Status:</span>
+                    <span className={`status-value status-${deliverable.Status || 'pending'}`}>
+                      {deliverable.Status || 'pending'}
+                    </span>
+                  </div>
                 </div>
               );
             })
           )}
         </div>
       </div>
+      
+      <DeliverableEditModal
+        deliverable={selectedDeliverable}
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        onSave={handleDeliverableUpdate}
+      />
     </div>
   );
 }

@@ -7,7 +7,8 @@
     "Close Date": "Sep 21, 2025 11:59 PM",
     "Weight %": "1.67",
     "Grade %": "97.14",
-    "Letter Grade": "A+"
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "MECH 205",
@@ -17,7 +18,8 @@
     "Close Date": "Sep 28, 2025 11:59 PM",
     "Weight %": "1.67",
     "Grade %": "96.67",
-    "Letter Grade": "A+"
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "MECH 205",
@@ -27,7 +29,8 @@
     "Close Date": "Oct 5, 2025 11:59 PM",
     "Weight %": "1.67",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -37,7 +40,8 @@
     "Close Date": "Oct 12, 2025 11:59 PM",
     "Weight %": "1.67",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -47,7 +51,8 @@
     "Close Date": "Oct 19, 2025 11:59 PM",
     "Weight %": "1.67",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -57,7 +62,8 @@
     "Close Date": "Oct 26, 2025 11:59 PM",
     "Weight %": "1.67",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -67,7 +73,8 @@
     "Close Date": "Nov 2, 2025 11:59 PM",
     "Weight %": "1.67",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -77,7 +84,8 @@
     "Close Date": "Nov 9, 2025 11:59 PM",
     "Weight %": "1.67",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -87,7 +95,8 @@
     "Close Date": "Nov 23, 2025 11:59 PM",
     "Weight %": "1.67",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -97,7 +106,8 @@
     "Close Date": "Nov 30, 2025 11:59 PM",
     "Weight %": "1.67",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -107,7 +117,8 @@
     "Close Date": "Dec 7, 2025 11:59 PM",
     "Weight %": "1.67",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -117,7 +128,8 @@
     "Close Date": "Dec 16, 2025 11:59 PM",
     "Weight %": "1.67",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -127,7 +139,8 @@
     "Close Date": "Sep 28, 2025 11:59 PM",
     "Weight %": "3",
     "Grade %": "89.78",
-    "Letter Grade": "A+"
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "MECH 205",
@@ -137,7 +150,8 @@
     "Close Date": "Sep 28, 2025 11:59 PM",
     "Weight %": "3",
     "Grade %": "88.78",
-    "Letter Grade": "A"
+    "Letter Grade": "A",
+    "Status": "graded"
   },
   {
     "Course ID": "MECH 205",
@@ -147,7 +161,8 @@
     "Close Date": "Oct 5, 2025 11:59 PM",
     "Weight %": "3",
     "Grade %": "96.16",
-    "Letter Grade": "A+"
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "MECH 205",
@@ -157,7 +172,8 @@
     "Close Date": "Oct 12, 2025 11:59 PM",
     "Weight %": "3",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -167,7 +183,8 @@
     "Close Date": "Oct 19, 2025 11:59 PM",
     "Weight %": "4",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -177,7 +194,8 @@
     "Close Date": "Nov 2, 2025 11:59 PM",
     "Weight %": "1",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -187,7 +205,8 @@
     "Close Date": "Nov 2, 2025 11:59 PM",
     "Weight %": "3",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -197,7 +216,8 @@
     "Close Date": "Nov 2, 2025 11:59 PM",
     "Weight %": "3",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -207,7 +227,8 @@
     "Close Date": "Nov 9, 2025 11:59 PM",
     "Weight %": "4",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -217,7 +238,8 @@
     "Close Date": "Nov 16, 2025 11:59 PM",
     "Weight %": "3",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -227,7 +249,8 @@
     "Close Date": "Nov 23, 2025 11:59 PM",
     "Weight %": "1",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -237,7 +260,8 @@
     "Close Date": "Nov 23, 2025 11:59 PM",
     "Weight %": "6",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -247,7 +271,8 @@
     "Close Date": "Nov 30, 2025 11:59 PM",
     "Weight %": "3",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -257,7 +282,8 @@
     "Close Date": "Dec 11, 2025 11:59 PM",
     "Weight %": "1",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -267,7 +293,8 @@
     "Close Date": "Dec 11, 2025 11:59 PM",
     "Weight %": "6",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -277,7 +304,8 @@
     "Close Date": "",
     "Weight %": "12",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -287,7 +315,8 @@
     "Close Date": "Dec 17, 2025 11:59 PM",
     "Weight %": "18",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "THRM 200",
@@ -297,7 +326,8 @@
     "Close Date": "Sep 28, 2025 11:59 PM",
     "Weight %": "3.34",
     "Grade %": "100",
-    "Letter Grade": "A+"
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "THRM 200",
@@ -307,7 +337,8 @@
     "Close Date": "Oct 19, 2025 11:59 PM",
     "Weight %": "3.34",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "THRM 200",
@@ -317,7 +348,8 @@
     "Close Date": "Nov 2, 2025 11:59 PM",
     "Weight %": "3.34",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "THRM 200",
@@ -327,7 +359,8 @@
     "Close Date": "Nov 23, 2025 11:59 PM",
     "Weight %": "3.34",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "THRM 200",
@@ -337,7 +370,8 @@
     "Close Date": "Nov 30, 2025 11:59 PM",
     "Weight %": "3.34",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "THRM 200",
@@ -347,7 +381,8 @@
     "Close Date": "Dec 7, 2025 11:59 PM",
     "Weight %": "3.30",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "THRM 200",
@@ -357,7 +392,8 @@
     "Close Date": "Sep 28, 2025 11:59 PM",
     "Weight %": "3.34",
     "Grade %": "100",
-    "Letter Grade": "A+"
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "THRM 200",
@@ -367,7 +403,8 @@
     "Close Date": "Oct 19, 2025 11:59 PM",
     "Weight %": "3.34",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "THRM 200",
@@ -377,7 +414,8 @@
     "Close Date": "Nov 2, 2025 11:59 PM",
     "Weight %": "3.34",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "THRM 200",
@@ -387,7 +425,8 @@
     "Close Date": "Nov 23, 2025 11:59 PM",
     "Weight %": "3.34",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "THRM 200",
@@ -397,7 +436,8 @@
     "Close Date": "Nov 30, 2025 11:59 PM",
     "Weight %": "3.34",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "THRM 200",
@@ -407,7 +447,8 @@
     "Close Date": "Dec 7, 2025 11:59 PM",
     "Weight %": "3.30",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "THRM 200",
@@ -417,7 +458,8 @@
     "Close Date": "",
     "Weight %": "30",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "THRM 200",
@@ -427,7 +469,8 @@
     "Close Date": "Dec 17, 2025 11:59 PM",
     "Weight %": "30",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 200",
@@ -448,7 +491,8 @@
     "Close Date": "Tue Oct 21, 2025 11:59 PM",
     "Weight %": "17",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 200",
@@ -458,7 +502,8 @@
     "Close Date": "Tue Nov 25, 2025 11:59 PM",
     "Weight %": "20",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 200",
@@ -468,7 +513,8 @@
     "Close Date": "Tue Sep 30, 2025 11:59 PM (kept Brightspace date)",
     "Weight %": "6",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 200",
@@ -478,7 +524,8 @@
     "Close Date": "Fri Oct 31, 2025 (in-class/submit by 11:59 PM)",
     "Weight %": "6",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 200",
@@ -488,7 +535,8 @@
     "Close Date": "Fri Nov 28, 2025 (in-class/submit by 11:59 PM)",
     "Weight %": "6",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 200",
@@ -498,7 +546,8 @@
     "Close Date": "Wed Oct 15, 2025 (in-class)",
     "Weight %": "7.5",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 200",
@@ -508,7 +557,8 @@
     "Close Date": "Fri Oct 10, 2025 (in-class)",
     "Weight %": "7.5",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 200",
@@ -518,7 +568,8 @@
     "Close Date": "Wed Dec 3, 2025 (in-class)",
     "Weight %": "7.5",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 200",
@@ -528,7 +579,8 @@
     "Close Date": "Fri Nov 21, 2025 (in-class)",
     "Weight %": "7.5",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "STCS 255",
@@ -549,7 +601,8 @@
     "Close Date": "Sep 28, 2025 11:59 PM",
     "Weight %": "1.43",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "STCS 255",
@@ -559,7 +612,8 @@
     "Close Date": "Oct 12, 2025 11:59 PM",
     "Weight %": "1.43",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "STCS 255",
@@ -569,7 +623,8 @@
     "Close Date": "Oct 26, 2025 11:59 PM",
     "Weight %": "1.43",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "STCS 255",
@@ -579,7 +634,8 @@
     "Close Date": "Nov 9, 2025 11:59 PM",
     "Weight %": "1.43",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "STCS 255",
@@ -589,7 +645,8 @@
     "Close Date": "Nov 23, 2025 11:59 PM",
     "Weight %": "1.43",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "STCS 255",
@@ -599,7 +656,8 @@
     "Close Date": "Dec 7, 2025 11:59 PM",
     "Weight %": "1.43",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "STCS 255",
@@ -620,7 +678,8 @@
     "Close Date": "",
     "Weight %": "3",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "STCS 255",
@@ -630,7 +689,8 @@
     "Close Date": "",
     "Weight %": "3",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "STCS 255",
@@ -640,7 +700,8 @@
     "Close Date": "",
     "Weight %": "3",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "STCS 255",
@@ -650,7 +711,8 @@
     "Close Date": "",
     "Weight %": "3",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "STCS 255",
@@ -660,7 +722,8 @@
     "Close Date": "Oct 1, 2025 12:50 PM",
     "Weight %": "7.5",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "STCS 255",
@@ -670,7 +733,8 @@
     "Close Date": "",
     "Weight %": "7.5",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "STCS 255",
@@ -680,7 +744,8 @@
     "Close Date": "",
     "Weight %": "30",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "STCS 255",
@@ -690,7 +755,8 @@
     "Close Date": "Dec 17, 2025 11:59 PM",
     "Weight %": "30",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "COMP 213",
@@ -700,7 +766,8 @@
     "Close Date": "Sep 16, 2025 11:59 PM",
     "Weight %": "13",
     "Grade %": "100",
-    "Letter Grade": "A+"
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "COMP 213",
@@ -710,7 +777,8 @@
     "Close Date": "Oct 24, 2025 11:59 PM",
     "Weight %": "20",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "COMP 213",
@@ -720,7 +788,8 @@
     "Close Date": "Nov 21, 2025 11:59 PM",
     "Weight %": "15",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "COMP 213",
@@ -730,7 +799,8 @@
     "Close Date": "Nov 7, 2025 11:59 PM",
     "Weight %": "11",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "COMP 213",
@@ -740,7 +810,8 @@
     "Close Date": "Dec 12, 2025 11:59 PM",
     "Weight %": "11",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "COMP 213",
@@ -750,7 +821,8 @@
     "Close Date": "Sep 18, 2025 1:00 PM",
     "Weight %": "6",
     "Grade %": "96",
-    "Letter Grade": "A+"
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "COMP 213",
@@ -760,7 +832,8 @@
     "Close Date": "Oct 31, 2025 11:59 PM",
     "Weight %": "7",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "COMP 213",
@@ -770,7 +843,8 @@
     "Close Date": "Nov 28, 2025 11:59 PM",
     "Weight %": "7",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "COMP 213",
@@ -780,7 +854,8 @@
     "Close Date": "Dec 12, 2025 11:59 PM",
     "Weight %": "5",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "COMP 213",
@@ -790,7 +865,8 @@
     "Close Date": "Sep 13, 2025 11:59 PM",
     "Weight %": "2.5",
     "Grade %": "100",
-    "Letter Grade": "A+"
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "COMP 213",
@@ -800,7 +876,8 @@
     "Close Date": "Sep 21, 2025 11:59 PM",
     "Weight %": "2.5",
     "Grade %": "100",
-    "Letter Grade": "A+"
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "MATH 238",
@@ -810,7 +887,8 @@
     "Close Date": "Sep 28, 2025 11:59 PM",
     "Weight %": "2.5",
     "Grade %": "100",
-    "Letter Grade": "A+"
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "MATH 238",
@@ -820,7 +898,8 @@
     "Close Date": "Oct 26, 2025 11:59 PM",
     "Weight %": "2.5",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MATH 238",
@@ -830,7 +909,8 @@
     "Close Date": "Nov 30, 2025 11:59 PM",
     "Weight %": "2.5",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MATH 238",
@@ -840,7 +920,8 @@
     "Close Date": "Dec 7, 2025 11:59 PM",
     "Weight %": "2.5",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MATH 238",
@@ -850,7 +931,8 @@
     "Close Date": "Sep 14, 2025 4:52 PM",
     "Weight %": "2",
     "Grade %": "96.55",
-    "Letter Grade": "A+"
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "MATH 238",
@@ -860,7 +942,8 @@
     "Close Date": "",
     "Weight %": "2",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MATH 238",
@@ -870,7 +953,8 @@
     "Close Date": "",
     "Weight %": "2",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MATH 238",
@@ -880,7 +964,8 @@
     "Close Date": "",
     "Weight %": "2",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MATH 238",
@@ -890,7 +975,8 @@
     "Close Date": "",
     "Weight %": "2",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MATH 238",
@@ -900,7 +986,8 @@
     "Close Date": "",
     "Weight %": "2",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MATH 238",
@@ -910,7 +997,8 @@
     "Close Date": "Oct 3, 2025 3:50 PM (110 min, Ch. 23.1–23.9, Room TBA)",
     "Weight %": "10",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MATH 238",
@@ -920,7 +1008,8 @@
     "Close Date": "Dec 5, 2025 11:59 PM",
     "Weight %": "10",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MATH 238",
@@ -930,7 +1019,8 @@
     "Close Date": "Oct 31, 2025 11:59 PM",
     "Weight %": "30",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MATH 238",
@@ -940,6 +1030,7 @@
     "Close Date": "Dec 17, 2025 11:59 PM",
     "Weight %": "40",
     "Grade %": "",
-    "Letter Grade": ""
+    "Letter Grade": "",
+    "Status": "pending"
   }
 ]

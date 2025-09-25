@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import DeliverableEditModal from './DeliverableEditModal';
 
 interface Course {
   "Course ID": string;
@@ -22,7 +23,7 @@ interface Deliverable {
   "Weight %": string;
   "Grade %": string;
   "Letter Grade": string;
-  "Status"?: string;
+  "Status": string;
 }
 
 export default function Dashboard() {
@@ -40,6 +41,8 @@ export default function Dashboard() {
   const [upcomingDeadlinesPage, setUpcomingDeadlinesPage] = useState(0);
   const [recentActivityTotalPages, setRecentActivityTotalPages] = useState(0);
   const [upcomingDeadlinesTotalPages, setUpcomingDeadlinesTotalPages] = useState(0);
+  const [selectedDeliverable, setSelectedDeliverable] = useState<Deliverable | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const itemsPerPage = 4;
 
   useEffect(() => {
@@ -243,7 +246,7 @@ export default function Dashboard() {
     const currentItems = gradedItems.slice(startIndex, endIndex);
 
     container.innerHTML = currentItems.map(deliverable => `
-      <div class="activity-item">
+      <div class="activity-item clickable-activity" data-deliverable='${JSON.stringify(deliverable)}'>
         <div class="activity-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -257,6 +260,14 @@ export default function Dashboard() {
         <div class="activity-grade">${deliverable['Grade %']}%</div>
       </div>
     `).join('');
+
+    // Add click handlers to activity items
+    container.querySelectorAll('.clickable-activity').forEach(item => {
+      item.addEventListener('click', () => {
+        const deliverableData = JSON.parse(item.getAttribute('data-deliverable') || '{}');
+        handleDeliverableClick(deliverableData);
+      });
+    });
 
     // Update pagination
     if (pagination && prevBtn && nextBtn && pageInfo) {
@@ -306,7 +317,7 @@ export default function Dashboard() {
       const daysUntilDue = Math.ceil((dueDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
       
       return `
-        <div class="deadline-item">
+        <div class="deadline-item clickable-deadline" data-deliverable='${JSON.stringify(deliverable)}'>
           <div class="deadline-date">${dueDate.toLocaleDateString()}</div>
           <div class="deadline-content">
             <div class="deadline-title">${deliverable['Deliverable']}</div>
@@ -316,6 +327,14 @@ export default function Dashboard() {
         </div>
       `;
     }).join('');
+
+    // Add click handlers to deadline items
+    container.querySelectorAll('.clickable-deadline').forEach(item => {
+      item.addEventListener('click', () => {
+        const deliverableData = JSON.parse(item.getAttribute('data-deliverable') || '{}');
+        handleDeliverableClick(deliverableData);
+      });
+    });
 
     // Update pagination
     if (pagination && prevBtn && nextBtn && pageInfo) {
@@ -466,6 +485,37 @@ export default function Dashboard() {
 
   const handleUpcomingDeadlinesNext = () => {
     setUpcomingDeadlinesPage(upcomingDeadlinesPage + 1);
+  };
+
+  const handleDeliverableClick = (deliverable: Deliverable) => {
+    setSelectedDeliverable(deliverable);
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setSelectedDeliverable(null);
+  };
+
+  const handleDeliverableUpdate = (updatedDeliverable: Deliverable) => {
+    setDeliverables(prev => 
+      prev.map(deliverable => 
+        deliverable['Course ID'] === updatedDeliverable['Course ID'] &&
+        deliverable['Deliverable'] === updatedDeliverable['Deliverable'] &&
+        deliverable['Close Date'] === updatedDeliverable['Close Date']
+          ? updatedDeliverable
+          : deliverable
+      )
+    );
+    
+    // Recalculate stats after update
+    calculateStats(courses, deliverables.map(d => 
+      d['Course ID'] === updatedDeliverable['Course ID'] &&
+      d['Deliverable'] === updatedDeliverable['Deliverable'] &&
+      d['Close Date'] === updatedDeliverable['Close Date']
+        ? updatedDeliverable
+        : d
+    ));
   };
 
   return (
@@ -712,5 +762,12 @@ export default function Dashboard() {
         </div>
       </div>
     </div>
+    
+    <DeliverableEditModal
+      deliverable={selectedDeliverable}
+      isOpen={isModalOpen}
+      onClose={handleModalClose}
+      onSave={handleDeliverableUpdate}
+    />
     </div>  );
 }
