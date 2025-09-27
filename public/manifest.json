@@ -1,0 +1,24 @@
+{
+  "name": "UniHUB",
+  "short_name": "UniHUB",
+  "description": "Your personal academic hub for courses, assignments, and grades",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/images/A36DC129-2A04-46D8-93F5-590A54FF9CDA.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/A36DC129-2A04-46D8-93F5-590A54FF9CDA.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
