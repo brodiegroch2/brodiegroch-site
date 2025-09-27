@@ -177,7 +177,7 @@ export default function Dashboard() {
 
     if (upcomingDeliverables.length > 0) {
       const nextDeliverable = upcomingDeliverables[0];
-      setNextAssignment(nextDeliverable["Deliverable"]);
+      setNextAssignment(`${nextDeliverable["Course ID"]} - ${nextDeliverable["Deliverable"]}`);
       
       const updateCountdown = () => {
         const now = new Date();
