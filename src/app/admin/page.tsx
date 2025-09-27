@@ -51,7 +51,7 @@ export default function AdminPage() {
 
   const updateDeliverable = (index: number, field: string, value: string) => {
     const updated = [...deliverables];
-    updated[index][field] = value;
+    (updated[index] as any)[field] = value;
     setDeliverables(updated);
   };
 
