@@ -441,19 +441,33 @@ export default function Dashboard() {
       
       <div class="progress-item">
         <div class="progress-header">
-          <div class="progress-title">Days Remaining</div>
-          <div class="progress-percentage">${Math.max(0, Math.ceil((semesterEnd.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)))}</div>
+          <div class="progress-title">Semester Progress</div>
+          <div class="progress-percentage">${Math.max(0, Math.ceil((semesterEnd.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)))} days left</div>
         </div>
-        <div class="progress-info">
-          <div class="progress-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-              <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <div class="pie-chart-container">
+          <div class="pie-chart">
+            <svg width="120" height="120" viewBox="0 0 120 120" class="pie-svg">
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#374151" stroke-width="8" class="pie-background"/>
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#3b82f6" stroke-width="8" 
+                      stroke-dasharray="${(semesterProgress / 100) * 314.16} 314.16" 
+                      stroke-dashoffset="78.54" 
+                      class="pie-progress" 
+                      style="transform: rotate(-90deg); transform-origin: 60px 60px;"/>
+              <text x="60" y="65" text-anchor="middle" class="pie-text">${Math.round(semesterProgress)}%</text>
             </svg>
           </div>
-          <div class="progress-text">Days until semester end</div>
+          <div class="pie-info">
+            <div class="pie-stats">
+              <div class="pie-stat">
+                <div class="pie-stat-value">${Math.max(0, Math.ceil((semesterEnd.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)))}</div>
+                <div class="pie-stat-label">Days Remaining</div>
+              </div>
+              <div class="pie-stat">
+                <div class="pie-stat-value">${Math.ceil((now.getTime() - semesterStart.getTime()) / (1000 * 60 * 60 * 24))}</div>
+                <div class="pie-stat-label">Days Passed</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     `;
