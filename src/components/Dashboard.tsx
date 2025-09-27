@@ -44,6 +44,8 @@ export default function Dashboard() {
   const [upcomingDeadlinesTotalPages, setUpcomingDeadlinesTotalPages] = useState(0);
   const [selectedDeliverable, setSelectedDeliverable] = useState<Deliverable | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [courseAverages, setCourseAverages] = useState<{[key: string]: {average: number, courseName: string, gradedCount: number, totalCount: number}}>({});
+  const [showCourseAverages, setShowCourseAverages] = useState(false);
   const itemsPerPage = 4;
 
   useEffect(() => {
@@ -152,6 +154,9 @@ export default function Dashboard() {
       averageGrade: `${averageGrade}%`,
       gpa: overallGPA
     });
+
+    // Store course averages for modal display
+    setCourseAverages(courseAverages);
   };
 
   const calculateCountdown = (deliverablesData: Deliverable[]) => {
@@ -619,7 +624,7 @@ export default function Dashboard() {
           </div>
         </div>
         
-        <div className="stat-card info">
+        <div className="stat-card info clickable" onClick={() => setShowCourseAverages(true)}>
           <div className="stat-icon-wrapper">
             <div className="stat-icon">
               <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -789,5 +794,43 @@ export default function Dashboard() {
       onClose={handleModalClose}
       onSave={handleDeliverableUpdate}
     />
+
+    {/* Course Averages Modal */}
+    {showCourseAverages && (
+      <div className="modal-overlay" onClick={() => setShowCourseAverages(false)}>
+        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-header">
+            <h2>Course Averages</h2>
+            <button 
+              className="modal-close"
+              onClick={() => setShowCourseAverages(false)}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <div className="modal-body">
+            <div className="course-averages-list">
+              {Object.entries(courseAverages).map(([courseId, data]) => (
+                <div key={courseId} className="course-average-item">
+                  <div className="course-average-header">
+                    <div className="course-id">{courseId}</div>
+                    <div className="course-average-grade">{data.average}%</div>
+                  </div>
+                  <div className="course-name">{data.courseName}</div>
+                  <div className="course-stats">
+                    {data.gradedCount} of {data.totalCount} assignments graded
+                  </div>
+                </div>
+              ))}
+              {Object.keys(courseAverages).length === 0 && (
+                <div className="no-data">No graded assignments yet</div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
     </div>  );
 }
