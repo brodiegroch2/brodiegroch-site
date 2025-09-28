@@ -2,26 +2,31 @@
   {
     "Site Name": "Brightspace (D2L)",
     "Address": "https://learn.sait.ca/",
-    "Link_image_id": "Brightspace_featured-1024x1024.png"
+    "Link_image_id": "Brightspace_featured-1024x1024.png",
+    "Category": "Learning Management"
   },
   {
     "Site Name": "Microsoft MyApps",
     "Address": "https://myapps.microsoft.com/",
-    "Link_image_id": "logo-256x256.png"
+    "Link_image_id": "logo-256x256.png",
+    "Category": "Productivity Tools"
   },
   {
     "Site Name": "MySAIT",
     "Address": "https://mysait.ca/",
-    "Link_image_id": "sait_logo_transparent.png"
+    "Link_image_id": "sait_logo_transparent.png",
+    "Category": "SAIT Services"
   },
   {
     "Site Name": "Pearson MyLab",
     "Address": "https://www.pearson.com/en-ca/higher-education/products-services/mylab/login-mylab.html",
-    "Link_image_id": "pearson mylab.png"
+    "Link_image_id": "pearson mylab.png",
+    "Category": "Learning Management"
   },
   {
     "Site Name": "MyCareerHub",
     "Address": "https://mycareerhub.sait.ca/home.htm",
-    "Link_image_id": "sait_logo_transparent.png"
+    "Link_image_id": "sait_logo_transparent.png",
+    "Category": "SAIT Services"
   }
 ]
