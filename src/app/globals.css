@@ -3313,6 +3313,50 @@ body {
     color: white !important;
 }
 
+/* Completed item styling */
+.completed-item {
+    border-left: 4px solid #10b981 !important;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%) !important;
+}
+
+.completed-item:hover {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.08) 100%) !important;
+    transform: translateY(-2px);
+    border-color: #10b981 !important;
+}
+
+.completed-item .deadline-title {
+    color: #10b981 !important;
+    font-weight: 600;
+}
+
+.completed-item .deadline-countdown {
+    background: #10b981 !important;
+    color: white !important;
+}
+
+/* Submitted item styling */
+.submitted-item {
+    border-left: 4px solid #3b82f6 !important;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%) !important;
+}
+
+.submitted-item:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.08) 100%) !important;
+    transform: translateY(-2px);
+    border-color: #3b82f6 !important;
+}
+
+.submitted-item .deadline-title {
+    color: #3b82f6 !important;
+    font-weight: 600;
+}
+
+.submitted-item .deadline-countdown {
+    background: #3b82f6 !important;
+    color: white !important;
+}
+
 .deadline-icon {
     background: linear-gradient(135deg, #ff9800, #ffb74d);
     border-radius: 12px;

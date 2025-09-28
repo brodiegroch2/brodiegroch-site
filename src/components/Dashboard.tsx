@@ -112,7 +112,7 @@ export default function Dashboard() {
       deliverable['Course ID'] && deliverable['Course ID'] !== ''
     ).length;
 
-    // Count upcoming deadlines (next 7 days) - exclude already graded items, submitted items, and completed items
+    // Count upcoming deadlines (next 7 days) - exclude already graded items and submitted items, but include completed items
     const now = new Date();
     const nextWeek = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
     const upcomingDeadlines = deliverablesData.filter(deliverable => {
@@ -120,8 +120,7 @@ export default function Dashboard() {
       const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
                       deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
       const isSubmitted = deliverable['Status'] === 'submitted';
-      const isCompleted = deliverable['Status'] === 'completed';
-      return dueDate >= now && dueDate <= nextWeek && !isGraded && !isSubmitted && !isCompleted;
+      return dueDate >= now && dueDate <= nextWeek && !isGraded && !isSubmitted;
     }).length;
 
     // Calculate weighted average grade based on course averages and credit hours
@@ -183,6 +182,7 @@ export default function Dashboard() {
     // 1. Haven't passed their due date yet
     // 2. Don't have a grade (not graded yet)
     // 3. Aren't submitted (if status exists)
+    // 4. Include completed items (completed but not submitted)
     const upcomingDeliverables = deliverablesData
       .filter(d => {
         const closeDate = new Date(d["Close Date"]);
@@ -196,6 +196,7 @@ export default function Dashboard() {
         const isSubmitted = d['Status'] === 'submitted';
         
         // Include if it's not past due AND doesn't have a grade AND isn't submitted
+        // This includes pending and completed items
         return isNotPastDue && !hasGrade && !isSubmitted;
       })
       .sort((a, b) => new Date(a["Close Date"]).getTime() - new Date(b["Close Date"]).getTime());
@@ -310,25 +311,33 @@ export default function Dashboard() {
   const updateUpcomingDeadlines = (deliverablesData: Deliverable[]) => {
     const regularContainer = document.getElementById('upcoming-deadlines-list');
     const examsContainer = document.getElementById('upcoming-exams-list');
+    const needsGradesContainer = document.getElementById('needs-grades-list');
     const pagination = document.getElementById('upcoming-deadlines-pagination');
     const prevBtn = document.getElementById('upcoming-deadlines-prev') as HTMLButtonElement;
     const nextBtn = document.getElementById('upcoming-deadlines-next') as HTMLButtonElement;
     const pageInfo = document.getElementById('upcoming-deadlines-page-info');
     
-    if (!regularContainer || !examsContainer) return;
+    if (!regularContainer || !examsContainer || !needsGradesContainer) return;
 
     const now = new Date();
     const nextWeek = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
     const nextTwoWeeks = new Date(now.getTime() + 14 * 24 * 60 * 60 * 1000);
     
-    // Filter for upcoming deadlines - exclude already graded items, submitted items, and completed items
+    // Filter for upcoming deadlines - exclude already graded items and submitted items, but include completed items
     const upcomingDeadlines = deliverablesData.filter(deliverable => {
       const dueDate = new Date(deliverable['Close Date']);
       const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
                       deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
       const isSubmitted = deliverable['Status'] === 'submitted';
-      const isCompleted = deliverable['Status'] === 'completed';
-      return dueDate >= now && !isGraded && !isSubmitted && !isCompleted && deliverable['Close Date'];
+      return dueDate >= now && !isGraded && !isSubmitted && deliverable['Close Date'];
+    }).sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime());
+
+    // Filter for submitted items that need grades
+    const needsGrades = deliverablesData.filter(deliverable => {
+      const isSubmitted = deliverable['Status'] === 'submitted';
+      const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
+                      deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
+      return isSubmitted && !isGraded && deliverable['Close Date'];
     }).sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime());
 
     // Separate regular deliverables from exams/tests
@@ -370,9 +379,10 @@ export default function Dashboard() {
       regularContainer.innerHTML = upcomingAssignments.map(deliverable => {
         const dueDate = new Date(deliverable['Close Date']);
         const daysUntilDue = Math.ceil((dueDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+        const statusClass = deliverable['Status'] === 'completed' ? 'completed-item' : '';
         
         return `
-          <div class="deadline-item clickable-deadline" data-deliverable='${JSON.stringify(deliverable)}'>
+          <div class="deadline-item clickable-deadline ${statusClass}" data-deliverable='${JSON.stringify(deliverable)}'>
             <div class="deadline-date">${dueDate.toLocaleDateString()}</div>
             <div class="deadline-content">
               <div class="deadline-title">${deliverable['Deliverable']}</div>
@@ -405,10 +415,32 @@ export default function Dashboard() {
       }).join('');
     }
 
+    // Render needs grades
+    if (needsGrades.length === 0) {
+      needsGradesContainer.innerHTML = '<div class="empty-state">No submitted assignments waiting for grades</div>';
+    } else {
+      needsGradesContainer.innerHTML = needsGrades.map(deliverable => {
+        const dueDate = new Date(deliverable['Close Date']);
+        const daysSinceSubmitted = Math.ceil((now.getTime() - dueDate.getTime()) / (1000 * 60 * 60 * 24));
+        
+        return `
+          <div class="deadline-item clickable-deadline submitted-item" data-deliverable='${JSON.stringify(deliverable)}'>
+            <div class="deadline-date">${dueDate.toLocaleDateString()}</div>
+            <div class="deadline-content">
+              <div class="deadline-title">${deliverable['Deliverable']}</div>
+              <div class="deadline-course">${deliverable['Course ID']}</div>
+            </div>
+            <div class="deadline-countdown">Submitted ${daysSinceSubmitted} days ago</div>
+          </div>
+        `;
+      }).join('');
+    }
+
     // Add click handlers to all deadline items
     const regularItems = Array.from(regularContainer.querySelectorAll('.clickable-deadline'));
     const examItems = Array.from(examsContainer.querySelectorAll('.clickable-deadline'));
-    [...regularItems, ...examItems].forEach(item => {
+    const needsGradesItems = Array.from(needsGradesContainer.querySelectorAll('.clickable-deadline'));
+    [...regularItems, ...examItems, ...needsGradesItems].forEach(item => {
       item.addEventListener('click', () => {
         const deliverableData = JSON.parse(item.getAttribute('data-deliverable') || '{}');
         handleDeliverableClick(deliverableData);
@@ -822,6 +854,13 @@ export default function Dashboard() {
         <h2 className="section-title">Upcoming Assignments</h2>
         <div id="upcoming-deadlines-list" className="deadlines-list">
           <div className="empty-state">Loading upcoming assignments...</div>
+        </div>
+      </div>
+      
+      <div className="dashboard-section">
+        <h2 className="section-title">Needs Grades</h2>
+        <div id="needs-grades-list" className="deadlines-list">
+          <div className="empty-state">Loading submitted assignments...</div>
         </div>
       </div>
       
