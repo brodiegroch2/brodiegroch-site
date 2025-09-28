@@ -52,17 +52,21 @@ export default function SchedulePage() {
     loadData();
   }, []);
 
-  // Set filter to current day after data loads
+  // Set filter to current day after data loads (Monday on weekends)
   useEffect(() => {
     if (!loading && schedule.length > 0) {
       const currentDay = getCurrentDay();
       const availableDays = Array.from(new Set(schedule.map(item => item["Day of Week"])));
       
-      // Only set to current day if it exists in the schedule data
-      if (availableDays.includes(currentDay)) {
-        setFilter(currentDay);
+      // If it's a weekend (Saturday or Sunday), default to Monday
+      const isWeekend = currentDay === 'Saturday' || currentDay === 'Sunday';
+      const dayToShow = isWeekend ? 'Monday' : currentDay;
+      
+      // Only set to the chosen day if it exists in the schedule data
+      if (availableDays.includes(dayToShow)) {
+        setFilter(dayToShow);
       } else {
-        // Fallback to first available day if current day not found
+        // Fallback to first available day if chosen day not found
         setFilter(availableDays[0] || 'all');
       }
     }
