@@ -29,6 +29,16 @@ async function updateGitHub(data: any[]) {
   try {
     console.log('🔄 Starting GitHub update process...');
     
+    // In production (Vercel), we can't write files or run git commands
+    // Instead, we'll use GitHub's API to update the file directly
+    if (process.env.NODE_ENV === 'production') {
+      console.log('🌐 Using GitHub API for production update...');
+      return await updateViaGitHubAPI(data);
+    }
+    
+    // In development, use local git commands
+    console.log('💻 Using local git commands for development...');
+    
     // Write to local file first
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
     console.log('✅ Written to local file');
@@ -75,6 +85,69 @@ async function updateGitHub(data: any[]) {
       stderr: (error as any).stderr || 'No stderr',
       code: (error as any).code || 'No code'
     });
+    return false;
+  }
+}
+
+async function updateViaGitHubAPI(data: any[]) {
+  try {
+    const githubToken = process.env.GITHUB_TOKEN;
+    const repoOwner = 'brodiegroch2';
+    const repoName = 'brodiegroch-site';
+    const filePath = 'src/data/deliverables.json';
+    
+    if (!githubToken) {
+      console.error('❌ GITHUB_TOKEN environment variable not set');
+      return false;
+    }
+    
+    console.log('🔑 Using GitHub API with token...');
+    
+    // Get the current file content and SHA
+    const getFileResponse = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+      headers: {
+        'Authorization': `token ${githubToken}`,
+        'Accept': 'application/vnd.github.v3+json'
+      }
+    });
+    
+    if (!getFileResponse.ok) {
+      console.error('❌ Failed to get file from GitHub:', getFileResponse.status, getFileResponse.statusText);
+      return false;
+    }
+    
+    const fileData = await getFileResponse.json();
+    console.log('📄 Got file SHA:', fileData.sha);
+    
+    // Update the file
+    const newContent = JSON.stringify(data, null, 2);
+    const timestamp = new Date().toISOString();
+    const commitMessage = `Update deliverables: ${timestamp}`;
+    
+    const updateResponse = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `token ${githubToken}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: commitMessage,
+        content: Buffer.from(newContent).toString('base64'),
+        sha: fileData.sha
+      })
+    });
+    
+    if (!updateResponse.ok) {
+      const errorData = await updateResponse.text();
+      console.error('❌ Failed to update file on GitHub:', updateResponse.status, errorData);
+      return false;
+    }
+    
+    console.log('✅ Successfully updated file via GitHub API');
+    return true;
+  } catch (error) {
+    console.error('❌ Error updating via GitHub API:', error);
     return false;
   }
 }
