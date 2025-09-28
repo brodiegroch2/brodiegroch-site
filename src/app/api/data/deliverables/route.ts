@@ -71,9 +71,9 @@ async function updateGitHub(data: any[]) {
     console.error('❌ Error updating GitHub:', error);
     console.error('Error details:', {
       message: error instanceof Error ? error.message : 'Unknown error',
-      stdout: error.stdout || 'No stdout',
-      stderr: error.stderr || 'No stderr',
-      code: error.code || 'No code'
+      stdout: (error as any).stdout || 'No stdout',
+      stderr: (error as any).stderr || 'No stderr',
+      code: (error as any).code || 'No code'
     });
     return false;
   }
