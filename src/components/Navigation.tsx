@@ -16,7 +16,7 @@ export default function Navigation() {
     { href: '/schedule', label: 'Schedule' },
   ];
 
-  const dropdownLinks = [
+  const dropdownLinks: { href: string; label: string }[] = [
   ];
 
   const toggleDropdown = () => {
