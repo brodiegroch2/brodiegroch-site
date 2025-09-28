@@ -600,7 +600,7 @@ export default function Dashboard() {
     const container = document.getElementById('course-performance-chart');
     if (!container) return;
 
-    const courseAverages: { [key: string]: { average: number; courseName: string; gradedCount: number; totalCount: number } } = {};
+    const courseAverages: { [key: string]: { average: number; courseName: string; gradedCount: number; totalCount: number; creditHours: number } } = {};
     
     coursesData.forEach(course => {
       const courseId = course['Course ID'];
@@ -619,7 +619,8 @@ export default function Dashboard() {
           average: averageGrade,
           courseName: course['Course Name'],
           gradedCount: gradedDeliverables.length,
-          totalCount: courseDeliverables.length
+          totalCount: courseDeliverables.length,
+          creditHours: Number(course['Credit Hours']) || 0
         };
       }
     });
@@ -629,21 +630,93 @@ export default function Dashboard() {
       return;
     }
     
-    container.innerHTML = Object.entries(courseAverages).map(([courseId, data]) => `
-      <div class="course-performance-item">
-        <div class="course-performance-header">
-          <div class="course-performance-id">${courseId}</div>
-          <div class="course-performance-average ${getGradeClass(data.average)}">${data.average}%</div>
-        </div>
-        <div class="course-performance-name">${data.courseName}</div>
-        <div class="course-performance-progress">
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: ${data.average}%"></div>
+    // Sort courses by average grade (highest first)
+    const sortedCourses = Object.entries(courseAverages).sort(([,a], [,b]) => b.average - a.average);
+    
+    // Get course icons based on course type
+    const getCourseIcon = (courseId: string) => {
+      if (courseId.includes('COMP')) {
+        return `<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+          <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
+          <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+        </svg>`;
+      } else if (courseId.includes('MECH')) {
+        return `<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>`;
+      } else if (courseId.includes('MATH')) {
+        return `<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+        </svg>`;
+      } else if (courseId.includes('THRM')) {
+        return `<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C8.13 2 5 5.13 5 9C5 11.38 6.19 13.47 8 14.74V17C8 17.55 8.45 18 9 18H15C15.55 18 16 17.55 16 17V14.74C17.81 13.47 19 11.38 19 9C19 5.13 15.87 2 12 2Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M9 21H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>`;
+      } else {
+        return `<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>`;
+      }
+    };
+    
+    container.innerHTML = `
+      <div class="course-performance-grid">
+        ${sortedCourses.map(([courseId, data], index) => `
+          <div class="course-card" style="animation-delay: ${index * 0.1}s">
+            <div class="course-card-header">
+              <div class="course-icon">
+                ${getCourseIcon(courseId)}
+              </div>
+              <div class="course-info">
+                <div class="course-id">${courseId}</div>
+                <div class="course-credits">${data.creditHours} Credits</div>
+              </div>
+              <div class="course-grade ${getGradeClass(data.average)}">
+                <div class="grade-percentage">${data.average}%</div>
+                <div class="grade-letter">${getLetterGrade(data.average)}</div>
+              </div>
+            </div>
+            
+            <div class="course-name">${data.courseName}</div>
+            
+            <div class="course-progress-section">
+              <div class="progress-header">
+                <span class="progress-label">Assignment Progress</span>
+                <span class="progress-percentage">${Math.round((data.gradedCount / data.totalCount) * 100)}%</span>
+              </div>
+              <div class="modern-progress-bar">
+                <div class="progress-fill-modern" style="width: ${(data.gradedCount / data.totalCount) * 100}%"></div>
+              </div>
+              <div class="progress-stats">
+                <span class="graded-count">${data.gradedCount}</span>
+                <span class="total-count">/${data.totalCount}</span>
+                <span class="assignments-text">assignments graded</span>
+              </div>
+            </div>
+            
+            <div class="course-performance-chart">
+              <div class="mini-chart">
+                <svg width="60" height="60" viewBox="0 0 60 60">
+                  <circle cx="30" cy="30" r="25" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="4"/>
+                  <circle cx="30" cy="30" r="25" fill="none" stroke="currentColor" stroke-width="4" 
+                          stroke-dasharray="${2 * Math.PI * 25}" 
+                          stroke-dashoffset="${2 * Math.PI * 25 * (1 - data.average / 100)}"
+                          stroke-linecap="round" class="grade-circle"/>
+                </svg>
+                <div class="chart-percentage">${data.average}%</div>
+              </div>
+            </div>
           </div>
-          <div class="course-performance-stats">${data.gradedCount}/${data.totalCount} assignments graded</div>
-        </div>
+        `).join('')}
       </div>
-    `).join('');
+    `;
   };
 
   const updateProgressOverview = (coursesData: Course[], deliverablesData: Deliverable[]) => {
@@ -825,6 +898,22 @@ export default function Dashboard() {
     if (percentage >= 75) return 'grade-average';
     if (percentage >= 65) return 'grade-below-average';
     return 'grade-poor';
+  };
+
+  const getLetterGrade = (grade: number) => {
+    if (grade >= 97) return 'A+';
+    if (grade >= 93) return 'A';
+    if (grade >= 90) return 'A-';
+    if (grade >= 87) return 'B+';
+    if (grade >= 83) return 'B';
+    if (grade >= 80) return 'B-';
+    if (grade >= 77) return 'C+';
+    if (grade >= 73) return 'C';
+    if (grade >= 70) return 'C-';
+    if (grade >= 67) return 'D+';
+    if (grade >= 63) return 'D';
+    if (grade >= 60) return 'D-';
+    return 'F';
   };
 
   // Pagination handlers
