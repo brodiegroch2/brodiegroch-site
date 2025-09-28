@@ -18,5 +18,10 @@
     "Site Name": "Pearson MyLab",
     "Address": "https://www.pearson.com/en-ca/higher-education/products-services/mylab/login-mylab.html",
     "Link_image_id": "pearson mylab.png"
+  },
+  {
+    "Site Name": "MyCareerHub",
+    "Address": "https://mycareerhub.sait.ca/home.htm",
+    "Link_image_id": "sait_logo_transparent.png"
   }
 ]
