@@ -386,7 +386,9 @@ export default function Dashboard() {
     }
 
     // Add click handlers to all deadline items
-    [...regularContainer.querySelectorAll('.clickable-deadline'), ...examsContainer.querySelectorAll('.clickable-deadline')].forEach(item => {
+    const regularItems = Array.from(regularContainer.querySelectorAll('.clickable-deadline'));
+    const examItems = Array.from(examsContainer.querySelectorAll('.clickable-deadline'));
+    [...regularItems, ...examItems].forEach(item => {
       item.addEventListener('click', () => {
         const deliverableData = JSON.parse(item.getAttribute('data-deliverable') || '{}');
         handleDeliverableClick(deliverableData);
