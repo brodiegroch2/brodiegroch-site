@@ -4993,7 +4993,7 @@ body {
 .course-id {
     font-size: 1.125rem;
     font-weight: 700;
-    color: #3b82f6;
+    color: white;
 }
 
 .course-average-grade {
@@ -5254,7 +5254,7 @@ body {
     
     .course-id {
         font-size: 0.875rem;
-        color: #6b7280;
+        color: white;
         margin-bottom: 0.75rem;
     }
     
@@ -5336,7 +5336,7 @@ body {
     .course-id {
         font-size: 0.9rem;
         margin-bottom: 1rem;
-        color: #6b7280;
+        color: white;
         font-weight: 500;
     }
     
