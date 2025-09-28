@@ -44,7 +44,7 @@ export default function Dashboard() {
   const [upcomingDeadlinesTotalPages, setUpcomingDeadlinesTotalPages] = useState(0);
   const [selectedDeliverable, setSelectedDeliverable] = useState<Deliverable | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [courseAverages, setCourseAverages] = useState<{[key: string]: {average: number, courseName: string, gradedCount: number, totalCount: number}}>({});
+  const [courseAverages, setCourseAverages] = useState<{[key: string]: {average: number, courseName: string, gradedCount: number, totalCount: number, creditHours: number}}>({});
   const [showCourseAverages, setShowCourseAverages] = useState(false);
   const itemsPerPage = 4;
 
@@ -111,7 +111,7 @@ export default function Dashboard() {
     }).length;
 
     // Calculate weighted average grade based on course averages and credit hours
-    const courseAverages: { [key: string]: { average: number; creditHours: number } } = {};
+    const courseAverages: { [key: string]: { average: number; courseName: string; gradedCount: number; totalCount: number; creditHours: number } } = {};
     
     coursesData.forEach(course => {
       const courseId = course['Course ID'];
@@ -128,6 +128,9 @@ export default function Dashboard() {
         const averageGrade = totalGrade / gradedDeliverables.length;
         courseAverages[courseId] = {
           average: averageGrade,
+          courseName: course['Course Name'],
+          gradedCount: gradedDeliverables.length,
+          totalCount: courseDeliverables.length,
           creditHours: parseFloat(course['Credit Hours']) || 0
         };
       }
