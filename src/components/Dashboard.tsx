@@ -187,7 +187,7 @@ export default function Dashboard() {
     // 1. Haven't passed their due date yet
     // 2. Don't have a grade (not graded yet)
     // 3. Aren't submitted (if status exists)
-    // 4. Include completed items (completed but not submitted)
+    // 4. Aren't completed (exclude completed items)
     const upcomingDeliverables = deliverablesData
       .filter(d => {
         const closeDate = new Date(d["Close Date"]);
@@ -205,9 +205,12 @@ export default function Dashboard() {
         // Check if it's submitted (exclude submitted assignments)
         const isSubmitted = d['Status'] === 'submitted';
         
-        // Include if it's not past due AND doesn't have a grade AND isn't submitted
-        // This includes pending and completed items
-        return isNotPastDue && !hasGrade && !isSubmitted;
+        // Check if it's completed (exclude completed assignments)
+        const isCompleted = d['Status'] === 'completed';
+        
+        // Include if it's not past due AND doesn't have a grade AND isn't submitted AND isn't completed
+        // This only includes pending items
+        return isNotPastDue && !hasGrade && !isSubmitted && !isCompleted;
       })
       .sort((a, b) => new Date(a["Close Date"]).getTime() - new Date(b["Close Date"]).getTime());
 
