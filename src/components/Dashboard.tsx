@@ -30,9 +30,9 @@ interface Deliverable {
 export default function Dashboard() {
   const [courses, setCourses] = useState<Course[]>([]);
   const [deliverables, setDeliverables] = useState<Deliverable[]>([]);
-  const [countdown, setCountdown] = useState({ days: '--', hours: '--', minutes: '--' });
+  const [countdown, setCountdown] = useState({ days: '--', hours: '--', minutes: '--', seconds: '--' });
   const [nextAssignment, setNextAssignment] = useState('Loading...');
-  const [testExamCountdown, setTestExamCountdown] = useState({ days: '--', hours: '--', minutes: '--' });
+  const [testExamCountdown, setTestExamCountdown] = useState({ days: '--', hours: '--', minutes: '--', seconds: '--' });
   const [nextTestExam, setNextTestExam] = useState('Loading...');
   const [stats, setStats] = useState({
     completedDeliverables: '0/0',
@@ -237,18 +237,37 @@ export default function Dashboard() {
           const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
           const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
           
-          setCountdown({
-            days: days.toString().padStart(2, '0'),
-            hours: hours.toString().padStart(2, '0'),
-            minutes: minutes.toString().padStart(2, '0')
-          });
+          if (days > 0) {
+            setCountdown({
+              days: days.toString().padStart(2, '0'),
+              hours: hours.toString().padStart(2, '0'),
+              minutes: '--',
+              seconds: '--'
+            });
+          } else if (hours > 0) {
+            setCountdown({
+              days: '--',
+              hours: hours.toString().padStart(2, '0'),
+              minutes: minutes.toString().padStart(2, '0'),
+              seconds: '--'
+            });
+          } else {
+            setCountdown({
+              days: '--',
+              hours: '--',
+              minutes: minutes.toString().padStart(2, '0'),
+              seconds: seconds.toString().padStart(2, '0')
+            });
+          }
         } else {
           // If time has passed, set to 00:00:00
           setCountdown({
             days: '00',
             hours: '00',
-            minutes: '00'
+            minutes: '00',
+            seconds: '00'
           });
         }
       };
@@ -263,7 +282,8 @@ export default function Dashboard() {
       setCountdown({
         days: '--',
         hours: '--',
-        minutes: '--'
+        minutes: '--',
+        seconds: '--'
       });
     }
   };
@@ -321,14 +341,32 @@ export default function Dashboard() {
           const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
           const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
           
-          setTestExamCountdown({
-            days: days.toString().padStart(2, '0'),
-            hours: hours.toString().padStart(2, '0'),
-            minutes: minutes.toString().padStart(2, '0')
-          });
+          if (days > 0) {
+            setTestExamCountdown({
+              days: days.toString().padStart(2, '0'),
+              hours: hours.toString().padStart(2, '0'),
+              minutes: '--',
+              seconds: '--'
+            });
+          } else if (hours > 0) {
+            setTestExamCountdown({
+              days: '--',
+              hours: hours.toString().padStart(2, '0'),
+              minutes: minutes.toString().padStart(2, '0'),
+              seconds: '--'
+            });
+          } else {
+            setTestExamCountdown({
+              days: '--',
+              hours: '--',
+              minutes: minutes.toString().padStart(2, '0'),
+              seconds: seconds.toString().padStart(2, '0')
+            });
+          }
         } else {
-          setTestExamCountdown({ days: '00', hours: '00', minutes: '00' });
+          setTestExamCountdown({ days: '00', hours: '00', minutes: '00', seconds: '00' });
         }
       };
       
@@ -338,7 +376,7 @@ export default function Dashboard() {
       return () => clearInterval(interval);
     } else {
       setNextTestExam('No upcoming tests/exams');
-      setTestExamCountdown({ days: '--', hours: '--', minutes: '--' });
+      setTestExamCountdown({ days: '--', hours: '--', minutes: '--', seconds: '--' });
     }
   };
 
@@ -870,20 +908,22 @@ export default function Dashboard() {
               <div className="countdown-content">
                 <div className="countdown-label">Next Due Date</div>
                 <div className="countdown-timer">
-                  <div className="time-unit">
-                    <span className="time-value">{countdown.days}</span>
-                    <span className="time-label">Days</span>
-                  </div>
-                  <div className="time-separator">:</div>
-                  <div className="time-unit">
-                    <span className="time-value">{countdown.hours}</span>
-                    <span className="time-label">Hours</span>
-                  </div>
-                  <div className="time-separator">:</div>
-                  <div className="time-unit">
-                    <span className="time-value">{countdown.minutes}</span>
-                    <span className="time-label">Mins</span>
-                  </div>
+                  {countdown.days !== '--' && countdown.hours !== '--' ? (
+                    <div className="time-display">
+                      <span className="time-value">{countdown.days}:{countdown.hours}</span>
+                      <span className="time-label">Days:Hours</span>
+                    </div>
+                  ) : countdown.hours !== '--' && countdown.minutes !== '--' ? (
+                    <div className="time-display">
+                      <span className="time-value">{countdown.hours}:{countdown.minutes}</span>
+                      <span className="time-label">Hours:Mins</span>
+                    </div>
+                  ) : (
+                    <div className="time-display">
+                      <span className="time-value">{countdown.minutes}:{countdown.seconds}</span>
+                      <span className="time-label">Mins:Secs</span>
+                    </div>
+                  )}
                 </div>
                 <div className="countdown-assignment">{nextAssignment}</div>
               </div>
@@ -899,20 +939,22 @@ export default function Dashboard() {
               <div className="countdown-content">
                 <div className="countdown-label">Next TEST/EXAM Date</div>
                 <div className="countdown-timer">
-                  <div className="time-unit">
-                    <span className="time-value">{testExamCountdown.days}</span>
-                    <span className="time-label">Days</span>
-                  </div>
-                  <div className="time-separator">:</div>
-                  <div className="time-unit">
-                    <span className="time-value">{testExamCountdown.hours}</span>
-                    <span className="time-label">Hours</span>
-                  </div>
-                  <div className="time-separator">:</div>
-                  <div className="time-unit">
-                    <span className="time-value">{testExamCountdown.minutes}</span>
-                    <span className="time-label">Mins</span>
-                  </div>
+                  {testExamCountdown.days !== '--' && testExamCountdown.hours !== '--' ? (
+                    <div className="time-display">
+                      <span className="time-value">{testExamCountdown.days}:{testExamCountdown.hours}</span>
+                      <span className="time-label">Days:Hours</span>
+                    </div>
+                  ) : testExamCountdown.hours !== '--' && testExamCountdown.minutes !== '--' ? (
+                    <div className="time-display">
+                      <span className="time-value">{testExamCountdown.hours}:{testExamCountdown.minutes}</span>
+                      <span className="time-label">Hours:Mins</span>
+                    </div>
+                  ) : (
+                    <div className="time-display">
+                      <span className="time-value">{testExamCountdown.minutes}:{testExamCountdown.seconds}</span>
+                      <span className="time-label">Mins:Secs</span>
+                    </div>
+                  )}
                 </div>
                 <div className="countdown-assignment">{nextTestExam}</div>
               </div>
