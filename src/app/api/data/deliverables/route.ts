@@ -116,6 +116,38 @@ export async function PUT(request: NextRequest) {
     // Update GitHub with the changes
     const gitHubSuccess = await updateGitHub(memoryCache);
     
+    // Trigger webhook to notify local systems (if running locally)
+    if (gitHubSuccess) {
+      try {
+        const webhookUrl = process.env.LOCAL_WEBHOOK_URL || 'http://localhost:3000/api/webhook/sync';
+        const webhookSecret = process.env.WEBHOOK_SECRET || 'your-secret-key';
+        
+        // Only trigger webhook if we're running locally
+        if (process.env.NODE_ENV === 'development' || process.env.LOCAL_SYNC === 'true') {
+          const response = await fetch(webhookUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-webhook-secret': webhookSecret
+            },
+            body: JSON.stringify({
+              type: 'deliverable_updated',
+              timestamp: new Date().toISOString(),
+              deliverable: updatedDeliverable
+            })
+          });
+          
+          if (response.ok) {
+            console.log('Webhook triggered successfully');
+          } else {
+            console.log('Webhook failed, but GitHub update succeeded');
+          }
+        }
+      } catch (webhookError) {
+        console.log('Webhook error (non-critical):', webhookError);
+      }
+    }
+    
     if (gitHubSuccess) {
       console.log('Successfully updated deliverable and pushed to GitHub');
       return NextResponse.json({ 

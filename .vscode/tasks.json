@@ -2,28 +2,67 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Auto-Save to GitHub",
+            "label": "Auto-Sync Monitor",
             "type": "shell",
-            "command": "./auto-save.sh",
+            "command": "./auto-sync.sh",
+            "args": ["monitor"],
             "group": "build",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
                 "focus": false,
-                "panel": "shared"
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
+        {
+            "label": "Auto-Sync Once",
+            "type": "shell",
+            "command": "./auto-sync.sh",
+            "args": ["once"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
             },
             "problemMatcher": []
         },
         {
-            "label": "Quick Commit & Push",
+            "label": "Setup Auto-Sync",
             "type": "shell",
-            "command": "git add . && git commit -m \"Quick save: $(date '+%H:%M:%S')\" && git push origin main",
+            "command": "./setup-auto-sync.sh",
             "group": "build",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
                 "focus": false,
-                "panel": "shared"
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Git Pull Latest",
+            "type": "shell",
+            "command": "git pull origin main",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
             },
             "problemMatcher": []
         }
