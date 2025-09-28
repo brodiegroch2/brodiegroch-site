@@ -27,28 +27,54 @@ async function initializeCache() {
 
 async function updateGitHub(data: any[]) {
   try {
+    console.log('🔄 Starting GitHub update process...');
+    
     // Write to local file first
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+    console.log('✅ Written to local file');
     
     // Commit and push to GitHub
     const { exec } = require('child_process');
     const util = require('util');
     const execAsync = util.promisify(exec);
     
+    // Check git status first
+    console.log('📋 Checking git status...');
+    const statusResult = await execAsync('git status --porcelain');
+    console.log('Git status output:', statusResult.stdout);
+    
+    if (!statusResult.stdout.trim()) {
+      console.log('⚠️ No changes to commit - file might already be up to date');
+      return true; // No changes needed
+    }
+    
     // Add all changes
-    await execAsync('git add .');
+    console.log('📝 Adding changes to git...');
+    const addResult = await execAsync('git add .');
+    console.log('Git add result:', addResult.stdout);
     
     // Commit with timestamp
     const timestamp = new Date().toISOString();
-    await execAsync(`git commit -m "Update deliverables: ${timestamp}"`);
+    const commitMessage = `Update deliverables: ${timestamp}`;
+    console.log('💾 Committing changes:', commitMessage);
+    const commitResult = await execAsync(`git commit -m "${commitMessage}"`);
+    console.log('Git commit result:', commitResult.stdout);
     
     // Push to GitHub
-    await execAsync('git push origin main');
+    console.log('🚀 Pushing to GitHub...');
+    const pushResult = await execAsync('git push origin main');
+    console.log('Git push result:', pushResult.stdout);
     
-    console.log('Successfully updated GitHub with deliverable changes');
+    console.log('✅ Successfully updated GitHub with deliverable changes');
     return true;
   } catch (error) {
-    console.error('Error updating GitHub:', error);
+    console.error('❌ Error updating GitHub:', error);
+    console.error('Error details:', {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stdout: error.stdout || 'No stdout',
+      stderr: error.stderr || 'No stderr',
+      code: error.code || 'No code'
+    });
     return false;
   }
 }
