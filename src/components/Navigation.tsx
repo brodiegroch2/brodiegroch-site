@@ -17,7 +17,6 @@ export default function Navigation() {
   ];
 
   const dropdownLinks = [
-    { href: '/quick-links', label: 'Quick Links' },
   ];
 
   const toggleDropdown = () => {
@@ -61,34 +60,36 @@ export default function Navigation() {
             ))}
           </ul>
           
-          {/* Desktop Dropdown */}
-          <div className="nav-dropdown" ref={dropdownRef}>
-            <button 
-              className="dropdown-toggle"
-              onClick={toggleDropdown}
-              aria-expanded={isDropdownOpen}
-            >
-              More
-              <svg className="dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            
-            {isDropdownOpen && (
-              <div className="dropdown-menu">
-                {dropdownLinks.map((link) => (
-                  <Link 
-                    key={link.href}
-                    href={link.href} 
-                    className={`dropdown-link ${pathname === link.href ? 'active' : ''}`}
-                    onClick={() => setIsDropdownOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+          {/* Desktop Dropdown - Only show if there are dropdown links */}
+          {dropdownLinks.length > 0 && (
+            <div className="nav-dropdown" ref={dropdownRef}>
+              <button 
+                className="dropdown-toggle"
+                onClick={toggleDropdown}
+                aria-expanded={isDropdownOpen}
+              >
+                More
+                <svg className="dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              
+              {isDropdownOpen && (
+                <div className="dropdown-menu">
+                  {dropdownLinks.map((link) => (
+                    <Link 
+                      key={link.href}
+                      href={link.href} 
+                      className={`dropdown-link ${pathname === link.href ? 'active' : ''}`}
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
       </div>

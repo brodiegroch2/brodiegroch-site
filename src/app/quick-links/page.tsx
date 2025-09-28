@@ -84,10 +84,10 @@ export default function QuickLinksPage() {
   if (loading) {
     return (
       <div className="container">
-        <h1 className="page-title">Quick Links</h1>
+        <h1 className="page-title">Links</h1>
         <p className="page-subtitle">Access your frequently used resources and tools</p>
         <div className="data-section">
-          <div className="empty-state">Loading quick links...</div>
+          <div className="empty-state">Loading links...</div>
         </div>
       </div>
     );
@@ -101,7 +101,7 @@ export default function QuickLinksPage() {
       {links.length === 0 ? (
         <div className="data-section">
           <div className="empty-state">
-            No quick links available. Load data from Quick Links.json to display quick access links.
+            No links available. Load data from Quick Links.json to display quick access links.
           </div>
         </div>
       ) : (
