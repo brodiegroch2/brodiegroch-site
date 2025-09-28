@@ -3847,6 +3847,11 @@ body {
     font-weight: 500;
 }
 
+.deliverable-card.completed .deliverable-title {
+    color: #000000;
+    font-weight: 600;
+}
+
 /* Submitted item styling */
 .submitted-item {
     border-left: 4px solid #3b82f6 !important;
