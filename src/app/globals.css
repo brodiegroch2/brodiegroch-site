@@ -144,6 +144,24 @@ body {
     gap: 1rem;
 }
 
+/* Red styling for test/exam countdown */
+.countdown-card:nth-child(2) {
+    background: #2a1a1a;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.countdown-card:nth-child(2) .time-display .time-value {
+    color: #ef4444;
+}
+
+.countdown-card:nth-child(2) .countdown-label {
+    color: #ef4444;
+}
+
+.countdown-card:nth-child(2) .countdown-assignment {
+    color: #fca5a5;
+}
+
 .countdown-card::before {
     content: '';
     position: absolute;
@@ -4983,16 +5001,18 @@ body {
     
     .countdown-section {
         margin-top: 1.5rem;
-        flex-direction: column;
+        flex-direction: row;
         gap: 1rem;
+        flex-wrap: wrap;
     }
     
     .countdown-card {
-        padding: 1.25rem;
+        padding: 1rem;
         border-radius: 16px;
         text-align: center;
-        min-width: unset;
-        max-width: unset;
+        min-width: 140px;
+        max-width: 180px;
+        flex: 1;
     }
     
     .countdown-time {
