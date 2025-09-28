@@ -3805,6 +3805,48 @@ body {
     color: white !important;
 }
 
+/* Completed deliverable card styling */
+.deliverable-card.completed {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-color: #f59e0b;
+    color: #92400e;
+}
+
+.deliverable-card.completed:hover {
+    background: linear-gradient(135deg, #fde68a, #fcd34d);
+    border-color: #d97706;
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+}
+
+.deliverable-card.completed .deliverable-category {
+    background: #f59e0b;
+    color: #ffffff;
+}
+
+.deliverable-card.completed .deliverable-weight {
+    background: #d97706;
+    color: #ffffff;
+}
+
+.deliverable-card.completed .status-value.status-completed {
+    background: #f59e0b;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.deliverable-card.completed .date-label,
+.deliverable-card.completed .grade-label,
+.deliverable-card.completed .status-label {
+    color: #92400e;
+    font-weight: 600;
+}
+
+.deliverable-card.completed .date-value,
+.deliverable-card.completed .grade-value {
+    color: #b45309;
+    font-weight: 500;
+}
+
 /* Submitted item styling */
 .submitted-item {
     border-left: 4px solid #3b82f6 !important;

@@ -79,8 +79,33 @@ export default function DeliverablesPage() {
     }
   }, [deliverables, statusFilter]);
 
-  // Sort deliverables: ungraded by due date first, then graded at bottom
+  // Sort deliverables: completed at top, then ungraded by due date, then graded at bottom
   const sortedDeliverables = filteredDeliverables.sort((a, b) => {
+    const isCompletedA = a.Status === 'completed';
+    const isCompletedB = b.Status === 'completed';
+    
+    // Completed items go to the top
+    if (isCompletedA && !isCompletedB) return -1;
+    if (!isCompletedA && isCompletedB) return 1;
+    
+    // If both are completed, sort by due date
+    if (isCompletedA && isCompletedB) {
+      const dateA = a['Close Date'] || '';
+      const dateB = b['Close Date'] || '';
+      
+      if (!dateA && !dateB) return 0;
+      if (!dateA) return 1;
+      if (!dateB) return -1;
+      
+      const timeA = new Date(dateA).getTime();
+      const timeB = new Date(dateB).getTime();
+      if (isNaN(timeA) && isNaN(timeB)) return 0;
+      if (isNaN(timeA)) return 1;
+      if (isNaN(timeB)) return -1;
+      return timeA - timeB;
+    }
+    
+    // For non-completed items, use existing logic
     const hasGradeA = a['Grade %'] && a['Grade %'] !== '' && a['Grade %'] !== 'Not specified' && a['Grade %'] !== 'Not graded';
     const hasGradeB = b['Grade %'] && b['Grade %'] !== '' && b['Grade %'] !== 'Not specified' && b['Grade %'] !== 'Not graded';
     
@@ -153,7 +178,12 @@ export default function DeliverablesPage() {
   const getDeliverableClasses = (deliverable: Deliverable) => {
     const classes = ['deliverable-card'];
     
-    // Check if graded (highest priority)
+    // Check if completed (highest priority)
+    if (deliverable['Status'] === 'completed') {
+      classes.push('completed');
+    }
+    
+    // Check if graded (high priority)
     const hasGrade = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
                     deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
     if (hasGrade) {
