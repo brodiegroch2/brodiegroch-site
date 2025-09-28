@@ -508,65 +508,163 @@ export default function Dashboard() {
     const now = new Date();
     const semesterEnd = new Date('2025-12-20'); // Approximate semester end
     const semesterStart = new Date('2025-09-01'); // Approximate semester start
-    const totalDays = semesterEnd.getTime() - semesterStart.getTime();
-    const daysPassed = now.getTime() - semesterStart.getTime();
+    const totalDays = Math.ceil((semesterEnd.getTime() - semesterStart.getTime()) / (1000 * 60 * 60 * 24));
+    const daysPassed = Math.ceil((now.getTime() - semesterStart.getTime()) / (1000 * 60 * 60 * 24));
+    const daysRemaining = Math.max(0, Math.ceil((semesterEnd.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)));
     const semesterProgress = Math.min(100, Math.max(0, (daysPassed / totalDays) * 100));
     
-    const totalDeliverables = deliverablesData.length;
-    const completedDeliverables = deliverablesData.filter(d => 
-      d['Grade %'] && d['Grade %'] !== '' && 
-      d['Grade %'] !== 'Not specified' && d['Grade %'] !== 'Not graded'
-    ).length;
+    // Calculate assignment completion more comprehensively
+    const totalDeliverables = deliverablesData.filter(d => d['Course ID'] && d['Course ID'] !== '').length;
+    const completedDeliverables = deliverablesData.filter(d => {
+      const isGraded = d['Grade %'] && d['Grade %'] !== '' && 
+                      d['Grade %'] !== 'Not specified' && d['Grade %'] !== 'Not graded';
+      const isSubmitted = d['Status'] === 'submitted';
+      const isCompleted = d['Status'] === 'completed';
+      return isGraded || isSubmitted || isCompleted;
+    }).length;
     const completionProgress = totalDeliverables > 0 ? (completedDeliverables / totalDeliverables) * 100 : 0;
     
+    // Calculate weighted progress based on course credits
+    const totalCredits = coursesData.reduce((sum, course) => sum + (course['Credit Hours'] || 0), 0);
+    const completedCredits = coursesData.reduce((sum, course) => {
+      const courseDeliverables = deliverablesData.filter(d => d['Course ID'] === course['Course ID']);
+      const courseCompleted = courseDeliverables.filter(d => {
+        const isGraded = d['Grade %'] && d['Grade %'] !== '' && 
+                        d['Grade %'] !== 'Not specified' && d['Grade %'] !== 'Not graded';
+        const isSubmitted = d['Status'] === 'submitted';
+        const isCompleted = d['Status'] === 'completed';
+        return isGraded || isSubmitted || isCompleted;
+      }).length;
+      const courseProgress = courseDeliverables.length > 0 ? (courseCompleted / courseDeliverables.length) : 0;
+      return sum + (courseProgress * (course['Credit Hours'] || 0));
+    }, 0);
+    const weightedProgress = totalCredits > 0 ? (completedCredits / totalCredits) * 100 : 0;
+    
     container.innerHTML = `
-      <div class="progress-item">
-        <div class="progress-header">
-          <div class="progress-title">Semester Progress</div>
-          <div class="progress-percentage">${semesterProgress.toFixed(1)}%</div>
-        </div>
-        <div class="progress-bar-large">
-          <div class="progress-fill-large" style="width: ${semesterProgress}%"></div>
-        </div>
-      </div>
-      
-      <div class="progress-item">
-        <div class="progress-header">
-          <div class="progress-title">Assignment Completion</div>
-          <div class="progress-percentage">${completionProgress.toFixed(1)}%</div>
-        </div>
-        <div class="progress-bar-large">
-          <div class="progress-fill-large completion" style="width: ${completionProgress}%"></div>
-        </div>
-        <div class="progress-stats">${completedDeliverables} of ${totalDeliverables} assignments completed</div>
-      </div>
-      
-      <div class="progress-item">
-        <div class="progress-header">
-          <div class="progress-title">Semester Progress</div>
-          <div class="progress-percentage">${Math.max(0, Math.ceil((semesterEnd.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)))} days left</div>
-        </div>
-        <div class="pie-chart-container">
-          <div class="pie-chart">
-            <svg width="120" height="120" viewBox="0 0 120 120" class="pie-svg">
-              <circle cx="60" cy="60" r="50" fill="none" stroke="#374151" stroke-width="8" class="pie-background"/>
-              <circle cx="60" cy="60" r="50" fill="none" stroke="#3b82f6" stroke-width="8" 
-                      stroke-dasharray="${(semesterProgress / 100) * 314.16} 314.16" 
-                      stroke-dashoffset="78.54" 
-                      class="pie-progress" 
-                      style="transform: rotate(-90deg); transform-origin: 60px 60px;"/>
-              <text x="60" y="65" text-anchor="middle" class="pie-text">${Math.round(semesterProgress)}%</text>
-            </svg>
+      <div class="progress-overview-grid">
+        <!-- Semester Progress Card -->
+        <div class="progress-card semester-progress">
+          <div class="progress-card-header">
+            <div class="progress-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="progress-card-title">Semester Progress</div>
           </div>
-          <div class="pie-info">
-            <div class="pie-stats">
-              <div class="pie-stat">
-                <div class="pie-stat-value">${Math.max(0, Math.ceil((semesterEnd.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)))}</div>
-                <div class="pie-stat-label">Days Remaining</div>
+          <div class="progress-card-content">
+            <div class="progress-percentage-large">${semesterProgress.toFixed(1)}%</div>
+            <div class="progress-bar-modern">
+              <div class="progress-fill-modern" style="width: ${semesterProgress}%"></div>
+            </div>
+            <div class="progress-details">
+              <div class="progress-detail-item">
+                <span class="progress-detail-value">${daysRemaining}</span>
+                <span class="progress-detail-label">Days Left</span>
               </div>
-              <div class="pie-stat">
-                <div class="pie-stat-value">${Math.ceil((now.getTime() - semesterStart.getTime()) / (1000 * 60 * 60 * 24))}</div>
-                <div class="pie-stat-label">Days Passed</div>
+              <div class="progress-detail-item">
+                <span class="progress-detail-value">${daysPassed}</span>
+                <span class="progress-detail-label">Days Passed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Assignment Completion Card -->
+        <div class="progress-card assignment-progress">
+          <div class="progress-card-header">
+            <div class="progress-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="progress-card-title">Assignment Progress</div>
+          </div>
+          <div class="progress-card-content">
+            <div class="progress-percentage-large">${completionProgress.toFixed(1)}%</div>
+            <div class="progress-bar-modern">
+              <div class="progress-fill-modern completion" style="width: ${completionProgress}%"></div>
+            </div>
+            <div class="progress-details">
+              <div class="progress-detail-item">
+                <span class="progress-detail-value">${completedDeliverables}</span>
+                <span class="progress-detail-label">Completed</span>
+              </div>
+              <div class="progress-detail-item">
+                <span class="progress-detail-value">${totalDeliverables}</span>
+                <span class="progress-detail-label">Total</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Progress Card -->
+        <div class="progress-card course-progress">
+          <div class="progress-card-header">
+            <div class="progress-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6.5 2H20V22H6.5A2.5 2.5 0 0 1 4 19.5V4.5A2.5 2.5 0 0 1 6.5 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="progress-card-title">Course Progress</div>
+          </div>
+          <div class="progress-card-content">
+            <div class="progress-percentage-large">${weightedProgress.toFixed(1)}%</div>
+            <div class="progress-bar-modern">
+              <div class="progress-fill-modern course" style="width: ${weightedProgress}%"></div>
+            </div>
+            <div class="progress-details">
+              <div class="progress-detail-item">
+                <span class="progress-detail-value">${coursesData.length}</span>
+                <span class="progress-detail-label">Courses</span>
+              </div>
+              <div class="progress-detail-item">
+                <span class="progress-detail-value">${totalCredits}</span>
+                <span class="progress-detail-label">Credits</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pie Chart for Visual Appeal -->
+        <div class="progress-card pie-chart-card">
+          <div class="progress-card-header">
+            <div class="progress-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M21.21 15.89A10 10 0 1 1 8 2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 12A10 10 0 0 0 12 2V12H22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="progress-card-title">Overall Progress</div>
+          </div>
+          <div class="progress-card-content">
+            <div class="pie-chart-container-modern">
+              <div class="pie-chart-modern">
+                <svg width="100" height="100" viewBox="0 0 100 100" class="pie-svg-modern">
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="#374151" stroke-width="6" class="pie-background-modern"/>
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="6" 
+                          stroke-dasharray="${(weightedProgress / 100) * 251.2} 251.2" 
+                          stroke-dashoffset="62.8" 
+                          class="pie-progress-modern" 
+                          style="transform: rotate(-90deg); transform-origin: 50px 50px;"/>
+                  <text x="50" y="55" text-anchor="middle" class="pie-text-modern">${Math.round(weightedProgress)}%</text>
+                </svg>
+              </div>
+              <div class="pie-info-modern">
+                <div class="pie-stats-modern">
+                  <div class="pie-stat-modern">
+                    <div class="pie-stat-value-modern">${Math.round(semesterProgress)}%</div>
+                    <div class="pie-stat-label-modern">Semester</div>
+                  </div>
+                  <div class="pie-stat-modern">
+                    <div class="pie-stat-value-modern">${Math.round(completionProgress)}%</div>
+                    <div class="pie-stat-label-modern">Assignments</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
