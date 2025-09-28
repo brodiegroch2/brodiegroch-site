@@ -89,6 +89,11 @@ export default function DeliverableEditModal({
     if (newStatus === 'pending' && grade) {
       handleClearGrade();
     }
+    
+    // If status is changed to completed, keep any existing grade but don't auto-set graded status
+    if (newStatus === 'completed') {
+      // Keep current grade and letter grade as they are
+    }
   };
 
   const handleDateChange = (newDate: string) => {
@@ -296,6 +301,13 @@ export default function DeliverableEditModal({
                 onClick={() => handleStatusChange('pending')}
               >
                 Pending
+              </button>
+              <button
+                type="button"
+                className={`status-btn ${status === 'completed' ? 'active' : ''}`}
+                onClick={() => handleStatusChange('completed')}
+              >
+                Completed
               </button>
               <button
                 type="button"

@@ -112,7 +112,7 @@ export default function Dashboard() {
       deliverable['Course ID'] && deliverable['Course ID'] !== ''
     ).length;
 
-    // Count upcoming deadlines (next 7 days) - exclude already graded items and submitted items
+    // Count upcoming deadlines (next 7 days) - exclude already graded items, submitted items, and completed items
     const now = new Date();
     const nextWeek = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
     const upcomingDeadlines = deliverablesData.filter(deliverable => {
@@ -120,7 +120,8 @@ export default function Dashboard() {
       const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
                       deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
       const isSubmitted = deliverable['Status'] === 'submitted';
-      return dueDate >= now && dueDate <= nextWeek && !isGraded && !isSubmitted;
+      const isCompleted = deliverable['Status'] === 'completed';
+      return dueDate >= now && dueDate <= nextWeek && !isGraded && !isSubmitted && !isCompleted;
     }).length;
 
     // Calculate weighted average grade based on course averages and credit hours
@@ -320,13 +321,14 @@ export default function Dashboard() {
     const nextWeek = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
     const nextTwoWeeks = new Date(now.getTime() + 14 * 24 * 60 * 60 * 1000);
     
-    // Filter for upcoming deadlines - exclude already graded items and submitted items
+    // Filter for upcoming deadlines - exclude already graded items, submitted items, and completed items
     const upcomingDeadlines = deliverablesData.filter(deliverable => {
       const dueDate = new Date(deliverable['Close Date']);
       const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
                       deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
       const isSubmitted = deliverable['Status'] === 'submitted';
-      return dueDate >= now && !isGraded && !isSubmitted && deliverable['Close Date'];
+      const isCompleted = deliverable['Status'] === 'completed';
+      return dueDate >= now && !isGraded && !isSubmitted && !isCompleted && deliverable['Close Date'];
     }).sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime());
 
     // Separate regular deliverables from exams/tests
