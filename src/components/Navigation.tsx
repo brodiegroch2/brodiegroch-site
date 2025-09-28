@@ -14,6 +14,7 @@ export default function Navigation() {
     { href: '/courses', label: 'Courses' },
     { href: '/deliverables', label: 'Deliverables' },
     { href: '/schedule', label: 'Schedule' },
+    { href: '/quick-links', label: 'Links' },
   ];
 
   const dropdownLinks: { href: string; label: string }[] = [
