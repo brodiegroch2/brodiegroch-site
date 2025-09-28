@@ -32,6 +32,8 @@ export default function Dashboard() {
   const [deliverables, setDeliverables] = useState<Deliverable[]>([]);
   const [countdown, setCountdown] = useState({ days: '--', hours: '--', minutes: '--' });
   const [nextAssignment, setNextAssignment] = useState('Loading...');
+  const [testExamCountdown, setTestExamCountdown] = useState({ days: '--', hours: '--', minutes: '--' });
+  const [nextTestExam, setNextTestExam] = useState('Loading...');
   const [stats, setStats] = useState({
     completedDeliverables: '0/0',
     upcomingDeadlines: 0,
@@ -66,6 +68,7 @@ export default function Dashboard() {
         // Calculate stats
         calculateStats(coursesData, deliverablesData);
         calculateCountdown(deliverablesData);
+        calculateTestExamCountdown(deliverablesData);
         updateRecentActivity(deliverablesData);
         updateUpcomingDeadlines(deliverablesData);
         updateCoursePerformance(coursesData, deliverablesData);
@@ -188,6 +191,7 @@ export default function Dashboard() {
     // 2. Don't have a grade (not graded yet)
     // 3. Aren't submitted (if status exists)
     // 4. Aren't completed (exclude completed items)
+    // 5. Aren't tests or exams (exclude tests/exams)
     const upcomingDeliverables = deliverablesData
       .filter(d => {
         const closeDate = new Date(d["Close Date"]);
@@ -208,9 +212,15 @@ export default function Dashboard() {
         // Check if it's completed (exclude completed assignments)
         const isCompleted = d['Status'] === 'completed';
         
-        // Include if it's not past due AND doesn't have a grade AND isn't submitted AND isn't completed
-        // This only includes pending items
-        return isNotPastDue && !hasGrade && !isSubmitted && !isCompleted;
+        // Check if it's a test or exam (exclude tests/exams)
+        const category = d['Category']?.toLowerCase() || '';
+        const deliverableName = d['Deliverable']?.toLowerCase() || '';
+        const isTestOrExam = category.includes('test') || category.includes('exam') || 
+                           deliverableName.includes('test') || deliverableName.includes('exam');
+        
+        // Include if it's not past due AND doesn't have a grade AND isn't submitted AND isn't completed AND isn't a test/exam
+        // This only includes pending assignments (not tests/exams)
+        return isNotPastDue && !hasGrade && !isSubmitted && !isCompleted && !isTestOrExam;
       })
       .sort((a, b) => new Date(a["Close Date"]).getTime() - new Date(b["Close Date"]).getTime());
 
@@ -255,6 +265,80 @@ export default function Dashboard() {
         hours: '--',
         minutes: '--'
       });
+    }
+  };
+
+  const calculateTestExamCountdown = (deliverablesData: Deliverable[]) => {
+    const now = new Date();
+    
+    // Filter for tests and exams that:
+    // 1. Haven't passed their due date yet
+    // 2. Don't have a grade (not graded yet)
+    // 3. Aren't submitted (if status exists)
+    // 4. Aren't completed (exclude completed items)
+    const upcomingTestsExams = deliverablesData
+      .filter(d => {
+        const closeDate = new Date(d["Close Date"]);
+        const isNotPastDue = closeDate > now;
+        
+        // Check if it has a grade (exclude graded tests/exams)
+        const gradeValue = d['Grade %'];
+        const hasGrade = gradeValue && 
+                        gradeValue !== '' && 
+                        gradeValue !== 'Not specified' && 
+                        gradeValue !== 'Not graded' &&
+                        !isNaN(Number(gradeValue)) &&
+                        Number(gradeValue) > 0;
+        
+        // Check if it's submitted (exclude submitted tests/exams)
+        const isSubmitted = d['Status'] === 'submitted';
+        
+        // Check if it's completed (exclude completed tests/exams)
+        const isCompleted = d['Status'] === 'completed';
+        
+        // Check if it's a test or exam (only include tests/exams)
+        const category = d['Category']?.toLowerCase() || '';
+        const deliverableName = d['Deliverable']?.toLowerCase() || '';
+        const isTestOrExam = category.includes('test') || category.includes('exam') || 
+                           deliverableName.includes('test') || deliverableName.includes('exam');
+        
+        // Include if it's not past due AND doesn't have a grade AND isn't submitted AND isn't completed AND is a test/exam
+        // This only includes pending tests/exams
+        return isNotPastDue && !hasGrade && !isSubmitted && !isCompleted && isTestOrExam;
+      })
+      .sort((a, b) => new Date(a["Close Date"]).getTime() - new Date(b["Close Date"]).getTime());
+
+    if (upcomingTestsExams.length > 0) {
+      const nextTestExam = upcomingTestsExams[0];
+      setNextTestExam(`${nextTestExam["Course ID"]} - ${nextTestExam["Deliverable"]}`);
+      
+      const updateCountdown = () => {
+        const now = new Date();
+        const dueDate = new Date(nextTestExam["Close Date"]);
+        const timeDiff = dueDate.getTime() - now.getTime();
+        
+        if (timeDiff > 0) {
+          const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+          
+          setTestExamCountdown({
+            days: days.toString().padStart(2, '0'),
+            hours: hours.toString().padStart(2, '0'),
+            minutes: minutes.toString().padStart(2, '0')
+          });
+        } else {
+          setTestExamCountdown({ days: '00', hours: '00', minutes: '00' });
+        }
+      };
+      
+      updateCountdown();
+      const interval = setInterval(updateCountdown, 60000); // Update every minute
+      
+      return () => clearInterval(interval);
+    } else {
+      setNextTestExam('No upcoming tests/exams');
+      setTestExamCountdown({ days: '--', hours: '--', minutes: '--' });
     }
   };
 
@@ -802,6 +886,35 @@ export default function Dashboard() {
                   </div>
                 </div>
                 <div className="countdown-assignment">{nextAssignment}</div>
+              </div>
+            </div>
+            
+            <div className="countdown-card">
+              <div className="countdown-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div className="countdown-content">
+                <div className="countdown-label">Next TEST/EXAM Date</div>
+                <div className="countdown-timer">
+                  <div className="time-unit">
+                    <span className="time-value">{testExamCountdown.days}</span>
+                    <span className="time-label">Days</span>
+                  </div>
+                  <div className="time-separator">:</div>
+                  <div className="time-unit">
+                    <span className="time-value">{testExamCountdown.hours}</span>
+                    <span className="time-label">Hours</span>
+                  </div>
+                  <div className="time-separator">:</div>
+                  <div className="time-unit">
+                    <span className="time-value">{testExamCountdown.minutes}</span>
+                    <span className="time-label">Mins</span>
+                  </div>
+                </div>
+                <div className="countdown-assignment">{nextTestExam}</div>
               </div>
             </div>
           </div>

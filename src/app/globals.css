@@ -123,6 +123,8 @@ body {
 .countdown-section {
     display: flex;
     justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .countdown-card {
@@ -131,6 +133,10 @@ body {
     padding: 1.25rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
     overflow: hidden;
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -4955,12 +4961,16 @@ body {
     
     .countdown-section {
         margin-top: 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
     }
     
     .countdown-card {
         padding: 1.25rem;
         border-radius: 16px;
         text-align: center;
+        min-width: unset;
+        max-width: unset;
     }
     
     .countdown-time {
