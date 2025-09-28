@@ -323,13 +323,14 @@ export default function Dashboard() {
     const nextWeek = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
     const nextTwoWeeks = new Date(now.getTime() + 14 * 24 * 60 * 60 * 1000);
     
-    // Filter for upcoming deadlines - exclude already graded items and submitted items, but include completed items
+    // Filter for upcoming deadlines - exclude already graded items, submitted items, and completed items
     const upcomingDeadlines = deliverablesData.filter(deliverable => {
       const dueDate = new Date(deliverable['Close Date']);
       const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
                       deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
       const isSubmitted = deliverable['Status'] === 'submitted';
-      return dueDate >= now && !isGraded && !isSubmitted && deliverable['Close Date'];
+      const isCompleted = deliverable['Status'] === 'completed';
+      return dueDate >= now && !isGraded && !isSubmitted && !isCompleted && deliverable['Close Date'];
     }).sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime());
 
     // Filter for submitted items that need grades
@@ -340,7 +341,7 @@ export default function Dashboard() {
       return isSubmitted && !isGraded && deliverable['Close Date'];
     }).sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime());
 
-    // Separate regular deliverables from exams/tests
+    // Separate regular deliverables from exams/tests (only pending items now)
     const regularDeliverables = upcomingDeadlines.filter(deliverable => {
       const category = deliverable['Category']?.toLowerCase() || '';
       const deliverableName = deliverable['Deliverable']?.toLowerCase() || '';
@@ -379,10 +380,9 @@ export default function Dashboard() {
       regularContainer.innerHTML = upcomingAssignments.map(deliverable => {
         const dueDate = new Date(deliverable['Close Date']);
         const daysUntilDue = Math.ceil((dueDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-        const statusClass = deliverable['Status'] === 'completed' ? 'completed-item' : '';
         
         return `
-          <div class="deadline-item clickable-deadline ${statusClass}" data-deliverable='${JSON.stringify(deliverable)}'>
+          <div class="deadline-item clickable-deadline" data-deliverable='${JSON.stringify(deliverable)}'>
             <div class="deadline-date">${dueDate.toLocaleDateString()}</div>
             <div class="deadline-content">
               <div class="deadline-title">${deliverable['Deliverable']}</div>
