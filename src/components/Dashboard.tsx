@@ -117,8 +117,13 @@ export default function Dashboard() {
     const nextWeek = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
     const upcomingDeadlines = deliverablesData.filter(deliverable => {
       const dueDate = new Date(deliverable['Close Date']);
-      const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
-                      deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
+      const gradeValue = deliverable['Grade %'];
+      const isGraded = gradeValue && 
+                      gradeValue !== '' && 
+                      gradeValue !== 'Not specified' && 
+                      gradeValue !== 'Not graded' &&
+                      !isNaN(Number(gradeValue)) &&
+                      Number(gradeValue) > 0;
       const isSubmitted = deliverable['Status'] === 'submitted';
       return dueDate >= now && dueDate <= nextWeek && !isGraded && !isSubmitted;
     }).length;
@@ -189,8 +194,13 @@ export default function Dashboard() {
         const isNotPastDue = closeDate > now;
         
         // Check if it has a grade (exclude graded assignments)
-        const hasGrade = d['Grade %'] && d['Grade %'] !== '' && 
-                        d['Grade %'] !== 'Not specified' && d['Grade %'] !== 'Not graded';
+        const gradeValue = d['Grade %'];
+        const hasGrade = gradeValue && 
+                        gradeValue !== '' && 
+                        gradeValue !== 'Not specified' && 
+                        gradeValue !== 'Not graded' &&
+                        !isNaN(Number(gradeValue)) &&
+                        Number(gradeValue) > 0;
         
         // Check if it's submitted (exclude submitted assignments)
         const isSubmitted = d['Status'] === 'submitted';
@@ -326,8 +336,13 @@ export default function Dashboard() {
     // Filter for upcoming deadlines - exclude already graded items, submitted items, and completed items
     const upcomingDeadlines = deliverablesData.filter(deliverable => {
       const dueDate = new Date(deliverable['Close Date']);
-      const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
-                      deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
+      const gradeValue = deliverable['Grade %'];
+      const isGraded = gradeValue && 
+                      gradeValue !== '' && 
+                      gradeValue !== 'Not specified' && 
+                      gradeValue !== 'Not graded' &&
+                      !isNaN(Number(gradeValue)) &&
+                      Number(gradeValue) > 0;
       const isSubmitted = deliverable['Status'] === 'submitted';
       const isCompleted = deliverable['Status'] === 'completed';
       return dueDate >= now && !isGraded && !isSubmitted && !isCompleted && deliverable['Close Date'];
@@ -336,8 +351,13 @@ export default function Dashboard() {
     // Filter for submitted items that need grades
     const needsGrades = deliverablesData.filter(deliverable => {
       const isSubmitted = deliverable['Status'] === 'submitted';
-      const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
-                      deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
+      const gradeValue = deliverable['Grade %'];
+      const isGraded = gradeValue && 
+                      gradeValue !== '' && 
+                      gradeValue !== 'Not specified' && 
+                      gradeValue !== 'Not graded' &&
+                      !isNaN(Number(gradeValue)) &&
+                      Number(gradeValue) > 0;
       return isSubmitted && !isGraded && deliverable['Close Date'];
     }).sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime());
 
