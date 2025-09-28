@@ -1,6 +1,6 @@
 {
-  "name": "UniHUB",
-  "short_name": "UniHUB",
+  "name": "brodiegroch.ca",
+  "short_name": "brodiegroch.ca",
   "description": "Your personal academic hub for courses, assignments, and grades",
   "start_url": "/",
   "display": "standalone",

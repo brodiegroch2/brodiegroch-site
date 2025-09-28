@@ -1,4 +1,4 @@
-export interface UniHUBMeta {
+export interface BrodiegrochMeta {
   name: string;
   version: string;
   description: string;
@@ -33,8 +33,8 @@ export interface UniHUBMeta {
   };
 }
 
-export const uniHUBMeta: UniHUBMeta = {
-  name: "UniHUB",
+export const brodiegrochMeta: BrodiegrochMeta = {
+  name: "brodiegroch.ca",
   version: "1.0.0",
   description: "A comprehensive student management application for tracking courses, assignments, grades, and academic progress.",
   author: "Brodie Groch",

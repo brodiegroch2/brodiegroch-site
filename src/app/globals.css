@@ -473,6 +473,24 @@ body {
     margin-right: auto;
 }
 
+/* Dashboard Sections Grid - 2-wide layout */
+.dashboard-sections-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .dashboard-sections-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
 .dashboard-section {
     background: #1a1a1a;
     border-radius: 12px;
@@ -5913,13 +5931,6 @@ body {
     }
 }
 
-/* Performance optimizations for mobile */
-@media (max-width: 768px) {
-    /* Reduce animations on mobile for better performance */
-    .modal-overlay,
-    .modal-content,
-    .btn,
-    .status-btn,
     .calendar-btn,
     .clear-grade-btn {
         animation-duration: 0.2s;

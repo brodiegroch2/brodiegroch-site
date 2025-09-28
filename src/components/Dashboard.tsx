@@ -789,8 +789,22 @@ export default function Dashboard() {
         </div>
       </div>
 
-    {/* Dashboard Sections */}
-    <div className="dashboard-sections">
+    {/* Dashboard Sections - 2-wide grid */}
+    <div className="dashboard-sections-grid">
+      <div className="dashboard-section">
+        <h2 className="section-title">Upcoming Exams & Tests (Next 7 Days)</h2>
+        <div id="upcoming-exams-list" className="deadlines-list">
+          <div className="empty-state">Loading upcoming exams...</div>
+        </div>
+      </div>
+      
+      <div className="dashboard-section">
+        <h2 className="section-title">Upcoming Assignments (Next 7 Days)</h2>
+        <div id="upcoming-deadlines-list" className="deadlines-list">
+          <div className="empty-state">Loading upcoming assignments...</div>
+        </div>
+      </div>
+      
       <div className="dashboard-section">
         <h2 className="section-title">Recent Activity</h2>
         <div id="recent-activity" className="activity-list">
@@ -803,22 +817,6 @@ export default function Dashboard() {
         </div>
       </div>
       
-      <div className="dashboard-section">
-        <h2 className="section-title">Upcoming Assignments (Next 7 Days)</h2>
-        <div id="upcoming-deadlines-list" className="deadlines-list">
-          <div className="empty-state">Loading upcoming assignments...</div>
-        </div>
-      </div>
-      
-      <div className="dashboard-section">
-        <h2 className="section-title">Upcoming Exams & Tests (Next 7 Days)</h2>
-        <div id="upcoming-exams-list" className="deadlines-list">
-          <div className="empty-state">Loading upcoming exams...</div>
-        </div>
-      </div>
-    </div>
-
-    <div className="dashboard-sections">
       <div className="dashboard-section course-performance">
         <h2 className="section-title">Course Performance</h2>
         <div id="course-performance-chart" className="performance-chart">

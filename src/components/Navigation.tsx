@@ -44,7 +44,7 @@ export default function Navigation() {
   return (
     <nav className="main-nav">
       <div className="nav-container">
-        <h1 className="nav-title">UniHUB</h1>
+        <h1 className="nav-title">brodiegroch.ca</h1>
         
         {/* Desktop Navigation */}
         <div className="desktop-nav">
