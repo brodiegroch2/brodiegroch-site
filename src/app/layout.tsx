@@ -1,6 +1,7 @@
 import PasswordProtection from '@/components/PasswordProtection';
 import Navigation from '@/components/Navigation';
 import MobileBottomNav from '@/components/MobileBottomNav';
+import TodoNotification from '@/components/TodoNotification';
 import './globals.css';
 
 export default function RootLayout({
@@ -28,6 +29,7 @@ export default function RootLayout({
             </div>
           </main>
           <MobileBottomNav />
+          <TodoNotification />
         </PasswordProtection>
       </body>
     </html>

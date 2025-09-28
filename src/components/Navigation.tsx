@@ -17,7 +17,6 @@ export default function Navigation() {
   ];
 
   const dropdownLinks = [
-    { href: '/todo', label: 'To Do' },
     { href: '/quick-links', label: 'Quick Links' },
   ];
 

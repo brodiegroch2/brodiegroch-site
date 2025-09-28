@@ -5821,6 +5821,76 @@ body {
     }
 }
 
+/* Todo Notification Circle */
+.todo-notification {
+    position: fixed;
+    z-index: 1000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.todo-notification:hover {
+    transform: scale(1.1);
+}
+
+.notification-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #ef4444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+    border: 3px solid #ffffff;
+    animation: pulse 2s infinite;
+}
+
+.notification-icon {
+    width: 24px;
+    height: 24px;
+    color: white;
+    stroke-width: 2.5;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(239, 68, 68, 0.6);
+    }
+    100% {
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+    }
+}
+
+/* Desktop positioning - bottom right */
+@media (min-width: 769px) {
+    .todo-notification {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Mobile positioning - top right */
+@media (max-width: 768px) {
+    .todo-notification {
+        top: 20px;
+        right: 20px;
+    }
+    
+    .notification-circle {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .notification-icon {
+        width: 22px;
+        height: 22px;
+    }
+}
+
 /* Performance optimizations for mobile */
 @media (max-width: 768px) {
     /* Reduce animations on mobile for better performance */

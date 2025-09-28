@@ -48,16 +48,6 @@ export default function MobileBottomNav() {
           <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       )
-    },
-    {
-      href: '/todo',
-      label: 'To Do',
-      icon: (
-        <svg className="bottom-nav-icon" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-          <polyline points="12,6 12,12 16,14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      )
     }
   ];
 

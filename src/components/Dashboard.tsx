@@ -144,7 +144,7 @@ export default function Dashboard() {
       totalCreditHours += courseData.creditHours;
     });
 
-    const averageGrade = totalCreditHours > 0 ? Math.round(weightedSum / totalCreditHours) : 0;
+    const averageGrade = totalCreditHours > 0 ? (weightedSum / totalCreditHours).toFixed(1) : '0.0';
 
     // Calculate GPA based on average grade percentage using grading scale
     const gradeResult = calculateGradeAndGPA(averageGrade);
