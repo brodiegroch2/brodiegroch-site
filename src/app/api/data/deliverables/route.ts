@@ -25,6 +25,34 @@ async function initializeCache() {
   }
 }
 
+async function updateGitHub(data: any[]) {
+  try {
+    // Write to local file first
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+    
+    // Commit and push to GitHub
+    const { exec } = require('child_process');
+    const util = require('util');
+    const execAsync = util.promisify(exec);
+    
+    // Add all changes
+    await execAsync('git add .');
+    
+    // Commit with timestamp
+    const timestamp = new Date().toISOString();
+    await execAsync(`git commit -m "Update deliverables: ${timestamp}"`);
+    
+    // Push to GitHub
+    await execAsync('git push origin main');
+    
+    console.log('Successfully updated GitHub with deliverable changes');
+    return true;
+  } catch (error) {
+    console.error('Error updating GitHub:', error);
+    return false;
+  }
+}
+
 export async function GET() {
   try {
     await initializeCache();
@@ -47,7 +75,6 @@ export async function PUT(request: NextRequest) {
     }
     
     // Find the deliverable using Course ID and Deliverable name (most stable identifiers)
-    // We'll try multiple approaches to find the deliverable
     let index = memoryCache.findIndex((item: any) => 
       item['Course ID'] === updatedDeliverable['Course ID'] &&
       item['Deliverable'] === updatedDeliverable['Deliverable'] &&
@@ -86,16 +113,25 @@ export async function PUT(request: NextRequest) {
     // Update the deliverable in memory
     memoryCache[index] = updatedDeliverable;
     
-    // Try to write to file (will work in development, fail gracefully in production)
-    try {
-      fs.writeFileSync(filePath, JSON.stringify(memoryCache, null, 2));
-      console.log('Successfully updated deliverable in file');
-    } catch (writeError) {
-      console.log('File write failed (expected in production), data updated in memory only');
-    }
+    // Update GitHub with the changes
+    const gitHubSuccess = await updateGitHub(memoryCache);
     
-    console.log('Successfully updated deliverable');
-    return NextResponse.json({ success: true, updatedDeliverable });
+    if (gitHubSuccess) {
+      console.log('Successfully updated deliverable and pushed to GitHub');
+      return NextResponse.json({ 
+        success: true, 
+        updatedDeliverable,
+        gitHubUpdated: true 
+      });
+    } else {
+      console.log('Updated deliverable locally but failed to push to GitHub');
+      return NextResponse.json({ 
+        success: true, 
+        updatedDeliverable,
+        gitHubUpdated: false,
+        warning: 'Updated locally but failed to sync with GitHub'
+      });
+    }
   } catch (error) {
     console.error('Error updating deliverable:', error);
     return NextResponse.json({ error: `Failed to update deliverable: ${error instanceof Error ? error.message : 'Unknown error'}` }, { status: 500 });

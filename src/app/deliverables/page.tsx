@@ -43,6 +43,19 @@ export default function DeliverablesPage() {
 
   useEffect(() => {
     loadDeliverables();
+    
+    // Listen for deliverable updates from other components
+    const handleDeliverableUpdate = () => {
+      console.log('Deliverables page: Refreshing data due to deliverable update');
+      loadDeliverables();
+    };
+    
+    // Add event listener for deliverable updates
+    window.addEventListener('deliverableUpdated', handleDeliverableUpdate);
+    
+    return () => {
+      window.removeEventListener('deliverableUpdated', handleDeliverableUpdate);
+    };
   }, []);
 
   const handleRefresh = async () => {

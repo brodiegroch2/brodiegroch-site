@@ -188,6 +188,12 @@ export default function DeliverableEditModal({
       if (response.ok) {
         console.log('API call successful, calling onSave with:', updatedDeliverable);
         onSave(updatedDeliverable);
+        
+        // Dispatch event to notify other components of the update
+        window.dispatchEvent(new CustomEvent('deliverableUpdated', {
+          detail: { updatedDeliverable }
+        }));
+        
         onClose();
       } else {
         const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));

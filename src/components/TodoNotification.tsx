@@ -53,10 +53,22 @@ export default function TodoNotification() {
 
     checkPendingDeliverables();
     
+    // Listen for deliverable updates
+    const handleDeliverableUpdate = () => {
+      console.log('TodoNotification: Refreshing due to deliverable update');
+      checkPendingDeliverables();
+    };
+    
+    // Add event listener for deliverable updates
+    window.addEventListener('deliverableUpdated', handleDeliverableUpdate);
+    
     // Check every 30 seconds for updates
     const interval = setInterval(checkPendingDeliverables, 30000);
     
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('deliverableUpdated', handleDeliverableUpdate);
+    };
   }, []);
 
   if (loading || !hasPendingDeliverables) {

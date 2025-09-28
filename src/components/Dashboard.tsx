@@ -76,6 +76,19 @@ export default function Dashboard() {
     };
 
     loadData();
+    
+    // Listen for deliverable updates
+    const handleDeliverableUpdate = () => {
+      console.log('Dashboard: Refreshing data due to deliverable update');
+      loadData();
+    };
+    
+    // Add event listener for deliverable updates
+    window.addEventListener('deliverableUpdated', handleDeliverableUpdate);
+    
+    return () => {
+      window.removeEventListener('deliverableUpdated', handleDeliverableUpdate);
+    };
   }, []);
 
   // Update sections when pagination state changes
