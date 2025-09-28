@@ -95,59 +95,72 @@ export default function QuickLinksPage() {
 
   return (
     <div className="container">
-      <h1 className="page-title">Quick Links</h1>
-      <p className="page-subtitle">Access your frequently used resources and tools</p>
+      <div className="page-header">
+        <h1 className="page-title">Quick Links</h1>
+        <p className="page-subtitle">Access your frequently used resources and tools</p>
+      </div>
       
       {links.length === 0 ? (
         <div className="data-section">
           <div className="empty-state">
-            No links available. Load data from Quick Links.json to display quick access links.
+            <div className="empty-icon">🔗</div>
+            <h3>No links available</h3>
+            <p>Load data from Quick Links.json to display quick access links.</p>
           </div>
         </div>
       ) : (
-        categories.map((category) => (
-          <div key={category} className="data-section">
-            <h2 className="section-title">{category}</h2>
-            <div className="dashboard-grid">
-              {groupedLinks[category].map((link, index) => {
-                const imageId = link["Link_image_id"] || '';
-                const hasImage = imageId && imageId !== 'No image' && imageId !== '';
+        <div className="quick-links-container">
+          {categories.map((category, categoryIndex) => (
+            <div key={category} className="category-section">
+              <div className="category-header">
+                <h2 className="category-title">{category}</h2>
+                <div className="category-count">{groupedLinks[category].length} link{groupedLinks[category].length !== 1 ? 's' : ''}</div>
+              </div>
+              <div className="links-grid">
+                {groupedLinks[category].map((link, index) => {
+                  const imageId = link["Link_image_id"] || '';
+                  const hasImage = imageId && imageId !== 'No image' && imageId !== '';
 
-                return (
-                  <div key={index} className="app-card">
-                    <a href={link["Address"] || '#'} target="_blank" rel="noopener noreferrer">
-                      <div className="app-icon">
-                        {hasImage ? (
-                          <>
-                            <img 
-                              src={`/images/${imageId}`} 
-                              alt={link["Site Name"] || ''} 
-                              onError={(e) => {
-                                const target = e.target as HTMLImageElement;
-                                target.style.display = 'none';
-                                const fallback = target.nextElementSibling as HTMLElement;
-                                if (fallback) fallback.style.display = 'flex';
-                              }}
-                            />
-                            <div className="fallback-icon" style={{ display: 'none' }}>
+                  return (
+                    <div key={index} className="link-card">
+                      <a href={link["Address"] || '#'} target="_blank" rel="noopener noreferrer" className="link-card-link">
+                        <div className="link-icon">
+                          {hasImage ? (
+                            <>
+                              <img 
+                                src={`/images/${imageId}`} 
+                                alt={link["Site Name"] || ''} 
+                                className="link-image"
+                                onError={(e) => {
+                                  const target = e.target as HTMLImageElement;
+                                  target.style.display = 'none';
+                                  const fallback = target.nextElementSibling as HTMLElement;
+                                  if (fallback) fallback.style.display = 'flex';
+                                }}
+                              />
+                              <div className="fallback-icon" style={{ display: 'none' }}>
+                                {getAppIcon(link["Site Name"] || '')}
+                              </div>
+                            </>
+                          ) : (
+                            <div className="fallback-icon">
                               {getAppIcon(link["Site Name"] || '')}
                             </div>
-                          </>
-                        ) : (
-                          <div className="fallback-icon">
-                            {getAppIcon(link["Site Name"] || '')}
-                          </div>
-                        )}
-                      </div>
-                      <div className="app-title">{link["Site Name"] || 'Not specified'}</div>
-                      <div className="app-url">{link["Address"] || 'Not specified'}</div>
-                    </a>
-                  </div>
-                );
-              })}
+                          )}
+                        </div>
+                        <div className="link-content">
+                          <h3 className="link-title">{link["Site Name"] || 'Not specified'}</h3>
+                          <p className="link-url">{link["Address"] || 'Not specified'}</p>
+                        </div>
+                        <div className="link-arrow">→</div>
+                      </a>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ))
+          ))}
+        </div>
       )}
     </div>
   );
