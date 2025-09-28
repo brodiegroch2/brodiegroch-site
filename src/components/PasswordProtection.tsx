@@ -44,7 +44,8 @@ export default function PasswordProtection({ children }: PasswordProtectionProps
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === '$408621geidorB') {
+    const validPasswords = ['$408621geidorB', 'Brecken2815'];
+    if (validPasswords.includes(password)) {
       setIsAuthenticated(true);
       localStorage.setItem('authenticated', 'true');
       setError('');
