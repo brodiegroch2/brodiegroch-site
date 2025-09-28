@@ -525,7 +525,7 @@ export default function Dashboard() {
     const completionProgress = totalDeliverables > 0 ? (completedDeliverables / totalDeliverables) * 100 : 0;
     
     // Calculate weighted progress based on course credits
-    const totalCredits = coursesData.reduce((sum, course) => sum + (course['Credit Hours'] || 0), 0);
+    const totalCredits = coursesData.reduce((sum, course) => sum + (Number(course['Credit Hours']) || 0), 0);
     const completedCredits = coursesData.reduce((sum, course) => {
       const courseDeliverables = deliverablesData.filter(d => d['Course ID'] === course['Course ID']);
       const courseCompleted = courseDeliverables.filter(d => {
@@ -536,7 +536,7 @@ export default function Dashboard() {
         return isGraded || isSubmitted || isCompleted;
       }).length;
       const courseProgress = courseDeliverables.length > 0 ? (courseCompleted / courseDeliverables.length) : 0;
-      return sum + (courseProgress * (course['Credit Hours'] || 0));
+      return sum + (courseProgress * (Number(course['Credit Hours']) || 0));
     }, 0);
     const weightedProgress = totalCredits > 0 ? (completedCredits / totalCredits) * 100 : 0;
     
