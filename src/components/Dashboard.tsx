@@ -307,70 +307,94 @@ export default function Dashboard() {
   };
 
   const updateUpcomingDeadlines = (deliverablesData: Deliverable[]) => {
-    const container = document.getElementById('upcoming-deadlines-list');
+    const regularContainer = document.getElementById('upcoming-deadlines-list');
+    const examsContainer = document.getElementById('upcoming-exams-list');
     const pagination = document.getElementById('upcoming-deadlines-pagination');
     const prevBtn = document.getElementById('upcoming-deadlines-prev') as HTMLButtonElement;
     const nextBtn = document.getElementById('upcoming-deadlines-next') as HTMLButtonElement;
     const pageInfo = document.getElementById('upcoming-deadlines-page-info');
     
-    if (!container) return;
+    if (!regularContainer || !examsContainer) return;
 
     const now = new Date();
-    const nextMonth = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
+    const nextWeek = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+    
+    // Filter for upcoming deadlines (next 7 days) - exclude already graded items and submitted items
     const upcomingDeadlines = deliverablesData.filter(deliverable => {
       const dueDate = new Date(deliverable['Close Date']);
       const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
                       deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
       const isSubmitted = deliverable['Status'] === 'submitted';
-      return dueDate >= now && dueDate <= nextMonth && !isGraded && !isSubmitted && deliverable['Close Date'];
+      return dueDate >= now && dueDate <= nextWeek && !isGraded && !isSubmitted && deliverable['Close Date'];
     }).sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime());
 
-    if (upcomingDeadlines.length === 0) {
-      container.innerHTML = '<div class="empty-state">No upcoming deadlines</div>';
-      if (pagination) pagination.style.display = 'none';
-      return;
+    // Separate regular deliverables from exams/tests
+    const regularDeliverables = upcomingDeadlines.filter(deliverable => {
+      const category = deliverable['Category']?.toLowerCase() || '';
+      const deliverableName = deliverable['Deliverable']?.toLowerCase() || '';
+      return !category.includes('exam') && !category.includes('test') && 
+             !deliverableName.includes('exam') && !deliverableName.includes('test');
+    });
+
+    const examsAndTests = upcomingDeadlines.filter(deliverable => {
+      const category = deliverable['Category']?.toLowerCase() || '';
+      const deliverableName = deliverable['Deliverable']?.toLowerCase() || '';
+      return category.includes('exam') || category.includes('test') || 
+             deliverableName.includes('exam') || deliverableName.includes('test');
+    });
+
+    // Render regular deliverables
+    if (regularDeliverables.length === 0) {
+      regularContainer.innerHTML = '<div class="empty-state">No upcoming assignments</div>';
+    } else {
+      regularContainer.innerHTML = regularDeliverables.map(deliverable => {
+        const dueDate = new Date(deliverable['Close Date']);
+        const daysUntilDue = Math.ceil((dueDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+        
+        return `
+          <div class="deadline-item clickable-deadline" data-deliverable='${JSON.stringify(deliverable)}'>
+            <div class="deadline-date">${dueDate.toLocaleDateString()}</div>
+            <div class="deadline-content">
+              <div class="deadline-title">${deliverable['Deliverable']}</div>
+              <div class="deadline-course">${deliverable['Course ID']}</div>
+            </div>
+            <div class="deadline-countdown">${daysUntilDue} days</div>
+          </div>
+        `;
+      }).join('');
     }
 
-    const totalPages = Math.ceil(upcomingDeadlines.length / itemsPerPage);
-    setUpcomingDeadlinesTotalPages(totalPages);
-    const startIndex = upcomingDeadlinesPage * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const currentItems = upcomingDeadlines.slice(startIndex, endIndex);
-
-    container.innerHTML = currentItems.map(deliverable => {
-      const dueDate = new Date(deliverable['Close Date']);
-      const daysUntilDue = Math.ceil((dueDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-      
-      return `
-        <div class="deadline-item clickable-deadline" data-deliverable='${JSON.stringify(deliverable)}'>
-          <div class="deadline-date">${dueDate.toLocaleDateString()}</div>
-          <div class="deadline-content">
-            <div class="deadline-title">${deliverable['Deliverable']}</div>
-            <div class="deadline-course">${deliverable['Course ID']}</div>
+    // Render exams and tests
+    if (examsAndTests.length === 0) {
+      examsContainer.innerHTML = '<div class="empty-state">No upcoming exams or tests</div>';
+    } else {
+      examsContainer.innerHTML = examsAndTests.map(deliverable => {
+        const dueDate = new Date(deliverable['Close Date']);
+        const daysUntilDue = Math.ceil((dueDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+        
+        return `
+          <div class="deadline-item clickable-deadline exam-item" data-deliverable='${JSON.stringify(deliverable)}'>
+            <div class="deadline-date">${dueDate.toLocaleDateString()}</div>
+            <div class="deadline-content">
+              <div class="deadline-title">${deliverable['Deliverable']}</div>
+              <div class="deadline-course">${deliverable['Course ID']}</div>
+            </div>
+            <div class="deadline-countdown">${daysUntilDue} days</div>
           </div>
-          <div class="deadline-countdown">${daysUntilDue} days</div>
-        </div>
-      `;
-    }).join('');
+        `;
+      }).join('');
+    }
 
-    // Add click handlers to deadline items
-    container.querySelectorAll('.clickable-deadline').forEach(item => {
+    // Add click handlers to all deadline items
+    [...regularContainer.querySelectorAll('.clickable-deadline'), ...examsContainer.querySelectorAll('.clickable-deadline')].forEach(item => {
       item.addEventListener('click', () => {
         const deliverableData = JSON.parse(item.getAttribute('data-deliverable') || '{}');
         handleDeliverableClick(deliverableData);
       });
     });
 
-    // Update pagination
-    if (pagination && prevBtn && nextBtn && pageInfo) {
-      if (totalPages > 1) {
-        pagination.style.display = 'flex';
-        // Don't set disabled directly on DOM - let React handle it
-        pageInfo.textContent = `${upcomingDeadlinesPage + 1} of ${totalPages}`;
-      } else {
-        pagination.style.display = 'none';
-      }
-    }
+    // Hide pagination since we're showing all items for the next week
+    if (pagination) pagination.style.display = 'none';
   };
 
   const updateCoursePerformance = (coursesData: Course[], deliverablesData: Deliverable[]) => {
@@ -778,14 +802,16 @@ export default function Dashboard() {
       </div>
       
       <div className="dashboard-section">
-        <h2 className="section-title">Upcoming Deadlines</h2>
+        <h2 className="section-title">Upcoming Assignments (Next 7 Days)</h2>
         <div id="upcoming-deadlines-list" className="deadlines-list">
-          <div className="empty-state">Loading upcoming deadlines...</div>
+          <div className="empty-state">Loading upcoming assignments...</div>
         </div>
-        <div id="upcoming-deadlines-pagination" className="pagination" style={{ display: 'none' }}>
-          <button id="upcoming-deadlines-prev" className="pagination-btn" disabled={upcomingDeadlinesPage === 0} onClick={handleUpcomingDeadlinesPrev}>Previous</button>
-          <span id="upcoming-deadlines-page-info" className="pagination-info"></span>
-          <button id="upcoming-deadlines-next" className="pagination-btn" disabled={upcomingDeadlinesPage >= upcomingDeadlinesTotalPages - 1} onClick={handleUpcomingDeadlinesNext}>Next</button>
+      </div>
+      
+      <div className="dashboard-section">
+        <h2 className="section-title">Upcoming Exams & Tests (Next 7 Days)</h2>
+        <div id="upcoming-exams-list" className="deadlines-list">
+          <div className="empty-state">Loading upcoming exams...</div>
         </div>
       </div>
     </div>

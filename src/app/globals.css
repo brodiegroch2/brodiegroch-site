@@ -3273,6 +3273,28 @@ body {
     opacity: 1;
 }
 
+/* Exam and Test Items */
+.exam-item {
+    border-left: 4px solid #ef4444 !important;
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%) !important;
+}
+
+.exam-item:hover {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(239, 68, 68, 0.08) 100%) !important;
+    transform: translateY(-2px);
+    border-color: #ef4444 !important;
+}
+
+.exam-item .deadline-title {
+    color: #ef4444 !important;
+    font-weight: 600;
+}
+
+.exam-item .deadline-countdown {
+    background: #ef4444 !important;
+    color: white !important;
+}
+
 .deadline-icon {
     background: linear-gradient(135deg, #ff9800, #ffb74d);
     border-radius: 12px;
