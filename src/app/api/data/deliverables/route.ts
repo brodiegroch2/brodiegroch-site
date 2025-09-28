@@ -260,7 +260,7 @@ export async function PUT(request: NextRequest) {
         success: true, 
         updatedDeliverable,
         gitHubUpdated: false,
-        warning: 'Updated locally but failed to sync with GitHub'
+        warning: 'Updated locally but failed to sync with GitHub. Please configure GITHUB_TOKEN in Vercel environment variables.'
       });
     }
   } catch (error) {
