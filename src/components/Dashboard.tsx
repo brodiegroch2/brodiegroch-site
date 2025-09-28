@@ -318,14 +318,15 @@ export default function Dashboard() {
 
     const now = new Date();
     const nextWeek = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+    const nextTwoWeeks = new Date(now.getTime() + 14 * 24 * 60 * 60 * 1000);
     
-    // Filter for upcoming deadlines (next 7 days) - exclude already graded items and submitted items
+    // Filter for upcoming deadlines - exclude already graded items and submitted items
     const upcomingDeadlines = deliverablesData.filter(deliverable => {
       const dueDate = new Date(deliverable['Close Date']);
       const isGraded = deliverable['Grade %'] && deliverable['Grade %'] !== '' && 
                       deliverable['Grade %'] !== 'Not specified' && deliverable['Grade %'] !== 'Not graded';
       const isSubmitted = deliverable['Status'] === 'submitted';
-      return dueDate >= now && dueDate <= nextWeek && !isGraded && !isSubmitted && deliverable['Close Date'];
+      return dueDate >= now && !isGraded && !isSubmitted && deliverable['Close Date'];
     }).sort((a, b) => new Date(a['Close Date']).getTime() - new Date(b['Close Date']).getTime());
 
     // Separate regular deliverables from exams/tests
@@ -343,11 +344,28 @@ export default function Dashboard() {
              deliverableName.includes('exam') || deliverableName.includes('test');
     });
 
+    // Filter exams/tests for next 2 weeks
+    const upcomingExams = examsAndTests.filter(deliverable => {
+      const dueDate = new Date(deliverable['Close Date']);
+      return dueDate <= nextTwoWeeks;
+    });
+
+    // Filter assignments for next week, but if less than 3, get next 3
+    let upcomingAssignments = regularDeliverables.filter(deliverable => {
+      const dueDate = new Date(deliverable['Close Date']);
+      return dueDate <= nextWeek;
+    });
+
+    // If less than 3 assignments in next week, get next 3 assignments
+    if (upcomingAssignments.length < 3) {
+      upcomingAssignments = regularDeliverables.slice(0, 3);
+    }
+
     // Render regular deliverables
-    if (regularDeliverables.length === 0) {
+    if (upcomingAssignments.length === 0) {
       regularContainer.innerHTML = '<div class="empty-state">No upcoming assignments</div>';
     } else {
-      regularContainer.innerHTML = regularDeliverables.map(deliverable => {
+      regularContainer.innerHTML = upcomingAssignments.map(deliverable => {
         const dueDate = new Date(deliverable['Close Date']);
         const daysUntilDue = Math.ceil((dueDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
         
@@ -365,10 +383,10 @@ export default function Dashboard() {
     }
 
     // Render exams and tests
-    if (examsAndTests.length === 0) {
+    if (upcomingExams.length === 0) {
       examsContainer.innerHTML = '<div class="empty-state">No upcoming exams or tests</div>';
     } else {
-      examsContainer.innerHTML = examsAndTests.map(deliverable => {
+      examsContainer.innerHTML = upcomingExams.map(deliverable => {
         const dueDate = new Date(deliverable['Close Date']);
         const daysUntilDue = Math.ceil((dueDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
         
@@ -792,14 +810,14 @@ export default function Dashboard() {
     {/* Dashboard Sections - 2-wide grid */}
     <div className="dashboard-sections-grid">
       <div className="dashboard-section">
-        <h2 className="section-title">Upcoming Exams & Tests (Next 7 Days)</h2>
+        <h2 className="section-title">Upcoming Exams & Tests</h2>
         <div id="upcoming-exams-list" className="deadlines-list">
           <div className="empty-state">Loading upcoming exams...</div>
         </div>
       </div>
       
       <div className="dashboard-section">
-        <h2 className="section-title">Upcoming Assignments (Next 7 Days)</h2>
+        <h2 className="section-title">Upcoming Assignments</h2>
         <div id="upcoming-deadlines-list" className="deadlines-list">
           <div className="empty-state">Loading upcoming assignments...</div>
         </div>
