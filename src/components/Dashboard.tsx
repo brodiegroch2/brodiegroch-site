@@ -30,9 +30,9 @@ interface Deliverable {
 export default function Dashboard() {
   const [courses, setCourses] = useState<Course[]>([]);
   const [deliverables, setDeliverables] = useState<Deliverable[]>([]);
-  const [countdown, setCountdown] = useState({ days: '000', hours: '00', minutes: '00', seconds: '00' });
+  const [countdown, setCountdown] = useState({ days: '00', hours: '00', minutes: '00', seconds: '00' });
   const [nextAssignment, setNextAssignment] = useState('Loading...');
-  const [testExamCountdown, setTestExamCountdown] = useState({ days: '000', hours: '00', minutes: '00', seconds: '00' });
+  const [testExamCountdown, setTestExamCountdown] = useState({ days: '00', hours: '00', minutes: '00', seconds: '00' });
   const [nextTestExam, setNextTestExam] = useState('Loading...');
   const [stats, setStats] = useState({
     completedDeliverables: '0/0',
@@ -237,18 +237,17 @@ export default function Dashboard() {
           const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
           const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
           
           setCountdown({
-            days: days.toString().padStart(3, '0'),
+            days: days.toString().padStart(2, '0'),
             hours: hours.toString().padStart(2, '0'),
             minutes: minutes.toString().padStart(2, '0'),
-            seconds: seconds.toString().padStart(2, '0')
+            seconds: '00'
           });
         } else {
-          // If time has passed, set to 000:00:00
+          // If time has passed, set to 00:00:00
           setCountdown({
-            days: '000',
+            days: '00',
             hours: '00',
             minutes: '00',
             seconds: '00'
@@ -264,7 +263,7 @@ export default function Dashboard() {
       // No upcoming ungraded/unsubmitted deliverables
       setNextAssignment('No upcoming assignments');
       setCountdown({
-        days: '000',
+        days: '00',
         hours: '00',
         minutes: '00',
         seconds: '00'
@@ -325,17 +324,16 @@ export default function Dashboard() {
           const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
           const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
           
           setTestExamCountdown({
-            days: days.toString().padStart(3, '0'),
+            days: days.toString().padStart(2, '0'),
             hours: hours.toString().padStart(2, '0'),
             minutes: minutes.toString().padStart(2, '0'),
-            seconds: seconds.toString().padStart(2, '0')
+            seconds: '00'
           });
         } else {
           setTestExamCountdown({ 
-            days: '000', 
+            days: '00', 
             hours: '00', 
             minutes: '00', 
             seconds: '00' 
@@ -344,13 +342,13 @@ export default function Dashboard() {
       };
       
       updateCountdown();
-      const interval = setInterval(updateCountdown, 60000); // Update every minute
+      const interval = setInterval(updateCountdown, 1000); // Update every second for real-time countdown
       
       return () => clearInterval(interval);
     } else {
       setNextTestExam('No upcoming tests/exams');
       setTestExamCountdown({ 
-        days: '000', 
+        days: '00', 
         hours: '00', 
         minutes: '00', 
         seconds: '00' 
@@ -976,8 +974,8 @@ export default function Dashboard() {
                 <div className="countdown-label">Next Due Date</div>
                 <div className="countdown-timer">
                   <div className="time-display">
-                    <span className="time-value">{countdown.days}:{countdown.hours}:{countdown.seconds}</span>
-                    <span className="time-label">D:H:S</span>
+                    <span className="time-value">{countdown.days}:{countdown.hours}:{countdown.minutes}</span>
+                    <span className="time-label">D:H:M</span>
                   </div>
                 </div>
                 <div className="countdown-assignment">{nextAssignment}</div>
@@ -995,8 +993,8 @@ export default function Dashboard() {
                 <div className="countdown-label">Next TEST/EXAM Date</div>
                 <div className="countdown-timer">
                   <div className="time-display">
-                    <span className="time-value">{testExamCountdown.days}:{testExamCountdown.hours}:{testExamCountdown.seconds}</span>
-                    <span className="time-label">D:H:S</span>
+                    <span className="time-value">{testExamCountdown.days}:{testExamCountdown.hours}:{testExamCountdown.minutes}</span>
+                    <span className="time-label">D:H:M</span>
                   </div>
                 </div>
                 <div className="countdown-assignment">{nextTestExam}</div>
