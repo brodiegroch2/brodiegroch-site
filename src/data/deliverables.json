@@ -477,11 +477,11 @@
     "Category": "Project",
     "Deliverable": "Project 1",
     "Open Date": "",
-    "Close Date": "Tue Sep 23, 2025 11:59 PM",
+    "Close Date": "Sep 23, 2025, 11:59 PM",
     "Weight %": "15",
-    "Grade %": "",
-    "Letter Grade": "",
-    "Status": "submitted"
+    "Grade %": "100",
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "MECH 200",
