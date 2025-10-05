@@ -237,12 +237,13 @@ export default function Dashboard() {
           const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
           const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
           
           setCountdown({
             days: days.toString().padStart(2, '0'),
             hours: hours.toString().padStart(2, '0'),
             minutes: minutes.toString().padStart(2, '0'),
-            seconds: '00'
+            seconds: seconds.toString().padStart(2, '0')
           });
         } else {
           // If time has passed, set to 00:00:00
@@ -324,12 +325,13 @@ export default function Dashboard() {
           const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
           const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
           
           setTestExamCountdown({
             days: days.toString().padStart(2, '0'),
             hours: hours.toString().padStart(2, '0'),
             minutes: minutes.toString().padStart(2, '0'),
-            seconds: '00'
+            seconds: seconds.toString().padStart(2, '0')
           });
         } else {
           setTestExamCountdown({ 
@@ -963,7 +965,7 @@ export default function Dashboard() {
             <p className="hero-subtitle">Here&apos;s what&apos;s happening in your academic journey today</p>
           </div>
           <div className="countdown-section">
-            <div className="countdown-card">
+            <div className={`countdown-card ${parseInt(countdown.days) <= 1 ? 'urgent' : ''} ${parseInt(countdown.hours) <= 2 && parseInt(countdown.days) === 0 ? 'critical' : ''}`}>
               <div className="countdown-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
@@ -974,15 +976,15 @@ export default function Dashboard() {
                 <div className="countdown-label">Next Due Date</div>
                 <div className="countdown-timer">
                   <div className="time-display">
-                    <span className="time-value">{countdown.days}:{countdown.hours}:{countdown.minutes}</span>
-                    <span className="time-label">D:H:M</span>
+                    <span className="time-value">{countdown.days}:{countdown.hours}:{countdown.minutes}:{countdown.seconds}</span>
+                    <span className="time-label">D:H:M:S</span>
                   </div>
                 </div>
                 <div className="countdown-assignment">{nextAssignment}</div>
               </div>
             </div>
             
-            <div className="countdown-card">
+            <div className={`countdown-card ${parseInt(testExamCountdown.days) <= 1 ? 'urgent' : ''} ${parseInt(testExamCountdown.hours) <= 2 && parseInt(testExamCountdown.days) === 0 ? 'critical' : ''}`}>
               <div className="countdown-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -993,8 +995,8 @@ export default function Dashboard() {
                 <div className="countdown-label">Next TEST/EXAM Date</div>
                 <div className="countdown-timer">
                   <div className="time-display">
-                    <span className="time-value">{testExamCountdown.days}:{testExamCountdown.hours}:{testExamCountdown.minutes}</span>
-                    <span className="time-label">D:H:M</span>
+                    <span className="time-value">{testExamCountdown.days}:{testExamCountdown.hours}:{testExamCountdown.minutes}:{testExamCountdown.seconds}</span>
+                    <span className="time-label">D:H:M:S</span>
                   </div>
                 </div>
                 <div className="countdown-assignment">{nextTestExam}</div>
