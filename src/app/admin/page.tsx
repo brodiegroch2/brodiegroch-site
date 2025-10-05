@@ -81,67 +81,66 @@ export default function AdminPage() {
       </div>
 
       <div className="responsive-grid">
-          {deliverables.map((deliverable: any, index: number) => (
-            <div key={index} className="bg-gray-800 p-4 rounded-lg">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
-                  <label className="block text-sm font-medium mb-1">Course ID</label>
-                  <input
-                    type="text"
-                    value={deliverable['Course ID'] || ''}
-                    onChange={(e) => updateDeliverable(index, 'Course ID', e.target.value)}
-                    className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1">Category</label>
-                  <input
-                    type="text"
-                    value={deliverable.Category || ''}
-                    onChange={(e) => updateDeliverable(index, 'Category', e.target.value)}
-                    className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1">Deliverable</label>
-                  <input
-                    type="text"
-                    value={deliverable.Deliverable || ''}
-                    onChange={(e) => updateDeliverable(index, 'Deliverable', e.target.value)}
-                    className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1">Open Date</label>
-                  <input
-                    type="text"
-                    value={deliverable['Open Date'] || ''}
-                    onChange={(e) => updateDeliverable(index, 'Open Date', e.target.value)}
-                    className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1">Close Date</label>
-                  <input
-                    type="text"
-                    value={deliverable['Close Date'] || ''}
-                    onChange={(e) => updateDeliverable(index, 'Close Date', e.target.value)}
-                    className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1">Weight %</label>
-                  <input
-                    type="text"
-                    value={deliverable['Weight %'] || ''}
-                    onChange={(e) => updateDeliverable(index, 'Weight %', e.target.value)}
-                    className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2"
-                  />
-                </div>
+        {deliverables.map((deliverable: any, index: number) => (
+          <div key={index} className="bg-gray-800 p-4 rounded-lg">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label className="block text-sm font-medium mb-1">Course ID</label>
+                <input
+                  type="text"
+                  value={deliverable['Course ID'] || ''}
+                  onChange={(e) => updateDeliverable(index, 'Course ID', e.target.value)}
+                  className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Category</label>
+                <input
+                  type="text"
+                  value={deliverable.Category || ''}
+                  onChange={(e) => updateDeliverable(index, 'Category', e.target.value)}
+                  className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Deliverable</label>
+                <input
+                  type="text"
+                  value={deliverable.Deliverable || ''}
+                  onChange={(e) => updateDeliverable(index, 'Deliverable', e.target.value)}
+                  className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Open Date</label>
+                <input
+                  type="text"
+                  value={deliverable['Open Date'] || ''}
+                  onChange={(e) => updateDeliverable(index, 'Open Date', e.target.value)}
+                  className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Close Date</label>
+                <input
+                  type="text"
+                  value={deliverable['Close Date'] || ''}
+                  onChange={(e) => updateDeliverable(index, 'Close Date', e.target.value)}
+                  className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Weight %</label>
+                <input
+                  type="text"
+                  value={deliverable['Weight %'] || ''}
+                  onChange={(e) => updateDeliverable(index, 'Weight %', e.target.value)}
+                  className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2"
+                />
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

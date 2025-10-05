@@ -6125,32 +6125,6 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-        font-weight: 600;
-    }
-    
-    .schedule-list-title {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-    }
-    
-    .schedule-list-course {
-        font-size: 0.875rem;
-        color: #6b7280;
-        margin-bottom: 0.75rem;
-    }
-    
-    .schedule-list-day {
-        font-size: 0.75rem;
-        padding: 0.25rem 0.5rem;
-        border-radius: 6px;
-    }
-    
-    .schedule-location-info {
-        font-size: 0.8rem;
-        color: #9ca3af;
-    }
-}
 
 @media (max-width: 480px) {
     .page-title {
