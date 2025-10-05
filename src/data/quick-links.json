@@ -34,5 +34,17 @@
     "Address": "https://www.sait.ca/programs-and-courses/diplomas/mechanical-engineering-technology",
     "Link_image_id": "sait_logo_transparent.png",
     "Category": "SAIT Services"
+  },
+  {
+    "Site Name": "SAIT Important Dates",
+    "Address": "https://www.sait.ca/student-life/important-dates",
+    "Link_image_id": "sait_logo_transparent.png",
+    "Category": "SAIT Services"
+  },
+  {
+    "Site Name": "Class Schedule & Registration",
+    "Address": "https://www.sait.ca/student-life/getting-your-class-schedule",
+    "Link_image_id": "sait_logo_transparent.png",
+    "Category": "SAIT Services"
   }
 ]
