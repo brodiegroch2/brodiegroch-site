@@ -121,12 +121,14 @@ export default function CoursesPage() {
 
   return (
     <div className="container">
-      <h1 className="page-title">Courses</h1>
-      <p className="page-subtitle">Manage your academic courses and track your progress</p>
+      <div className="page-header">
+        <h1 className="page-title">Courses</h1>
+        <p className="page-subtitle">Manage your academic courses and track your progress</p>
+      </div>
       
       <div className="data-section">
         <h2 className="section-title">Course Information</h2>
-        <div className="courses-grid">
+        <div className="courses-grid responsive-grid">
           {courses.length === 0 ? (
             <div className="empty-state">
               No courses data available. Load data from Courses.json to display course information.

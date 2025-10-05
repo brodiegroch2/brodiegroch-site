@@ -56,29 +56,31 @@ export default function AdminPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6">📝 Deliverables Editor</h1>
-        
-        {message && (
-          <div className={`p-4 rounded-lg mb-6 ${
-            message.includes('✅') ? 'bg-green-600' : 'bg-red-600'
-          }`}>
-            {message}
-          </div>
-        )}
-
-        <div className="mb-6">
-          <button
-            onClick={saveDeliverables}
-            disabled={loading}
-            className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 px-6 py-3 rounded-lg font-semibold"
-          >
-            {loading ? '💾 Saving...' : '💾 Save to GitHub'}
-          </button>
+    <div className="container">
+      <div className="page-header">
+        <h1 className="page-title">📝 Deliverables Editor</h1>
+        <p className="page-subtitle">Manage and edit deliverable data</p>
+      </div>
+      
+      {message && (
+        <div className={`p-4 rounded-lg mb-6 ${
+          message.includes('✅') ? 'bg-green-600' : 'bg-red-600'
+        }`}>
+          {message}
         </div>
+      )}
 
-        <div className="grid gap-4">
+      <div className="mb-6">
+        <button
+          onClick={saveDeliverables}
+          disabled={loading}
+          className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 px-6 py-3 rounded-lg font-semibold w-full sm:w-auto"
+        >
+          {loading ? '💾 Saving...' : '💾 Save to GitHub'}
+        </button>
+      </div>
+
+      <div className="responsive-grid">
           {deliverables.map((deliverable: any, index: number) => (
             <div key={index} className="bg-gray-800 p-4 rounded-lg">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

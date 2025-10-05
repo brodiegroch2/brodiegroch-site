@@ -285,8 +285,10 @@ export default function CourseDetailPage() {
         </Link>
       </div>
       
-      <h1 className="page-title">{course["Course Name"]}</h1>
-      <p className="page-subtitle">{course["Course ID"]} - Detailed Information</p>
+      <div className="page-header">
+        <h1 className="page-title">{course["Course Name"]}</h1>
+        <p className="page-subtitle">{course["Course ID"]} - Detailed Information</p>
+      </div>
       
       <div className="data-section">
         <h2 className="section-title">Course Information</h2>
@@ -533,7 +535,7 @@ export default function CourseDetailPage() {
             }
             
             return (
-              <div className="deliverables-columns" style={{ gridTemplateColumns: `repeat(${columns.length}, 1fr)` }}>
+              <div className="deliverables-columns responsive-grid" style={{ gridTemplateColumns: `repeat(${columns.length}, 1fr)` }}>
                 {columns}
               </div>
             );

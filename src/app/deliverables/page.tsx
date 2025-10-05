@@ -222,8 +222,10 @@ export default function DeliverablesPage() {
   return (
     <div className="container">
       <ToastContainer />
-      <h1 className="page-title">Deliverables</h1>
-      <p className="page-subtitle">Track assignments, projects, and course deliverables</p>
+      <div className="page-header">
+        <h1 className="page-title">Deliverables</h1>
+        <p className="page-subtitle">Track assignments, projects, and course deliverables</p>
+      </div>
       
       <PullToRefresh onRefresh={handleRefresh}>
       
@@ -265,7 +267,7 @@ export default function DeliverablesPage() {
       <div className="data-section">
         <h2 className="section-title">Assignment Information</h2>
         
-        <div id="deliverables-container" className="deliverables-grid">
+        <div id="deliverables-container" className="deliverables-grid responsive-grid">
           {sortedDeliverables.length === 0 ? (
             <div className="empty-state">
               No deliverables data available. Load data from Deliverables.json to display assignment information.

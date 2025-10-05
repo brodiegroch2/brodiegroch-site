@@ -128,8 +128,10 @@ export default function SchedulePage() {
 
   return (
     <div className="container">
-      <h1 className="page-title">Schedule</h1>
-      <p className="page-subtitle">View your class schedule and recurring events</p>
+      <div className="page-header">
+        <h1 className="page-title">Schedule</h1>
+        <p className="page-subtitle">View your class schedule and recurring events</p>
+      </div>
       
       <div className="data-section">
         <h2 className="section-title">Schedule Information</h2>
@@ -154,7 +156,7 @@ export default function SchedulePage() {
           ))}
         </div>
 
-        <div className={filter === 'all' ? 'data-grid' : 'data-grid list-view'}>
+        <div className={filter === 'all' ? 'data-grid responsive-grid' : 'data-grid responsive-grid list-view'}>
           {filteredSchedule.length === 0 ? (
             <div className="empty-state">
               {filter === 'all' 

@@ -116,7 +116,7 @@ export default function QuickLinksPage() {
                 <h2 className="category-title">{category}</h2>
                 <div className="category-count">{groupedLinks[category].length} link{groupedLinks[category].length !== 1 ? 's' : ''}</div>
               </div>
-              <div className="links-grid">
+              <div className="links-grid responsive-grid-3">
                 {groupedLinks[category].map((link, index) => {
                   const imageId = link["Link_image_id"] || '';
                   const hasImage = imageId && imageId !== 'No image' && imageId !== '';

@@ -96,12 +96,14 @@ export default function TodoPage() {
 
   return (
     <div className="container">
-      <h1 className="page-title">To Do</h1>
-      <p className="page-subtitle">Deliverables without due dates that need attention</p>
+      <div className="page-header">
+        <h1 className="page-title">To Do</h1>
+        <p className="page-subtitle">Deliverables without due dates that need attention</p>
+      </div>
       
       <div className="data-section">
         <h2 className="section-title">Undated Deliverables</h2>
-        <div className="deliverables-grid">
+        <div className="deliverables-grid responsive-grid">
           {undatedDeliverables.length === 0 ? (
             <div className="empty-state">
               All deliverables have due dates! Great job staying organized.
