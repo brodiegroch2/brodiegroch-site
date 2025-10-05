@@ -107,14 +107,28 @@ export default function DeliverableEditModal({
   const formatDateForDisplay = (dateString: string) => {
     if (!dateString) return '';
     try {
-      const date = new Date(dateString);
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-      });
+      // If it's a YYYY-MM-DD format from the date input, parse it as local date
+      if (dateString.match(/^\d{4}-\d{2}-\d{2}$/)) {
+        const [year, month, day] = dateString.split('-').map(Number);
+        const date = new Date(year, month - 1, day, 23, 59); // Set to 11:59 PM
+        return date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+      } else {
+        // For other date formats, use the original logic
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+      }
     } catch (error) {
       return dateString;
     }
