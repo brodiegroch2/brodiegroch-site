@@ -28,5 +28,11 @@
     "Address": "https://mycareerhub.sait.ca/home.htm",
     "Link_image_id": "sait_logo_transparent.png",
     "Category": "SAIT Services"
+  },
+  {
+    "Site Name": "Mechanical Engineering Technology",
+    "Address": "https://www.sait.ca/programs-and-courses/diplomas/mechanical-engineering-technology",
+    "Link_image_id": "sait_logo_transparent.png",
+    "Category": "SAIT Services"
   }
 ]
