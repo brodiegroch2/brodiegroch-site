@@ -1398,7 +1398,6 @@ body {
     font-size: 1.2rem;
     min-width: 160px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -1433,7 +1432,6 @@ body {
     letter-spacing: 0.5px;
     display: inline-block;
     margin-bottom: 0.8rem;
-    box-shadow: 0 3px 10px rgba(74, 158, 255, 0.4);
     position: relative;
 }
 
@@ -1500,7 +1498,6 @@ body {
 
 .schedule-list-item.upcoming .schedule-list-time {
     background: #4a9eff;
-    box-shadow: 0 4px 12px rgba(74, 158, 255, 0.4);
 }
 
 .schedule-list-item.current {
@@ -1510,7 +1507,6 @@ body {
 
 .schedule-list-item.current .schedule-list-time {
     background: #2d5aa0;
-    box-shadow: 0 4px 12px rgba(45, 90, 160, 0.4);
 }
 
 .schedule-list-item.completed {
@@ -1521,7 +1517,6 @@ body {
 
 .schedule-list-item.completed .schedule-list-time {
     background: #666666;
-    box-shadow: 0 4px 12px rgba(102, 102, 102, 0.4);
 }
 
 .schedule-list-item.completed .schedule-list-course-name,
@@ -1531,7 +1526,6 @@ body {
 
 .schedule-list-item.completed .schedule-list-course-id {
     background: #666666;
-    box-shadow: 0 3px 10px rgba(102, 102, 102, 0.4);
 }
 
 .schedule-list-duration {
@@ -1603,7 +1597,6 @@ body {
     letter-spacing: 0.5px;
     display: inline-block;
     margin-bottom: 0.75rem;
-    box-shadow: 0 2px 8px rgba(74, 158, 255, 0.3);
 }
 
 .schedule-course-name {
@@ -1628,7 +1621,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     display: inline-block;
-    box-shadow: 0 2px 6px rgba(45, 90, 160, 0.3);
 }
 
 .schedule-tile-body {
@@ -1660,7 +1652,6 @@ body {
     padding: 0.8rem;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(45, 90, 160, 0.3);
 }
 
 .schedule-location-text {
