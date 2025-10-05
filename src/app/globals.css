@@ -4168,16 +4168,21 @@ body {
 }
 
 /* Dashboard Section Styles */
+/* Modern Dashboard Sections - Needs Grades & Recent Activity */
 .dashboard-section {
-    background: #1a1a1a;
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
     padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 2rem;
+    backdrop-filter: blur(8px);
+    transition: border-color 0.2s ease;
     position: relative;
     overflow: hidden;
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-section:hover {
+    border-color: rgba(255, 255, 255, 0.12);
 }
 
 .dashboard-section::before {
@@ -4196,23 +4201,204 @@ body {
     opacity: 1;
 }
 
-.dashboard-section .section-title {
+.section-title {
+    color: #ffffff;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #e0e0e0;
     margin-bottom: 1.5rem;
+    text-align: center;
     position: relative;
 }
 
-.dashboard-section .section-title::after {
+.section-title::after {
     content: '';
     position: absolute;
     bottom: -0.5rem;
-    left: 0;
-    width: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, #4a9eff, #6bb6ff);
+    background: #4a9eff;
     border-radius: 2px;
+}
+
+/* Modern Needs Grades Cards */
+.deadlines-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.deadline-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.deadline-item:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.deadline-item.submitted-item {
+    border-left: 4px solid #9c27b0;
+}
+
+.deadline-item.submitted-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #9c27b0;
+    opacity: 0.6;
+}
+
+.deadline-date {
+    color: #4a9eff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    background: rgba(74, 158, 255, 0.1);
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.deadline-content {
+    margin-bottom: 1rem;
+}
+
+.deadline-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.deadline-course {
+    color: #4a9eff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: rgba(74, 158, 255, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.deadline-countdown {
+    color: #a0a0a0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: right;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Modern Recent Activity Cards */
+.activity-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.activity-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.activity-item:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.activity-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #4caf50;
+    opacity: 0.6;
+}
+
+.activity-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4caf50;
+}
+
+.activity-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.activity-title {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+
+.activity-course {
+    color: #4a9eff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.activity-date {
+    color: #a0a0a0;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.activity-grade {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.grade-percentage {
+    color: #4caf50;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.grade-letter {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: rgba(76, 175, 80, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    display: inline-block;
 }
 
 /* Performance Chart and Progress Overview */

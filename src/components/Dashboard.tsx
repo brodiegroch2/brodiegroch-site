@@ -395,9 +395,13 @@ export default function Dashboard() {
         </div>
         <div class="activity-content">
           <div class="activity-title">${deliverable['Deliverable']}</div>
-          <div class="activity-details">${deliverable['Course ID']} • ${new Date(deliverable['Close Date']).toLocaleDateString()}</div>
+          <div class="activity-course">${deliverable['Course ID']}</div>
+          <div class="activity-date">${new Date(deliverable['Close Date']).toLocaleDateString()}</div>
         </div>
-        <div class="activity-grade">${deliverable['Grade %']}%</div>
+        <div class="activity-grade">
+          <div class="grade-percentage">${deliverable['Grade %']}%</div>
+          <div class="grade-letter">${deliverable['Letter Grade'] || 'A'}</div>
+        </div>
       </div>
     `).join('');
 
