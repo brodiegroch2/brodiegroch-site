@@ -46,5 +46,11 @@
     "Address": "https://www.sait.ca/student-life/getting-your-class-schedule",
     "Link_image_id": "sait_logo_transparent.png",
     "Category": "SAIT Services"
+  },
+  {
+    "Site Name": "Ionicons",
+    "Address": "https://ionic.io/ionicons",
+    "Link_image_id": "logo-256x256.png",
+    "Category": "Development Tools"
   }
 ]
