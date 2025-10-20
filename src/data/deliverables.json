@@ -180,11 +180,11 @@
     "Category": "Lab",
     "Deliverable": "Lab 3b: Basic Sensors",
     "Open Date": "Sep 28, 2025 11:59 PM",
-    "Close Date": "Oct 16, 2025 at 11:59 PM",
+    "Close Date": "Oct 17, 2025 at 11:59 PM",
     "Weight %": "4",
-    "Grade %": "100",
-    "Letter Grade": "A+",
-    "Status": "graded"
+    "Grade %": "",
+    "Letter Grade": "",
+    "Status": "pending"
   },
   {
     "Course ID": "MECH 205",
@@ -587,11 +587,11 @@
     "Category": "Assignment/Quiz",
     "Deliverable": "Assignment 1",
     "Open Date": "",
-    "Close Date": "Sep 13, 2025 at 11:59 PM",
+    "Close Date": "Sep 14, 2025 11:59 PM",
     "Weight %": "1.43",
-    "Grade %": "100",
-    "Letter Grade": "A+",
-    "Status": "graded"
+    "Grade %": "",
+    "Letter Grade": "",
+    "Status": "submitted"
   },
   {
     "Course ID": "STCS 255",
@@ -774,11 +774,11 @@
     "Category": "Assignment",
     "Deliverable": "Spreadsheets Assignment",
     "Open Date": "Oct 20, 2025 (start of Week 8)",
-    "Close Date": "Oct 23, 2025, 11:59 PM",
+    "Close Date": "Oct 22, 2025, 11:59 PM",
     "Weight %": "20",
     "Grade %": "",
     "Letter Grade": "",
-    "Status": "completed"
+    "Status": "pending"
   },
   {
     "Course ID": "COMP 213",
