@@ -587,11 +587,11 @@
     "Category": "Assignment/Quiz",
     "Deliverable": "Assignment 1",
     "Open Date": "",
-    "Close Date": "Sep 14, 2025 11:59 PM",
+    "Close Date": "Sep 13, 2025, 11:59 PM",
     "Weight %": "1.43",
-    "Grade %": "",
-    "Letter Grade": "",
-    "Status": "submitted"
+    "Grade %": "100",
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "STCS 255",
