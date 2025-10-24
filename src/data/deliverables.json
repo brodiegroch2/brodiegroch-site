@@ -829,11 +829,11 @@
     "Category": "Exam",
     "Deliverable": "Spreadsheets Exam",
     "Open Date": "Oct 27, 2025 (Week 9)",
-    "Close Date": "Oct 31, 2025 11:59 PM",
+    "Close Date": "Oct 30, 2025, 11:59 PM",
     "Weight %": "7",
-    "Grade %": "",
-    "Letter Grade": "",
-    "Status": "pending"
+    "Grade %": "100",
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "COMP 213",
