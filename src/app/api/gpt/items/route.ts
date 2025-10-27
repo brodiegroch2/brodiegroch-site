@@ -1,10 +1,46 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { sql } from '@vercel/postgres';
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
-    const items = await db.items.findMany();
-    return NextResponse.json(items);
+    const { searchParams } = new URL(req.url);
+    const type = searchParams.get("type");
+    const limit = Math.min(parseInt(searchParams.get("limit") || "50"), 200);
+    const since = searchParams.get("since");
+
+    let result;
+    
+    if (type && since) {
+      result = await sql`
+        SELECT * FROM items 
+        WHERE type = ${type} AND updated_at > ${since}
+        ORDER BY updated_at DESC 
+        LIMIT ${limit}
+      `;
+    } else if (type) {
+      result = await sql`
+        SELECT * FROM items 
+        WHERE type = ${type}
+        ORDER BY updated_at DESC 
+        LIMIT ${limit}
+      `;
+    } else if (since) {
+      result = await sql`
+        SELECT * FROM items 
+        WHERE updated_at > ${since}
+        ORDER BY updated_at DESC 
+        LIMIT ${limit}
+      `;
+    } else {
+      result = await sql`
+        SELECT * FROM items 
+        ORDER BY updated_at DESC 
+        LIMIT ${limit}
+      `;
+    }
+    
+    return NextResponse.json(result.rows);
   } catch (error) {
     console.error('Database error:', error);
     return NextResponse.json(
