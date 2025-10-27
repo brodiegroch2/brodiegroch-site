@@ -58,6 +58,21 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                Course ID:
+                  type: string
+                Course Name:
+                  type: string
+                Course Average Weighted Grade:
+                  type: string
+                Credit Hours:
+                  type: string
+                Course Description:
+                  type: string
+                Professor/Teacher Name:
+                  type: string
+                Professor/Teacher Email:
+                  type: string
               additionalProperties: true
       responses:
         "201":
@@ -72,6 +87,21 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                Course ID:
+                  type: string
+                Course Name:
+                  type: string
+                Course Average Weighted Grade:
+                  type: string
+                Credit Hours:
+                  type: string
+                Course Description:
+                  type: string
+                Professor/Teacher Name:
+                  type: string
+                Professor/Teacher Email:
+                  type: string
               additionalProperties: true
       responses:
         "200":
@@ -116,6 +146,15 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                Site Name:
+                  type: string
+                Address:
+                  type: string
+                Link_image_id:
+                  type: string
+                Category:
+                  type: string
               additionalProperties: true
       responses:
         "201":
@@ -130,6 +169,15 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                Site Name:
+                  type: string
+                Address:
+                  type: string
+                Link_image_id:
+                  type: string
+                Category:
+                  type: string
               additionalProperties: true
       responses:
         "200":
@@ -183,6 +231,21 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                Course ID:
+                  type: string
+                Day of Week:
+                  type: string
+                Start Time:
+                  type: string
+                End Time:
+                  type: string
+                Location:
+                  type: string
+                Recurring:
+                  type: string
+                Period:
+                  type: string
               additionalProperties: true
       responses:
         "201":
@@ -197,6 +260,21 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                Course ID:
+                  type: string
+                Day of Week:
+                  type: string
+                Start Time:
+                  type: string
+                End Time:
+                  type: string
+                Location:
+                  type: string
+                Recurring:
+                  type: string
+                Period:
+                  type: string
               additionalProperties: true
       responses:
         "200":
@@ -251,6 +329,15 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                minPercentage:
+                  type: number
+                maxPercentage:
+                  type: number
+                letterGrade:
+                  type: string
+                gradePoints:
+                  type: number
               additionalProperties: true
       responses:
         "201":
@@ -265,6 +352,15 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                minPercentage:
+                  type: number
+                maxPercentage:
+                  type: number
+                letterGrade:
+                  type: string
+                gradePoints:
+                  type: number
               additionalProperties: true
       responses:
         "200":
@@ -309,6 +405,25 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                Course ID:
+                  type: string
+                Category:
+                  type: string
+                Deliverable:
+                  type: string
+                Open Date:
+                  type: string
+                Close Date:
+                  type: string
+                Weight %:
+                  type: string
+                Grade %:
+                  type: string
+                Letter Grade:
+                  type: string
+                Status:
+                  type: string
               additionalProperties: true
       responses:
         "200":
