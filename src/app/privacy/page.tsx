@@ -187,6 +187,25 @@ export default function PrivacyPolicy() {
               <p className="text-gray-600 dark:text-gray-300 mt-4">
                 For complete API documentation, see the <a href="/privacy" className="text-blue-600 dark:text-blue-400 hover:underline">API Documentation</a> page.
               </p>
+              
+              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                <p className="text-gray-700 dark:text-gray-300 mb-2">
+                  <strong>API Actions Reference:</strong>
+                </p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                  Download the complete API actions reference guide for integrating with Custom GPT or other applications.
+                </p>
+                <a 
+                  href="/actions.txt" 
+                  download
+                  className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Download API Actions Guide (actions.txt)
+                </a>
+              </div>
             </section>
           </div>
         </div>
