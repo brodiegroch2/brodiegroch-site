@@ -2,11 +2,6 @@
 
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'API Documentation',
-  description: 'Complete API documentation for brodiegroch.ca'
-};
-
 export default function ApiDocs() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
