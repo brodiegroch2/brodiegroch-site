@@ -22,18 +22,18 @@ function parseRSS(rssXml: string): NewsItem[] {
   const items: NewsItem[] = [];
   
   // Extract item tags
-  const itemRegex = /<item>(.*?)<\/item>/gs;
+  const itemRegex = /<item>([\s\S]*?)<\/item>/g;
   const matches = rssXml.matchAll(itemRegex);
   
   for (const match of matches) {
     const itemContent = match[1];
     
-    const titleMatch = itemContent.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/s) || 
-                       itemContent.match(/<title>(.*?)<\/title>/s);
-    const linkMatch = itemContent.match(/<link>(.*?)<\/link>/s);
-    const descMatch = itemContent.match(/<description><!\[CDATA\[(.*?)\]\]><\/description>/s) ||
-                       itemContent.match(/<description>(.*?)<\/description>/s);
-    const dateMatch = itemContent.match(/<pubDate>(.*?)<\/pubDate>/s);
+    const titleMatch = itemContent.match(/<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>/) || 
+                       itemContent.match(/<title>([\s\S]*?)<\/title>/);
+    const linkMatch = itemContent.match(/<link>([\s\S]*?)<\/link>/);
+    const descMatch = itemContent.match(/<description><!\[CDATA\[([\s\S]*?)\]\]><\/description>/) ||
+                       itemContent.match(/<description>([\s\S]*?)<\/description>/);
+    const dateMatch = itemContent.match(/<pubDate>([\s\S]*?)<\/pubDate>/);
     
     if (titleMatch) {
       items.push({
