@@ -14,6 +14,49 @@ components:
       in: header
       name: X-API-Key
       description: API key for authentication
+  
+  schemas:
+    Item:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum: [task, note, event, metric]
+        data:
+          type: object
+          additionalProperties: true
+        updated_at:
+          type: string
+          format: date-time
+    
+    UpsertRequest:
+      type: object
+      required: [type, data]
+      properties:
+        type:
+          type: string
+          enum: [task, note, event, metric]
+          description: Type of item
+        data:
+          type: object
+          additionalProperties: true
+          description: Item data
+    
+    SuccessResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+          example: true
+    
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
 
 paths:
   /api/gpt/upsert:
