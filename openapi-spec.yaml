@@ -1,139 +1,83 @@
 openapi: 3.0.0
 info:
-  title: PersonalDB
-  version: "1.0.0"
-  description: API for storing and retrieving personal items (tasks, notes, events, metrics)
+  title: PersonalDB API
+  version: "1.0"
+  description: API for storing and managing personal items
 
 servers:
   - url: https://brodiegroch.ca
     description: Production server
 
-tags:
-  - name: items
-    description: Item storage operations
-
 components:
   securitySchemes:
-    api_key:
+    ApiKeyAuth:
       type: apiKey
       in: header
       name: X-API-Key
-      description: API key for authentication
-
-  schemas:
-    Item:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum: [task, note, event, metric]
-        data:
-          type: object
-          additionalProperties: true
-        updated_at:
-          type: string
-          format: date-time
-
-    UpsertRequest:
-      type: object
-      required: [type, data]
-      properties:
-        type:
-          type: string
-          enum: [task, note, event, metric]
-          description: Type of item
-        data:
-          type: object
-          additionalProperties: true
-          description: Item data
-
-    SuccessResponse:
-      type: object
-      properties:
-        ok:
-          type: boolean
-          example: true
-
-    ErrorResponse:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Error message
+      description: API key authentication
 
 paths:
   /api/gpt/upsert:
     post:
       operationId: upsertItem
       summary: Create or update an item
-      tags:
-        - items
+      description: Stores or updates an item in the database
       security:
-        - api_key: []
+        - ApiKeyAuth: []
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpsertRequest'
-            examples:
-              task:
-                summary: Task example
-                value:
-                  type: task
-                  data:
-                    title: "Complete project"
-                    priority: "high"
-                    due_date: "2024-12-31"
-              note:
-                summary: Note example
-                value:
-                  type: note
-                  data:
-                    content: "Meeting notes from today"
-                    tags: ["work", "important"]
+              type: object
+              required: [type, data]
+              properties:
+                type:
+                  type: string
+                  enum: [task, note, event, metric]
+                  description: Type of item to store
+                data:
+                  type: object
+                  additionalProperties: true
+                  description: Item data as JSON object
+            example:
+              type: task
+              data:
+                title: "Example task"
+                completed: false
       responses:
         "200":
-          description: Item successfully created or updated
+          description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SuccessResponse'
+                type: object
+                properties:
+                  ok:
+                    type: boolean
         "400":
-          description: Bad request (invalid type or data)
+          description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                type: object
+                properties:
+                  error:
+                    type: string
         "401":
-          description: Unauthorized (missing or invalid API key)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
+          description: Unauthorized
         "413":
-          description: Payload too large (>8KB)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
+          description: Payload too large
         "500":
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
+          description: Server error
 
   /api/gpt/items:
     get:
       operationId: listItems
       summary: List stored items
-      tags:
-        - items
+      description: Retrieve items from the database
       security:
-        - api_key: []
+        - ApiKeyAuth: []
       parameters:
         - in: query
           name: type
@@ -147,13 +91,7 @@ paths:
             type: integer
             default: 50
             maximum: 200
-          description: Maximum number of items to return
-        - in: query
-          name: since
-          schema:
-            type: string
-            format: date-time
-          description: Return items updated after this time
+          description: Maximum items to return
       responses:
         "200":
           description: List of items
@@ -162,21 +100,24 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Item'
-        "401":
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    data:
+                      type: object
+                    updated_at:
+                      type: string
+                      format: date-time
 
     delete:
       operationId: deleteItem
       summary: Delete an item
-      tags:
-        - items
+      description: Remove an item from the database
       security:
-        - api_key: []
+        - ApiKeyAuth: []
       parameters:
         - in: query
           name: id
@@ -186,20 +127,11 @@ paths:
           description: ID of item to delete
       responses:
         "200":
-          description: Item deleted
+          description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SuccessResponse'
-        "401":
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        "404":
-          description: Item not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                type: object
+                properties:
+                  ok:
+                    type: boolean
