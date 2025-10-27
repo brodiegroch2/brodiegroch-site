@@ -7,8 +7,6 @@ info:
 servers:
   - url: https://brodiegroch.ca
     description: Production server
-  - url: http://localhost:3000
-    description: Local development server
 
 components:
   securitySchemes:
@@ -49,6 +47,7 @@ paths:
                 type: array
                 items:
                   type: object
+                  additionalProperties: true
     post:
       operationId: createCourse
       summary: Create a new course
@@ -59,6 +58,7 @@ paths:
           application/json:
             schema:
               type: object
+              additionalProperties: true
       responses:
         "201":
           description: Course created
@@ -72,6 +72,7 @@ paths:
           application/json:
             schema:
               type: object
+              additionalProperties: true
       responses:
         "200":
           description: Course updated
@@ -104,6 +105,7 @@ paths:
                 type: array
                 items:
                   type: object
+                  additionalProperties: true
     post:
       operationId: createQuickLink
       summary: Create a new quick link
@@ -114,6 +116,7 @@ paths:
           application/json:
             schema:
               type: object
+              additionalProperties: true
       responses:
         "201":
           description: Quick link created
@@ -127,6 +130,7 @@ paths:
           application/json:
             schema:
               type: object
+              additionalProperties: true
       responses:
         "200":
           description: Quick link updated
@@ -168,6 +172,7 @@ paths:
                 type: array
                 items:
                   type: object
+                  additionalProperties: true
     post:
       operationId: createScheduleItem
       summary: Create a new schedule item
@@ -178,6 +183,7 @@ paths:
           application/json:
             schema:
               type: object
+              additionalProperties: true
       responses:
         "201":
           description: Schedule item created
@@ -191,6 +197,7 @@ paths:
           application/json:
             schema:
               type: object
+              additionalProperties: true
       responses:
         "200":
           description: Schedule item updated
@@ -233,6 +240,7 @@ paths:
                 type: array
                 items:
                   type: object
+                  additionalProperties: true
     post:
       operationId: createGradeScale
       summary: Create a new grade scale
@@ -243,6 +251,7 @@ paths:
           application/json:
             schema:
               type: object
+              additionalProperties: true
       responses:
         "201":
           description: Grade scale created
@@ -256,6 +265,7 @@ paths:
           application/json:
             schema:
               type: object
+              additionalProperties: true
       responses:
         "200":
           description: Grade scale updated
@@ -288,6 +298,7 @@ paths:
                 type: array
                 items:
                   type: object
+                  additionalProperties: true
     put:
       operationId: updateDeliverable
       summary: Update a deliverable
@@ -298,6 +309,7 @@ paths:
           application/json:
             schema:
               type: object
+              additionalProperties: true
       responses:
         "200":
           description: Deliverable updated
