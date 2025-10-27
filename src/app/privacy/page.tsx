@@ -163,13 +163,29 @@ export default function PrivacyPolicy() {
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 The following API endpoints are available under this privacy policy:
               </p>
+              
+              <h3 className="text-xl font-semibold mb-2 mt-4">Data Management APIs</h3>
+              <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2 ml-4">
+                <li><code className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">GET/POST/PUT/DELETE /api/data/courses</code> - Course management</li>
+                <li><code className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">GET/POST/PUT/DELETE /api/data/quick-links</code> - Quick links management</li>
+                <li><code className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">GET/POST/PUT/DELETE /api/data/schedule</code> - Schedule management</li>
+                <li><code className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">GET/POST/PUT/DELETE /api/data/grading-scale</code> - Grading scale management</li>
+                <li><code className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">GET/PUT /api/data/deliverables</code> - Deliverables management</li>
+              </ul>
+              
+              <h3 className="text-xl font-semibold mb-2 mt-4">GPT Integration API</h3>
               <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2 ml-4">
                 <li><code className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">POST /api/gpt/upsert</code> - Create or update items</li>
                 <li><code className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">GET /api/gpt/items</code> - Retrieve items</li>
                 <li><code className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">DELETE /api/gpt/items</code> - Delete items</li>
               </ul>
+              
               <p className="text-gray-600 dark:text-gray-300 mt-4">
-                All endpoints require authentication via the <code className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">X-API-Key</code> header.
+                GPT endpoints require authentication via the <code className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">X-API-Key</code> header.
+              </p>
+              
+              <p className="text-gray-600 dark:text-gray-300 mt-4">
+                For complete API documentation, see the <a href="/privacy" className="text-blue-600 dark:text-blue-400 hover:underline">API Documentation</a> page.
               </p>
             </section>
           </div>

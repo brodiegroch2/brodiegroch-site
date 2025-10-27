@@ -52,5 +52,11 @@
     "Address": "https://ionic.io/ionicons",
     "Link_image_id": "logo-256x256.png",
     "Category": "Development Tools"
+  },
+  {
+    "Site Name": "Privacy Policy",
+    "Address": "https://brodiegroch.ca/privacy",
+    "Link_image_id": "logo-256x256.png",
+    "Category": "Site Information"
   }
 ]
