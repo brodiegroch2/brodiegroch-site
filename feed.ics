@@ -1,0 +1,2311 @@
+BEGIN:VCALENDAR
+PRODID:-//D2L//NONSGML v1.0//EN
+VERSION:2.0
+METHOD:PUBLISH
+X-WR-CALNAME:All Courses - SAIT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:{No title}
+LOCATION:SAIT
+DESCRIPTION:<p>This is my Agenda</p>
+CLASS:PUBLIC
+DTSTART;VALUE=DATE:20160419
+DTEND;VALUE=DATE:20160421
+UID:6605-480499@learn.sait.ca
+SEQUENCE:0
+LAST-MODIFIED:20160418T171920Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:MATH 238 Survey - Availability Ends
+LOCATION:Fall 2025 Mathematics for Engineering and Technology l (MATH-238-C
+	3)
+DESCRIPTION:This survey is anonymous and only aggregate data is presented t
+	o your instructor. It helps us to improve the quality of our resources on B
+	rightspace. Thank you for participating!\n\n\nSurveys:\nMATH 238 Survey\n\n
+	\nView event - https://learn.sait.ca/d2l/le/calendar/796170/event/2747612/d
+	etailsview?ou=796170#2747612
+CLASS:PUBLIC
+DTSTART:20190421T140000Z
+DTEND:20190421T140000Z
+UID:6605-2747612@learn.sait.ca
+SEQUENCE:0
+LAST-MODIFIED:20250809T071240Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Winter 2023 PREP-100 begins!
+LOCATION:Fall 2025 The SAIT Experience (PREP-100-MA1)
+CLASS:PUBLIC
+DTSTART;VALUE=DATE:20230103
+DTEND;VALUE=DATE:20230104
+UID:6605-2747506@learn.sait.ca
+SEQUENCE:0
+LAST-MODIFIED:20250809T070910Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Welcome session | Register to attend a live introduction to PREP-10
+	0
+LOCATION:Zoom (Fall 2025 The SAIT Experience (PREP-100-MA1))
+DESCRIPTION:Join your instructor for a live introduction to PREP-100 and PE
+	RS-050. Learn a bit about the course\, gain some tips for easy course compl
+	etion and get your questions answered. This session is optional. \nRegister
+	 now\n\nQuestions?  Email us.
+CLASS:PUBLIC
+DTSTART:20230103T210000Z
+DTEND:20230103T220000Z
+UID:6605-2747508@learn.sait.ca
+SEQUENCE:0
+LAST-MODIFIED:20250809T070910Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Welcome session | Register to attend a live introduction to PREP-10
+	0
+LOCATION:Zoom (Fall 2025 The SAIT Experience (PREP-100-MA1))
+DESCRIPTION:Join your instructor for a live introduction to PREP-100 and PE
+	RS-050. Learn a bit about the course\, gain some tips for easy course compl
+	etion and get your questions answered. This session is optional. \nRegister
+	 now\n\nQuestions?  Email us.
+CLASS:PUBLIC
+DTSTART:20230104T190000Z
+DTEND:20230104T200000Z
+UID:6605-2747509@learn.sait.ca
+SEQUENCE:0
+LAST-MODIFIED:20250809T070910Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Course Outline - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nCourse Outline - https://learn.sait.ca/d2l/le/content
+	/805444/Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920545\
+	n\n\nView event - https://learn.sait.ca/d2l/le/calendar/805444/event/278023
+	6/detailsview?ou=805444#2780236
+CLASS:PUBLIC
+DTSTART:20230109T150000Z
+DTEND:20230109T150000Z
+UID:6605-2780236@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20250902T204827Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:WEEK 5 - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nWEEK 5 - https://learn.sait.ca/d2l/le/content/805444/
+	Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920551\n\n\nVie
+	w event - https://learn.sait.ca/d2l/le/calendar/805444/event/2780230/detail
+	sview?ou=805444#2780230
+CLASS:PUBLIC
+DTSTART:20230130T150000Z
+DTEND:20230130T150000Z
+UID:6605-2780230@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20250924T202735Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:WEEK 7 - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nWEEK 7 - https://learn.sait.ca/d2l/le/content/805444/
+	Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920553\n\n\nVie
+	w event - https://learn.sait.ca/d2l/le/calendar/805444/event/2780234/detail
+	sview?ou=805444#2780234
+CLASS:PUBLIC
+DTSTART:20230227T150000Z
+DTEND:20230227T150000Z
+UID:6605-2780234@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20251014T212829Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:WEEK 8 - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nWEEK 8 - https://learn.sait.ca/d2l/le/content/805444/
+	Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920554\n\n\nVie
+	w event - https://learn.sait.ca/d2l/le/calendar/805444/event/2780235/detail
+	sview?ou=805444#2780235
+CLASS:PUBLIC
+DTSTART:20230227T150000Z
+DTEND:20230227T150000Z
+UID:6605-2780235@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20251027T175120Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:WEEK 9 - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nWEEK 9 - https://learn.sait.ca/d2l/le/content/805444/
+	Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920555\n\n\nVie
+	w event - https://learn.sait.ca/d2l/le/calendar/805444/event/2780238/detail
+	sview?ou=805444#2780238
+CLASS:PUBLIC
+DTSTART:20230308T170000Z
+DTEND:20230308T170000Z
+UID:6605-2780238@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20251027T182204Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Last day to complete PREP-100 for the Winter 2023 term
+LOCATION:Fall 2025 The SAIT Experience (PREP-100-MA1)
+CLASS:PUBLIC
+DTSTART;VALUE=DATE:20230428
+DTEND;VALUE=DATE:20230429
+UID:6605-2747507@learn.sait.ca
+SEQUENCE:0
+LAST-MODIFIED:20250809T070910Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:PROJECT 2 - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Assignments:\nPROJECT 2 - https://learn.sait.ca/d2l/lms/dropbox
+	/user/folder_submit_files.d2l?ou=805444&db=963538\n\n\nView event - https:/
+	/learn.sait.ca/d2l/le/calendar/805444/event/2780210/detailsview?ou=805444#2
+	780210
+CLASS:PUBLIC
+DTSTART:20240122T150000Z
+DTEND:20240122T150000Z
+UID:6605-2780210@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250925T222238Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:WEEK 1 - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nWEEK 1 - https://learn.sait.ca/d2l/le/content/805444/
+	Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920548\n\n\nVie
+	w event - https://learn.sait.ca/d2l/le/calendar/805444/event/2780223/detail
+	sview?ou=805444#2780223
+CLASS:PUBLIC
+DTSTART:20240903T210000Z
+DTEND:20240903T210000Z
+UID:6605-2780223@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20250902T204835Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:PROJECT 1 - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Assignments:\nPROJECT 1 - https://learn.sait.ca/d2l/lms/dropbox
+	/user/folder_submit_files.d2l?ou=805444&db=963534\n\n\nView event - https:/
+	/learn.sait.ca/d2l/le/calendar/805444/event/2780207/detailsview?ou=805444#2
+	780207
+CLASS:PUBLIC
+DTSTART:20250106T150000Z
+DTEND:20250106T150000Z
+UID:6605-2780207@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250902T204335Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Course Schedule - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nCourse Schedule - https://learn.sait.ca/d2l/le/conten
+	t/805444/Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920546
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/805444/event/27802
+	37/detailsview?ou=805444#2780237
+CLASS:PUBLIC
+DTSTART:20250106T150000Z
+DTEND:20250106T150000Z
+UID:6605-2780237@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20250902T204827Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:WEEK 4 - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nWEEK 4 - https://learn.sait.ca/d2l/le/content/805444/
+	Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920550\n\n\nVie
+	w event - https://learn.sait.ca/d2l/le/calendar/805444/event/2780228/detail
+	sview?ou=805444#2780228
+CLASS:PUBLIC
+DTSTART:20250127T150000Z
+DTEND:20250127T150000Z
+UID:6605-2780228@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20250917T171341Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:SKETCHING - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nSKETCHING - https://learn.sait.ca/d2l/le/content/8054
+	44/Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920572\n\n\n
+	View event - https://learn.sait.ca/d2l/le/calendar/805444/event/2780229/det
+	ailsview?ou=805444#2780229
+CLASS:PUBLIC
+DTSTART:20250130T160000Z
+DTEND:20250130T160000Z
+UID:6605-2780229@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20250926T172003Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:THEORY - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nTHEORY - https://learn.sait.ca/d2l/le/content/805444/
+	Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920573\n\n\nVie
+	w event - https://learn.sait.ca/d2l/le/calendar/805444/event/2780232/detail
+	sview?ou=805444#2780232
+CLASS:PUBLIC
+DTSTART:20250203T150000Z
+DTEND:20250203T150000Z
+UID:6605-2780232@learn.sait.ca
+SEQUENCE:0
+LAST-MODIFIED:20250826T160205Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:SKETCH 2 - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Assignments:\nSKETCH 2 - https://learn.sait.ca/d2l/lms/dropbox/
+	user/folder_submit_files.d2l?ou=805444&db=963536\n\n\nView event - https://
+	learn.sait.ca/d2l/le/calendar/805444/event/2780208/detailsview?ou=805444#27
+	80208
+CLASS:PUBLIC
+DTSTART:20250206T150000Z
+DTEND:20250206T150000Z
+UID:6605-2780208@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20251010T014234Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:WEEK 6 - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nWEEK 6 - https://learn.sait.ca/d2l/le/content/805444/
+	Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920552\n\n\nVie
+	w event - https://learn.sait.ca/d2l/le/calendar/805444/event/2780233/detail
+	sview?ou=805444#2780233
+CLASS:PUBLIC
+DTSTART:20250210T150000Z
+DTEND:20250210T150000Z
+UID:6605-2780233@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20251006T183059Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:D2L Quiz Orientation - Available
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nD2L Quiz Orientation - https://learn.sait.ca/d2l/lms/
+	quizzing/quizzing.d2l?ou=823317&qi=1856135\n\n\nView event - https://learn.
+	sait.ca/d2l/le/calendar/823317/event/2771551/detailsview?ou=823317#2771551
+CLASS:PUBLIC
+DTSTART:20250804T060000Z
+DTEND:20250804T060000Z
+UID:6605-2771551@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170811Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Syllabus Quiz - Available
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nSyllabus Quiz - https://learn.sait.ca/d2l/lms/quizzin
+	g/quizzing.d2l?ou=823317&qi=1856164\n\n\nView event - https://learn.sait.ca
+	/d2l/le/calendar/823317/event/2771580/detailsview?ou=823317#2771580
+CLASS:PUBLIC
+DTSTART:20250805T055959Z
+DTEND:20250805T055959Z
+UID:6605-2771580@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170812Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 0: Introduction/Lab Duties/Policies/ Equipment Check - Availabl
+	e
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nLab 0: Introduction/Lab Duties/Policies/ Equipment Ch
+	eck - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856
+	593\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823449/event/27
+	72465/detailsview?ou=823449#2772465
+CLASS:PUBLIC
+DTSTART:20250829T055900Z
+DTEND:20250829T055900Z
+UID:6605-2772465@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250820T180242Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 1:  Basic Circuits\, Electrical Measurements and Ohm's Law - Av
+	ailable
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nLab 1:  Basic Circuits\, Electrical Measurements and 
+	Ohm's Law - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&q
+	i=1856653\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823449/ev
+	ent/2773221/detailsview?ou=823449#2773221
+CLASS:PUBLIC
+DTSTART:20250829T055959Z
+DTEND:20250829T055959Z
+UID:6605-2773221@learn.sait.ca
+SEQUENCE:11
+LAST-MODIFIED:20250908T165039Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment 1 - Available
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nAssignment 1 - https://learn.sait.ca/d2l/lms/quizzing
+	/quizzing.d2l?ou=823317&qi=1856138\n\n\nView event - https://learn.sait.ca/
+	d2l/le/calendar/823317/event/2771553/detailsview?ou=823317#2771553
+CLASS:PUBLIC
+DTSTART:20250901T060000Z
+DTEND:20250901T060000Z
+UID:6605-2771553@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170812Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Practice: Ohms Law and Power Law - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Ohms Law and Power Law Practice\nUse the notes from class\, D2L
+	\, the textbook\, and your own research\, to answer the questions. \nYou ha
+	ve unlimited attempts available for practice quizzes\, and they do not coun
+	t towards your grade.\n\n\nQuizzes:\nPractice: Ohms Law and Power Law - htt
+	ps://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856629\n\n\n
+	View event - https://learn.sait.ca/d2l/le/calendar/823449/event/2772518/det
+	ailsview?ou=823449#2772518
+CLASS:PUBLIC
+DTSTART:20250901T140000Z
+DTEND:20250901T140000Z
+UID:6605-2772518@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250820T180246Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Practice: Number System Conversions - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Number Systems Conversion Practice\nUse the notes from class\, 
+	D2L\, the textbook\, and your own research\, to answer the questions. \nYou
+	 have unlimited attempts available for practice quizzes\, and they do not c
+	ount towards your grade.\n\n\nQuizzes:\nPractice: Number System Conversions
+	 - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856630
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823449/event/27725
+	19/detailsview?ou=823449#2772519
+CLASS:PUBLIC
+DTSTART:20250901T140000Z
+DTEND:20250901T140000Z
+UID:6605-2772519@learn.sait.ca
+SEQUENCE:3
+LAST-MODIFIED:20251024T145203Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Practice: Boolean - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Boolean Practice\nUse the notes from class\, D2L\, the textbook
+	\, and your own research\, to answer the questions. \nYou have unlimited at
+	tempts available for practice quizzes\, and they do not count towards your 
+	grade.\n\n\nQuizzes:\nPractice: Boolean - https://learn.sait.ca/d2l/lms/qui
+	zzing/quizzing.d2l?ou=823449&qi=1856631\n\n\nView event - https://learn.sai
+	t.ca/d2l/le/calendar/823449/event/2772520/detailsview?ou=823449#2772520
+CLASS:PUBLIC
+DTSTART:20250901T140000Z
+DTEND:20250901T140000Z
+UID:6605-2772520@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250820T180246Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Practice: Boolean Logic Circuits - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Boolean Logic Circuits Practice\nUse the notes from class\, D2L
+	\, the textbook\, and your own research\, to answer the questions. \nYou ha
+	ve unlimited attempts available for practice quizzes\, and they do not coun
+	t towards your grade.\n\n\nQuizzes:\nPractice: Boolean Logic Circuits - htt
+	ps://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856632\n\n\n
+	View event - https://learn.sait.ca/d2l/le/calendar/823449/event/2772521/det
+	ailsview?ou=823449#2772521
+CLASS:PUBLIC
+DTSTART:20250901T140000Z
+DTEND:20250901T140000Z
+UID:6605-2772521@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250820T180246Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Computer Skills Assignment - Available
+LOCATION:Fall 2025 Computing for Engineering Technology (COMP-213-MED)
+DESCRIPTION:During this assignment you will need to complete some practical
+	 tasks using your computer and take screenshots showing your work. Those sc
+	reenshots will need to be inserted into the answer boxes.\nNOTE: If paste o
+	ption does not work for your browser\, save the screenshots as files and up
+	load them in the corresponding answer boxes.\n\n\nQuizzes:\nComputer Skills
+	 Assignment - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=797356
+	&qi=1821074\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/797356/
+	event/2799993/detailsview?ou=797356#2799993
+CLASS:PUBLIC
+DTSTART:20250904T060100Z
+DTEND:20250904T060100Z
+UID:6605-2799993@learn.sait.ca
+SEQUENCE:3
+LAST-MODIFIED:20250917T144011Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 2a: Electronic Principles - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Electronics Test and Measurement Quiz\n Use the notes from clas
+	s\, D2L\, the textbook\, and your own research\, to answer the questions.\n
+	For this quiz\, you are permitted one (1) attempt\, and the result will be 
+	your grade for the quiz.\n\n\nQuizzes:\nQuiz 2a: Electronic Principles - ht
+	tps://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856608\n\n\
+	nView event - https://learn.sait.ca/d2l/le/calendar/823449/event/2772494/de
+	tailsview?ou=823449#2772494
+CLASS:PUBLIC
+DTSTART:20250905T161000Z
+DTEND:20250905T161000Z
+UID:6605-2772494@learn.sait.ca
+SEQUENCE:5
+LAST-MODIFIED:20250905T175120Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 2b: Series and Parallel Circuits - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Series and Parallel Circuit Quiz\n Use the notes from class\, D
+	2L\, the textbook\, and your own research\, to answer the questions.\nFor t
+	his quiz\, you are permitted one (1) attempt\, and the result will be your 
+	grade for the quiz.\n\n\nQuizzes:\nQuiz 2b: Series and Parallel Circuits - 
+	https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856609\n\
+	n\nView event - https://learn.sait.ca/d2l/le/calendar/823449/event/2772496/
+	detailsview?ou=823449#2772496
+CLASS:PUBLIC
+DTSTART:20250908T055959Z
+DTEND:20250908T055959Z
+UID:6605-2772496@learn.sait.ca
+SEQUENCE:5
+LAST-MODIFIED:20250905T175321Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 2a:  Kirchhoff's Laws - Series and Parallel Circuits - Availabl
+	e
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nLab 2a:  Kirchhoff's Laws - Series and Parallel Circu
+	its - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856
+	654\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823449/event/27
+	73223/detailsview?ou=823449#2773223
+CLASS:PUBLIC
+DTSTART:20250908T055959Z
+DTEND:20250908T055959Z
+UID:6605-2773223@learn.sait.ca
+SEQUENCE:10
+LAST-MODIFIED:20250908T182952Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 1 - Requires Respondus LockDown Browser + Webcam - Available
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nQuiz 1 - Requires Respondus LockDown Browser + Webcam
+	 - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823317&qi=1856139
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823317/event/27715
+	55/detailsview?ou=823317#2771555
+CLASS:PUBLIC
+DTSTART:20250908T060000Z
+DTEND:20250908T060000Z
+UID:6605-2771555@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170812Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 2b:  Kirchhoff's Laws - Mixed Circuits\, Power Laws and Measure
+	ment Error - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nLab 2b:  Kirchhoff's Laws - Mixed Circuits\, Power La
+	ws and Measurement Error - https://learn.sait.ca/d2l/lms/quizzing/quizzing.
+	d2l?ou=823449&qi=1856655\n\n\nView event - https://learn.sait.ca/d2l/le/cal
+	endar/823449/event/2773248/detailsview?ou=823449#2773248
+CLASS:PUBLIC
+DTSTART:20250910T152600Z
+DTEND:20250910T152600Z
+UID:6605-2773248@learn.sait.ca
+SEQUENCE:8
+LAST-MODIFIED:20251007T003058Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:WEEK 2 - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nWEEK 2 - https://learn.sait.ca/d2l/le/content/805444/
+	Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920549\n\n\nVie
+	w event - https://learn.sait.ca/d2l/le/calendar/805444/event/2780224/detail
+	sview?ou=805444#2780224
+CLASS:PUBLIC
+DTSTART:20250910T210000Z
+DTEND:20250910T210000Z
+UID:6605-2780224@learn.sait.ca
+SEQUENCE:3
+LAST-MODIFIED:20250909T182019Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:WEEK 3 - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nWEEK 3 - https://learn.sait.ca/d2l/le/content/805444/
+	Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920560\n\n\nVie
+	w event - https://learn.sait.ca/d2l/le/calendar/805444/event/2780227/detail
+	sview?ou=805444#2780227
+CLASS:PUBLIC
+DTSTART:20250910T210000Z
+DTEND:20250910T210000Z
+UID:6605-2780227@learn.sait.ca
+SEQUENCE:3
+LAST-MODIFIED:20250910T184636Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:SKETCHING - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nSKETCHING - https://learn.sait.ca/d2l/le/content/8054
+	44/Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920568\n\n\n
+	View event - https://learn.sait.ca/d2l/le/calendar/805444/event/2780221/det
+	ailsview?ou=805444#2780221
+CLASS:PUBLIC
+DTSTART:20250911T210000Z
+DTEND:20250911T210000Z
+UID:6605-2780221@learn.sait.ca
+SEQUENCE:3
+LAST-MODIFIED:20250910T201825Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 2c: Ohm's and Power Laws applied to Circuits - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Ohm's and Power Laws applied to Circuits\n Use the notes from c
+	lass\, D2L\, the textbook\, and your own research\, to answer the questions
+	.\nFor this quiz\, you are permitted one (1) attempt\, and the result will 
+	be your grade for the quiz.\n\n\nQuizzes:\nQuiz 2c: Ohm's and Power Laws ap
+	plied to Circuits - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=
+	823449&qi=1856610\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/8
+	23449/event/2772498/detailsview?ou=823449#2772498
+CLASS:PUBLIC
+DTSTART:20250912T135900Z
+DTEND:20250912T135900Z
+UID:6605-2772498@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20250912T135956Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Small Assignment 1 - Malware - Due
+LOCATION:Fall 2025 Computing for Engineering Technology (COMP-213-MED)
+DESCRIPTION:Assignments:\nSmall Assignment 1 - Malware\n\n\nView event - ht
+	tps://learn.sait.ca/d2l/le/calendar/797356/event/2801407/detailsview?ou=797
+	356#2801407
+CLASS:PUBLIC
+DTSTART:20250914T055959Z
+DTEND:20250914T055959Z
+UID:6605-2801407@learn.sait.ca
+SEQUENCE:0
+LAST-MODIFIED:20250907T132604Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Syllabus Quiz - Due
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nSyllabus Quiz - https://learn.sait.ca/d2l/lms/quizzin
+	g/quizzing.d2l?ou=823317&qi=1856164\n\n\nView event - https://learn.sait.ca
+	/d2l/le/calendar/823317/event/2771579/detailsview?ou=823317#2771579
+CLASS:PUBLIC
+DTSTART:20250915T055959Z
+DTEND:20250915T055959Z
+UID:6605-2771579@learn.sait.ca
+SEQUENCE:5
+LAST-MODIFIED:20250928T182436Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment Set 1 - Due
+LOCATION:Fall 2025 Engineering Statics (STCS-255-D)
+DESCRIPTION:Please include your calculations\, draw graphs and box the fina
+	l answers.  Upload your solutions as a single pdf or jpeg file here before 
+	the deadline. \nUpdate-Solutions are now added. \n\n\nAssignments:\nAssignm
+	ent Set 1 - https://learn.sait.ca/d2l/lms/dropbox/user/folder_submit_files.
+	d2l?ou=797955&db=968378\n\n\nView event - https://learn.sait.ca/d2l/le/cale
+	ndar/797955/event/2798475/detailsview?ou=797955#2798475
+CLASS:PUBLIC
+DTSTART:20250915T055959Z
+DTEND:20250915T055959Z
+UID:6605-2798475@learn.sait.ca
+SEQUENCE:7
+LAST-MODIFIED:20251020T123455Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Computer Skills Assignment - Due
+LOCATION:Fall 2025 Computing for Engineering Technology (COMP-213-MED)
+DESCRIPTION:During this assignment you will need to complete some practical
+	 tasks using your computer and take screenshots showing your work. Those sc
+	reenshots will need to be inserted into the answer boxes.\nNOTE: If paste o
+	ption does not work for your browser\, save the screenshots as files and up
+	load them in the corresponding answer boxes.\n\n\nQuizzes:\nComputer Skills
+	 Assignment - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=797356
+	&qi=1821074\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/797356/
+	event/2799992/detailsview?ou=797356#2799992
+CLASS:PUBLIC
+DTSTART:20250917T055959Z
+DTEND:20250917T055959Z
+UID:6605-2799992@learn.sait.ca
+SEQUENCE:10
+LAST-MODIFIED:20250917T144038Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Computer Skills Assignment - Availability Ends
+LOCATION:Fall 2025 Computing for Engineering Technology (COMP-213-MED)
+DESCRIPTION:During this assignment you will need to complete some practical
+	 tasks using your computer and take screenshots showing your work. Those sc
+	reenshots will need to be inserted into the answer boxes.\nNOTE: If paste o
+	ption does not work for your browser\, save the screenshots as files and up
+	load them in the corresponding answer boxes.\n\n\nQuizzes:\nComputer Skills
+	 Assignment - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=797356
+	&qi=1821074\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/797356/
+	event/2799994/detailsview?ou=797356#2799994
+CLASS:PUBLIC
+DTSTART:20250917T055959Z
+DTEND:20250917T055959Z
+UID:6605-2799994@learn.sait.ca
+SEQUENCE:3
+LAST-MODIFIED:20250917T144011Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Computer Skills Exam - Available
+LOCATION:Fall 2025 Computing for Engineering Technology (COMP-213-MED)
+DESCRIPTION:You have 45 minutes to complete the exam from the start date an
+	d time specified in Announcements and Calendar.\nGood luck!\n\n\nQuizzes:\n
+	Computer Skills Exam - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?
+	ou=797356&qi=1821075\n\n\nView event - https://learn.sait.ca/d2l/le/calenda
+	r/797356/event/2805584/detailsview?ou=797356#2805584
+CLASS:PUBLIC
+DTSTART:20250918T181500Z
+DTEND:20250918T181500Z
+UID:6605-2805584@learn.sait.ca
+SEQUENCE:3
+LAST-MODIFIED:20250913T235003Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Computer Skills Exam - Due
+LOCATION:Fall 2025 Computing for Engineering Technology (COMP-213-MED)
+DESCRIPTION:You have 45 minutes to complete the exam from the start date an
+	d time specified in Announcements and Calendar.\nGood luck!\n\n\nQuizzes:\n
+	Computer Skills Exam - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?
+	ou=797356&qi=1821075\n\n\nView event - https://learn.sait.ca/d2l/le/calenda
+	r/797356/event/2805583/detailsview?ou=797356#2805583
+CLASS:PUBLIC
+DTSTART:20250918T190000Z
+DTEND:20250918T190000Z
+UID:6605-2805583@learn.sait.ca
+SEQUENCE:9
+LAST-MODIFIED:20250913T235009Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Computer Skills Exam - Availability Ends
+LOCATION:Fall 2025 Computing for Engineering Technology (COMP-213-MED)
+DESCRIPTION:You have 45 minutes to complete the exam from the start date an
+	d time specified in Announcements and Calendar.\nGood luck!\n\n\nQuizzes:\n
+	Computer Skills Exam - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?
+	ou=797356&qi=1821075\n\n\nView event - https://learn.sait.ca/d2l/le/calenda
+	r/797356/event/2805585/detailsview?ou=797356#2805585
+CLASS:PUBLIC
+DTSTART:20250918T190000Z
+DTEND:20250918T190000Z
+UID:6605-2805585@learn.sait.ca
+SEQUENCE:3
+LAST-MODIFIED:20250913T235003Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:SKETCHING - Available
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Modules:\nSKETCHING - https://learn.sait.ca/d2l/le/content/8054
+	44/Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-19920570\n\n\n
+	View event - https://learn.sait.ca/d2l/le/calendar/805444/event/2809615/det
+	ailsview?ou=805444#2809615
+CLASS:PUBLIC
+DTSTART:20250918T210000Z
+DTEND:20250918T210000Z
+UID:6605-2809615@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250917T171611Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 1a: Boolean 1 (Number Systems) - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nQuiz 1a: Boolean 1 (Number Systems) - https://learn.s
+	ait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856611\n\n\nView event -
+	 https://learn.sait.ca/d2l/le/calendar/823449/event/2772500/detailsview?ou=
+	823449#2772500
+CLASS:PUBLIC
+DTSTART:20250922T055900Z
+DTEND:20250922T055900Z
+UID:6605-2772500@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250905T175607Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Syllabus Quiz - Availability Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nSyllabus Quiz - https://learn.sait.ca/d2l/lms/quizzin
+	g/quizzing.d2l?ou=823317&qi=1856164\n\n\nView event - https://learn.sait.ca
+	/d2l/le/calendar/823317/event/2771581/detailsview?ou=823317#2771581
+CLASS:PUBLIC
+DTSTART:20250922T055959Z
+DTEND:20250922T055959Z
+UID:6605-2771581@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170812Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 3a: Electrical Control Systems 1 - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Electronic Control Systems Lab\nYour instructor will demonstrat
+	e the EMSI Component boxes and Power Supply today.\nAfter this lab you will
+	 be able to construct basic control circuits using the:\n\n24 vdc power sup
+	ply.\nPushbutton box.\nLight and Buzzer box.\nRelay box.\nTimer box.\n\n\n\
+	nQuizzes:\nLab 3a: Electrical Control Systems 1 - https://learn.sait.ca/d2l
+	/lms/quizzing/quizzing.d2l?ou=823449&qi=1856598\n\n\nView event - https://l
+	earn.sait.ca/d2l/le/calendar/823449/event/2772475/detailsview?ou=823449#277
+	2475
+CLASS:PUBLIC
+DTSTART:20250922T055959Z
+DTEND:20250922T055959Z
+UID:6605-2772475@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20251023T142705Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 2a: Electronic Principles - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Electronics Test and Measurement Quiz\n Use the notes from clas
+	s\, D2L\, the textbook\, and your own research\, to answer the questions.\n
+	For this quiz\, you are permitted one (1) attempt\, and the result will be 
+	your grade for the quiz.\n\n\nQuizzes:\nQuiz 2a: Electronic Principles - ht
+	tps://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856608\n\n\
+	nView event - https://learn.sait.ca/d2l/le/calendar/823449/event/2772495/de
+	tailsview?ou=823449#2772495
+CLASS:PUBLIC
+DTSTART:20250922T055959Z
+DTEND:20250922T055959Z
+UID:6605-2772495@learn.sait.ca
+SEQUENCE:5
+LAST-MODIFIED:20250905T175120Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Small Assignment 2 - IIOT - Due
+LOCATION:Fall 2025 Computing for Engineering Technology (COMP-213-MED)
+DESCRIPTION:Assignments:\nSmall Assignment 2 - IIOT\n\n\nView event - https
+	://learn.sait.ca/d2l/le/calendar/797356/event/2805580/detailsview?ou=797356
+	#2805580
+CLASS:PUBLIC
+DTSTART:20250922T055959Z
+DTEND:20250922T055959Z
+UID:6605-2805580@learn.sait.ca
+SEQUENCE:0
+LAST-MODIFIED:20250911T193231Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment 2  - Available
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nAssignment 2  - https://learn.sait.ca/d2l/lms/quizzin
+	g/quizzing.d2l?ou=823317&qi=1856140\n\n\nView event - https://learn.sait.ca
+	/d2l/le/calendar/823317/event/2771557/detailsview?ou=823317#2771557
+CLASS:PUBLIC
+DTSTART:20250922T060000Z
+DTEND:20250922T060000Z
+UID:6605-2771557@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170812Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 2 - Requires Respondus LockDown Browser + Webcam - Available
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nQuiz 2 - Requires Respondus LockDown Browser + Webcam
+	 - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823317&qi=1856141
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823317/event/27715
+	59/detailsview?ou=823317#2771559
+CLASS:PUBLIC
+DTSTART:20250922T060000Z
+DTEND:20250922T060000Z
+UID:6605-2771559@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20251020T133717Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:PROJECT 1 - Due
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Assignments:\nPROJECT 1 - https://learn.sait.ca/d2l/lms/dropbox
+	/user/folder_submit_files.d2l?ou=805444&db=963534\n\n\nView event - https:/
+	/learn.sait.ca/d2l/le/calendar/805444/event/2780216/detailsview?ou=805444#2
+	780216
+CLASS:PUBLIC
+DTSTART:20250924T055959Z
+DTEND:20250924T055959Z
+UID:6605-2780216@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250902T204335Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 3b: Basic Sensors - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Basic Sensors Lab\nYour instructor will demonstrate the Conveyo
+	r\, Counter Box\, Optical\, Capacitive\, and Inductive Proximity sensors to
+	day.\nAfter this lab you will be able to construct basic control circuits u
+	sing the additional new components:\n\nProximity Sensors.\nConveyor.\nCount
+	er box.\n\n\n\nQuizzes:\nLab 3b: Basic Sensors - https://learn.sait.ca/d2l/
+	lms/quizzing/quizzing.d2l?ou=823449&qi=1856599\n\n\nView event - https://le
+	arn.sait.ca/d2l/le/calendar/823449/event/2772478/detailsview?ou=823449#2772
+	478
+CLASS:PUBLIC
+DTSTART:20250926T221500Z
+DTEND:20250926T221500Z
+UID:6605-2772478@learn.sait.ca
+SEQUENCE:5
+LAST-MODIFIED:20250926T221543Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment 1 - Availability Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nAssignment 1 - https://learn.sait.ca/d2l/lms/quizzing
+	/quizzing.d2l?ou=823317&qi=1856138\n\n\nView event - https://learn.sait.ca/
+	d2l/le/calendar/823317/event/2771554/detailsview?ou=823317#2771554
+CLASS:PUBLIC
+DTSTART:20250929T055900Z
+DTEND:20250929T055900Z
+UID:6605-2771554@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170812Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 0: Introduction/Lab Duties/Policies/ Equipment Check - Availabi
+	lity Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nLab 0: Introduction/Lab Duties/Policies/ Equipment Ch
+	eck - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856
+	593\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823449/event/27
+	72466/detailsview?ou=823449#2772466
+CLASS:PUBLIC
+DTSTART:20250929T055900Z
+DTEND:20250929T055900Z
+UID:6605-2772466@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250820T180242Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 1b: Boolean Logic - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nQuiz 1b: Boolean Logic - https://learn.sait.ca/d2l/lm
+	s/quizzing/quizzing.d2l?ou=823449&qi=1856612\n\n\nView event - https://lear
+	n.sait.ca/d2l/le/calendar/823449/event/2772502/detailsview?ou=823449#277250
+	2
+CLASS:PUBLIC
+DTSTART:20250929T055900Z
+DTEND:20250929T055900Z
+UID:6605-2772502@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250905T175607Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:D2L Quiz Orientation - Availability Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nD2L Quiz Orientation - https://learn.sait.ca/d2l/lms/
+	quizzing/quizzing.d2l?ou=823317&qi=1856135\n\n\nView event - https://learn.
+	sait.ca/d2l/le/calendar/823317/event/2771552/detailsview?ou=823317#2771552
+CLASS:PUBLIC
+DTSTART:20250929T055959Z
+DTEND:20250929T055959Z
+UID:6605-2771552@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170811Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 1 - Requires Respondus LockDown Browser + Webcam - Availabilit
+	y Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nQuiz 1 - Requires Respondus LockDown Browser + Webcam
+	 - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823317&qi=1856139
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823317/event/27715
+	56/detailsview?ou=823317#2771556
+CLASS:PUBLIC
+DTSTART:20250929T055959Z
+DTEND:20250929T055959Z
+UID:6605-2771556@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170812Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 2b: Series and Parallel Circuits - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Series and Parallel Circuit Quiz\n Use the notes from class\, D
+	2L\, the textbook\, and your own research\, to answer the questions.\nFor t
+	his quiz\, you are permitted one (1) attempt\, and the result will be your 
+	grade for the quiz.\n\n\nQuizzes:\nQuiz 2b: Series and Parallel Circuits - 
+	https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856609\n\
+	n\nView event - https://learn.sait.ca/d2l/le/calendar/823449/event/2772497/
+	detailsview?ou=823449#2772497
+CLASS:PUBLIC
+DTSTART:20250929T055959Z
+DTEND:20250929T055959Z
+UID:6605-2772497@learn.sait.ca
+SEQUENCE:5
+LAST-MODIFIED:20250905T175321Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 1:  Basic Circuits\, Electrical Measurements and Ohm's Law - Av
+	ailability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nLab 1:  Basic Circuits\, Electrical Measurements and 
+	Ohm's Law - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&q
+	i=1856653\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823449/ev
+	ent/2773222/detailsview?ou=823449#2773222
+CLASS:PUBLIC
+DTSTART:20250929T055959Z
+DTEND:20250929T055959Z
+UID:6605-2773222@learn.sait.ca
+SEQUENCE:11
+LAST-MODIFIED:20250908T165039Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 2a:  Kirchhoff's Laws - Series and Parallel Circuits - Availabi
+	lity Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nLab 2a:  Kirchhoff's Laws - Series and Parallel Circu
+	its - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856
+	654\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823449/event/27
+	73224/detailsview?ou=823449#2773224
+CLASS:PUBLIC
+DTSTART:20250929T055959Z
+DTEND:20250929T055959Z
+UID:6605-2773224@learn.sait.ca
+SEQUENCE:10
+LAST-MODIFIED:20250908T182952Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment Set 2 - Due
+LOCATION:Fall 2025 Engineering Statics (STCS-255-D)
+DESCRIPTION:Please include your calculations\, draw graphs and box the fina
+	l answers. Upload the answers as a single pdf or jpeg file here before the 
+	deadline. \n\n\nAssignments:\nAssignment Set 2 - https://learn.sait.ca/d2l/
+	lms/dropbox/user/folder_submit_files.d2l?ou=797955&db=968379\n\n\nView even
+	t - https://learn.sait.ca/d2l/le/calendar/797955/event/2798472/detailsview?
+	ou=797955#2798472
+CLASS:PUBLIC
+DTSTART:20250929T055959Z
+DTEND:20250929T055959Z
+UID:6605-2798472@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20251023T025040Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment 3 - Available
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nAssignment 3 - https://learn.sait.ca/d2l/lms/quizzing
+	/quizzing.d2l?ou=823317&qi=1856142\n\n\nView event - https://learn.sait.ca/
+	d2l/le/calendar/823317/event/2771561/detailsview?ou=823317#2771561
+CLASS:PUBLIC
+DTSTART:20250929T060000Z
+DTEND:20250929T060000Z
+UID:6605-2771561@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170812Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 3 - Requires Respondus LockDown Browser + Webcam - Available
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nQuiz 3 - Requires Respondus LockDown Browser + Webcam
+	 - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823317&qi=1856143
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823317/event/27715
+	63/detailsview?ou=823317#2771563
+CLASS:PUBLIC
+DTSTART:20250929T060000Z
+DTEND:20250929T060000Z
+UID:6605-2771563@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170812Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:SKETCH 1 - Due
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Assignments:\nSKETCH 1 - https://learn.sait.ca/d2l/lms/dropbox/
+	user/folder_submit_files.d2l?ou=805444&db=963535\n\n\nView event - https://
+	learn.sait.ca/d2l/le/calendar/805444/event/2780219/detailsview?ou=805444#27
+	80219
+CLASS:PUBLIC
+DTSTART:20251001T055959Z
+DTEND:20251001T055959Z
+UID:6605-2780219@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250911T205554Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 3a: Electrical Symbols - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Electrical Symbols and Schematics Quiz\n Use the notes from cla
+	ss\, D2L\, the textbook\, and your own research\, to answer the questions.\
+	nFor this quiz\, you are permitted one (1) attempt\, and the result will be
+	 your grade for the quiz.\n\n\n\nQuizzes:\nQuiz 3a: Electrical Symbols - ht
+	tps://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856613\n\n\
+	nView event - https://learn.sait.ca/d2l/le/calendar/823449/event/2772504/de
+	tailsview?ou=823449#2772504
+CLASS:PUBLIC
+DTSTART:20251006T055900Z
+DTEND:20251006T055900Z
+UID:6605-2772504@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250905T175321Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 3c: Overhead Door Control System Design Project - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Overhead Door Control System Lab\nIn this lab you need to apply
+	 your knowledge of Boolean logic\, Electrical Controls\, and Relay Controls
+	\, to design and build a program to control an overhead garage door.\nNOTE:
+	 This lab has both a written Pre-lab (see Assignments) and Pre-lab Quiz (se
+	e Tests) that should be completed prior to coming to the lab\n\n\nQuizzes:\
+	nLab 3c: Overhead Door Control System Design Project - https://learn.sait.c
+	a/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856601\n\n\nView event - http
+	s://learn.sait.ca/d2l/le/calendar/823449/event/2772482/detailsview?ou=82344
+	9#2772482
+CLASS:PUBLIC
+DTSTART:20251006T055959Z
+DTEND:20251006T055959Z
+UID:6605-2772482@learn.sait.ca
+SEQUENCE:7
+LAST-MODIFIED:20250929T214232Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 2c: Ohm's and Power Laws applied to Circuits - Availability En
+	ds
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Ohm's and Power Laws applied to Circuits\n Use the notes from c
+	lass\, D2L\, the textbook\, and your own research\, to answer the questions
+	.\nFor this quiz\, you are permitted one (1) attempt\, and the result will 
+	be your grade for the quiz.\n\n\nQuizzes:\nQuiz 2c: Ohm's and Power Laws ap
+	plied to Circuits - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=
+	823449&qi=1856610\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/8
+	23449/event/2772499/detailsview?ou=823449#2772499
+CLASS:PUBLIC
+DTSTART:20251006T055959Z
+DTEND:20251006T055959Z
+UID:6605-2772499@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20250912T135957Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 2b:  Kirchhoff's Laws - Mixed Circuits\, Power Laws and Measure
+	ment Error - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nLab 2b:  Kirchhoff's Laws - Mixed Circuits\, Power La
+	ws and Measurement Error - https://learn.sait.ca/d2l/lms/quizzing/quizzing.
+	d2l?ou=823449&qi=1856655\n\n\nView event - https://learn.sait.ca/d2l/le/cal
+	endar/823449/event/2773249/detailsview?ou=823449#2773249
+CLASS:PUBLIC
+DTSTART:20251006T055959Z
+DTEND:20251006T055959Z
+UID:6605-2773249@learn.sait.ca
+SEQUENCE:8
+LAST-MODIFIED:20251007T003058Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 1a: Boolean 1 (Number Systems) - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nQuiz 1a: Boolean 1 (Number Systems) - https://learn.s
+	ait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856611\n\n\nView event -
+	 https://learn.sait.ca/d2l/le/calendar/823449/event/2772501/detailsview?ou=
+	823449#2772501
+CLASS:PUBLIC
+DTSTART:20251013T055900Z
+DTEND:20251013T055900Z
+UID:6605-2772501@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250905T175607Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 3b: Electrical Relay Control Systems - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Electrical Relay Control Systems Quiz\n Use the notes from clas
+	s\, D2L\, the textbook\, and your own research\, to answer the questions.\n
+	For this quiz\, you are permitted one (1) attempt\, and the result will be 
+	your grade for the quiz.\n\n\nQuizzes:\nQuiz 3b: Electrical Relay Control S
+	ystems - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1
+	856614\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823449/event
+	/2772506/detailsview?ou=823449#2772506
+CLASS:PUBLIC
+DTSTART:20251013T055900Z
+DTEND:20251013T055900Z
+UID:6605-2772506@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250905T175321Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 3a: Electrical Control Systems 1 - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Electronic Control Systems Lab\nYour instructor will demonstrat
+	e the EMSI Component boxes and Power Supply today.\nAfter this lab you will
+	 be able to construct basic control circuits using the:\n\n24 vdc power sup
+	ply.\nPushbutton box.\nLight and Buzzer box.\nRelay box.\nTimer box.\n\n\n\
+	nQuizzes:\nLab 3a: Electrical Control Systems 1 - https://learn.sait.ca/d2l
+	/lms/quizzing/quizzing.d2l?ou=823449&qi=1856598\n\n\nView event - https://l
+	earn.sait.ca/d2l/le/calendar/823449/event/2772476/detailsview?ou=823449#277
+	2476
+CLASS:PUBLIC
+DTSTART:20251013T055959Z
+DTEND:20251013T055959Z
+UID:6605-2772476@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20251023T142705Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Archived in 2025  Lab 3c: Overhead Door Control System - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Overhead Door Control System Lab\nIn this lab you need to apply
+	 your knowledge of Boolean logic\, Electrical Controls\, and Relay Controls
+	\, to design and build a program to control an overhead garage door.\nNOTE:
+	 THIS LAB HAS A GRADABLE PRE-LAB COMPONENT!\n\n\n\nQuizzes:\nArchived in 20
+	25  Lab 3c: Overhead Door Control System - https://learn.sait.ca/d2l/lms/qu
+	izzing/quizzing.d2l?ou=823449&qi=1856600\n\n\nView event - https://learn.sa
+	it.ca/d2l/le/calendar/823449/event/2772480/detailsview?ou=823449#2772480
+CLASS:PUBLIC
+DTSTART:20251013T055959Z
+DTEND:20251013T055959Z
+UID:6605-2772480@learn.sait.ca
+SEQUENCE:8
+LAST-MODIFIED:20250820T204350Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 4: Pneumatic Systems - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Pneumatic Systems Lab\nYour instructor will demonstrate the EMS
+	I Pneumatic components and air supply today.\nAfter this lab you will be ab
+	le to construct basic pneumatic circuits using the:\n\nAir Filter/Regulator
+	.\nSingle Acting Cylinder.\n3/2 Pushbutton Valve.\n5/2 Detent Valve.\nDoubl
+	e Acting Cylinder.\n5/2 single pilot DCV.\nPressure Regulator.\nDual Pressu
+	re Valve.\n3/2 Roller Lever Valves.\nShuttle Valve.\n\n\n\nQuizzes:\nLab 4:
+	 Pneumatic Systems - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou
+	=823449&qi=1856602\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/
+	823449/event/2772484/detailsview?ou=823449#2772484
+CLASS:PUBLIC
+DTSTART:20251013T055959Z
+DTEND:20251013T055959Z
+UID:6605-2772484@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250908T183901Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment 2  - Availability Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nAssignment 2  - https://learn.sait.ca/d2l/lms/quizzin
+	g/quizzing.d2l?ou=823317&qi=1856140\n\n\nView event - https://learn.sait.ca
+	/d2l/le/calendar/823317/event/2771558/detailsview?ou=823317#2771558
+CLASS:PUBLIC
+DTSTART:20251020T055900Z
+DTEND:20251020T055900Z
+UID:6605-2771558@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170812Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 1b: Boolean Logic - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nQuiz 1b: Boolean Logic - https://learn.sait.ca/d2l/lm
+	s/quizzing/quizzing.d2l?ou=823449&qi=1856612\n\n\nView event - https://lear
+	n.sait.ca/d2l/le/calendar/823449/event/2772503/detailsview?ou=823449#277250
+	3
+CLASS:PUBLIC
+DTSTART:20251020T055900Z
+DTEND:20251020T055900Z
+UID:6605-2772503@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250905T175607Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 4: Pneumatic Symbols - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nQuiz 4: Pneumatic Symbols - https://learn.sait.ca/d2l
+	/lms/quizzing/quizzing.d2l?ou=823449&qi=1856615\n\n\nView event - https://l
+	earn.sait.ca/d2l/le/calendar/823449/event/2772508/detailsview?ou=823449#277
+	2508
+CLASS:PUBLIC
+DTSTART:20251020T055900Z
+DTEND:20251020T055900Z
+UID:6605-2772508@learn.sait.ca
+SEQUENCE:5
+LAST-MODIFIED:20250905T175321Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 2 - Requires Respondus LockDown Browser + Webcam - Availabilit
+	y Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nQuiz 2 - Requires Respondus LockDown Browser + Webcam
+	 - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823317&qi=1856141
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823317/event/27715
+	60/detailsview?ou=823317#2771560
+CLASS:PUBLIC
+DTSTART:20251020T055959Z
+DTEND:20251020T055959Z
+UID:6605-2771560@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20251020T133717Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 3b: Basic Sensors - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Basic Sensors Lab\nYour instructor will demonstrate the Conveyo
+	r\, Counter Box\, Optical\, Capacitive\, and Inductive Proximity sensors to
+	day.\nAfter this lab you will be able to construct basic control circuits u
+	sing the additional new components:\n\nProximity Sensors.\nConveyor.\nCount
+	er box.\n\n\n\nQuizzes:\nLab 3b: Basic Sensors - https://learn.sait.ca/d2l/
+	lms/quizzing/quizzing.d2l?ou=823449&qi=1856599\n\n\nView event - https://le
+	arn.sait.ca/d2l/le/calendar/823449/event/2772479/detailsview?ou=823449#2772
+	479
+CLASS:PUBLIC
+DTSTART:20251020T055959Z
+DTEND:20251020T055959Z
+UID:6605-2772479@learn.sait.ca
+SEQUENCE:5
+LAST-MODIFIED:20250926T221543Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 5: Pneumatic Control - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Pneumatic Control Lab\nAfter this lab you will be able to contr
+	ol basic pneumatic circuits using:\n\nBi-stable valves.\nIndirect control.\
+	nOne-way flow control valves.\nPneumatic time delay valve.\nPneumatic press
+	ure sequence valve.\n\n\n\nQuizzes:\nLab 5: Pneumatic Control - https://lea
+	rn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856603\n\n\nView eve
+	nt - https://learn.sait.ca/d2l/le/calendar/823449/event/2772486/detailsview
+	?ou=823449#2772486
+CLASS:PUBLIC
+DTSTART:20251020T055959Z
+DTEND:20251020T055959Z
+UID:6605-2772486@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250908T183901Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment 4 - Available
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nAssignment 4 - https://learn.sait.ca/d2l/lms/quizzing
+	/quizzing.d2l?ou=823317&qi=1856144\n\n\nView event - https://learn.sait.ca/
+	d2l/le/calendar/823317/event/2771565/detailsview?ou=823317#2771565
+CLASS:PUBLIC
+DTSTART:20251020T060000Z
+DTEND:20251020T060000Z
+UID:6605-2771565@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170813Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 4 - Requires Respondus LockDown Browser + Webcam - Available
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nQuiz 4 - Requires Respondus LockDown Browser + Webcam
+	 - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823317&qi=1856145
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823317/event/27715
+	67/detailsview?ou=823317#2771567
+CLASS:PUBLIC
+DTSTART:20251020T060000Z
+DTEND:20251020T060000Z
+UID:6605-2771567@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170813Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment Set 3 - Due
+LOCATION:Fall 2025 Engineering Statics (STCS-255-D)
+DESCRIPTION:Please include your calculations\, draw graphs and box the fina
+	l answers. Upload the answers as a single pdf or jpeg file here before the 
+	deadline. A small hint:The questions asking about the direction of the reac
+	tion as multiple choice: the question is asking about the angle that the re
+	action force (of the pin) makes with the structure that is attached to that
+	 pin.For example if it is a shaft or a bar\, the angle that the reaction fo
+	rce makes with the bar.\n\n\n\nAssignments:\nAssignment Set 3 - https://lea
+	rn.sait.ca/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=797955&db=968380
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/797955/event/27984
+	76/detailsview?ou=797955#2798476
+CLASS:PUBLIC
+DTSTART:20251022T055959Z
+DTEND:20251022T055959Z
+UID:6605-2798476@learn.sait.ca
+SEQUENCE:7
+LAST-MODIFIED:20251020T202421Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Spreadsheets Assignment - Due
+LOCATION:Fall 2025 Computing for Engineering Technology (COMP-213-MED)
+DESCRIPTION:Assignments:\nSpreadsheets Assignment\n\n\nView event - https:/
+	/learn.sait.ca/d2l/le/calendar/797356/event/2817172/detailsview?ou=797356#2
+	817172
+CLASS:PUBLIC
+DTSTART:20251022T055959Z
+DTEND:20251022T055959Z
+UID:6605-2817172@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20251010T135400Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Spreadsheets Exam - Available
+LOCATION:Fall 2025 Computing for Engineering Technology (COMP-213-MED)
+DESCRIPTION:\nDownload files for your randomly assigned version of the exam
+	.\nComplete your work.\nSubmit your solution in:\n\nAssessments > Assignmen
+	ts > Spreadsheets Exam\n\n\nQuizzes:\nSpreadsheets Exam - https://learn.sai
+	t.ca/d2l/lms/quizzing/quizzing.d2l?ou=797356&qi=1875850\n\n\nView event - h
+	ttps://learn.sait.ca/d2l/le/calendar/797356/event/2817168/detailsview?ou=79
+	7356#2817168
+CLASS:PUBLIC
+DTSTART:20251023T180000Z
+DTEND:20251023T180000Z
+UID:6605-2817168@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20251023T174016Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Spreadsheets Exam - Due
+LOCATION:Fall 2025 Computing for Engineering Technology (COMP-213-MED)
+DESCRIPTION:\nDownload files for your randomly assigned version of the exam
+	.\nComplete your work.\nSubmit your solution in:\n\nAssessments > Assignmen
+	ts > Spreadsheets Exam\n\n\nQuizzes:\nSpreadsheets Exam - https://learn.sai
+	t.ca/d2l/lms/quizzing/quizzing.d2l?ou=797356&qi=1875850\n\n\nView event - h
+	ttps://learn.sait.ca/d2l/le/calendar/797356/event/2817167/detailsview?ou=79
+	7356#2817167
+CLASS:PUBLIC
+DTSTART:20251023T193000Z
+DTEND:20251023T193000Z
+UID:6605-2817167@learn.sait.ca
+SEQUENCE:7
+LAST-MODIFIED:20251023T174024Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Spreadsheets Exam - Availability Ends
+LOCATION:Fall 2025 Computing for Engineering Technology (COMP-213-MED)
+DESCRIPTION:\nDownload files for your randomly assigned version of the exam
+	.\nComplete your work.\nSubmit your solution in:\n\nAssessments > Assignmen
+	ts > Spreadsheets Exam\n\n\nQuizzes:\nSpreadsheets Exam - https://learn.sai
+	t.ca/d2l/lms/quizzing/quizzing.d2l?ou=797356&qi=1875850\n\n\nView event - h
+	ttps://learn.sait.ca/d2l/le/calendar/797356/event/2817169/detailsview?ou=79
+	7356#2817169
+CLASS:PUBLIC
+DTSTART:20251023T193000Z
+DTEND:20251023T193000Z
+UID:6605-2817169@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20251023T174016Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Spreadsheets Exam - Due
+LOCATION:Fall 2025 Computing for Engineering Technology (COMP-213-MED)
+DESCRIPTION:Assignments:\nSpreadsheets Exam\n\n\nView event - https://learn
+	.sait.ca/d2l/le/calendar/797356/event/2817173/detailsview?ou=797356#2817173
+CLASS:PUBLIC
+DTSTART:20251023T193300Z
+DTEND:20251023T193300Z
+UID:6605-2817173@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20251023T180342Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 3a: Electrical Symbols - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Electrical Symbols and Schematics Quiz\n Use the notes from cla
+	ss\, D2L\, the textbook\, and your own research\, to answer the questions.\
+	nFor this quiz\, you are permitted one (1) attempt\, and the result will be
+	 your grade for the quiz.\n\n\n\nQuizzes:\nQuiz 3a: Electrical Symbols - ht
+	tps://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856613\n\n\
+	nView event - https://learn.sait.ca/d2l/le/calendar/823449/event/2772505/de
+	tailsview?ou=823449#2772505
+CLASS:PUBLIC
+DTSTART:20251027T055900Z
+DTEND:20251027T055900Z
+UID:6605-2772505@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250905T175321Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 6: Electro-Pneumatic Systems - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Electro-Pneumatic Systems Lab\nAfter this lab you will be able 
+	to construct basic electro-pneumatic circuits using the:\n\nElectronic push
+	button inputs.\nSolenoid operated DCVs.\nMagnetic reed switch inputs.\nElec
+	tronic proximity switches.\nRelay controls.\nPressure switch.\nE-Stop pushb
+	utton.\n\n\n\nQuizzes:\nLab 6: Electro-Pneumatic Systems - https://learn.sa
+	it.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856604\n\n\nView event - 
+	https://learn.sait.ca/d2l/le/calendar/823449/event/2772488/detailsview?ou=8
+	23449#2772488
+CLASS:PUBLIC
+DTSTART:20251027T055959Z
+DTEND:20251027T055959Z
+UID:6605-2772488@learn.sait.ca
+SEQUENCE:5
+LAST-MODIFIED:20250908T183902Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:PROJECT 2 - Due
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Assignments:\nPROJECT 2 - https://learn.sait.ca/d2l/lms/dropbox
+	/user/folder_submit_files.d2l?ou=805444&db=963538\n\n\nView event - https:/
+	/learn.sait.ca/d2l/le/calendar/805444/event/2780214/detailsview?ou=805444#2
+	780214
+CLASS:PUBLIC
+DTSTART:20251029T055959Z
+DTEND:20251029T055959Z
+UID:6605-2780214@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250925T222238Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment 3 - Availability Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nAssignment 3 - https://learn.sait.ca/d2l/lms/quizzing
+	/quizzing.d2l?ou=823317&qi=1856142\n\n\nView event - https://learn.sait.ca/
+	d2l/le/calendar/823317/event/2771562/detailsview?ou=823317#2771562
+CLASS:PUBLIC
+DTSTART:20251103T065900Z
+DTEND:20251103T065900Z
+UID:6605-2771562@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170812Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 3b: Electrical Relay Control Systems - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Electrical Relay Control Systems Quiz\n Use the notes from clas
+	s\, D2L\, the textbook\, and your own research\, to answer the questions.\n
+	For this quiz\, you are permitted one (1) attempt\, and the result will be 
+	your grade for the quiz.\n\n\nQuizzes:\nQuiz 3b: Electrical Relay Control S
+	ystems - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1
+	856614\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823449/event
+	/2772507/detailsview?ou=823449#2772507
+CLASS:PUBLIC
+DTSTART:20251103T065900Z
+DTEND:20251103T065900Z
+UID:6605-2772507@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250905T175321Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 3 - Requires Respondus LockDown Browser + Webcam - Availabilit
+	y Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nQuiz 3 - Requires Respondus LockDown Browser + Webcam
+	 - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823317&qi=1856143
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823317/event/27715
+	64/detailsview?ou=823317#2771564
+CLASS:PUBLIC
+DTSTART:20251103T065959Z
+DTEND:20251103T065959Z
+UID:6605-2771564@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170812Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 3c: Overhead Door Control System Design Project - Availability 
+	Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Overhead Door Control System Lab\nIn this lab you need to apply
+	 your knowledge of Boolean logic\, Electrical Controls\, and Relay Controls
+	\, to design and build a program to control an overhead garage door.\nNOTE:
+	 This lab has both a written Pre-lab (see Assignments) and Pre-lab Quiz (se
+	e Tests) that should be completed prior to coming to the lab\n\n\nQuizzes:\
+	nLab 3c: Overhead Door Control System Design Project - https://learn.sait.c
+	a/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856601\n\n\nView event - http
+	s://learn.sait.ca/d2l/le/calendar/823449/event/2772483/detailsview?ou=82344
+	9#2772483
+CLASS:PUBLIC
+DTSTART:20251103T065959Z
+DTEND:20251103T065959Z
+UID:6605-2772483@learn.sait.ca
+SEQUENCE:7
+LAST-MODIFIED:20250929T214232Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 4: Pneumatic Systems - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Pneumatic Systems Lab\nYour instructor will demonstrate the EMS
+	I Pneumatic components and air supply today.\nAfter this lab you will be ab
+	le to construct basic pneumatic circuits using the:\n\nAir Filter/Regulator
+	.\nSingle Acting Cylinder.\n3/2 Pushbutton Valve.\n5/2 Detent Valve.\nDoubl
+	e Acting Cylinder.\n5/2 single pilot DCV.\nPressure Regulator.\nDual Pressu
+	re Valve.\n3/2 Roller Lever Valves.\nShuttle Valve.\n\n\n\nQuizzes:\nLab 4:
+	 Pneumatic Systems - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou
+	=823449&qi=1856602\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/
+	823449/event/2772485/detailsview?ou=823449#2772485
+CLASS:PUBLIC
+DTSTART:20251103T065959Z
+DTEND:20251103T065959Z
+UID:6605-2772485@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250908T183901Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 5: Pneumatic Control - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Pneumatic Control Quiz\n Use the notes from class\, D2L\, and y
+	our own research\, to answer the questions.\nFor this quiz\, you are permit
+	ted one (1) attempt\, and the result will be your grade for the quiz.\n\n\n
+	Quizzes:\nQuiz 5: Pneumatic Control - https://learn.sait.ca/d2l/lms/quizzin
+	g/quizzing.d2l?ou=823449&qi=1856616\n\n\nView event - https://learn.sait.ca
+	/d2l/le/calendar/823449/event/2772510/detailsview?ou=823449#2772510
+CLASS:PUBLIC
+DTSTART:20251103T065959Z
+DTEND:20251103T065959Z
+UID:6605-2772510@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20250905T175321Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment Set 4 - Due
+LOCATION:Fall 2025 Engineering Statics (STCS-255-D)
+DESCRIPTION:Please include your calculations\, draw graphs and box the fina
+	l answers. Upload the answers as a single pdf or jpeg file here before the 
+	deadline. \n\n\nAssignments:\nAssignment Set 4 - https://learn.sait.ca/d2l/
+	lms/dropbox/user/folder_submit_files.d2l?ou=797955&db=968381\n\n\nView even
+	t - https://learn.sait.ca/d2l/le/calendar/797955/event/2798471/detailsview?
+	ou=797955#2798471
+CLASS:PUBLIC
+DTSTART:20251103T065959Z
+DTEND:20251103T065959Z
+UID:6605-2798471@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20251014T150458Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 3c - Pre-Lab Quiz - Due
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nLab 3c - Pre-Lab Quiz - https://learn.sait.ca/d2l/lms
+	/quizzing/quizzing.d2l?ou=823449&qi=1857795\n\n\nView event - https://learn
+	.sait.ca/d2l/le/calendar/823449/event/2830335/detailsview?ou=823449#2830335
+CLASS:PUBLIC
+DTSTART:20251103T065959Z
+DTEND:20251103T065959Z
+UID:6605-2830335@learn.sait.ca
+SEQUENCE:5
+LAST-MODIFIED:20251021T210120Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment 5 - Available
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nAssignment 5 - https://learn.sait.ca/d2l/lms/quizzing
+	/quizzing.d2l?ou=823317&qi=1856146\n\n\nView event - https://learn.sait.ca/
+	d2l/le/calendar/823317/event/2771569/detailsview?ou=823317#2771569
+CLASS:PUBLIC
+DTSTART:20251103T070000Z
+DTEND:20251103T070000Z
+UID:6605-2771569@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170813Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 5 - Requires Respondus LockDown Browser + Webcam - Available
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nQuiz 5 - Requires Respondus LockDown Browser + Webcam
+	 - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823317&qi=1856147
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823317/event/27715
+	71/detailsview?ou=823317#2771571
+CLASS:PUBLIC
+DTSTART:20251103T070000Z
+DTEND:20251103T070000Z
+UID:6605-2771571@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170813Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:SKETCH 2 - Due
+LOCATION:Fall 2025 Mechanical Engineering Technology Concepts (MECH-200-SA2
+	)
+DESCRIPTION:Assignments:\nSKETCH 2 - https://learn.sait.ca/d2l/lms/dropbox/
+	user/folder_submit_files.d2l?ou=805444&db=963536\n\n\nView event - https://
+	learn.sait.ca/d2l/le/calendar/805444/event/2780215/detailsview?ou=805444#27
+	80215
+CLASS:PUBLIC
+DTSTART:20251105T065959Z
+DTEND:20251105T065959Z
+UID:6605-2780215@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20251010T014234Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Visualization Assignment - Due
+LOCATION:Fall 2025 Computing for Engineering Technology (COMP-213-MED)
+DESCRIPTION:Please download the instructions for the visualization assignme
+	nt in Power BI and the dataset. \nComplete the assignment and submit answer
+	s here by the due date. \nRemember\, you need to share your solution with y
+	our instructor as described in the assignment instructions and upload the s
+	creenshot with mobile view.\n\n\nAssignments:\nVisualization Assignment - h
+	ttps://learn.sait.ca/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=797356
+	&db=945506\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/797356/e
+	vent/2834426/detailsview?ou=797356#2834426
+CLASS:PUBLIC
+DTSTART:20251105T065959Z
+DTEND:20251105T065959Z
+UID:6605-2834426@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20251026T131428Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 4: Pneumatic Symbols - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nQuiz 4: Pneumatic Symbols - https://learn.sait.ca/d2l
+	/lms/quizzing/quizzing.d2l?ou=823449&qi=1856615\n\n\nView event - https://l
+	earn.sait.ca/d2l/le/calendar/823449/event/2772509/detailsview?ou=823449#277
+	2509
+CLASS:PUBLIC
+DTSTART:20251110T065900Z
+DTEND:20251110T065900Z
+UID:6605-2772509@learn.sait.ca
+SEQUENCE:5
+LAST-MODIFIED:20250905T175321Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Archived in 2025  Lab 3c: Overhead Door Control System - Availabili
+	ty Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Overhead Door Control System Lab\nIn this lab you need to apply
+	 your knowledge of Boolean logic\, Electrical Controls\, and Relay Controls
+	\, to design and build a program to control an overhead garage door.\nNOTE:
+	 THIS LAB HAS A GRADABLE PRE-LAB COMPONENT!\n\n\n\nQuizzes:\nArchived in 20
+	25  Lab 3c: Overhead Door Control System - https://learn.sait.ca/d2l/lms/qu
+	izzing/quizzing.d2l?ou=823449&qi=1856600\n\n\nView event - https://learn.sa
+	it.ca/d2l/le/calendar/823449/event/2772481/detailsview?ou=823449#2772481
+CLASS:PUBLIC
+DTSTART:20251110T065959Z
+DTEND:20251110T065959Z
+UID:6605-2772481@learn.sait.ca
+SEQUENCE:8
+LAST-MODIFIED:20250820T204350Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 5: Pneumatic Control - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Pneumatic Control Lab\nAfter this lab you will be able to contr
+	ol basic pneumatic circuits using:\n\nBi-stable valves.\nIndirect control.\
+	nOne-way flow control valves.\nPneumatic time delay valve.\nPneumatic press
+	ure sequence valve.\n\n\n\nQuizzes:\nLab 5: Pneumatic Control - https://lea
+	rn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856603\n\n\nView eve
+	nt - https://learn.sait.ca/d2l/le/calendar/823449/event/2772487/detailsview
+	?ou=823449#2772487
+CLASS:PUBLIC
+DTSTART:20251110T065959Z
+DTEND:20251110T065959Z
+UID:6605-2772487@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250908T183902Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 8: PLC Introduction - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:PLC Introduction Lab\nYour instructor will demonstrate the PLC 
+	and PLC I/O box today.\nAfter this lab you will be able to program a PLC vi
+	a a PC and connect the PLC to inputs and outputs.\n\n\nQuizzes:\nLab 8: PLC
+	 Introduction - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=8234
+	49&qi=1856606\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/82344
+	9/event/2772490/detailsview?ou=823449#2772490
+CLASS:PUBLIC
+DTSTART:20251110T065959Z
+DTEND:20251110T065959Z
+UID:6605-2772490@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250908T183902Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 8: Programmable Logic Controller Fundamentals - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:PLC Fundamentals Quiz\n Use the notes from class\, D2L\, the te
+	xtbook\, and your own research\, to answer the questions.\nFor this quiz\, 
+	you are permitted one (1) attempt\, and the result will be your grade for t
+	he quiz.\n\n\nQuizzes:\nQuiz 8: Programmable Logic Controller Fundamentals 
+	- https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856617\
+	n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823449/event/277251
+	2/detailsview?ou=823449#2772512
+CLASS:PUBLIC
+DTSTART:20251110T065959Z
+DTEND:20251110T065959Z
+UID:6605-2772512@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20250905T175321Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Practice:  Pneumatic Control - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Pneumatic Control Practice\nUse the notes from class\, D2L\, th
+	e textbook\, and your own research\, to answer the questions. \nYou have un
+	limited attempts available for practice quizzes\, and they do not count tow
+	ards your grade.\n\n\nQuizzes:\nPractice:  Pneumatic Control - https://lear
+	n.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856633\n\n\nView even
+	t - https://learn.sait.ca/d2l/le/calendar/823449/event/2772522/detailsview?
+	ou=823449#2772522
+CLASS:PUBLIC
+DTSTART:20251110T070100Z
+DTEND:20251110T070100Z
+UID:6605-2772522@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250820T180246Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 9: PLC Programming - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:PLC Programming Quiz\n Use the notes from class\, D2L\, the tex
+	tbook\, and your own research\, to answer the questions.\nFor this quiz\, y
+	ou are permitted one (1) attempt\, and the result will be your grade for th
+	e quiz.\n\n\nQuizzes:\nQuiz 9: PLC Programming - https://learn.sait.ca/d2l/
+	lms/quizzing/quizzing.d2l?ou=823449&qi=1856618\n\n\nView event - https://le
+	arn.sait.ca/d2l/le/calendar/823449/event/2772514/detailsview?ou=823449#2772
+	514
+CLASS:PUBLIC
+DTSTART:20251117T065900Z
+DTEND:20251117T065900Z
+UID:6605-2772514@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20250905T175321Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 6: Electro-Pneumatic Systems - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Electro-Pneumatic Systems Lab\nAfter this lab you will be able 
+	to construct basic electro-pneumatic circuits using the:\n\nElectronic push
+	button inputs.\nSolenoid operated DCVs.\nMagnetic reed switch inputs.\nElec
+	tronic proximity switches.\nRelay controls.\nPressure switch.\nE-Stop pushb
+	utton.\n\n\n\nQuizzes:\nLab 6: Electro-Pneumatic Systems - https://learn.sa
+	it.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856604\n\n\nView event - 
+	https://learn.sait.ca/d2l/le/calendar/823449/event/2772489/detailsview?ou=8
+	23449#2772489
+CLASS:PUBLIC
+DTSTART:20251117T065959Z
+DTEND:20251117T065959Z
+UID:6605-2772489@learn.sait.ca
+SEQUENCE:5
+LAST-MODIFIED:20250908T183902Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 9: Final Design Project (PLC) - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Final Design Project Lab\nYou must design and build a PLC contr
+	olled electro-pneumatic system to identify and sort three different colored
+	 cylinders.\n\n\nQuizzes:\nLab 9: Final Design Project (PLC) - https://lear
+	n.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1858205\n\n\nView even
+	t - https://learn.sait.ca/d2l/le/calendar/823449/event/2775506/detailsview?
+	ou=823449#2775506
+CLASS:PUBLIC
+DTSTART:20251117T065959Z
+DTEND:20251117T065959Z
+UID:6605-2775506@learn.sait.ca
+SEQUENCE:7
+LAST-MODIFIED:20250908T185102Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment Set 5 - Due
+LOCATION:Fall 2025 Engineering Statics (STCS-255-D)
+DESCRIPTION:Please include your calculations\, draw graphs and box the fina
+	l answers. Upload the answers as a single pdf or jpeg file here before the 
+	deadline. \n\n\n\nAssignments:\nAssignment Set 5 - https://learn.sait.ca/d2
+	l/lms/dropbox/user/folder_submit_files.d2l?ou=797955&db=968382\n\n\nView ev
+	ent - https://learn.sait.ca/d2l/le/calendar/797955/event/2798474/detailsvie
+	w?ou=797955#2798474
+CLASS:PUBLIC
+DTSTART:20251117T065959Z
+DTEND:20251117T065959Z
+UID:6605-2798474@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20251014T150833Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment 6 - Available
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nAssignment 6 - https://learn.sait.ca/d2l/lms/quizzing
+	/quizzing.d2l?ou=823317&qi=1856148\n\n\nView event - https://learn.sait.ca/
+	d2l/le/calendar/823317/event/2771573/detailsview?ou=823317#2771573
+CLASS:PUBLIC
+DTSTART:20251117T070000Z
+DTEND:20251117T070000Z
+UID:6605-2771573@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170813Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 6 - Requires Respondus LockDown Browser + Webcam - Available
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nQuiz 6 - Requires Respondus LockDown Browser + Webcam
+	 - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823317&qi=1856149
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823317/event/27715
+	75/detailsview?ou=823317#2771575
+CLASS:PUBLIC
+DTSTART:20251117T070000Z
+DTEND:20251117T070000Z
+UID:6605-2771575@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170813Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment 4 - Availability Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nAssignment 4 - https://learn.sait.ca/d2l/lms/quizzing
+	/quizzing.d2l?ou=823317&qi=1856144\n\n\nView event - https://learn.sait.ca/
+	d2l/le/calendar/823317/event/2771566/detailsview?ou=823317#2771566
+CLASS:PUBLIC
+DTSTART:20251124T065959Z
+DTEND:20251124T065959Z
+UID:6605-2771566@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170813Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 4 - Requires Respondus LockDown Browser + Webcam - Availabilit
+	y Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nQuiz 4 - Requires Respondus LockDown Browser + Webcam
+	 - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823317&qi=1856145
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823317/event/27715
+	68/detailsview?ou=823317#2771568
+CLASS:PUBLIC
+DTSTART:20251124T065959Z
+DTEND:20251124T065959Z
+UID:6605-2771568@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170813Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 5: Pneumatic Control - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Pneumatic Control Quiz\n Use the notes from class\, D2L\, and y
+	our own research\, to answer the questions.\nFor this quiz\, you are permit
+	ted one (1) attempt\, and the result will be your grade for the quiz.\n\n\n
+	Quizzes:\nQuiz 5: Pneumatic Control - https://learn.sait.ca/d2l/lms/quizzin
+	g/quizzing.d2l?ou=823449&qi=1856616\n\n\nView event - https://learn.sait.ca
+	/d2l/le/calendar/823449/event/2772511/detailsview?ou=823449#2772511
+CLASS:PUBLIC
+DTSTART:20251124T065959Z
+DTEND:20251124T065959Z
+UID:6605-2772511@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20250905T175321Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment Set 6 - Due
+LOCATION:Fall 2025 Engineering Statics (STCS-255-D)
+DESCRIPTION:Please include your calculations\, draw graphs and box the fina
+	l answers. Upload the answers as a single pdf or jpeg file here before the 
+	deadline. \n\n\nAssignments:\nAssignment Set 6 - https://learn.sait.ca/d2l/
+	lms/dropbox/user/folder_submit_files.d2l?ou=797955&db=968383\n\n\nView even
+	t - https://learn.sait.ca/d2l/le/calendar/797955/event/2798470/detailsview?
+	ou=797955#2798470
+CLASS:PUBLIC
+DTSTART:20251124T065959Z
+DTEND:20251124T065959Z
+UID:6605-2798470@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250906T221614Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Final Exam! Choose your poison! - Availability Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Surveys:\nFinal Exam! Choose your poison!\n\n\nView event - htt
+	ps://learn.sait.ca/d2l/le/calendar/823317/event/2771585/detailsview?ou=8233
+	17#2771585
+CLASS:PUBLIC
+DTSTART:20251129T000000Z
+DTEND:20251129T000000Z
+UID:6605-2771585@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170814Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment 5 - Availability Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nAssignment 5 - https://learn.sait.ca/d2l/lms/quizzing
+	/quizzing.d2l?ou=823317&qi=1856146\n\n\nView event - https://learn.sait.ca/
+	d2l/le/calendar/823317/event/2771570/detailsview?ou=823317#2771570
+CLASS:PUBLIC
+DTSTART:20251201T065900Z
+DTEND:20251201T065900Z
+UID:6605-2771570@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170813Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 5 - Requires Respondus LockDown Browser + Webcam - Availabilit
+	y Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nQuiz 5 - Requires Respondus LockDown Browser + Webcam
+	 - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823317&qi=1856147
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823317/event/27715
+	72/detailsview?ou=823317#2771572
+CLASS:PUBLIC
+DTSTART:20251201T065959Z
+DTEND:20251201T065959Z
+UID:6605-2771572@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170813Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 8: PLC Introduction - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:PLC Introduction Lab\nYour instructor will demonstrate the PLC 
+	and PLC I/O box today.\nAfter this lab you will be able to program a PLC vi
+	a a PC and connect the PLC to inputs and outputs.\n\n\nQuizzes:\nLab 8: PLC
+	 Introduction - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=8234
+	49&qi=1856606\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/82344
+	9/event/2772491/detailsview?ou=823449#2772491
+CLASS:PUBLIC
+DTSTART:20251201T065959Z
+DTEND:20251201T065959Z
+UID:6605-2772491@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250908T183902Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 8: Programmable Logic Controller Fundamentals - Availability E
+	nds
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:PLC Fundamentals Quiz\n Use the notes from class\, D2L\, the te
+	xtbook\, and your own research\, to answer the questions.\nFor this quiz\, 
+	you are permitted one (1) attempt\, and the result will be your grade for t
+	he quiz.\n\n\nQuizzes:\nQuiz 8: Programmable Logic Controller Fundamentals 
+	- https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1856617\
+	n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823449/event/277251
+	3/detailsview?ou=823449#2772513
+CLASS:PUBLIC
+DTSTART:20251201T065959Z
+DTEND:20251201T065959Z
+UID:6605-2772513@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20250905T175321Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 7: Airlock Doors - Due
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Scenario:\nAs an engineering technologist at Millen Marine\, yo
+	u are required to design an electro-pneumatic control system which operates
+	 the inner hatch of an airlock on a submarine. (The outer hatch control sys
+	tem will be designed later). These are sliding hatches with a pressure swit
+	ch between then to detect if there is water in the airlock. \nThe system sh
+	ould operate as follows and may use any combination of electro-pneumatics y
+	ou choose.\n\nA maintained switch on the command deck enables the hatches t
+	o open.\nA pressure switch detects if there is water in the airlock. Water 
+	present will close the switch.\nThe inner hatch has open and close momentar
+	y buttons on the inside and outside of the hatchway.\n\nPressing either clo
+	se switch will close the hatch.\nPressing either open switch will open the 
+	hatch (if enabled\, and no water is in the airlock)\, as long as a close sw
+	itch is not pressed.\nThe inner hatch will automatically close if the hatch
+	 is left open for 10 seconds after the open switches have been released.\nT
+	he inner hatch will automatically close if water is present.\nThe inner hat
+	ch must open quickly\, and close slowly.\n\n\nAn audible warning device mus
+	t sound on the command deck if there is water in the airlock.\nFor maintena
+	nce\, a pilot light (Safe to use) must illuminate on the command deck if th
+	e inner hatch closes for less than a pre-set number of times. (E.G. 10).\n\
+	n\nPre-Lab (30 marks)\nShow your lab instructor your pre-lab preparation fo
+	r your electro-pneumatic case study at the beginning of the scheduled lab c
+	lass. This must be on pages 2 and 3 of the lab in your Lab Workbook. (Each 
+	learner submits their own preparation.) It must include the following eleme
+	nts:\n\nInput/Output/Control Table.\nBoolean Equations for each output.\nFi
+	rst draft of Electrical Ladder Schematic.\nFirst draft of Pneumatic Schemat
+	ic.\n\nDemonstration (40 marks)\nDemonstrate your functioning electro-pneum
+	atic circuit to your instructor. \nAs-Built Schematics (30 marks)\nShow you
+	r lab instructor your completed as-built electro-pneumatic schematics.\n\n\
+	n\nA complete input/output/control table. \nA complete electrical ladder sc
+	hematic\, drawn neatly in pencil with a ruler and include:\n\nRail voltages
+	.\nRung numbers.\nWire numbers.\nCorrect component symbols.\nConnector dots
+	 (if applicable).\nComponent designations match input/output/control table.
+	\nSchematic matches as-built circuit.\nBoolean equations for each output.\n
+	\n\n\n\n\nA complete pneumatic schematic including the following elements:\
+	n\nValves and actuators drawn correctly.\nComponent designations correct (n
+	umbers and hierarchy) and match input/output/control table .\nPort numbers 
+	included.\nActuation method symbols (pushbutton\, via roller\, spring) corr
+	ect.\nCorrect air service (filter\, regulator\, shutoff\, air source\, etc.
+	).\nRoller lever and reed switch positions on actuators (if applicable).\nC
+	orrect electrical interface (where applicable).\nSchematic matches as-built
+	 circuit.\nBoolean equations for each output.\n\n\n\n\n\n\n\n\nAssignments:
+	\nLab 7: Airlock Doors - https://learn.sait.ca/d2l/lms/dropbox/user/folder_
+	submit_files.d2l?ou=823449&db=961396\n\n\nView event - https://learn.sait.c
+	a/d2l/le/calendar/823449/event/2774962/detailsview?ou=823449#2774962
+CLASS:PUBLIC
+DTSTART:20251201T065959Z
+DTEND:20251201T065959Z
+UID:6605-2774962@learn.sait.ca
+SEQUENCE:3
+LAST-MODIFIED:20250821T194636Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 9: Final Design Project - Due
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Assignments:\nLab 9: Final Design Project - https://learn.sait.
+	ca/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=823449&db=961397\n\n\nVi
+	ew event - https://learn.sait.ca/d2l/le/calendar/823449/event/2774963/detai
+	lsview?ou=823449#2774963
+CLASS:PUBLIC
+DTSTART:20251201T065959Z
+DTEND:20251201T065959Z
+UID:6605-2774963@learn.sait.ca
+SEQUENCE:2
+LAST-MODIFIED:20250822T011044Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Practice Final - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nPractice Final - https://learn.sait.ca/d2l/lms/quizzi
+	ng/quizzing.d2l?ou=823449&qi=1856635\n\n\nView event - https://learn.sait.c
+	a/d2l/le/calendar/823449/event/2772523/detailsview?ou=823449#2772523
+CLASS:PUBLIC
+DTSTART:20251201T150000Z
+DTEND:20251201T150000Z
+UID:6605-2772523@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250820T180246Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment 6 - Availability Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nAssignment 6 - https://learn.sait.ca/d2l/lms/quizzing
+	/quizzing.d2l?ou=823317&qi=1856148\n\n\nView event - https://learn.sait.ca/
+	d2l/le/calendar/823317/event/2771574/detailsview?ou=823317#2771574
+CLASS:PUBLIC
+DTSTART:20251208T065900Z
+DTEND:20251208T065900Z
+UID:6605-2771574@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170813Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 9: PLC Programming - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:PLC Programming Quiz\n Use the notes from class\, D2L\, the tex
+	tbook\, and your own research\, to answer the questions.\nFor this quiz\, y
+	ou are permitted one (1) attempt\, and the result will be your grade for th
+	e quiz.\n\n\nQuizzes:\nQuiz 9: PLC Programming - https://learn.sait.ca/d2l/
+	lms/quizzing/quizzing.d2l?ou=823449&qi=1856618\n\n\nView event - https://le
+	arn.sait.ca/d2l/le/calendar/823449/event/2772515/detailsview?ou=823449#2772
+	515
+CLASS:PUBLIC
+DTSTART:20251208T065900Z
+DTEND:20251208T065900Z
+UID:6605-2772515@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20250905T175321Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 6 - Requires Respondus LockDown Browser + Webcam - Availabilit
+	y Ends
+LOCATION:Fall 2025 Introduction to Thermodynamics (THRM-200-SA1)
+DESCRIPTION:Quizzes:\nQuiz 6 - Requires Respondus LockDown Browser + Webcam
+	 - https://learn.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823317&qi=1856149
+	\n\n\nView event - https://learn.sait.ca/d2l/le/calendar/823317/event/27715
+	76/detailsview?ou=823317#2771576
+CLASS:PUBLIC
+DTSTART:20251208T065959Z
+DTEND:20251208T065959Z
+UID:6605-2771576@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250819T170813Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 10: Robotics Fundamentals - Available
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Robotics Fundamentals Quiz\n Use the notes from class\, D2L\, a
+	nd your own research\, to answer the questions.\nFor this quiz\, you are pe
+	rmitted one (1) attempt\, and the result will be your grade for the quiz.\n
+	\n\nQuizzes:\nQuiz 10: Robotics Fundamentals - https://learn.sait.ca/d2l/lm
+	s/quizzing/quizzing.d2l?ou=823449&qi=1856619\n\n\nView event - https://lear
+	n.sait.ca/d2l/le/calendar/823449/event/2772516/detailsview?ou=823449#277251
+	6
+CLASS:PUBLIC
+DTSTART:20251208T065959Z
+DTEND:20251208T065959Z
+UID:6605-2772516@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20250905T174729Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Assignment Set 7 - Due
+LOCATION:Fall 2025 Engineering Statics (STCS-255-D)
+DESCRIPTION:Last assignment set for the course!Please include your calculat
+	ions\, draw graphs and box the final answers. Upload the answers as a singl
+	e pdf or jpeg file here before the deadline. \n\n\nAssignments:\nAssignment
+	 Set 7 - https://learn.sait.ca/d2l/lms/dropbox/user/folder_submit_files.d2l
+	?ou=797955&db=968384\n\n\nView event - https://learn.sait.ca/d2l/le/calenda
+	r/797955/event/2798473/detailsview?ou=797955#2798473
+CLASS:PUBLIC
+DTSTART:20251208T065959Z
+DTEND:20251208T065959Z
+UID:6605-2798473@learn.sait.ca
+SEQUENCE:4
+LAST-MODIFIED:20250906T222255Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Lab 9: Final Design Project (PLC) - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Final Design Project Lab\nYou must design and build a PLC contr
+	olled electro-pneumatic system to identify and sort three different colored
+	 cylinders.\n\n\nQuizzes:\nLab 9: Final Design Project (PLC) - https://lear
+	n.sait.ca/d2l/lms/quizzing/quizzing.d2l?ou=823449&qi=1858205\n\n\nView even
+	t - https://learn.sait.ca/d2l/le/calendar/823449/event/2775507/detailsview?
+	ou=823449#2775507
+CLASS:PUBLIC
+DTSTART:20251212T065959Z
+DTEND:20251212T065959Z
+UID:6605-2775507@learn.sait.ca
+SEQUENCE:7
+LAST-MODIFIED:20250908T185102Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Practice Final - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Quizzes:\nPractice Final - https://learn.sait.ca/d2l/lms/quizzi
+	ng/quizzing.d2l?ou=823449&qi=1856635\n\n\nView event - https://learn.sait.c
+	a/d2l/le/calendar/823449/event/2772524/detailsview?ou=823449#2772524
+CLASS:PUBLIC
+DTSTART:20251214T220000Z
+DTEND:20251214T220000Z
+UID:6605-2772524@learn.sait.ca
+SEQUENCE:1
+LAST-MODIFIED:20250820T180246Z
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251027T215750Z
+SUMMARY:Quiz 10: Robotics Fundamentals - Availability Ends
+LOCATION:Fall 2025 Electro-Mechanical Systems (MECH-205-SA1)
+DESCRIPTION:Robotics Fundamentals Quiz\n Use the notes from class\, D2L\, a
+	nd your own research\, to answer the questions.\nFor this quiz\, you are pe
+	rmitted one (1) attempt\, and the result will be your grade for the quiz.\n
+	\n\nQuizzes:\nQuiz 10: Robotics Fundamentals - https://learn.sait.ca/d2l/lm
+	s/quizzing/quizzing.d2l?ou=823449&qi=1856619\n\n\nView event - https://lear
+	n.sait.ca/d2l/le/calendar/823449/event/2772517/detailsview?ou=823449#277251
+	7
+CLASS:PUBLIC
+DTSTART:20251217T065959Z
+DTEND:20251217T065959Z
+UID:6605-2772517@learn.sait.ca
+SEQUENCE:6
+LAST-MODIFIED:20250905T174729Z
+END:VEVENT
+END:VCALENDAR
