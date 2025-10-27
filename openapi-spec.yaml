@@ -14,7 +14,7 @@ components:
       in: header
       name: X-API-Key
       description: API key for authentication
-  
+
   schemas:
     Item:
       type: object
@@ -30,7 +30,7 @@ components:
         updated_at:
           type: string
           format: date-time
-    
+
     UpsertRequest:
       type: object
       required: [type, data]
@@ -43,14 +43,14 @@ components:
           type: object
           additionalProperties: true
           description: Item data
-    
+
     SuccessResponse:
       type: object
       properties:
         ok:
           type: boolean
           example: true
-    
+
     ErrorResponse:
       type: object
       properties:
