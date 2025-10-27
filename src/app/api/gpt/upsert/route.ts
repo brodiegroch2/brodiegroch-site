@@ -49,10 +49,10 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ ok: true });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Database error:', error);
     return NextResponse.json(
-      { error: "Database operation failed" },
+      { error: "server", detail: String(error?.message ?? error) },
       { status: 500 }
     );
   }
