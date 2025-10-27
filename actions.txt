@@ -281,6 +281,22 @@ This document describes all available API actions for managing course data, sche
 
 ---
 
+## Action Documentation API
+
+### getActionDocs
+**Method**: GET  
+**Path**: /api/actions  
+**Description**: Retrieve this actions reference documentation to understand available API endpoints and their usage.  
+**Use when**: You need to look up how to use an API endpoint, understand request/response formats, or get example use cases.  
+**Query Parameters** (optional):
+  - action: Filter documentation for a specific action (e.g., "listCourses", "updateDeliverable")
+  - category: Filter documentation for a specific category (e.g., "Course Management", "Deliverables Management")
+**Returns**: Documentation text from actions.txt file with usage instructions.  
+**Example Use Case**: "How do I update a deliverable?" or "What actions are available for courses?"  
+**Special Note**: This endpoint allows the GPT to self-reference and understand how to use other endpoints.
+
+---
+
 ## Best Practices for GPT Usage
 
 1. **When to Query**: Use list operations to display current information before making changes.
@@ -320,4 +336,9 @@ This document describes all available API actions for managing course data, sche
 1. Use getNewsFeed to fetch all course announcements
 2. Filter by specific courseId to see announcements from one course
 3. Display title, description, and publication date to user
+
+**Getting Action Documentation**:
+1. Use getActionDocs to query the actions.txt file
+2. Use optional parameters to filter by specific action or category
+3. Helpful for understanding available endpoints and their usage
 
