@@ -237,12 +237,12 @@ This document describes all available API actions for managing course data, sche
   - Category: Type (Assignment, Exam, Lab, etc.)
   - Grade %: Percentage grade received
   - Letter Grade: Letter grade equivalent
-  - Status: Current status (Not Started, In Progress, Complete, etc.)
+  - Status: Current status (graded, not started, in progress, complete, submitted, etc.)
   - Weight %: Percentage weight in course grade
   - Open Date: When assignment becomes available
   - Close Date: Due date
 **Returns**: Updated deliverable object.  
-**Example Use Case**: "Mark my COMP 213 project as complete with 85% grade"
+**Example Use Case**: "Mark my COMP 213 project as complete with 85% grade" or "Update the status of Quiz 2a to 'graded'"
 
 ---
 
@@ -259,6 +259,25 @@ This document describes all available API actions for managing course data, sche
   - Includes all weekly recurring classes
   - Can be imported into any calendar app
 **Example Use Case**: "Give me my class schedule as a calendar file" or "I want to add my classes to Google Calendar"
+
+---
+
+## News/Announcements API
+
+### getNewsFeed
+**Method**: GET  
+**Path**: /api/news  
+**Description**: Retrieve course announcements from Brightspace RSS feeds.  
+**Use when**: User wants to see latest announcements from their courses, check for updates, or view course news.  
+**Query Parameters** (optional):
+  - courseId: Filter news from a specific course (e.g., "MECH 205", "COMP 213")
+**Returns**: Array of news items with: title, link, description, pubDate, courseId.  
+**Notes**:
+  - Fetches live data from Brightspace/D2L RSS feeds
+  - Some feeds may be empty if there are no current announcements
+  - Automatically strips HTML tags from descriptions
+  - Caches results for 5 minutes to reduce server load
+**Example Use Case**: "Show me the latest announcements from my courses" or "What's new in COMP 213?"
 
 ---
 
@@ -296,4 +315,9 @@ This document describes all available API actions for managing course data, sche
 1. Use listSchedule to show current schedule
 2. Use updateScheduleItem to modify or deleteScheduleItem to remove entries
 3. Use getCalendarFeed to sync with calendar apps
+
+**Checking Course Announcements**:
+1. Use getNewsFeed to fetch all course announcements
+2. Filter by specific courseId to see announcements from one course
+3. Display title, description, and publication date to user
 

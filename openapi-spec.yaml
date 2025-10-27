@@ -30,6 +30,8 @@ tags:
     description: Grading scale management
   - name: calendar
     description: Calendar feed generation
+  - name: news
+    description: Course announcements and news feeds
 
 paths:
   # Courses API
@@ -444,6 +446,37 @@ paths:
               schema:
                 type: string
                 format: binary
+        "500":
+          description: Server error
+
+  # News/Announcements API
+  /api/news:
+    get:
+      operationId: getNewsFeed
+      summary: Get course announcements
+      description: Retrieve course announcements from Brightspace RSS feeds
+      tags: [news]
+      parameters:
+        - in: query
+          name: courseId
+          schema:
+            type: string
+            examples: [MECH 205, COMP 213, STCS 255]
+          description: Filter announcements by specific course
+      responses:
+        "200":
+          description: List of course announcements
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  news:
+                    type: object
+                    additionalProperties: true
+                    description: Course announcements grouped by course
+        "404":
+          description: Course not found
         "500":
           description: Server error
 
