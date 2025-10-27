@@ -18,6 +18,9 @@ export default function Navigation() {
   ];
 
   const dropdownLinks: { href: string; label: string }[] = [
+    { href: '/api-docs', label: 'API Docs' },
+    { href: '/privacy', label: 'Privacy' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   const toggleDropdown = () => {
