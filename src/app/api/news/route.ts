@@ -23,7 +23,7 @@ function parseRSS(rssXml: string): NewsItem[] {
   
   // Extract item tags
   const itemRegex = /<item>([\s\S]*?)<\/item>/g;
-  const matches = rssXml.matchAll(itemRegex);
+  const matches = Array.from(rssXml.matchAll(itemRegex));
   
   for (const match of matches) {
     const itemContent = match[1];
