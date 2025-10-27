@@ -1,0 +1,299 @@
+# API Actions Reference for brodiegroch.ca
+
+This document describes all available API actions for managing course data, schedule, quick links, grading scale, deliverables, and calendar feeds.
+
+---
+
+## Course Management
+
+### listCourses
+**Method**: GET  
+**Path**: /api/data/courses  
+**Description**: Retrieve all courses from the system.  
+**Use when**: You need to display courses, show course information, or reference course details.  
+**Returns**: Array of course objects with fields: Course ID, Course Name, Credit Hours, Course Description, Professor/Teacher Name, Professor/Teacher Email, Course Average Weighted Grade.  
+**Example Use Case**: "Show me my courses" or "What courses am I taking?"
+
+---
+
+### createCourse
+**Method**: POST  
+**Path**: /api/data/courses  
+**Description**: Add a new course to the system.  
+**Use when**: User wants to add a new course or register for a course.  
+**Request Body**: 
+  - Course ID (required): Unique identifier (e.g., "COMP 213")
+  - Course Name (required): Full course name
+  - Credit Hours: Number of credits
+  - Course Description: Description of the course
+  - Professor/Teacher Name: Instructor's name
+  - Professor/Teacher Email: Instructor's email
+**Returns**: Created course object.  
+**Example Use Case**: "Add COMP 250 - Data Structures to my courses"
+
+---
+
+### updateCourse
+**Method**: PUT  
+**Path**: /api/data/courses  
+**Description**: Update an existing course's information.  
+**Use when**: User wants to modify course details (name, credits, professor, etc.).  
+**Request Body**: Complete course object with updated fields. Must include Course ID to identify which course to update.  
+**Returns**: Updated course object.  
+**Example Use Case**: "Update my COMP 213 professor email to newemail@university.edu"
+
+---
+
+### deleteCourse
+**Method**: DELETE  
+**Path**: /api/data/courses  
+**Description**: Remove a course from the system.  
+**Use when**: User wants to drop a course or remove a course from their schedule.  
+**Query Parameters**: 
+  - id (required): Course ID to delete
+**Returns**: Success confirmation.  
+**Example Use Case**: "Remove COMP 213 from my courses"
+
+---
+
+## Quick Links Management
+
+### listQuickLinks
+**Method**: GET  
+**Path**: /api/data/quick-links  
+**Description**: Retrieve all quick links.  
+**Use when**: User wants to see all available quick links.  
+**Returns**: Array of quick link objects with: Site Name, Address (URL), Link_image_id, Category.  
+**Example Use Case**: "Show me my quick links" or "What links do I have?"
+
+---
+
+### createQuickLink
+**Method**: POST  
+**Path**: /api/data/quick-links  
+**Description**: Add a new quick link.  
+**Use when**: User wants to bookmark a new site.  
+**Request Body**:
+  - Site Name (required): Display name for the link
+  - Address (required): Full URL (e.g., "https://example.com")
+  - Link_image_id: Image identifier
+  - Category: Category to group the link
+**Returns**: Created quick link object.  
+**Example Use Case**: "Add a quick link to YouTube"
+
+---
+
+### updateQuickLink
+**Method**: PUT  
+**Path**: /api/data/quick-links  
+**Description**: Update an existing quick link's information.  
+**Use when**: User wants to change link URL, name, or category.  
+**Request Body**: Complete quick link object with updated fields.  
+**Returns**: Updated quick link object.  
+**Example Use Case**: "Update my GitHub link to the new URL"
+
+---
+
+### deleteQuickLink
+**Method**: DELETE  
+**Path**: /api/data/quick-links  
+**Description**: Remove a quick link.  
+**Use when**: User no longer needs a link.  
+**Query Parameters**:
+  - name (required): Site Name of the link to delete
+**Returns**: Success confirmation.  
+**Example Use Case**: "Delete my old blog link"
+
+---
+
+## Schedule Management
+
+### listSchedule
+**Method**: GET  
+**Path**: /api/data/schedule  
+**Description**: Retrieve all schedule items (class times and locations).  
+**Use when**: Displaying class schedule, finding when classes occur.  
+**Query Parameters** (optional):
+  - courseId: Filter by specific course
+  - dayOfWeek: Filter by day (Monday, Tuesday, etc.)
+**Returns**: Array of schedule items with: Course ID, Day of Week, Start Time, End Time, Location, Recurring status, Period.  
+**Example Use Case**: "Show my schedule" or "When is my COMP 213 class?"
+
+---
+
+### createScheduleItem
+**Method**: POST  
+**Path**: /api/data/schedule  
+**Description**: Add a new schedule item (class time).  
+**Use when**: User needs to add class times to their schedule.  
+**Request Body**:
+  - Course ID (required): Course identifier
+  - Day of Week (required): Day name (Monday, Tuesday, etc.)
+  - Start Time (required): DateTime format (e.g., "2025-09-01 10:00")
+  - End Time (required): DateTime format
+  - Location: Room number or location
+  - Recurring: "Yes" or "No"
+  - Period: Frequency description (e.g., "Weekly")
+**Returns**: Created schedule item.  
+**Example Use Case**: "Add my COMP 213 lab on Thursdays from 2-4pm in Room 207"
+
+---
+
+### updateScheduleItem
+**Method**: PUT  
+**Path**: /api/data/schedule  
+**Description**: Update schedule item details.  
+**Use when**: Changing class time, location, or frequency.  
+**Request Body**: Complete schedule item with updated fields.  
+**Returns**: Updated schedule item.  
+**Example Use Case**: "Change my COMP 213 Tuesday class to Room 305"
+
+---
+
+### deleteScheduleItem
+**Method**: DELETE  
+**Path**: /api/data/schedule  
+**Description**: Remove a schedule item.  
+**Use when**: Canceling a class or removing a time slot.  
+**Query Parameters** (all required):
+  - courseId: Course identifier
+  - dayOfWeek: Day of week
+  - startTime: Start time
+**Returns**: Success confirmation.  
+**Example Use Case**: "Remove my Tuesday COMP 213 class"
+
+---
+
+## Grading Scale Management
+
+### listGradingScale
+**Method**: GET  
+**Path**: /api/data/grading-scale  
+**Description**: Retrieve all grade scale definitions.  
+**Use when**: Calculating grades, showing letter grade equivalent for percentages.  
+**Returns**: Array of grade scale objects with: minPercentage, maxPercentage, letterGrade, gradePoints.  
+**Example Use Case**: "What letter grade is 85%?" or "Show me the grading scale"
+
+---
+
+### createGradeScale
+**Method**: POST  
+**Path**: /api/data/grading-scale  
+**Description**: Add a new grade scale entry.  
+**Use when**: Defining custom grading scales or updating grade boundaries.  
+**Request Body**:
+  - minPercentage (required): Minimum percentage for this grade
+  - maxPercentage (required): Maximum percentage for this grade
+  - letterGrade (required): Letter grade (A+, A, B+, etc.)
+  - gradePoints: GPA points for this grade
+**Returns**: Created grade scale object.  
+**Example Use Case**: "Add A+ grade for 95-100%"
+
+---
+
+### updateGradeScale
+**Method**: PUT  
+**Path**: /api/data/grading-scale  
+**Description**: Update grade scale boundaries or points.  
+**Use when**: Adjusting grading scale.  
+**Request Body**: Complete grade scale object with updated fields.  
+**Returns**: Updated grade scale object.  
+**Example Use Case**: "Change A grade to 90-100%"
+
+---
+
+### deleteGradeScale
+**Method**: DELETE  
+**Path**: /api/data/grading-scale  
+**Description**: Remove a grade scale entry.  
+**Use when**: Simplifying or customizing grading scale.  
+**Query Parameters**:
+  - letterGrade (required): Letter grade to delete
+**Returns**: Success confirmation.  
+**Example Use Case**: "Remove the A+ grade from the scale"
+
+---
+
+## Deliverables Management
+
+### listDeliverables
+**Method**: GET  
+**Path**: /api/data/deliverables  
+**Description**: Retrieve all assignments, exams, and deliverables.  
+**Use when**: Showing pending assignments, due dates, or tracking coursework.  
+**Returns**: Array of deliverable objects with: Course ID, Category, Deliverable name, Open Date, Close Date, Weight %, Grade %, Letter Grade, Status.  
+**Example Use Case**: "Show me all my pending assignments" or "What's due this week?"
+
+---
+
+### updateDeliverable
+**Method**: PUT  
+**Path**: /api/data/deliverables  
+**Description**: Update deliverable status, grade, or information.  
+**Use when**: Recording grades, marking assignments complete, or updating due dates.  
+**Request Body**:
+  - Course ID (required)
+  - Deliverable (required)
+  - Category: Type (Assignment, Exam, Lab, etc.)
+  - Grade %: Percentage grade received
+  - Letter Grade: Letter grade equivalent
+  - Status: Current status (Not Started, In Progress, Complete, etc.)
+  - Weight %: Percentage weight in course grade
+  - Open Date: When assignment becomes available
+  - Close Date: Due date
+**Returns**: Updated deliverable object.  
+**Example Use Case**: "Mark my COMP 213 project as complete with 85% grade"
+
+---
+
+## Calendar Feed
+
+### getCalendarFeed
+**Method**: GET  
+**Path**: /api/calendar  
+**Description**: Generate an ICS (iCalendar) format calendar feed from schedule data.  
+**Use when**: User wants to subscribe to their class schedule in a calendar application (Google Calendar, Apple Calendar, Outlook, etc.).  
+**Returns**: ICS format text file with recurring class events.  
+**Notes**: 
+  - Automatically generates recurring events for the semester
+  - Includes all weekly recurring classes
+  - Can be imported into any calendar app
+**Example Use Case**: "Give me my class schedule as a calendar file" or "I want to add my classes to Google Calendar"
+
+---
+
+## Best Practices for GPT Usage
+
+1. **When to Query**: Use list operations to display current information before making changes.
+
+2. **Data Integrity**: Always provide complete objects when creating or updating. Include required fields.
+
+3. **Course Management**: Courses are central to the system. Most other data references courses.
+
+4. **Schedule**: Schedule items can be filtered by course or day. Use this for targeted queries.
+
+5. **Calendar Feed**: This endpoint returns a downloadable file, not JSON. Use when user wants to sync calendar.
+
+6. **Errors**: All endpoints return appropriate HTTP status codes. Handle 400 (bad request) and 500 (server error) responses gracefully.
+
+7. **Filtering**: Use query parameters to narrow results (courseId, dayOfWeek, etc.) for better performance and relevance.
+
+---
+
+## Common Workflows
+
+**Adding a New Course**:
+1. Use createCourse to add the course
+2. Use createScheduleItem to add class times
+3. Optionally use createQuickLink to add course materials
+
+**Checking Progress**:
+1. Use listDeliverables to see assignments
+2. Use listGradingScale to convert percentages to letter grades
+3. Calculate weighted grades using course weight percentages
+
+**Updating Schedule**:
+1. Use listSchedule to show current schedule
+2. Use updateScheduleItem to modify or deleteScheduleItem to remove entries
+3. Use getCalendarFeed to sync with calendar apps
+
