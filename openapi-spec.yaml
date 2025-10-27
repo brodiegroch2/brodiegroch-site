@@ -28,6 +28,8 @@ tags:
     description: Quick links management
   - name: grading-scale
     description: Grading scale management
+  - name: calendar
+    description: Calendar feed generation
 
 paths:
   # Courses API
@@ -426,4 +428,22 @@ paths:
       responses:
         "200":
           description: Deliverable updated
+
+  # Calendar API
+  /api/calendar:
+    get:
+      operationId: getCalendarFeed
+      summary: Generate calendar feed
+      description: Returns an ICS (iCalendar) format feed of schedule data
+      tags: [calendar]
+      responses:
+        "200":
+          description: Calendar feed in ICS format
+          content:
+            text/calendar:
+              schema:
+                type: string
+                format: binary
+        "500":
+          description: Server error
 
