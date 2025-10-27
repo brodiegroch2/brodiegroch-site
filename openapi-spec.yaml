@@ -32,6 +32,8 @@ tags:
     description: Calendar feed generation
   - name: news
     description: Course announcements and news feeds
+  - name: documentation
+    description: API documentation and action references
 
 paths:
   # Courses API
@@ -477,6 +479,44 @@ paths:
                     description: Course announcements grouped by course
         "404":
           description: Course not found
+        "500":
+          description: Server error
+
+  # Actions Documentation API
+  /api/actions:
+    get:
+      operationId: getActionDocs
+      summary: Get API actions documentation
+      description: Retrieve the actions reference documentation for understanding available API endpoints and usage
+      tags: [documentation]
+      parameters:
+        - in: query
+          name: action
+          schema:
+            type: string
+          description: Filter documentation for a specific action (e.g., "listCourses")
+        - in: query
+          name: category
+          schema:
+            type: string
+          description: Filter documentation for a category (e.g., "Course Management")
+      responses:
+        "200":
+          description: API actions documentation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  documentation:
+                    type: string
+                  timestamp:
+                    type: string
+                    format: date-time
+                  note:
+                    type: string
         "500":
           description: Server error
 
