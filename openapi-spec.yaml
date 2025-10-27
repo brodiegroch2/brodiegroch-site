@@ -1,12 +1,14 @@
 openapi: 3.1.0
 info:
-  title: PersonalDB API
+  title: brodiegroch.ca API
   version: "1.0"
-  description: API for storing and managing personal items
+  description: Complete API for managing courses, deliverables, schedule, quick links, grading scale, and personal items
 
 servers:
   - url: https://brodiegroch.ca
     description: Production server
+  - url: http://localhost:3000
+    description: Local development server
 
 components:
   securitySchemes:
@@ -17,12 +19,296 @@ components:
       description: API key authentication
   schemas: {}
 
+tags:
+  - name: courses
+    description: Course management
+  - name: deliverables
+    description: Assignment and deliverable management
+  - name: schedule
+    description: Schedule management
+  - name: quick-links
+    description: Quick links management
+  - name: grading-scale
+    description: Grading scale management
+  - name: items
+    description: Personal items (GPT API)
+
 paths:
+  # Courses API
+  /api/data/courses:
+    get:
+      operationId: listCourses
+      summary: List all courses
+      tags: [courses]
+      responses:
+        "200":
+          description: List of courses
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+    post:
+      operationId: createCourse
+      summary: Create a new course
+      tags: [courses]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Course created
+    put:
+      operationId: updateCourse
+      summary: Update a course
+      tags: [courses]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Course updated
+    delete:
+      operationId: deleteCourse
+      summary: Delete a course
+      tags: [courses]
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Course deleted
+
+  # Quick Links API
+  /api/data/quick-links:
+    get:
+      operationId: listQuickLinks
+      summary: List all quick links
+      tags: [quick-links]
+      responses:
+        "200":
+          description: List of quick links
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+    post:
+      operationId: createQuickLink
+      summary: Create a new quick link
+      tags: [quick-links]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Quick link created
+    put:
+      operationId: updateQuickLink
+      summary: Update a quick link
+      tags: [quick-links]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Quick link updated
+    delete:
+      operationId: deleteQuickLink
+      summary: Delete a quick link
+      tags: [quick-links]
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Quick link deleted
+
+  # Schedule API
+  /api/data/schedule:
+    get:
+      operationId: listSchedule
+      summary: List all schedule items
+      tags: [schedule]
+      parameters:
+        - name: courseId
+          in: query
+          schema:
+            type: string
+        - name: dayOfWeek
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of schedule items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+    post:
+      operationId: createScheduleItem
+      summary: Create a new schedule item
+      tags: [schedule]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Schedule item created
+    put:
+      operationId: updateScheduleItem
+      summary: Update a schedule item
+      tags: [schedule]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Schedule item updated
+    delete:
+      operationId: deleteScheduleItem
+      summary: Delete a schedule item
+      tags: [schedule]
+      parameters:
+        - name: courseId
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: dayOfWeek
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: startTime
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Schedule item deleted
+
+  # Grading Scale API
+  /api/data/grading-scale:
+    get:
+      operationId: listGradingScale
+      summary: List all grade scales
+      tags: [grading-scale]
+      responses:
+        "200":
+          description: List of grade scales
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+    post:
+      operationId: createGradeScale
+      summary: Create a new grade scale
+      tags: [grading-scale]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Grade scale created
+    put:
+      operationId: updateGradeScale
+      summary: Update a grade scale
+      tags: [grading-scale]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Grade scale updated
+    delete:
+      operationId: deleteGradeScale
+      summary: Delete a grade scale
+      tags: [grading-scale]
+      parameters:
+        - name: letterGrade
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Grade scale deleted
+
+  # Deliverables API
+  /api/data/deliverables:
+    get:
+      operationId: listDeliverables
+      summary: List all deliverables
+      tags: [deliverables]
+      responses:
+        "200":
+          description: List of deliverables
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+    put:
+      operationId: updateDeliverable
+      summary: Update a deliverable
+      tags: [deliverables]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Deliverable updated
+
+  # GPT API for Personal Items
   /api/gpt/upsert:
     post:
       operationId: upsertItem
       summary: Create or update an item
       description: Stores or updates an item in the database
+      tags: [items]
       security:
         - ApiKeyAuth: []
       requestBody:
@@ -77,6 +363,7 @@ paths:
       operationId: listItems
       summary: List stored items
       description: Retrieve items from the database
+      tags: [items]
       security:
         - ApiKeyAuth: []
       parameters:
@@ -117,6 +404,7 @@ paths:
       operationId: deleteItem
       summary: Delete an item
       description: Remove an item from the database
+      tags: [items]
       security:
         - ApiKeyAuth: []
       parameters:
