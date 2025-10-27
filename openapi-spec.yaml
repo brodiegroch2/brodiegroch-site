@@ -509,26 +509,36 @@ paths:
     get:
       operationId: listSchedule
       summary: List all schedule items
+      description: Retrieve all schedule items, optionally filtered by course ID or day of week
       tags: [schedule]
       parameters:
         - name: courseId
           in: query
+          description: Filter schedule items by specific course ID
           schema:
             type: string
+            example: "COMP 213"
         - name: dayOfWeek
           in: query
+          description: Filter schedule items by day of week (e.g., Monday, Tuesday)
           schema:
             type: string
+            example: "Monday"
       responses:
         "200":
-          description: List of schedule items
+          description: List of schedule items retrieved successfully
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  type: object
-                  additionalProperties: true
+                  $ref: '#/components/schemas/ScheduleItem'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     post:
       operationId: createScheduleItem
       summary: Create a new schedule item
@@ -616,17 +626,45 @@ paths:
     get:
       operationId: listGradingScale
       summary: List all grade scales
+      description: Retrieve all grade scale definitions, optionally filtered by letter grade
       tags: [grading-scale]
+      parameters:
+        - name: letterGrade
+          in: query
+          description: Filter by specific letter grade (e.g., "A+", "B")
+          schema:
+            type: string
+            example: "A+"
       responses:
         "200":
-          description: List of grade scales
+          description: List of grade scales retrieved successfully
           content:
             application/json:
               schema:
                 type: array
                 items:
                   type: object
-                  additionalProperties: true
+                  properties:
+                    minPercentage:
+                      type: number
+                    maxPercentage:
+                      type: number
+                    letterGrade:
+                      type: string
+                    gradePoints:
+                      type: number
+        "404":
+          description: Grade scale not found (when filtering by letterGrade)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     post:
       operationId: createGradeScale
       summary: Create a new grade scale
@@ -692,17 +730,23 @@ paths:
     get:
       operationId: listDeliverables
       summary: List all deliverables
+      description: Retrieve all assignments, exams, quizzes, and other deliverables from the system
       tags: [deliverables]
       responses:
         "200":
-          description: List of deliverables
+          description: List of deliverables retrieved successfully
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  type: object
-                  additionalProperties: true
+                  $ref: '#/components/schemas/Deliverable'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     put:
       operationId: updateDeliverable
       summary: Update a deliverable
@@ -760,18 +804,18 @@ paths:
     get:
       operationId: getNewsFeed
       summary: Get course announcements
-      description: Retrieve course announcements from Brightspace RSS feeds
+      description: Retrieve course announcements from Brightspace RSS feeds. Automatically strips HTML tags and caches results for 5 minutes.
       tags: [news]
       parameters:
         - in: query
           name: courseId
+          description: Optional course ID to filter announcements from a specific course
           schema:
             type: string
             examples: [MECH 205, COMP 213, STCS 255]
-          description: Filter announcements by specific course
       responses:
         "200":
-          description: List of course announcements
+          description: List of course announcements retrieved successfully
           content:
             application/json:
               schema:
@@ -781,32 +825,46 @@ paths:
                     type: object
                     additionalProperties: true
                     description: Course announcements grouped by course
+                  timestamp:
+                    type: string
+                    format: date-time
+                    description: Cache timestamp
         "404":
           description: Course not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         "500":
           description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
   # Actions Documentation API
   /api/actions:
     get:
       operationId: getActionDocs
       summary: Get API actions documentation
-      description: Retrieve the actions reference documentation for understanding available API endpoints and usage
+      description: Retrieve the actions reference documentation for understanding available API endpoints and usage. Useful for GPT to self-reference and understand how to use endpoints.
       tags: [documentation]
       parameters:
         - in: query
           name: action
+          description: Filter documentation for a specific action (e.g., "listCourses", "updateDeliverable")
           schema:
             type: string
-          description: Filter documentation for a specific action (e.g., "listCourses")
+            example: "listCourses"
         - in: query
           name: category
+          description: Filter documentation for a category (e.g., "Course Management", "Deliverables Management")
           schema:
             type: string
-          description: Filter documentation for a category (e.g., "Course Management")
+            example: "Course Management"
       responses:
         "200":
-          description: API actions documentation
+          description: API actions documentation retrieved successfully
           content:
             application/json:
               schema:
@@ -814,13 +872,21 @@ paths:
                 properties:
                   success:
                     type: boolean
+                    example: true
                   documentation:
                     type: string
+                    description: Full documentation text from actions.txt file
                   timestamp:
                     type: string
                     format: date-time
+                    description: Timestamp of when documentation was retrieved
                   note:
                     type: string
+                    description: Additional note about the documentation
         "500":
           description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
