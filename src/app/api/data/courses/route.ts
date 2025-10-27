@@ -36,7 +36,15 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
-    const newCourse = await req.json();
+    const rawCourse = await req.json();
+    
+    // Normalize field names: convert underscores to spaces (multiple underscores -> single space)
+    const newCourse: any = {};
+    for (const [key, value] of Object.entries(rawCourse)) {
+      const normalizedKey = key.replace(/_+/g, ' ');
+      newCourse[normalizedKey] = value;
+    }
+    
     const data = readData();
     
     // Check if course already exists
@@ -56,7 +64,15 @@ export async function POST(req: NextRequest) {
 
 export async function PUT(req: NextRequest) {
   try {
-    const updatedCourse = await req.json();
+    const rawCourse = await req.json();
+    
+    // Normalize field names: convert underscores to spaces (multiple underscores -> single space)
+    const updatedCourse: any = {};
+    for (const [key, value] of Object.entries(rawCourse)) {
+      const normalizedKey = key.replace(/_+/g, ' ');
+      updatedCourse[normalizedKey] = value;
+    }
+    
     const data = readData();
     
     const index = data.findIndex((item: any) => item['Course ID'] === updatedCourse['Course ID']);

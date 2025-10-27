@@ -164,8 +164,15 @@ export async function GET() {
 
 export async function PUT(request: NextRequest) {
   try {
-    const updatedDeliverable = await request.json();
-    console.log('API received deliverable:', updatedDeliverable);
+    const rawDeliverable = await request.json();
+    console.log('API received deliverable:', rawDeliverable);
+    
+    // Normalize field names: convert underscores to spaces (multiple underscores -> single space)
+    const updatedDeliverable: any = {};
+    for (const [key, value] of Object.entries(rawDeliverable)) {
+      const normalizedKey = key.replace(/_+/g, ' ');
+      updatedDeliverable[normalizedKey] = value;
+    }
     
     await initializeCache();
     

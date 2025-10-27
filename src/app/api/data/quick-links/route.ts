@@ -36,7 +36,15 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
-    const newLink = await req.json();
+    const rawLink = await req.json();
+    
+    // Normalize field names: convert underscores to spaces (multiple underscores -> single space)
+    const newLink: any = {};
+    for (const [key, value] of Object.entries(rawLink)) {
+      const normalizedKey = key.replace(/_+/g, ' ');
+      newLink[normalizedKey] = value;
+    }
+    
     const data = readData();
     
     // Check if link already exists
@@ -56,7 +64,15 @@ export async function POST(req: NextRequest) {
 
 export async function PUT(req: NextRequest) {
   try {
-    const updatedLink = await req.json();
+    const rawLink = await req.json();
+    
+    // Normalize field names: convert underscores to spaces (multiple underscores -> single space)
+    const updatedLink: any = {};
+    for (const [key, value] of Object.entries(rawLink)) {
+      const normalizedKey = key.replace(/_+/g, ' ');
+      updatedLink[normalizedKey] = value;
+    }
+    
     const data = readData();
     
     const index = data.findIndex((item: any) => item['Site Name'] === updatedLink['Site Name']);

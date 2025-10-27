@@ -41,7 +41,15 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
-    const newScheduleItem = await req.json();
+    const rawScheduleItem = await req.json();
+    
+    // Normalize field names: convert underscores to spaces (multiple underscores -> single space)
+    const newScheduleItem: any = {};
+    for (const [key, value] of Object.entries(rawScheduleItem)) {
+      const normalizedKey = key.replace(/_+/g, ' ');
+      newScheduleItem[normalizedKey] = value;
+    }
+    
     const data = readData();
     
     data.push(newScheduleItem);
@@ -56,7 +64,15 @@ export async function POST(req: NextRequest) {
 
 export async function PUT(req: NextRequest) {
   try {
-    const updatedScheduleItem = await req.json();
+    const rawScheduleItem = await req.json();
+    
+    // Normalize field names: convert underscores to spaces (multiple underscores -> single space)
+    const updatedScheduleItem: any = {};
+    for (const [key, value] of Object.entries(rawScheduleItem)) {
+      const normalizedKey = key.replace(/_+/g, ' ');
+      updatedScheduleItem[normalizedKey] = value;
+    }
+    
     const data = readData();
     
     const index = data.findIndex((item: any) => 
