@@ -15,7 +15,91 @@ components:
       in: header
       name: X-API-Key
       description: API key authentication
-  schemas: {}
+  schemas:
+    Course:
+      type: object
+      properties:
+        Course ID:
+          type: string
+          example: "COMP 213"
+        Course Name:
+          type: string
+          example: "Computing for Engineering Technology"
+        Course Average Weighted Grade:
+          type: string
+          example: "85.5"
+        Credit Hours:
+          type: string
+          example: "3"
+        Course Description:
+          type: string
+          example: "Course description here"
+        Professor/Teacher Name:
+          type: string
+          example: "John Doe"
+        Professor/Teacher Email:
+          type: string
+          format: email
+          example: "john.doe@sait.ca"
+    QuickLink:
+      type: object
+      properties:
+        Site Name:
+          type: string
+        Address:
+          type: string
+          format: uri
+        Link_image_id:
+          type: string
+        Category:
+          type: string
+    ScheduleItem:
+      type: object
+      properties:
+        Course ID:
+          type: string
+        Day of Week:
+          type: string
+        Start Time:
+          type: string
+          format: date-time
+        End Time:
+          type: string
+          format: date-time
+        Location:
+          type: string
+        Recurring:
+          type: string
+        Period:
+          type: string
+    Deliverable:
+      type: object
+      properties:
+        Course ID:
+          type: string
+        Category:
+          type: string
+        Deliverable:
+          type: string
+        Open Date:
+          type: string
+        Close Date:
+          type: string
+        Weight %:
+          type: string
+        Grade %:
+          type: string
+        Letter Grade:
+          type: string
+        Status:
+          type: string
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
 
 tags:
   - name: courses
@@ -30,197 +114,431 @@ tags:
     description: Grading scale management
   - name: calendar
     description: Calendar feed generation
+  - name: news
+    description: Course announcements and news feeds
+  - name: documentation
+    description: API documentation and action references
 
 paths:
+  # Actions Documentation API
+  /api/actions:
+    get:
+      operationId: getActionDocs
+      summary: Get API actions documentation
+      description: Retrieve the actions reference documentation for understanding available API endpoints and usage
+      tags: [documentation]
+      parameters:
+        - in: query
+          name: action
+          schema:
+            type: string
+          description: Filter documentation for a specific action (e.g., "listCourses")
+        - in: query
+          name: category
+          schema:
+            type: string
+          description: Filter documentation for a category (e.g., "Course Management")
+      responses:
+        "200":
+          description: API actions documentation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  documentation:
+                    type: string
+                  timestamp:
+                    type: string
+                    format: date-time
+                  note:
+                    type: string
+        "500":
+          description: Server error
+
   # Courses API
   /api/data/courses:
     get:
       operationId: listCourses
       summary: List all courses
+      description: Retrieve all courses from the system, optionally filtered by course ID
       tags: [courses]
+      parameters:
+        - name: id
+          in: query
+          description: Optional course ID to retrieve a specific course
+          schema:
+            type: string
+            example: "COMP 213"
       responses:
         "200":
-          description: List of courses
+          description: List of courses retrieved successfully
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  type: object
-                  additionalProperties: true
+                  $ref: '#/components/schemas/Course'
+        "404":
+          description: Course not found (when filtering by id)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     post:
       operationId: createCourse
       summary: Create a new course
+      description: Add a new course to the system with all course details
       tags: [courses]
       requestBody:
         required: true
+        description: Course object containing all course information
         content:
           application/json:
             schema:
               type: object
+              required:
+                - Course ID
+                - Course Name
               properties:
                 Course ID:
                   type: string
+                  description: Unique course identifier (e.g., "COMP 213")
                 Course Name:
                   type: string
+                  description: Full course name
                 Course Average Weighted Grade:
                   type: string
+                  description: Current weighted average grade (optional)
                 Credit Hours:
                   type: string
+                  description: Number of credit hours
                 Course Description:
                   type: string
+                  description: Detailed course description
                 Professor/Teacher Name:
                   type: string
+                  description: Instructor's full name
                 Professor/Teacher Email:
                   type: string
+                  format: email
+                  description: Instructor's email address
               additionalProperties: true
       responses:
         "201":
-          description: Course created
+          description: Course created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+        "400":
+          description: Bad request - course already exists or missing required fields
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     put:
       operationId: updateCourse
       summary: Update a course
+      description: Update an existing course's information. Must include Course ID to identify which course to update.
       tags: [courses]
       requestBody:
         required: true
+        description: Complete course object with updated fields
         content:
           application/json:
             schema:
               type: object
+              required:
+                - Course ID
               properties:
                 Course ID:
                   type: string
+                  description: Unique course identifier to identify which course to update
                 Course Name:
                   type: string
+                  description: Full course name
                 Course Average Weighted Grade:
                   type: string
+                  description: Current weighted average grade
                 Credit Hours:
                   type: string
+                  description: Number of credit hours
                 Course Description:
                   type: string
+                  description: Detailed course description
                 Professor/Teacher Name:
                   type: string
+                  description: Instructor's full name
                 Professor/Teacher Email:
                   type: string
+                  format: email
+                  description: Instructor's email address
               additionalProperties: true
       responses:
         "200":
-          description: Course updated
+          description: Course updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+        "404":
+          description: Course not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     delete:
       operationId: deleteCourse
       summary: Delete a course
+      description: Remove a course from the system by its Course ID
       tags: [courses]
       parameters:
         - name: id
           in: query
           required: true
+          description: Course ID to delete
           schema:
             type: string
+            example: "COMP 213"
       responses:
         "200":
-          description: Course deleted
+          description: Course deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+        "404":
+          description: Course not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
   # Quick Links API
   /api/data/quick-links:
     get:
       operationId: listQuickLinks
       summary: List all quick links
+      description: Retrieve all quick links from the system
       tags: [quick-links]
       responses:
         "200":
-          description: List of quick links
+          description: List of quick links retrieved successfully
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  type: object
-                  additionalProperties: true
+                  $ref: '#/components/schemas/QuickLink'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     post:
       operationId: createQuickLink
       summary: Create a new quick link
+      description: Add a new quick link to the system
       tags: [quick-links]
       requestBody:
         required: true
+        description: Quick link object containing all link information
         content:
           application/json:
             schema:
               type: object
+              required:
+                - Site Name
+                - Address
               properties:
                 Site Name:
                   type: string
+                  description: Display name for the link
                 Address:
                   type: string
+                  format: uri
+                  description: Full URL address
                 Link_image_id:
                   type: string
+                  description: Image identifier for the link icon
                 Category:
                   type: string
+                  description: Category to group the link
               additionalProperties: true
       responses:
         "201":
-          description: Quick link created
+          description: Quick link created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuickLink'
+        "400":
+          description: Bad request - link already exists or missing required fields
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     put:
       operationId: updateQuickLink
       summary: Update a quick link
+      description: Update an existing quick link's information
       tags: [quick-links]
       requestBody:
         required: true
+        description: Complete quick link object with updated fields
         content:
           application/json:
             schema:
               type: object
+              required:
+                - Site Name
               properties:
                 Site Name:
                   type: string
+                  description: Display name for the link (identifier)
                 Address:
                   type: string
+                  format: uri
+                  description: Full URL address
                 Link_image_id:
                   type: string
+                  description: Image identifier for the link icon
                 Category:
                   type: string
+                  description: Category to group the link
               additionalProperties: true
       responses:
         "200":
-          description: Quick link updated
+          description: Quick link updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuickLink'
+        "404":
+          description: Quick link not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     delete:
       operationId: deleteQuickLink
       summary: Delete a quick link
+      description: Remove a quick link from the system by its Site Name
       tags: [quick-links]
       parameters:
         - name: name
           in: query
           required: true
+          description: Site Name of the link to delete
           schema:
             type: string
       responses:
         "200":
-          description: Quick link deleted
+          description: Quick link deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+        "400":
+          description: Name parameter is required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Quick link not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
   # Schedule API
   /api/data/schedule:
     get:
       operationId: listSchedule
       summary: List all schedule items
+      description: Retrieve all schedule items, optionally filtered by course ID or day of week
       tags: [schedule]
       parameters:
         - name: courseId
           in: query
+          description: Filter schedule items by specific course ID
           schema:
             type: string
+            example: "COMP 213"
         - name: dayOfWeek
           in: query
+          description: Filter schedule items by day of week (e.g., Monday, Tuesday)
           schema:
             type: string
+            example: "Monday"
       responses:
         "200":
-          description: List of schedule items
+          description: List of schedule items retrieved successfully
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  type: object
-                  additionalProperties: true
+                  $ref: '#/components/schemas/ScheduleItem'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     post:
       operationId: createScheduleItem
       summary: Create a new schedule item
@@ -308,17 +626,45 @@ paths:
     get:
       operationId: listGradingScale
       summary: List all grade scales
+      description: Retrieve all grade scale definitions, optionally filtered by letter grade
       tags: [grading-scale]
+      parameters:
+        - name: letterGrade
+          in: query
+          description: Filter by specific letter grade (e.g., "A+", "B")
+          schema:
+            type: string
+            example: "A+"
       responses:
         "200":
-          description: List of grade scales
+          description: List of grade scales retrieved successfully
           content:
             application/json:
               schema:
                 type: array
                 items:
                   type: object
-                  additionalProperties: true
+                  properties:
+                    minPercentage:
+                      type: number
+                    maxPercentage:
+                      type: number
+                    letterGrade:
+                      type: string
+                    gradePoints:
+                      type: number
+        "404":
+          description: Grade scale not found (when filtering by letterGrade)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     post:
       operationId: createGradeScale
       summary: Create a new grade scale
@@ -384,17 +730,23 @@ paths:
     get:
       operationId: listDeliverables
       summary: List all deliverables
+      description: Retrieve all assignments, exams, quizzes, and other deliverables from the system
       tags: [deliverables]
       responses:
         "200":
-          description: List of deliverables
+          description: List of deliverables retrieved successfully
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  type: object
-                  additionalProperties: true
+                  $ref: '#/components/schemas/Deliverable'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     put:
       operationId: updateDeliverable
       summary: Update a deliverable
@@ -446,4 +798,95 @@ paths:
                 format: binary
         "500":
           description: Server error
+
+  # News/Announcements API
+  /api/news:
+    get:
+      operationId: getNewsFeed
+      summary: Get course announcements
+      description: Retrieve course announcements from Brightspace RSS feeds. Automatically strips HTML tags and caches results for 5 minutes.
+      tags: [news]
+      parameters:
+        - in: query
+          name: courseId
+          description: Optional course ID to filter announcements from a specific course
+          schema:
+            type: string
+            examples: [MECH 205, COMP 213, STCS 255]
+      responses:
+        "200":
+          description: List of course announcements retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  news:
+                    type: object
+                    additionalProperties: true
+                    description: Course announcements grouped by course
+                  timestamp:
+                    type: string
+                    format: date-time
+                    description: Cache timestamp
+        "404":
+          description: Course not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # Actions Documentation API
+  /api/actions:
+    get:
+      operationId: getActionDocs
+      summary: Get API actions documentation
+      description: Retrieve the actions reference documentation for understanding available API endpoints and usage. Useful for GPT to self-reference and understand how to use endpoints.
+      tags: [documentation]
+      parameters:
+        - in: query
+          name: action
+          description: Filter documentation for a specific action (e.g., "listCourses", "updateDeliverable")
+          schema:
+            type: string
+            example: "listCourses"
+        - in: query
+          name: category
+          description: Filter documentation for a category (e.g., "Course Management", "Deliverables Management")
+          schema:
+            type: string
+            example: "Course Management"
+      responses:
+        "200":
+          description: API actions documentation retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  documentation:
+                    type: string
+                    description: Full documentation text from actions.txt file
+                  timestamp:
+                    type: string
+                    format: date-time
+                    description: Timestamp of when documentation was retrieved
+                  note:
+                    type: string
+                    description: Additional note about the documentation
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
