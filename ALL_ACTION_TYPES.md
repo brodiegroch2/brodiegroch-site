@@ -4,7 +4,7 @@
 
 This document lists all available actions (API operations) for the SAIT MET Console, organized by category and HTTP method.
 
-**Total Actions:** 22 operations across 8 categories
+**Total Actions:** 23 operations across 9 categories
 
 ---
 
@@ -17,7 +17,8 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 ### 5. 📝 Deliverables (2 actions)
 ### 6. 📰 News & Announcements (1 action)
 ### 7. 📆 Calendar (1 action)
-### 8. 📖 Documentation (2 actions)
+### 8. 🕐 Time (1 action)
+### 9. 📖 Documentation (2 actions)
 
 ---
 
@@ -231,7 +232,24 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 
 ---
 
-## 8. Documentation (2 Actions)
+## 8. Time Information (1 Action)
+
+### getCurrentTime
+- **Method:** GET
+- **Path:** /api/time
+- **Approval Required:** ❌ No (Read-only)
+- **Returns:** Current date and time information
+- **Features:**
+  - ISO 8601 timestamp
+  - Human-readable date and time
+  - Timezone information (America/Edmonton)
+  - Unix timestamp
+  - Individual date components (year, month, day, weekday)
+- **Use Case:** Get current server time for scheduling, deadlines, or time-sensitive operations
+
+---
+
+## 9. Documentation (1 Action)
 
 ### getActionDocs
 - **Method:** GET
@@ -247,7 +265,7 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 
 ## Action Summary by HTTP Method
 
-### GET Methods (Read-Only) - 10 actions
+### GET Methods (Read-Only) - 11 actions
 - listCourses
 - listQuickLinks
 - listSchedule
@@ -255,6 +273,7 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 - listDeliverables
 - getNewsFeed
 - getCalendarFeed
+- getCurrentTime
 - getActionDocs
 
 ### POST Methods (Create) - 4 actions
@@ -283,7 +302,7 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 ### ✅ Requires User Approval (13 actions)
 All POST, PUT, and DELETE operations require approval before execution.
 
-### ❌ No Approval Required (10 actions)
+### ❌ No Approval Required (11 actions)
 All GET operations can be called freely without approval.
 
 ---
@@ -360,12 +379,12 @@ Error objects follow this structure:
 
 ## Total Summary
 
-- **Total Actions:** 22
-- **GET:** 10 (read-only)
+- **Total Actions:** 23
+- **GET:** 11 (read-only)
 - **POST:** 4 (create)
 - **PUT:** 5 (update)
 - **DELETE:** 4 (remove)
-- **Categories:** 8
+- **Categories:** 9
 - **All Actions Documented:** ✅
 - **All Actions Tested:** ✅
 - **All Actions Production Ready:** ✅

@@ -5,7 +5,7 @@
 ### Summary
 The OpenAPI spec has been cleaned and unified - all duplicate endpoints have been removed.
 
-### Endpoint Structure (8 total)
+### Endpoint Structure (9 total)
 1. **/api/actions** - Actions Documentation API
    - GET - getActionDocs
 
@@ -43,7 +43,10 @@ The OpenAPI spec has been cleaned and unified - all duplicate endpoints have bee
 8. **/api/news** - Course Announcements
    - GET - getNewsFeed
 
-### Total Operations: 21
+9. **/api/time** - Current Date and Time
+   - GET - getCurrentTime
+
+### Total Operations: 22
 
 ### No Duplicates
 ✅ Each endpoint appears only once

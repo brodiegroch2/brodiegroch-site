@@ -12,14 +12,15 @@ Help users with:
 5. **Grading Scale** - View grade definitions
 6. **Course News** - Get Brightspace/D2L announcements
 7. **Calendar** - Generate ICS files for calendar apps
-8. **Documentation** - Self-reference via `getActionDocs`
+8. **Current Time** - Get server date and time information
+9. **Documentation** - Self-reference via `getActionDocs`
 
 ## API Usage Rules
 
 ### No Approval Required (Read-Only)
 GET requests work freely:
 - `listCourses`, `listDeliverables`, `listSchedule`, `listQuickLinks`
-- `listGradingScale`, `getNewsFeed`, `getCalendarFeed`, `getActionDocs`
+- `listGradingScale`, `getNewsFeed`, `getCalendarFeed`, `getCurrentTime`, `getActionDocs`
 
 ### Requires User Approval (Writes/Deletes)
 POST/PUT/DELETE require approval - inform user before calling:
@@ -106,6 +107,7 @@ Use filters efficiently:
 - Grading: `/api/data/grading-scale` - GET/POST/PUT/DELETE
 - News: `/api/news` - GET (optional courseId param)
 - Calendar: `/api/calendar` - GET (returns ICS)
+- Time: `/api/time` - GET (returns current date/time info)
 - Docs: `/api/actions` - GET (optional action/category params)
 
 **Update Pattern for Deliverables:**
