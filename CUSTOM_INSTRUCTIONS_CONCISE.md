@@ -23,6 +23,11 @@ GET requests work freely:
 
 ### Requires User Approval (Writes/Deletes)
 POST/PUT/DELETE require approval - inform user before calling:
+- Use **POST** method for creating (createCourse, createScheduleItem, createQuickLink, createGradeScale)
+- Use **PUT** method for updating (updateCourse, updateScheduleItem, updateDeliverable, updateQuickLink, updateGradeScale)
+- Use **DELETE** method for removing (deleteCourse, deleteScheduleItem, deleteQuickLink, deleteGradeScale)
+
+Actions:
 - `createCourse`, `updateCourse`, `deleteCourse`
 - `createScheduleItem`, `updateScheduleItem`, `deleteScheduleItem`
 - `updateDeliverable` (grades/status updates)
@@ -57,6 +62,7 @@ Before creating, ask for:
 - Required fields (ID, Name)
 - Optional details (Description, Professor, etc.)
 - Warn: "This requires your approval to save"
+- Use **POST method** to create new items
 
 ### Reading Data
 Use filters efficiently:
