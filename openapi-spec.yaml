@@ -113,16 +113,25 @@ components:
           example: "Fall 2025"
         instructor:
           type: object
+          additionalProperties: true
         description:
           type: string
         schedule:
           type: object
+          additionalProperties: true
         learningOutcomes:
           type: array
+          items:
+            type: string
         assessment:
           type: object
+          additionalProperties: true
         modules:
           type: array
+          items:
+            type: object
+            additionalProperties: true
+      additionalProperties: true
     Error:
       type: object
       properties:
@@ -406,11 +415,8 @@ paths:
           content:
             application/json:
               schema:
-                oneOf:
-                  - type: array
-                    items:
-                      $ref: '#/components/schemas/DetailedCourse'
-                  - $ref: '#/components/schemas/DetailedCourse'
+                type: object
+                additionalProperties: true
         "404":
           description: Course not found
           content:
@@ -433,14 +439,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DetailedCourse'
+              type: object
+              additionalProperties: true
       responses:
         "201":
           description: Course created successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DetailedCourse'
+                type: object
+                additionalProperties: true
         "400":
           description: Course already exists
           content:
@@ -463,14 +471,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DetailedCourse'
+              type: object
+              additionalProperties: true
       responses:
         "200":
           description: Course updated successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DetailedCourse'
+                type: object
+                additionalProperties: true
         "404":
           description: Course not found
           content:
