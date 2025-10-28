@@ -542,84 +542,173 @@ paths:
     post:
       operationId: createScheduleItem
       summary: Create a new schedule item
+      description: Add a new class time to the schedule
       tags: [schedule]
       requestBody:
         required: true
+        description: Schedule item with class time and location information
         content:
           application/json:
             schema:
               type: object
+              required:
+                - Course ID
+                - Day of Week
+                - Start Time
+                - End Time
               properties:
                 Course ID:
                   type: string
+                  description: Course identifier
                 Day of Week:
                   type: string
+                  description: Day name (e.g., Monday, Tuesday)
                 Start Time:
                   type: string
+                  format: date-time
+                  description: Class start time
                 End Time:
                   type: string
+                  format: date-time
+                  description: Class end time
                 Location:
                   type: string
+                  description: Room or location
                 Recurring:
                   type: string
+                  description: "Yes" or "No"
                 Period:
                   type: string
+                  description: Frequency (e.g., "Weekly")
               additionalProperties: true
       responses:
         "201":
-          description: Schedule item created
+          description: Schedule item created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScheduleItem'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     put:
       operationId: updateScheduleItem
       summary: Update a schedule item
+      description: Update an existing schedule item's time, location, or frequency
       tags: [schedule]
       requestBody:
         required: true
+        description: Complete schedule item with updated fields
         content:
           application/json:
             schema:
               type: object
+              required:
+                - Course ID
+                - Day of Week
+                - Start Time
               properties:
                 Course ID:
                   type: string
+                  description: Course identifier
                 Day of Week:
                   type: string
+                  description: Day name
                 Start Time:
                   type: string
+                  format: date-time
+                  description: Start time
                 End Time:
                   type: string
+                  format: date-time
+                  description: End time
                 Location:
                   type: string
+                  description: Room or location
                 Recurring:
                   type: string
+                  description: Recurring status
                 Period:
                   type: string
+                  description: Frequency
               additionalProperties: true
       responses:
         "200":
-          description: Schedule item updated
+          description: Schedule item updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScheduleItem'
+        "404":
+          description: Schedule item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     delete:
       operationId: deleteScheduleItem
       summary: Delete a schedule item
+      description: Remove a specific class time from the schedule by identifying with Course ID, Day, and Start Time
       tags: [schedule]
       parameters:
         - name: courseId
           in: query
           required: true
+          description: Course ID of the schedule item to delete
           schema:
             type: string
+            example: "COMP 213"
         - name: dayOfWeek
           in: query
           required: true
+          description: Day of week of the schedule item
           schema:
             type: string
+            example: "Monday"
         - name: startTime
           in: query
           required: true
+          description: Start time of the schedule item
           schema:
             type: string
+            example: "2025-09-01 10:00"
       responses:
         "200":
-          description: Schedule item deleted
+          description: Schedule item deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+        "400":
+          description: Missing required parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Schedule item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
   # Grading Scale API
   /api/data/grading-scale:
@@ -668,62 +757,162 @@ paths:
     post:
       operationId: createGradeScale
       summary: Create a new grade scale
+      description: Add a new grade definition to the grading scale
       tags: [grading-scale]
       requestBody:
         required: true
+        description: Grade scale entry with percentage range and letter grade
         content:
           application/json:
             schema:
               type: object
+              required:
+                - minPercentage
+                - maxPercentage
+                - letterGrade
               properties:
                 minPercentage:
                   type: number
+                  description: Minimum percentage for this grade
+                  example: 90
                 maxPercentage:
                   type: number
+                  description: Maximum percentage for this grade
+                  example: 100
                 letterGrade:
                   type: string
+                  description: Letter grade (e.g., "A+", "A", "B+")
+                  example: "A+"
                 gradePoints:
                   type: number
+                  description: GPA points for this grade
+                  example: 4.0
               additionalProperties: true
       responses:
         "201":
-          description: Grade scale created
+          description: Grade scale created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  minPercentage:
+                    type: number
+                  maxPercentage:
+                    type: number
+                  letterGrade:
+                    type: string
+                  gradePoints:
+                    type: number
+        "400":
+          description: Bad request - grade already exists or missing required fields
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     put:
       operationId: updateGradeScale
       summary: Update a grade scale
+      description: Update an existing grade scale entry's percentage boundaries or grade points
       tags: [grading-scale]
       requestBody:
         required: true
+        description: Complete grade scale object with updated fields
         content:
           application/json:
             schema:
               type: object
+              required:
+                - letterGrade
               properties:
                 minPercentage:
                   type: number
+                  description: Minimum percentage for this grade
                 maxPercentage:
                   type: number
+                  description: Maximum percentage for this grade
                 letterGrade:
                   type: string
+                  description: Letter grade (identifier)
                 gradePoints:
                   type: number
+                  description: GPA points for this grade
               additionalProperties: true
       responses:
         "200":
-          description: Grade scale updated
+          description: Grade scale updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  minPercentage:
+                    type: number
+                  maxPercentage:
+                    type: number
+                  letterGrade:
+                    type: string
+                  gradePoints:
+                    type: number
+        "404":
+          description: Grade scale not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     delete:
       operationId: deleteGradeScale
       summary: Delete a grade scale
+      description: Remove a grade definition from the grading scale by letter grade
       tags: [grading-scale]
       parameters:
         - name: letterGrade
           in: query
           required: true
+          description: Letter grade to delete (e.g., "A+", "B")
           schema:
             type: string
+            example: "A+"
       responses:
         "200":
-          description: Grade scale deleted
+          description: Grade scale deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+        "400":
+          description: letterGrade parameter is required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Grade scale not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
   # Deliverables API
   /api/data/deliverables:
@@ -750,36 +939,87 @@ paths:
     put:
       operationId: updateDeliverable
       summary: Update a deliverable
+      description: Update an assignment's status, grade, or due date. Requires Course ID, Deliverable name, and Open Date to identify the item. Commonly used to record grades and update status from "pending" to "graded".
       tags: [deliverables]
       requestBody:
         required: true
+        description: Complete deliverable object with updated fields. Must include Course ID, Deliverable name, and Open Date to identify which item to update.
         content:
           application/json:
             schema:
               type: object
+              required:
+                - Course ID
+                - Deliverable
+                - Open Date
               properties:
                 Course ID:
                   type: string
+                  description: Course identifier (required to identify the deliverable)
+                  example: "MECH 205"
                 Category:
                   type: string
+                  description: Type of deliverable (Quiz, Lab, Exam, Assignment, etc.)
+                  example: "Quiz"
                 Deliverable:
                   type: string
+                  description: Name of the deliverable (required to identify)
+                  example: "Quiz 2a: Electronic Principles"
                 Open Date:
                   type: string
+                  description: Date when assignment opens (required for matching)
+                  example: "Sep 5, 2025 10:10 AM"
                 Close Date:
                   type: string
+                  description: Due date for the deliverable
+                  example: "Sep 21, 2025 11:59 PM"
                 Weight %:
                   type: string
+                  description: Percentage weight in course grade
+                  example: "1.67"
                 Grade %:
                   type: string
+                  description: Percentage grade received (e.g., "97.14")
+                  example: "97.14"
                 Letter Grade:
                   type: string
+                  description: Letter grade equivalent
+                  example: "A+"
                 Status:
                   type: string
+                  description: Current status (pending, graded, submitted, in progress, complete, etc.)
+                  example: "graded"
               additionalProperties: true
       responses:
         "200":
-          description: Deliverable updated
+          description: Deliverable updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  updatedDeliverable:
+                    $ref: '#/components/schemas/Deliverable'
+                  gitHubUpdated:
+                    type: boolean
+                    description: Whether changes were synced to GitHub
+                  warning:
+                    type: string
+                    description: Optional warning message if GitHub sync failed
+        "404":
+          description: Deliverable not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
   # Calendar API
   /api/calendar:
