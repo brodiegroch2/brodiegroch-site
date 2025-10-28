@@ -416,6 +416,7 @@ paths:
             application/json:
               schema:
                 type: object
+                properties: {}
                 additionalProperties: true
         "404":
           description: Course not found
@@ -440,6 +441,7 @@ paths:
           application/json:
             schema:
               type: object
+              properties: {}
               additionalProperties: true
       responses:
         "201":
@@ -448,6 +450,7 @@ paths:
             application/json:
               schema:
                 type: object
+                properties: {}
                 additionalProperties: true
         "400":
           description: Course already exists
@@ -472,6 +475,7 @@ paths:
           application/json:
             schema:
               type: object
+              properties: {}
               additionalProperties: true
       responses:
         "200":
@@ -480,6 +484,7 @@ paths:
             application/json:
               schema:
                 type: object
+                properties: {}
                 additionalProperties: true
         "404":
           description: Course not found
