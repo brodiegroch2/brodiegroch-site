@@ -586,7 +586,7 @@ paths:
                   description: Room or location
                 Recurring:
                   type: string
-                  description: "Yes" or "No"
+                  description: "Yes or No"
                 Period:
                   type: string
                   description: Frequency (e.g., "Weekly")
