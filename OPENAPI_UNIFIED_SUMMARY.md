@@ -5,7 +5,7 @@
 ### Summary
 The OpenAPI spec has been cleaned and unified - all duplicate endpoints have been removed.
 
-### Endpoint Structure (9 total)
+### Endpoint Structure (10 total)
 1. **/api/actions** - Actions Documentation API
    - GET - getActionDocs
 
@@ -46,12 +46,23 @@ The OpenAPI spec has been cleaned and unified - all duplicate endpoints have bee
 9. **/api/time** - Current Date and Time
    - GET - getCurrentTime
 
-### Total Operations: 22
+10. **/api/courses** - Detailed Course Management
+    - GET - getDetailedCourses
+    - POST - createDetailedCourse
+    - PUT - updateDetailedCourse
+    - DELETE - deleteDetailedCourse
+
+### Total Operations: 27
 
 ### No Duplicates
 ✅ Each endpoint appears only once
 ✅ Each operationId is unique
 ✅ Clean, well-structured spec
+
+### Course APIs
+The system has two course APIs:
+- **/api/data/courses** - Simple course list (from courses.json)
+- **/api/courses** - Detailed course files (individual JSON files with modules, assessments, learning outcomes)
 
 ### Files Updated
 - `openapi-spec.yaml` (root)

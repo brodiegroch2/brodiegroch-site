@@ -4,21 +4,22 @@
 
 This document lists all available actions (API operations) for the SAIT MET Console, organized by category and HTTP method.
 
-**Total Actions:** 23 operations across 9 categories
+**Total Actions:** 27 operations across 10 categories
 
 ---
 
 ## Action Categories
 
-### 1. 📚 Courses (4 actions)
-### 2. 🔗 Quick Links (4 actions)
-### 3. 📅 Schedule (4 actions)
-### 4. 📊 Grading Scale (4 actions)
-### 5. 📝 Deliverables (2 actions)
-### 6. 📰 News & Announcements (1 action)
-### 7. 📆 Calendar (1 action)
-### 8. 🕐 Time (1 action)
-### 9. 📖 Documentation (2 actions)
+### 1. 📚 Simple Courses (4 actions) - /api/data/courses
+### 2. 📖 Detailed Courses (4 actions) - /api/courses
+### 3. 🔗 Quick Links (4 actions)
+### 4. 📅 Schedule (4 actions)
+### 5. 📊 Grading Scale (4 actions)
+### 6. 📝 Deliverables (2 actions)
+### 7. 📰 News & Announcements (1 action)
+### 8. 📆 Calendar (1 action)
+### 9. 🕐 Time (1 action)
+### 10. 📖 Documentation (2 actions)
 
 ---
 
@@ -60,7 +61,47 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 
 ---
 
-## 2. Quick Links Management (4 Actions)
+## 2. Detailed Course Management (4 Actions)
+
+**Note:** These operations work with detailed individual course JSON files containing modules, learning outcomes, assessments, and complete course structure.
+
+### getDetailedCourses
+- **Method:** GET
+- **Path:** /api/courses
+- **Approval Required:** ❌ No (Read-only)
+- **Parameters:** `id` (optional, filter by course ID like "COMP-213")
+- **Returns:** Array of course objects or single course
+- **Use Case:** Retrieve detailed course information including modules, assessments, and learning outcomes
+
+### createDetailedCourse
+- **Method:** POST
+- **Path:** /api/courses
+- **Approval Required:** ✅ Yes
+- **Required Fields:** Course JSON file with id/code, name, description
+- **Optional Fields:** Modules, learning outcomes, assessment, schedule, instructor details
+- **Returns:** Created course object (201)
+- **Use Case:** Create a new detailed course JSON file with complete course structure
+
+### updateDetailedCourse
+- **Method:** PUT
+- **Path:** /api/courses
+- **Approval Required:** ✅ Yes
+- **Required Fields:** Course JSON with id/code to identify course
+- **Optional Fields:** Any course field including modules, assessments, learning outcomes
+- **Returns:** Updated course object (200)
+- **Use Case:** Update course modules, assessments, or any detailed course information
+
+### deleteDetailedCourse
+- **Method:** DELETE
+- **Path:** /api/courses
+- **Approval Required:** ✅ Yes
+- **Required Parameters:** `id` (query param - Course ID to delete)
+- **Returns:** Success object (200)
+- **Use Case:** Remove a detailed course JSON file from the system
+
+---
+
+## 3. Quick Links Management (4 Actions)
 
 ### listQuickLinks
 - **Method:** GET
@@ -98,7 +139,7 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 
 ---
 
-## 3. Schedule Management (4 Actions)
+## 5. Schedule Management (4 Actions)
 
 ### listSchedule
 - **Method:** GET
@@ -141,7 +182,7 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 
 ---
 
-## 4. Grading Scale Management (4 Actions)
+## 6. Grading Scale Management (4 Actions)
 
 ### listGradingScale
 - **Method:** GET
@@ -179,7 +220,7 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 
 ---
 
-## 5. Deliverables Management (2 Actions)
+## 7. Deliverables Management (2 Actions)
 
 ### listDeliverables
 - **Method:** GET
@@ -201,7 +242,7 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 
 ---
 
-## 6. News & Announcements (1 Action)
+## 8. News & Announcements (1 Action)
 
 ### getNewsFeed
 - **Method:** GET
@@ -217,7 +258,7 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 
 ---
 
-## 7. Calendar Feed (1 Action)
+## 9. Calendar Feed (1 Action)
 
 ### getCalendarFeed
 - **Method:** GET
@@ -232,7 +273,7 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 
 ---
 
-## 8. Time Information (1 Action)
+## 10. Time Information (1 Action)
 
 ### getCurrentTime
 - **Method:** GET
@@ -249,7 +290,7 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 
 ---
 
-## 9. Documentation (1 Action)
+## 11. Documentation (1 Action)
 
 ### getActionDocs
 - **Method:** GET
@@ -265,8 +306,9 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 
 ## Action Summary by HTTP Method
 
-### GET Methods (Read-Only) - 11 actions
+### GET Methods (Read-Only) - 13 actions
 - listCourses
+- getDetailedCourses
 - listQuickLinks
 - listSchedule
 - listGradingScale
@@ -276,21 +318,24 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 - getCurrentTime
 - getActionDocs
 
-### POST Methods (Create) - 4 actions
+### POST Methods (Create) - 5 actions
 - createCourse
+- createDetailedCourse
 - createQuickLink
 - createScheduleItem
 - createGradeScale
 
-### PUT Methods (Update) - 5 actions
+### PUT Methods (Update) - 6 actions
 - updateCourse
+- updateDetailedCourse
 - updateQuickLink
 - updateScheduleItem
 - updateGradeScale
 - updateDeliverable
 
-### DELETE Methods (Remove) - 4 actions
+### DELETE Methods (Remove) - 5 actions
 - deleteCourse
+- deleteDetailedCourse
 - deleteQuickLink
 - deleteScheduleItem
 - deleteGradeScale
@@ -299,10 +344,10 @@ This document lists all available actions (API operations) for the SAIT MET Cons
 
 ## Approval Requirements
 
-### ✅ Requires User Approval (13 actions)
+### ✅ Requires User Approval (16 actions)
 All POST, PUT, and DELETE operations require approval before execution.
 
-### ❌ No Approval Required (11 actions)
+### ❌ No Approval Required (13 actions)
 All GET operations can be called freely without approval.
 
 ---
@@ -379,12 +424,12 @@ Error objects follow this structure:
 
 ## Total Summary
 
-- **Total Actions:** 23
-- **GET:** 11 (read-only)
-- **POST:** 4 (create)
-- **PUT:** 5 (update)
-- **DELETE:** 4 (remove)
-- **Categories:** 9
+- **Total Actions:** 27
+- **GET:** 13 (read-only)
+- **POST:** 5 (create)
+- **PUT:** 6 (update)
+- **DELETE:** 5 (remove)
+- **Categories:** 10
 - **All Actions Documented:** ✅
 - **All Actions Tested:** ✅
 - **All Actions Production Ready:** ✅
