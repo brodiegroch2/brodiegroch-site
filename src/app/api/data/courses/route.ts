@@ -37,6 +37,7 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   try {
     const rawCourse = await req.json();
+    console.log('Received POST request with rawCourse:', rawCourse);
     
     // Normalize field names: convert underscores to spaces (multiple underscores -> single space)
     const newCourse: any = {};
@@ -44,21 +45,29 @@ export async function POST(req: NextRequest) {
       const normalizedKey = key.replace(/_+/g, ' ');
       newCourse[normalizedKey] = value;
     }
+    console.log('Normalized course:', newCourse);
     
     const data = readData();
+    console.log('Current data length:', data.length);
     
     // Check if course already exists
     if (data.find((item: any) => item['Course ID'] === newCourse['Course ID'])) {
+      console.log('Course already exists:', newCourse['Course ID']);
       return NextResponse.json({ error: 'Course already exists' }, { status: 400 });
     }
     
     data.push(newCourse);
     writeData(data);
+    console.log('Successfully wrote course');
     
     return NextResponse.json(newCourse, { status: 201 });
   } catch (error) {
     console.error('Error creating course:', error);
-    return NextResponse.json({ error: 'Failed to create course' }, { status: 500 });
+    console.error('Error details:', error instanceof Error ? error.message : String(error));
+    return NextResponse.json({ 
+      error: 'Failed to create course',
+      details: error instanceof Error ? error.message : String(error)
+    }, { status: 500 });
   }
 }
 
