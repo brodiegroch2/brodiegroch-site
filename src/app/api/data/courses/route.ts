@@ -12,6 +12,69 @@ function writeData(data: any) {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 }
 
+async function updateViaGitHubAPI(data: any[]) {
+  try {
+    const githubToken = process.env.GITHUB_TOKEN;
+    const repoOwner = 'brodiegroch2';
+    const repoName = 'brodiegroch-site';
+    const ghFilePath = 'src/data/courses.json';
+    
+    if (!githubToken) {
+      console.error('❌ GITHUB_TOKEN environment variable not set');
+      return false;
+    }
+    
+    console.log('🔑 Using GitHub API with token...');
+    
+    // Get the current file content and SHA
+    const getFileResponse = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${ghFilePath}`, {
+      headers: {
+        'Authorization': `token ${githubToken}`,
+        'Accept': 'application/vnd.github.v3+json'
+      }
+    });
+    
+    if (!getFileResponse.ok) {
+      console.error('❌ Failed to get file from GitHub:', getFileResponse.status, getFileResponse.statusText);
+      return false;
+    }
+    
+    const fileData = await getFileResponse.json();
+    console.log('📄 Got file SHA:', fileData.sha);
+    
+    // Update the file
+    const newContent = JSON.stringify(data, null, 2);
+    const timestamp = new Date().toISOString();
+    const commitMessage = `Update courses: ${timestamp}`;
+    
+    const updateResponse = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${ghFilePath}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `token ${githubToken}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: commitMessage,
+        content: Buffer.from(newContent).toString('base64'),
+        sha: fileData.sha
+      })
+    });
+    
+    if (!updateResponse.ok) {
+      const errorData = await updateResponse.text();
+      console.error('❌ Failed to update file on GitHub:', updateResponse.status, errorData);
+      return false;
+    }
+    
+    console.log('✅ Successfully updated file via GitHub API');
+    return true;
+  } catch (error) {
+    console.error('❌ Error updating via GitHub API:', error);
+    return false;
+  }
+}
+
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
@@ -57,6 +120,25 @@ export async function POST(req: NextRequest) {
     }
     
     data.push(newCourse);
+    
+    // In production (Vercel), use GitHub API to update file
+    if (process.env.VERCEL || process.env.NODE_ENV === 'production') {
+      console.log('🌐 Using GitHub API for production update...');
+      const success = await updateViaGitHubAPI(data);
+      if (!success) {
+        return NextResponse.json({ 
+          error: 'Failed to update courses via GitHub API. Please try again or update manually.',
+          gitHubUpdated: false
+        }, { status: 500 });
+      }
+      return NextResponse.json({ 
+        ...newCourse,
+        gitHubUpdated: true
+      }, { status: 201 });
+    }
+    
+    // In development, write to local file
+    console.log('💻 Using local file system for development...');
     writeData(data);
     console.log('Successfully wrote course');
     
@@ -90,6 +172,24 @@ export async function PUT(req: NextRequest) {
     }
     
     data[index] = updatedCourse;
+    
+    // In production (Vercel), use GitHub API to update file
+    if (process.env.VERCEL || process.env.NODE_ENV === 'production') {
+      console.log('🌐 Using GitHub API for production update...');
+      const success = await updateViaGitHubAPI(data);
+      if (!success) {
+        return NextResponse.json({ 
+          error: 'Failed to update courses via GitHub API. Please try again or update manually.',
+          gitHubUpdated: false
+        }, { status: 500 });
+      }
+      return NextResponse.json({ 
+        ...updatedCourse,
+        gitHubUpdated: true
+      });
+    }
+    
+    // In development, write to local file
     writeData(data);
     
     return NextResponse.json(updatedCourse);
@@ -116,6 +216,24 @@ export async function DELETE(req: NextRequest) {
     }
     
     data.splice(index, 1);
+    
+    // In production (Vercel), use GitHub API to update file
+    if (process.env.VERCEL || process.env.NODE_ENV === 'production') {
+      console.log('🌐 Using GitHub API for production update...');
+      const success = await updateViaGitHubAPI(data);
+      if (!success) {
+        return NextResponse.json({ 
+          error: 'Failed to update courses via GitHub API. Please try again or update manually.',
+          gitHubUpdated: false
+        }, { status: 500 });
+      }
+      return NextResponse.json({ 
+        success: true,
+        gitHubUpdated: true
+      });
+    }
+    
+    // In development, write to local file
     writeData(data);
     
     return NextResponse.json({ success: true });
