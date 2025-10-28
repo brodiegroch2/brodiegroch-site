@@ -52,5 +52,14 @@
     "Course Description": "This design course introduces the basic building blocks required for the common core and the three specializations. Using wide-ranging, flexible design reasoning the learner will learn how to set up problems based on a good understanding of the underlying principles, choose a plan to solve them, and present the results. Cross-referenced to the National Technology Benchmarks (NTB).",
     "Professor/Teacher Name": "Shaw Kinjo",
     "Professor/Teacher Email": "shaw.kinjo@sait.ca"
+  },
+  {
+    "Course ID": "MET320",
+    "Course Name": "Thermodynamics II",
+    "Course Average Weighted Grade": "N/A",
+    "Credit Hours": "3",
+    "Course Description": "An advanced course focusing on applications of thermodynamic principles to power cycles, refrigeration, and gas mixtures.",
+    "Professor/Teacher Name": "Dr. Sarah Thompson",
+    "Professor/Teacher Email": "sarah.thompson@sait.ca"
   }
 ]
