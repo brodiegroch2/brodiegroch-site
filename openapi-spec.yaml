@@ -118,6 +118,8 @@ tags:
     description: Course announcements and news feeds
   - name: documentation
     description: API documentation and action references
+  - name: time
+    description: Current date and time information
 
 paths:
   # Actions Documentation API
@@ -1093,3 +1095,64 @@ paths:
                 $ref: '#/components/schemas/Error'
 
 
+  # Time API
+  /api/time:
+    get:
+      operationId: getCurrentTime
+      summary: Get current date and time
+      description: Retrieve the current date and time information from the server in multiple formats
+      tags: [time]
+      responses:
+        "200":
+          description: Current date and time retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  timestamp:
+                    type: string
+                    format: date-time
+                    description: ISO 8601 timestamp
+                    example: "2025-10-28T01:30:00.000Z"
+                  date:
+                    type: string
+                    description: Human-readable date
+                    example: "October 28, 2025"
+                  time:
+                    type: string
+                    description: Human-readable time with AM/PM
+                    example: "01:30:00 AM"
+                  timezone:
+                    type: string
+                    description: Server timezone
+                    example: "America/Edmonton"
+                  unixTimestamp:
+                    type: integer
+                    description: Unix timestamp in seconds
+                    example: 1727001000
+                  year:
+                    type: integer
+                    description: Current year
+                    example: 2025
+                  month:
+                    type: integer
+                    description: Current month (1-12)
+                    example: 10
+                  day:
+                    type: integer
+                    description: Current day of month
+                    example: 28
+                  weekday:
+                    type: string
+                    description: Day of the week
+                    example: "Tuesday"
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
