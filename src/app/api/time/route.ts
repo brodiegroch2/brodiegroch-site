@@ -4,6 +4,10 @@ export async function GET() {
   try {
     const now = new Date();
     
+    // Get current date/time in multiple timezones
+    const edmontonTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Edmonton"}));
+    const utcTime = new Date(now.toISOString());
+    
     return NextResponse.json({
       success: true,
       timestamp: now.toISOString(),
@@ -21,11 +25,15 @@ export async function GET() {
         timeZone: 'America/Edmonton'
       }),
       timezone: 'America/Edmonton',
+      timezoneOffset: edmontonTime.getTime() - utcTime.getTime(),
       unixTimestamp: Math.floor(now.getTime() / 1000),
-      year: now.getFullYear(),
-      month: now.getMonth() + 1,
-      day: now.getDate(),
-      weekday: now.toLocaleDateString('en-US', { weekday: 'long' })
+      year: edmontonTime.getFullYear(),
+      month: edmontonTime.getMonth() + 1,
+      day: edmontonTime.getDate(),
+      weekday: now.toLocaleDateString('en-US', { 
+        weekday: 'long',
+        timeZone: 'America/Edmonton'
+      })
     });
   } catch (error) {
     console.error('Error getting time:', error);
