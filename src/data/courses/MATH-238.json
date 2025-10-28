@@ -1,0 +1,521 @@
+{
+  "id": "MATH-238",
+  "name": "Mathematics for Engineering and Technology I",
+  "code": "MATH-238",
+  "credits": 3,
+  "semester": "Fall 2025",
+  "effectiveTerm": "Fall 2025",
+  "timeGuidelines": {
+    "instructionalHours": 75,
+    "description": "The standard instructional time for this course is 75 hours."
+  },
+  "instructor": {
+    "name": "Femi Alli, Ph.D., P.Eng.",
+    "email": "femi.alli@sait.ca",
+    "phone": "403-284-7115",
+    "office": "NN 410F",
+    "appointment": "by request"
+  },
+  "description": "This course enables the student to apply the basic knowledge of algebra and introductory calculus to resolve applied scientific and technological problems. Applications include linear motion, areas under curves, and volumes of revolution.",
+  "courseDescription": {
+    "overview": "This course enables the student to apply the basic knowledge of algebra and introductory calculus to resolve applied scientific and technological problems. Applications include linear motion, areas under curves, and volumes of revolution.",
+    "credits": 3,
+    "timeGuidelines": "The standard instructional time for this course is 75 hours.",
+    "equivalents": "MATH 235",
+    "precludedEquivalents": "None"
+  },
+  "prerequisites": ["MATH-30-1 or MATH-30-2"],
+  "classrooms": {
+    "theory": ["NR211", "NH101", "NK109"],
+    "lab": []
+  },
+  "schedule": {
+    "lectures": [
+      {
+        "day": "Monday",
+        "time": "3:00 PM - 3:50 PM",
+        "room": "NK109",
+        "type": "Lecture",
+        "building": "Senator Burns Building"
+      },
+      {
+        "day": "Wednesday",
+        "time": "8:00 AM - 9:50 AM",
+        "room": "NH101",
+        "type": "Lecture",
+        "building": "Senator Burns Building"
+      },
+      {
+        "day": "Friday",
+        "time": "2:00 PM - 3:50 PM",
+        "room": "NR211",
+        "type": "Lecture",
+        "building": "Senator Burns Building"
+      }
+    ],
+    "labs": []
+  },
+  "classTimes": "Monday 3.00pm -3.50pm; Wednesday 8.00 am- 9.50 am; Friday 2.00 pm – 3.50 pm",
+  "courseDetails": {
+    "campus": "Main Campus",
+    "scheduleType": "Lecture",
+    "instructionalMethod": "In Person",
+    "gradeMode": "Normal - Letter Grade",
+    "crn": "21745",
+    "classBegin": "2025-09-01",
+    "classEnd": "2025-12-17",
+    "hours": 3,
+    "level": "Credit Education"
+  },
+  "learningOutcomes": [
+    {
+      "id": 1,
+      "title": "Solve for the limiting value of a function using the properties of limits",
+      "objectives": [
+        "Determine the continuity of a function",
+        "Evaluate simple limits algebraically using limit notation",
+        "Evaluate simple limits graphically",
+        "Evaluate indeterminate limits by specialized techniques"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Determine the derivative using first principles",
+      "objectives": [
+        "Determine the average rate of change of a function",
+        "Determine the instantaneous rate of change of a function from first principles",
+        "Calculate the slope of a tangent to a curve",
+        "Determine derivatives by employing the definition of the derivative"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Differentiate algebraic functions using fundamental formulas",
+      "objectives": [
+        "Determine derivatives using the power rule",
+        "Determine derivatives using the product and quotient rules",
+        "Determine derivatives using the chain rule",
+        "Determine successive (i.e. higher order) derivatives",
+        "Determine derivatives by applying the technique of implicit differentiation"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Solve problems involving applications of the derivative",
+      "objectives": [
+        "Determine the equation of a tangent or a normal line to a curve",
+        "Solve linear motion application problems",
+        "Solve related rates problems",
+        "Graph algebraic equations employing derivative and limit curve-sketching techniques",
+        "Solve maximum and minimum application problems",
+        "Solve linear differential approximation problems including error calculations with appropriate significant digits"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Determine the indefinite, definite, and particular integrals of algebraic functions",
+      "objectives": [
+        "Determine antiderivatives and integrals of algebraic functions",
+        "Evaluate the constant of integration",
+        "Determine the particular equation of a curve given a point on the curve",
+        "Evaluate the definite integral",
+        "Approximate a definite integral using the trapezoidal rule"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Solve problems involving applications of integration",
+      "objectives": [
+        "Solve applied integration problems involving displacement, velocity and acceleration",
+        "Calculate areas under and between curves employing integration techniques",
+        "Determine the volume obtained by rotating an area around an axis"
+      ]
+    }
+  ],
+  "assessment": {
+    "onlineQuizAssignment": 10,
+    "tests": 20,
+    "midtermExam": 30,
+    "finalExam": 40,
+    "total": 100,
+    "description": "Component Weight: Online Quiz/Assignment (on Pearsonmylab) 10%, 2 Tests (10% each) 20%, Mid-term Exam 30%, Final Exam 40%, Total 100%"
+  },
+  "weeklySchedule": {
+    "schedule": [
+      {
+        "week": 1,
+        "dates": "Sept 1–5",
+        "module": "1",
+        "topic": "Solve for the limiting value of a function using the properties of limits",
+        "chapters": "23-1",
+        "assessments": "None"
+      },
+      {
+        "week": 2,
+        "dates": "Sept 8–12",
+        "module": "1",
+        "topic": "Determine the derivative using first principles",
+        "chapters": "23-2, 3, 4",
+        "assessments": "None"
+      },
+      {
+        "week": 3,
+        "dates": "Sept 15–19",
+        "module": "1",
+        "topic": "Differentiate polynomials using fundamental formula",
+        "chapters": "23-5, 6, 7",
+        "assessments": "None"
+      },
+      {
+        "week": 4,
+        "dates": "Sept 22–26",
+        "module": "1",
+        "topic": "Differentiate polynomials including higher derivatives, tangents, and normal lines",
+        "chapters": "23-8, 9, 24-1",
+        "assessments": "Assignment 1 – 2.5% (Due Sept. 28)"
+      },
+      {
+        "week": 5,
+        "dates": "Sept 29–Oct 3",
+        "module": "2",
+        "topic": "Solve linear and curvilinear motion problems; Solve related rates problems",
+        "chapters": "24-3, 4",
+        "assessments": "Derivatives Test – 10% (Oct. 3)"
+      },
+      {
+        "week": 6,
+        "dates": "Oct 6–10",
+        "module": "2",
+        "topic": "Graph polynomial equations employing derivative curve-sketching techniques; Solve max & min problems",
+        "chapters": "24-5",
+        "assessments": "None"
+      },
+      {
+        "week": 7,
+        "dates": "Oct 13–17",
+        "module": "2",
+        "topic": "Application problems; Differentials and linear approximation",
+        "chapters": "24-7, 8",
+        "assessments": "None"
+      },
+      {
+        "week": 8,
+        "dates": "Oct 20–24",
+        "module": "–",
+        "topic": "MIDTERM",
+        "chapters": "–",
+        "assessments": "Midterm Exam – 30% (Oct. 31)"
+      },
+      {
+        "week": 9,
+        "dates": "Oct 27–31",
+        "module": "3",
+        "topic": "Antiderivatives and Indefinite Integral",
+        "chapters": "25-1, 2",
+        "assessments": "Assignment 2 – 2.5% (Due Oct. 26)"
+      },
+      {
+        "week": 10,
+        "dates": "Nov 3–7",
+        "module": "3",
+        "topic": "Definite Integral",
+        "chapters": "25-3, 4",
+        "assessments": "None"
+      },
+      {
+        "week": 11,
+        "dates": "Nov 10–14",
+        "module": "3",
+        "topic": "Trapezoidal Rule; Area under the curve",
+        "chapters": "25-5",
+        "assessments": "Reading Week – No Classes"
+      },
+      {
+        "week": 12,
+        "dates": "Nov 17–21",
+        "module": "4",
+        "topic": "Applications of Integration",
+        "chapters": "26-1",
+        "assessments": "None"
+      },
+      {
+        "week": 13,
+        "dates": "Nov 24–28",
+        "module": "4",
+        "topic": "Areas by Integration",
+        "chapters": "26-2",
+        "assessments": "Assignment 3 – 2.5% (Due Nov. 30)"
+      },
+      {
+        "week": 14,
+        "dates": "Dec 1–5",
+        "module": "4",
+        "topic": "Volumes by Integration",
+        "chapters": "26-3",
+        "assessments": "Assignment 4 – 2.5% (Due Dec. 7), Integration Test – 10% (Dec. 5)"
+      },
+      {
+        "week": 15,
+        "dates": "Dec 8–11",
+        "module": "–",
+        "topic": "Final Exam Review",
+        "chapters": "–",
+        "assessments": "None"
+      },
+      {
+        "week": 16,
+        "dates": "Dec 12–17",
+        "module": "–",
+        "topic": "Final Exam Week (40%) – Ch. 25: 1–5, Ch. 26: 1–3",
+        "chapters": "25: 1–5, 26: 1–3",
+        "assessments": "Final Exam – 40% (Date TBA)"
+      }
+    ],
+    "note": "Tentative; subject to change. Final Exam: 40%"
+  },
+  "modules": [
+    {
+      "id": 1,
+      "title": "Limits and Derivatives",
+      "duration": "4 weeks",
+      "topics": [
+        "Solve for the limiting value of a function using the properties of limits",
+        "Determine the derivative using first principles",
+        "Differentiate polynomials using fundamental formula",
+        "Differentiate polynomials including higher derivatives, tangents, and normal lines"
+      ],
+      "assignments": [
+        {
+          "name": "Assignment 1",
+          "due_date": "2025-09-28",
+          "weight": 2.5,
+          "description": "Derivatives and limits assignment"
+        }
+      ],
+      "tests": [
+        {
+          "name": "Derivatives Test",
+          "due_date": "2025-10-03",
+          "weight": 10,
+          "description": "Test on derivatives and limits concepts"
+        }
+      ],
+      "chapters": "23-1 through 24-1"
+    },
+    {
+      "id": 2,
+      "title": "Applications of Derivatives",
+      "duration": "3 weeks",
+      "topics": [
+        "Solve linear and curvilinear motion problems",
+        "Solve related rates problems",
+        "Graph polynomial equations employing derivative curve-sketching techniques",
+        "Solve max & min problems",
+        "Application problems",
+        "Differentials and linear approximation"
+      ],
+      "chapters": "24-3 through 24-8"
+    },
+    {
+      "id": 3,
+      "title": "Integration Fundamentals",
+      "duration": "3 weeks",
+      "topics": [
+        "Antiderivatives and Indefinite Integral",
+        "Definite Integral",
+        "Trapezoidal Rule",
+        "Area under the curve"
+      ],
+      "assignments": [
+        {
+          "name": "Assignment 2",
+          "due_date": "2025-10-26",
+          "weight": 2.5,
+          "description": "Integration fundamentals assignment"
+        }
+      ],
+      "chapters": "25-1 through 25-5"
+    },
+    {
+      "id": 4,
+      "title": "Applications of Integration",
+      "duration": "3 weeks",
+      "topics": [
+        "Applications of Integration",
+        "Areas by Integration",
+        "Volumes by Integration"
+      ],
+      "assignments": [
+        {
+          "name": "Assignment 3",
+          "due_date": "2025-11-30",
+          "weight": 2.5,
+          "description": "Areas by integration assignment"
+        },
+        {
+          "name": "Assignment 4",
+          "due_date": "2025-12-07",
+          "weight": 2.5,
+          "description": "Volumes by integration assignment"
+        }
+      ],
+      "tests": [
+        {
+          "name": "Integration Test",
+          "due_date": "2025-12-05",
+          "weight": 10,
+          "description": "Test on integration concepts and applications"
+        }
+      ],
+      "chapters": "26-1 through 26-3"
+    }
+  ],
+  "requiredStudentMaterials": {
+    "textbook": {
+      "title": "Basic Technical Mathematics with Calculus. SI Version Plus MyLab Math",
+      "authors": "Washington, A.J., Evans, R., Michalle, B., Fabbroni Martin, E.",
+      "edition": "12th ed.CE",
+      "year": "2024",
+      "publisher": "Pearson Education Canada",
+      "required": true
+    },
+    "calculator": {
+      "type": "Scientific calculator without graphing or programming capabilities",
+      "requirement": "Required for examinations",
+      "restrictions": "Graphing calculators (e.g. TI-83) will not be permitted for examinations. Check with your instructor regarding permissible calculators and any other limitations on the use of calculators."
+    }
+  },
+  "textbooks": [
+    {
+      "title": "Basic Technical Mathematics with Calculus. SI Version Plus MyLab Math",
+      "authors": "Washington, A.J., Evans, R., Michalle, B., Fabbroni Martin, E.",
+      "edition": "12th ed.CE",
+      "year": "2024",
+      "publisher": "Pearson Education Canada",
+      "required": true
+    }
+  ],
+  "turnitin": {
+    "description": "The instructor may submit student work in this course to Turnitin's text-matching software program, to help assess the academic integrity of student work in this course. Turnitin results may be considered as one piece of evidence in academic misconduct hearings.",
+    "dataManagement": "Turnitin is an American company that keeps no unencrypted student identity data in the United States unless the students themselves choose to share this information in their submission. Students should limit their sharing of personally identifiable information by not including their names and student ID numbers within the text body of submitted assignments.",
+    "saitReview": "SAIT has carefully reviewed this company's data management procedures against SAIT's data governance and governance protection practices. By enrolling in this course, students are deemed to agree to the submission of their written work to Turnitin for verification of their work's academic integrity.",
+    "contact": "A student who has questions about the collection or use of their personal information may contact foip.coordinator@sait.ca."
+  },
+  "saitPolicies": {
+    "description": "Students should familiarize themselves with SAIT's Policies and Procedures, including but not limited to those in the Academic Student, Conduct, and Health, Safety, and Environment domains."
+  },
+  "coursePolicies": {
+    "d2lBrightspace": {
+      "description": "Course website is Brightspace [https://learn.sait.ca/]. Blackboard Collaborate (on Brightspace), will be the only platform on which this course will be delivered. Announcements and grades will be posted on this website. Please check the course webpage frequently for relevant information, news and updates."
+    },
+    "calculator": {
+      "requirement": "Simple scientific calculator is required. (No smart devices, no graphing calculators).",
+      "restrictions": "Students are NOT PERMITTED to use any type of graphing calculators during tests and exams. Simple scientific calculator is required."
+    },
+    "attendance": {
+      "policy": "Attendance will be taken during every class. You are expected to attend ALL classes. Please be informed that if you miss any class, you are responsible for the missed content, not the instructor. You may refer to the course schedule or see notes taken by your colleagues. Sending email to the instructor when you are absent will not be an acceptable means of catching up on missed classes. Being absent without catching up on the missed content may have a significant effect on your grades."
+    },
+    "missedEvaluation": {
+      "policy": "Test rewrite is NOT automatic. There will be NO REWRITE of assessments. Students are required to provide prior notice BEFORE THE TEST, not after, else, ZERO mark will apply. Missed lab, test or exam will attract ZERO MARK. For health-related issues, you will be required to submit SAIT's physician statement to the instructor before limited options of a re-write can be considered. Any other claim must be substantiated by an appropriate document, otherwise zero mark will apply."
+    },
+    "homework": {
+      "policy": "A key factor to your success in this course is making sure that you do your assigned homework problems. This is in addition to regular class attendance and active participation."
+    },
+    "grades": {
+      "policy": "Grades will be turned in within 5 business days of assessment."
+    }
+  },
+  "classExpectations": [
+    "Learners are strongly encouraged to use SAIT email address ONLY for all correspondence. Non-compliance will attract 'no response'.",
+    "Every grade after each assessment stands. There will be NO BOOSTING OF GRADES with any extra assignment/exercise. All learners will have ONE equal opportunity on assessments. Hence, learners are encouraged to do all homework as suggested and start prep. early enough before each assessment.",
+    "Every student is encouraged to check SAIT emails regularly, likewise Brightspace for any announcement.",
+    "To be successful in this course, 'regular attendance/active class participation/doing homework' is strongly recommended and highly encouraged. Respectful behavior is expected at all levels in this class.",
+    "Regular practice is advised as this is a major factor that will contribute to your success in this course.",
+    "Please explore all the documents, class worksheets, etc, posted on Brightspace to your advantage.",
+    "Where applicable, answers alone are not sufficient. Show enough of your method so as to clearly indicate HOW you arrived at your answer. Marks will be given only for work that is CLEARLY shown and LEGIBLY presented.",
+    "Students are NOT PERMITTED to use any type of graphing calculators during tests and exams. Simple scientific calculator is required.",
+    "During assessments, cell phones must be turned off and put in bags, where bags are placed below the white board.",
+    "Smart watches and non-religious hat are NOT permitted during assessments."
+  ],
+  "onlineAssessments": {
+    "platform": "Online Quizzes/Assignments are on PearsonMylab.",
+    "registration": "Student registration instructions for PearsonMylab are under important files on D2L. You are required to carefully follow the instructions in the handout",
+    "extensionPolicy": "There will be NO EXTENSION of deadline for online quizzes/assignments.",
+    "attempts": "3 attempts",
+    "deadlines": [
+      "Assignment 1 – 2.5%: Due @ 11.59 pm on Sept. 28, 2025",
+      "Assignment 2 – 2.5%: Due @ 11.59 pm on Oct. 26, 2025",
+      "Assignment 3 – 2.5%: Due @ 11.59pm on Nov. 30, 2025",
+      "Assignment 4 – 2.5%: Due @ 11.59pm on Dec. 7, 2025"
+    ]
+  },
+  "textbookPurchase": {
+    "options": "Textbook can be purchased either at SAIT bookstore or directly at www.mymathlab.com. Either way, you will get full access to the entire e-text online and other available resources such as study plan, practice questions, online assignment, videos, slides and so on.",
+    "registration": "All online assessments are on PearsonMylab. Basically, just go to www.mymathlab.com , and you'll need three items: your SAIT email address, student registration handout, and your credit card. You register once only, and when you pay for online access, you automatically get access to the entire textbook for the course."
+  },
+  "copyright": {
+    "notice": "Copyright 2015 - 2026, Southern Alberta Institute of Technology (SAIT). All Rights Reserved.",
+    "intellectualProperty": "This document and materials herein are protected by applicable intellectual property laws. Unauthorized reproduction and distribution of this publication in whole or part is prohibited."
+  },
+  "important_dates": [
+    {
+      "date": "2025-09-01",
+      "event": "Labour Day (no classes)",
+      "type": "holiday"
+    },
+    {
+      "date": "2025-09-30",
+      "event": "National day for Truth and Reconciliation (no classes)",
+      "type": "holiday"
+    },
+    {
+      "date": "2025-10-13",
+      "event": "Thanksgiving Day (no classes)",
+      "type": "holiday"
+    },
+    {
+      "date": "2025-10-31",
+      "event": "Midterm Exam - 30%",
+      "type": "assessment"
+    },
+    {
+      "date": "2025-11-10",
+      "event": "Remembrance Day (no classes)",
+      "type": "holiday"
+    },
+    {
+      "date": "2025-11-10",
+      "event": "Mid Semester Break (no classes)",
+      "type": "break",
+      "endDate": "2025-11-14"
+    },
+    {
+      "date": "2025-11-14",
+      "event": "Withdrawal Deadline (no classes)",
+      "type": "academic"
+    },
+    {
+      "date": "2025-12-11",
+      "event": "Final Day of Classes",
+      "type": "academic"
+    },
+    {
+      "date": "2025-12-12",
+      "event": "Final Exam Week - 40% (Ch 25: 1-5, Ch 26: 1-3)",
+      "type": "assessment",
+      "endDate": "2025-12-17"
+    }
+  ],
+  "grading_scale": {
+    "A+": "95-100",
+    "A": "90-94",
+    "A-": "85-89",
+    "B+": "80-84",
+    "B": "75-79",
+    "B-": "70-74",
+    "C+": "65-69",
+    "C": "60-64",
+    "D": "50-59",
+    "F": "0-49"
+  }
+}

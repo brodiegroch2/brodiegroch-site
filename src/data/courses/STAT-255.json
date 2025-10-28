@@ -1,0 +1,502 @@
+{
+  "id": "STAT-255",
+  "name": "Engineering Statics",
+  "code": "STAT-255",
+  "credits": 1.5,
+  "semester": "Fall 2025",
+  "effectiveTerm": "Fall 2025",
+  "timeGuidelines": {
+    "instructionalHours": 60,
+    "description": "The standard instructional time for the day-time course offering is 60 hours. Continuing Education and Distance Education hours will vary."
+  },
+  "equivalents": ["STCS 200", "STCS 242"],
+  "instructor": {
+    "name": "Borzumehr Toloui",
+    "email": "borzumehr.toloui@sait.ca",
+    "office": "TBA"
+  },
+  "description": "This course covers components and resultants of vectors, two-force members, free-body diagrams, equations of equilibrium, equilibrium of concurrent force systems and pulley systems, moments and couples, equilibrium of non concurrent force systems, truss analysis using method of joints and method of sections, and frame analysis using method of members.",
+  "courseDescription": {
+    "overview": "This course covers components and resultants of vectors, two-force members, free-body diagrams, equations of equilibrium, equilibrium of concurrent force systems and pulley systems, moments and couples, equilibrium of non concurrent force systems, truss analysis using method of joints and method of sections, and frame analysis using method of members.",
+    "credits": 1.5,
+    "timeGuidelines": "The standard instructional time for the day-time course offering is 60 hours. Continuing Education and Distance Education hours will vary.",
+    "equivalents": ["STCS 200", "STCS 242"]
+  },
+  "prerequisites": ["MATH-238"],
+  "classrooms": {
+    "theory": ["NJ301", "NJ307"],
+    "lab": ["NJ312"]
+  },
+  "schedule": {
+    "lectures": [
+      {
+        "day": "Monday",
+        "time": "12:00 PM - 01:50 PM",
+        "room": "NJ307",
+        "type": "Lecture",
+        "building": "Senator Burns Building"
+      },
+      {
+        "day": "Wednesday",
+        "time": "12:00 PM - 12:50 PM",
+        "room": "NJ301",
+        "type": "Lecture",
+        "building": "Senator Burns Building"
+      }
+    ],
+    "labs": [
+      {
+        "day": "Friday",
+        "time": "08:00 AM - 09:50 AM",
+        "room": "NJ312",
+        "type": "Lab",
+        "building": "Senator Burns Building",
+        "schedule": "Selected Fridays throughout semester"
+      }
+    ]
+  },
+  "courseDetails": {
+    "campus": "Main Campus",
+    "scheduleType": "Lecture/Lab",
+    "instructionalMethod": "In Person",
+    "gradeMode": "Normal - Letter Grade",
+    "crn": "22454 (Lecture), 22456 (Lab)",
+    "classBegin": "2025-09-01",
+    "classEnd": "2025-12-17",
+    "hours": 1.5,
+    "level": "Credit Education"
+  },
+  "learningOutcomes": [
+    {
+      "id": 1,
+      "title": "Submit a problem solution complete in all aspects of organized layout, calculations, units, and significant digits",
+      "objectives": [
+        "Explain the components of applied mechanics",
+        "Use the system of SI units in the solution of engineering problems",
+        "Submit problem solutions in a clear and organized layout",
+        "Prepare problem solutions with appropriate numerical accuracy and significant figures",
+        "Use the basic principles of Algebra, Geometry, and Trigonometry to solve introductory problems"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Determine the resultant of several vectors",
+      "objectives": [
+        "Define the properties of vectors",
+        "Classify types, characteristics, and units of forces",
+        "Calculate the resultant of two perpendicular forces",
+        "Perform vector addition by using the graphical method (Tail to Tip)",
+        "Perform vector addition by using the Sine and Cosine Laws",
+        "Resolve vectors into components",
+        "Perform vector addition by using the component method"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Calculate moments and couples",
+      "objectives": [
+        "Calculate the moment of a force about a point",
+        "Calculate the moment due to a couple",
+        "Calculate the net moment about a point"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Apply three equations of equilibrium to coplanar force systems",
+      "objectives": [
+        "Draw free-body diagrams using common conventions",
+        "State the three equations of equilibrium",
+        "Analyze pulley systems",
+        "Identify two-force members",
+        "Determine member forces in coplanar concurrent force systems",
+        "Calculate support reactions in coplanar parallel force systems",
+        "Calculate support reactions in coplanar nonconcurrent force systems"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Solve problems involving the method of joints, method of members, and method of sections",
+      "objectives": [
+        "Determine forces in truss members using the method of joints",
+        "Determine forces in truss members using the method of sections",
+        "Calculate pin and support reactions using the method of members"
+      ]
+    }
+  ],
+  "assessment": {
+    "finalExam": 30,
+    "midtermExam": 30,
+    "assignmentsQuizzes": 25,
+    "labs": 15,
+    "total": 100,
+    "description": "Course Assessment: Final Exam 30%, Midterm Exam 30%, Assignment(s) and/or Quizzes 25%, Labs 15%, Total: 100%"
+  },
+  "weeklySchedule": {
+    "note": "Schedule is subject to change",
+    "schedule": [
+      {
+        "week": 1,
+        "modulesTopics": [
+          "Submit a problem solution complete in all aspects of organized layout, calculations, units, and significant digits",
+          "Determine the resultant of several vectors"
+        ],
+        "objectives": "1.1–1.5, 2.1–2.3",
+        "readings": "pp. 1–25, pp. 41–47",
+        "labsActivities": "Lab #1 (1)",
+        "assessments": "None"
+      },
+      {
+        "week": 2,
+        "modulesTopics": [
+          "Determine the resultant of several vectors"
+        ],
+        "objectives": "2.4–2.5",
+        "readings": "pp. 47–52",
+        "labsActivities": "Lab #1 (2)",
+        "assessments": "None"
+      },
+      {
+        "week": 3,
+        "modulesTopics": [
+          "Determine the resultant of several vectors",
+          "Calculate moments and couples"
+        ],
+        "objectives": "2.6, 3.1",
+        "readings": "pp. 52–55, pp. 69–72",
+        "labsActivities": "Lab #2 (1)",
+        "assessments": "Lab #1 (2.5%), Assignment #1 (2%)"
+      },
+      {
+        "week": 4,
+        "modulesTopics": [
+          "Calculate moments and couples"
+        ],
+        "objectives": "3.2–3.3",
+        "readings": "pp. 72–78",
+        "labsActivities": "Lab #2 (2)",
+        "assessments": "Quiz (10%), Assignment #2 (1%)"
+      },
+      {
+        "week": 5,
+        "modulesTopics": [
+          "Apply three equations of equilibrium to coplanar parallel and coplanar non-concurrent force systems"
+        ],
+        "objectives": "4.1–4.4",
+        "readings": "pp. 97–97, pp. 103–104",
+        "labsActivities": "Lab #3 (1)",
+        "assessments": "Lab #2 (2.5%)"
+      },
+      {
+        "week": 6,
+        "modulesTopics": [
+          "Apply three equations of equilibrium to coplanar parallel and coplanar non-concurrent force systems"
+        ],
+        "objectives": "4.5–4.6",
+        "readings": "pp. 107–119",
+        "labsActivities": "Lab #3 (2)",
+        "assessments": "Assignment #3 (2%)"
+      },
+      {
+        "week": 7,
+        "modulesTopics": [
+          "Apply three equations of equilibrium to coplanar parallel and coplanar non-concurrent force systems"
+        ],
+        "objectives": "4.6",
+        "readings": "pp. 119–122",
+        "labsActivities": "Lab #4 (1)",
+        "assessments": "Lab #3 (2.5%)"
+      },
+      {
+        "week": 8,
+        "modulesTopics": [
+          "Apply three equations of equilibrium to coplanar parallel and coplanar non-concurrent force systems"
+        ],
+        "objectives": "4.7",
+        "readings": "pp. 123–127",
+        "labsActivities": "Lab #4 (2)",
+        "assessments": "Assignment #4 (2%), Midterm Exam (30%)"
+      },
+      {
+        "week": 9,
+        "modulesTopics": [
+          "Apply three equations of equilibrium to coplanar parallel and coplanar non-concurrent force systems"
+        ],
+        "objectives": "4.7",
+        "readings": "–",
+        "labsActivities": "Lab #5 (1)",
+        "assessments": "Lab #4 (2.5%), Assignment #5 (2%)"
+      },
+      {
+        "week": 10,
+        "modulesTopics": [
+          "Solve problems involving the method of joints, method of sections, and method of members"
+        ],
+        "objectives": "5.1",
+        "readings": "pp. 157–169",
+        "labsActivities": "Lab #5 (2)",
+        "assessments": "None"
+      },
+      {
+        "week": 11,
+        "modulesTopics": [
+          "Solve problems involving the method of joints, method of sections, and method of members"
+        ],
+        "objectives": "5.1–5.2",
+        "readings": "pp. 169–173",
+        "labsActivities": "Lab #6 (1)",
+        "assessments": "Lab #5 (2.5%), Assignment #6 (2%)"
+      },
+      {
+        "week": 12,
+        "modulesTopics": [
+          "Solve problems involving the method of joints, method of sections, and method of members"
+        ],
+        "objectives": "5.2",
+        "readings": "–",
+        "labsActivities": "Lab #6 (2)",
+        "assessments": "None"
+      },
+      {
+        "week": 13,
+        "modulesTopics": [
+          "Solve problems involving the method of joints, method of sections, and method of members"
+        ],
+        "objectives": "5.3",
+        "readings": "pp. 173–182",
+        "labsActivities": "–",
+        "assessments": "Lab #6 (2.5%), Assignment #7 (2%)"
+      },
+      {
+        "week": 14,
+        "modulesTopics": [
+          "Solve problems involving the method of joints, method of sections, and method of members"
+        ],
+        "objectives": "5.3",
+        "readings": "–",
+        "labsActivities": "–",
+        "assessments": "Assignment #8 (2%)"
+      },
+      {
+        "week": 15,
+        "modulesTopics": [
+          "Review post-midterm material"
+        ],
+        "objectives": "–",
+        "readings": "–",
+        "labsActivities": "–",
+        "assessments": "Final Exam (30%)"
+      }
+    ]
+  },
+  "keyDates": {
+    "courseAddDrop": "Week 2: Course Add/Drop deadline (end of week 2)",
+    "finalWithdrawal": "Week 10: Final course withdrawal deadline (≈70% course completion). Check SAIT 'important dates' webpage for specifics."
+  },
+  "labSchedule": [
+    {
+      "date": "2025-09-08 to 2025-09-13",
+      "topic": "Force Analysis Lab"
+    },
+    {
+      "date": "2025-09-21 to 2025-09-27",
+      "topic": "Equilibrium Lab"
+    },
+    {
+      "date": "2025-10-05 to 2025-10-11",
+      "topic": "Truss Analysis Lab"
+    },
+    {
+      "date": "2025-10-19 to 2025-10-25",
+      "topic": "Friction Lab"
+    },
+    {
+      "date": "2025-11-02 to 2025-11-08",
+      "topic": "Centroid Lab"
+    },
+    {
+      "date": "2025-11-16 to 2025-11-22",
+      "topic": "Moment of Inertia Lab"
+    },
+    {
+      "date": "2025-11-30 to 2025-12-05",
+      "topic": "Comprehensive Lab"
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Introduction to Statics",
+      "duration": "2 weeks",
+      "topics": [
+        "Fundamental concepts of mechanics",
+        "Force and moment vectors",
+        "Newton's laws and equilibrium",
+        "Units and dimensional analysis"
+      ],
+      "assignments": [
+        {
+          "name": "Force Vector Assignment",
+          "due_date": "2025-09-15",
+          "weight": 5,
+          "description": "Problems involving force resolution and vector operations"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Engineering Mechanics: Statics",
+          "author": "TBA",
+          "chapter": "Chapters 1-2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Force Systems and Equilibrium",
+      "duration": "3 weeks",
+      "topics": [
+        "Resultant of force systems",
+        "Moment of a force",
+        "Couples and equivalent systems",
+        "Equilibrium of particles and rigid bodies"
+      ],
+      "assignments": [
+        {
+          "name": "Equilibrium Problems",
+          "due_date": "2025-10-01",
+          "weight": 10,
+          "description": "Solve equilibrium problems for particles and rigid bodies"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Engineering Mechanics: Statics",
+          "author": "TBA",
+          "chapter": "Chapters 3-4"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Structural Analysis",
+      "duration": "3 weeks",
+      "topics": [
+        "Analysis of trusses",
+        "Method of joints and sections",
+        "Frames and machines",
+        "Friction and its applications"
+      ],
+      "assignments": [
+        {
+          "name": "Truss Analysis Project",
+          "due_date": "2025-10-30",
+          "weight": 10,
+          "description": "Analyze a given truss structure using multiple methods"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Engineering Mechanics: Statics",
+          "author": "TBA",
+          "chapter": "Chapters 5-6"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Centroids and Moments of Inertia",
+      "duration": "2 weeks",
+      "topics": [
+        "Centroids of areas and volumes",
+        "Composite areas and volumes",
+        "Moments of inertia",
+        "Parallel axis theorem"
+      ],
+      "assignments": [
+        {
+          "name": "Centroid and Inertia Problems",
+          "due_date": "2025-11-20",
+          "weight": 5,
+          "description": "Calculate centroids and moments of inertia for various shapes"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Engineering Mechanics: Statics",
+          "author": "TBA",
+          "chapter": "Chapters 7-8"
+        }
+      ]
+    }
+  ],
+  "requiredStudentMaterials": {
+    "note": "For distance delivery, the labs are delivered on-campus in one week during the last month of the semester. Please contact your instructor for lab schedules.",
+    "textbook": {
+      "title": "Applied mechanics for engineering technology",
+      "author": "Walker, K. M.",
+      "edition": "2nd edition",
+      "publication": "Custom publication for SAIT",
+      "publisher": "Pearson Learning Solutions",
+      "year": "2016",
+      "location": "Boston, MA",
+      "required": true
+    }
+  },
+  "textbooks": [
+    {
+      "title": "Applied mechanics for engineering technology",
+      "author": "Walker, K. M.",
+      "edition": "2nd edition",
+      "publication": "Custom publication for SAIT",
+      "publisher": "Pearson Learning Solutions",
+      "year": "2016",
+      "location": "Boston, MA",
+      "required": true
+    }
+  ],
+  "turnitin": {
+    "description": "The instructor may submit student work in this course to Turnitin's text-matching software program, to help assess the academic integrity of student work in this course. Turnitin results may be considered as one piece of evidence in academic misconduct hearings.",
+    "dataManagement": "Turnitin is an American company that keeps no unencrypted student identity data in the United States unless the students themselves choose to share this information in their submission. Students should limit their sharing of personally identifiable information by not including their names and student ID numbers within the text body of submitted assignments.",
+    "saitReview": "SAIT has carefully reviewed this company's data management procedures against SAIT's data governance and governance protection practices. By enrolling in this course, students are deemed to agree to the submission of their written work to Turnitin for verification of their work's academic integrity.",
+    "contact": "A student who has questions about the collection or use of their personal information may contact foip.coordinator@sait.ca."
+  },
+  "saitPolicies": {
+    "description": "Students should familiarize themselves with SAIT's Policies and Procedures, including but not limited to those in the Academic Student, Conduct, and Health, Safety, and Environment domains."
+  },
+  "copyright": {
+    "notice": "Copyright 2015 - 2026, Southern Alberta Institute of Technology (SAIT). All Rights Reserved.",
+    "intellectualProperty": "This document and materials herein are protected by applicable intellectual property laws. Unauthorized reproduction and distribution of this publication in whole or part is prohibited."
+  },
+  "important_dates": [
+    {
+      "date": "2025-09-01",
+      "event": "First day of classes",
+      "type": "academic"
+    },
+    {
+      "date": "2025-10-15",
+      "event": "Midterm Exam",
+      "type": "assessment"
+    },
+    {
+      "date": "2025-12-17",
+      "event": "Final Exam",
+      "type": "assessment"
+    }
+  ],
+  "grading_scale": {
+    "A+": "95-100",
+    "A": "90-94",
+    "A-": "85-89",
+    "B+": "80-84",
+    "B": "75-79",
+    "B-": "70-74",
+    "C+": "65-69",
+    "C": "60-64",
+    "D": "50-59",
+    "F": "0-49"
+  }
+}

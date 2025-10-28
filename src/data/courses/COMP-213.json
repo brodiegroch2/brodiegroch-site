@@ -1,0 +1,452 @@
+{
+  "id": "COMP-213",
+  "name": "Computing for Engineering Technology",
+  "code": "COMP-213",
+  "credits": 3,
+  "semester": "Fall 2025",
+  "effectiveTerm": "Fall 2025",
+  "timeGuidelines": {
+    "instructionalHours": 60,
+    "description": "The standard instructional time for this course is 60 hours."
+  },
+  "instructor": {
+    "name": "Rasleen Sidhu",
+    "email": "rasleen.sidhu@sait.ca",
+    "office": "TBA"
+  },
+  "description": "This applied computer course provides students with critical electronic communications, data and file management skills, along with a strong focus on using common productivity applications to format, calculate, analyze, visualize, and present or report data and information. Industry standard project management principles are implemented throughout the course from a digital perspective, so students can have an appreciation for how computing skills relate to real world business processes.",
+  "courseDescription": {
+    "overview": "This applied computer course provides students with critical electronic communications, data and file management skills, along with a strong focus on using common productivity applications to format, calculate, analyze, visualize, and present or report data and information. Industry standard project management principles are implemented throughout the course from a digital perspective, so students can have an appreciation for how computing skills relate to real world business processes.",
+    "credits": 3,
+    "timeGuidelines": "The standard instructional time for this course is 60 hours."
+  },
+  "prerequisites": [],
+  "classrooms": {
+    "theory": ["NH407", "MC207"],
+    "lab": []
+  },
+  "schedule": {
+    "lectures": [
+      {
+        "day": "Tuesday",
+        "time": "10:00 AM - 11:50 AM",
+        "room": "MC207",
+        "type": "Lecture",
+        "building": "Stan Grad Centre"
+      },
+      {
+        "day": "Thursday",
+        "time": "12:00 PM - 01:50 PM",
+        "room": "NH407",
+        "type": "Lecture",
+        "building": "Senator Burns Building"
+      }
+    ],
+    "labs": []
+  },
+  "courseDetails": {
+    "campus": "Main Campus",
+    "scheduleType": "Lecture",
+    "instructionalMethod": "In Person",
+    "gradeMode": "Normal - Letter Grade",
+    "crn": "20675",
+    "classBegin": "2025-09-01",
+    "classEnd": "2025-12-17",
+    "hours": 3,
+    "level": "Credit Education"
+  },
+  "learningOutcomes": [
+    {
+      "id": 1,
+      "title": "Manage data retrieved from the internet, email, or other documents",
+      "objectives": [
+        "Practice ethical, legal and responsible digital citizenship",
+        "Conduct research to aid with critical thinking and problem solving",
+        "Create a file management system and naming conventions aligned to industry best practices",
+        "Use digital tools to organize tasks, meetings, and activities",
+        "Apply best practices to help ensure digital privacy and security",
+        "Use various communication tools in compliance with standard business protocols"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Apply project management principles",
+      "objectives": [
+        "Define a project",
+        "Determine project scope",
+        "Discuss the principles of classical management vs project management",
+        "Explain the elements of a project life cycle",
+        "Identify the components in a Project Plan",
+        "Describe the components of the Project Management System"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Develop a project schedule using project management software",
+      "objectives": [
+        "Setup a new project",
+        "Enter project tasks",
+        "Create the project calendar to reflect work schedule",
+        "Determine task durations and milestones",
+        "Create a baseline"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Establish effective task relationships applying time constraints using project management software",
+      "objectives": [
+        "Explain the relationship between time, cost, and quality elements",
+        "Organize project tasks into phases",
+        "Distinguish between types of task relationships",
+        "Create task relationships",
+        "Apply time constraints",
+        "Display critical path on the Gantt Chart"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Manage resource workloads with associated expenses using project management software",
+      "objectives": [
+        "Allocate project resources",
+        "Assign costs to resources",
+        "Level resources"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Analyze a project's progress",
+      "objectives": [
+        "Use a Gantt Chart to track project progress",
+        "Compare actual progress vs. baseline projections",
+        "Adjust the schedule to meet project goals",
+        "Update actual work completed",
+        "Generate project status reports"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Create industry specific documentation and presentations",
+      "objectives": [
+        "Apply standard software features to prepare industry specific documentation",
+        "Demonstrate how to import, export, and link external sources to achieve engaging and interactive documents",
+        "Use software functionality to visually enhance documentation and presentations"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Analyze, organize, and visualize data and information using industry standard software",
+      "objectives": [
+        "Perform industry related calculations using conventional software",
+        "Organize data into logical structures and meaningful layouts",
+        "Prepare charts, graphs, and other application visualizations of data"
+      ]
+    }
+  ],
+  "assessment": {
+    "assessments": 70,
+    "exams": 25,
+    "coreAbilities": 5,
+    "total": 100,
+    "description": "Course Assessment: Assessments 70%, Exam(s) 25%, Core Abilities 5%, Total: 100%"
+  },
+  "weeklySchedule": {
+    "schedule": [
+      {
+        "week": 1,
+        "dates": "Sept 2 – Sept 5",
+        "topics": "M1: Computer and operating system functionality, File management best practices / cloud technologies",
+        "assessments": "None"
+      },
+      {
+        "week": 2,
+        "dates": "Sept 8 – Sept 12",
+        "topics": "Introduction to Microsoft Outlook, Calendar / Appointments",
+        "assessments": "None"
+      },
+      {
+        "week": 3,
+        "dates": "Sept 15 – Sept 19",
+        "topics": "Digital security / citizenship, Review of Microsoft 365",
+        "assessments": "Computer Skills Assignment (13%), Computer Skills Exam (6%)"
+      },
+      {
+        "week": 4,
+        "dates": "Sept 22 – Sept 26",
+        "topics": "M2: Introduction to spreadsheets, Formatting worksheets, Layout and printing spreadsheets",
+        "assessments": "None"
+      },
+      {
+        "week": 5,
+        "dates": "Sept 29 – Oct 3",
+        "topics": "Basic formulas / functions, Intermediate formulas / functions",
+        "assessments": "None"
+      },
+      {
+        "week": 6,
+        "dates": "Oct 6 – Oct 10",
+        "topics": "VLOOKUP and XLOOKUP functions, IF statement, Conditional formatting, Data Validation",
+        "assessments": "None"
+      },
+      {
+        "week": 7,
+        "dates": "Oct 13 – Oct 17",
+        "topics": "Graphs / charts, Linear regression",
+        "assessments": "None"
+      },
+      {
+        "week": 8,
+        "dates": "Oct 20 – Oct 24",
+        "topics": "PivotTables, Macros, Review for Spreadsheet Exam",
+        "assessments": "Spreadsheets Assignment (20%)"
+      },
+      {
+        "week": 9,
+        "dates": "Oct 27 – Oct 31",
+        "topics": "M3: Introduction to presentation software, Presentation best practices, Data Visualization and Dashboards",
+        "assessments": "Spreadsheets Exam (7%)"
+      },
+      {
+        "week": 10,
+        "dates": "Nov 3 – Nov 7",
+        "topics": "M4: Overview of word processing fundamentals, Page and section breaks, Header / footer, Referencing, Footnotes / end notes",
+        "assessments": "Visualization Assignment (11%)"
+      },
+      {
+        "week": 11,
+        "dates": "Nov 10 – Nov 14",
+        "topics": "Mid-Term Break",
+        "assessments": "None"
+      },
+      {
+        "week": 12,
+        "dates": "Nov 17 – Nov 21",
+        "topics": "Styles, Table of contents, Captions",
+        "assessments": "Word Processing Assignment (15%)"
+      },
+      {
+        "week": 13,
+        "dates": "Nov 24 – Nov 28",
+        "topics": "M5: Introduction to MS Project, Adding/editing tasks and related properties, Adding and assigning resources, Updating the project timeline",
+        "assessments": "Word Processing Exam (7%)"
+      },
+      {
+        "week": 14,
+        "dates": "Dec 1 – Dec 5",
+        "topics": "Setting baselines and comparing to actuals, Creating reports, Reviewing",
+        "assessments": "None"
+      },
+      {
+        "week": 15,
+        "dates": "Dec 8 – Dec 12",
+        "topics": "Project Reporting, Reviewing",
+        "assessments": "Project Management Concepts Exam (5%), Project Scheduling Assignment (11%)"
+      }
+    ],
+    "note": "© 2024, Southern Alberta Institute of Technology – tentative schedule, subject to change"
+  },
+  "modules": [
+    {
+      "id": 1,
+      "title": "Computer and Operating System Functionality",
+      "duration": "3 weeks",
+      "topics": [
+        "Computer and operating system functionality",
+        "File management best practices / cloud technologies",
+        "Introduction to Microsoft Outlook",
+        "Calendar / Appointments",
+        "Digital security / citizenship",
+        "Review of Microsoft 365"
+      ],
+      "assignments": [
+        {
+          "name": "Computer Skills Assignment",
+          "due_date": "2025-09-19",
+          "weight": 13,
+          "description": "Computer skills and digital citizenship assignment"
+        }
+      ],
+      "exams": [
+        {
+          "name": "Computer Skills Exam",
+          "due_date": "2025-09-19",
+          "weight": 6,
+          "description": "Computer skills and digital citizenship exam"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Spreadsheets and Data Analysis",
+      "duration": "5 weeks",
+      "topics": [
+        "Introduction to spreadsheets",
+        "Formatting worksheets",
+        "Layout and printing spreadsheets",
+        "Basic formulas / functions",
+        "Intermediate formulas / functions",
+        "VLOOKUP and XLOOKUP functions",
+        "IF statement",
+        "Conditional formatting",
+        "Data Validation",
+        "Graphs / charts",
+        "Linear regression",
+        "PivotTables",
+        "Macros"
+      ],
+      "assignments": [
+        {
+          "name": "Spreadsheets Assignment",
+          "due_date": "2025-10-24",
+          "weight": 20,
+          "description": "Comprehensive spreadsheet skills assignment"
+        }
+      ],
+      "exams": [
+        {
+          "name": "Spreadsheets Exam",
+          "due_date": "2025-10-31",
+          "weight": 7,
+          "description": "Spreadsheet skills and functions exam"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Presentation Software and Data Visualization",
+      "duration": "2 weeks",
+      "topics": [
+        "Introduction to presentation software",
+        "Presentation best practices",
+        "Data Visualization and Dashboards"
+      ],
+      "assignments": [
+        {
+          "name": "Visualization Assignment",
+          "due_date": "2025-11-07",
+          "weight": 11,
+          "description": "Data visualization and presentation assignment"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Word Processing Fundamentals",
+      "duration": "3 weeks",
+      "topics": [
+        "Overview of word processing fundamentals",
+        "Page and section breaks",
+        "Header / footer",
+        "Referencing",
+        "Footnotes / end notes",
+        "Styles",
+        "Table of contents",
+        "Captions"
+      ],
+      "assignments": [
+        {
+          "name": "Word Processing Assignment",
+          "due_date": "2025-11-21",
+          "weight": 15,
+          "description": "Comprehensive word processing skills assignment"
+        }
+      ],
+      "exams": [
+        {
+          "name": "Word Processing Exam",
+          "due_date": "2025-11-28",
+          "weight": 7,
+          "description": "Word processing skills exam"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Project Management with MS Project",
+      "duration": "3 weeks",
+      "topics": [
+        "Introduction to MS Project",
+        "Adding/editing tasks and related properties",
+        "Adding and assigning resources",
+        "Updating the project timeline",
+        "Setting baselines and comparing to actuals",
+        "Creating reports",
+        "Reviewing",
+        "Project Reporting"
+      ],
+      "assignments": [
+        {
+          "name": "Project Scheduling Assignment",
+          "due_date": "2025-12-12",
+          "weight": 11,
+          "description": "Project management and scheduling assignment"
+        }
+      ],
+      "exams": [
+        {
+          "name": "Project Management Concepts Exam",
+          "due_date": "2025-12-12",
+          "weight": 5,
+          "description": "Project management concepts exam"
+        }
+      ]
+    }
+  ],
+  "requiredStudentMaterials": {
+    "software": "A current industry-standard software suite will be used to complete this course. Specific details will be provided in the Brightspace course shell, along with supplemental resources for each learning outcome.",
+    "libraryResources": "The SAIT library also provides ebooks on the topics covered",
+    "recommended": "A portable storage device and headphones are recommended"
+  },
+  "textbooks": [
+    {
+      "title": "Introduction to Computing for Engineers",
+      "author": "TBA",
+      "edition": "TBA",
+      "isbn": "TBA",
+      "publisher": "TBA",
+      "year": "TBA",
+      "required": true
+    }
+  ],
+  "turnitin": {
+    "description": "The instructor may submit student work in this course to Turnitin's text-matching software program, to help assess the academic integrity of student work in this course. Turnitin results may be considered as one piece of evidence in academic misconduct hearings.",
+    "dataManagement": "Turnitin is an American company that keeps no unencrypted student identity data in the United States unless the students themselves choose to share this information in their submission. Students should limit their sharing of personally identifiable information by not including their names and student ID numbers within the text body of submitted assignments.",
+    "saitReview": "SAIT has carefully reviewed this company's data management procedures against SAIT's data governance and governance protection practices. By enrolling in this course, students are deemed to agree to the submission of their written work to Turnitin for verification of their work's academic integrity.",
+    "contact": "A student who has questions about the collection or use of their personal information may contact foip.coordinator@sait.ca."
+  },
+  "saitPolicies": {
+    "description": "Students should familiarize themselves with SAIT's Policies and Procedures, including but not limited to those in the Academic Student, Conduct, and Health, Safety, and Environment domains."
+  },
+  "copyright": {
+    "notice": "Copyright 2015 - 2026, Southern Alberta Institute of Technology (SAIT). All Rights Reserved.",
+    "intellectualProperty": "This document and materials herein are protected by applicable intellectual property laws. Unauthorized reproduction and distribution of this publication in whole or part is prohibited."
+  },
+  "important_dates": [
+    {
+      "date": "2025-09-01",
+      "event": "First day of classes",
+      "type": "academic"
+    },
+    {
+      "date": "2025-10-15",
+      "event": "Midterm Exam",
+      "type": "assessment"
+    },
+    {
+      "date": "2025-12-17",
+      "event": "Final Exam",
+      "type": "assessment"
+    }
+  ],
+  "grading_scale": {
+    "A+": "95-100",
+    "A": "90-94",
+    "A-": "85-89",
+    "B+": "80-84",
+    "B": "75-79",
+    "B-": "70-74",
+    "C+": "65-69",
+    "C": "60-64",
+    "D": "50-59",
+    "F": "0-49"
+  }
+}

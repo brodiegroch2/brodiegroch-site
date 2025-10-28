@@ -1,0 +1,616 @@
+{
+  "id": "THRM-200",
+  "name": "Thermodynamics",
+  "code": "THRM-200",
+  "credits": 1.5,
+  "semester": "Fall 2024",
+  "effectiveTerm": "Fall 2024",
+  "instructor": {
+    "name": "Christopher Taggart",
+    "email": "christopher.taggart@sait.ca",
+    "office": "TBA"
+  },
+  "description": "The study of energy in its many forms involves thermodynamic principles. Basic concepts of work, heat, properties of perfect gases and pure substances will be addressed. The first law of thermodynamics will be applied to practical systems like compressors, turbines, nozzles and others to implement the concept of energy conversion. Basic power cycles will be analysed and the performance merit to be determined. The various modes of heat transfer will be practiced and applied to simple situations. Cross-referenced to the National Technology Benchmarks (NTB).",
+  "prerequisites": [
+    "At least 60% in English Language Arts 30-1 or English Language Arts 30-2",
+    "At least 60% in Math 30-1 or at least 75% in Math 30-2",
+    "At least 60% in Physics 20 and Chemistry 20, or at least 60% in Science 30",
+    "English Proficiency"
+  ],
+  "classrooms": {
+    "theory": ["TF209"],
+    "lab": []
+  },
+  "schedule": {
+    "lectures": [
+      {
+        "day": "Tuesday",
+        "time": "08:00 AM - 09:50 AM",
+        "room": "TF209",
+        "type": "Lecture",
+        "building": "Thomas Riley Building"
+      },
+      {
+        "day": "Wednesday",
+        "time": "01:00 PM - 02:50 PM",
+        "room": "TF209",
+        "type": "Lecture",
+        "building": "Thomas Riley Building"
+      }
+    ],
+    "labs": []
+  },
+  "courseDetails": {
+    "campus": "Main Campus",
+    "scheduleType": "Lecture",
+    "instructionalMethod": "In Person",
+    "gradeMode": "Normal - Letter Grade",
+    "crn": "22495",
+    "classBegin": "2025-09-01",
+    "classEnd": "2025-12-17",
+    "hours": 1.5,
+    "level": "Credit Education"
+  },
+  "assessment": {
+    "exams": 60,
+    "midterm_exam": 30,
+    "final_exam": 30,
+    "assignments": 20,
+    "quizzes": 20,
+    "total": 100
+  },
+  "learningOutcomes": [
+    {
+      "id": 1,
+      "title": "Explain the thermodynamic system and its properties",
+      "objectives": [
+        "Explain the term thermodynamics, the thermodynamic system and its properties",
+        "Classify properties of a system",
+        "Classify thermodynamic systems",
+        "Explain the terms; state, equilibrium, thermodynamic process, thermodynamic cycles",
+        "Discuss different forms of energy",
+        "Describe methods of pressure and temperature measurements",
+        "State the zeroth law of thermodynamics",
+        "Specify temperature scales and conversion in International System of Units (SI) and imperial system of units"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Calculate work, power, and heat transfer in a thermodynamic system",
+      "objectives": [
+        "Calculate the total energy of a system",
+        "Calculate mechanical forms of work",
+        "Determine the power-work relationship",
+        "Define the rate of heat transfer across the thermodynamic system boundary",
+        "Calculate energy conversion efficiency",
+        "Discuss the effect of energy on environment"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Determine the properties of pure substances and ideal fluids",
+      "objectives": [
+        "Identify phases of pure substances",
+        "Illustrate property diagrams for phase change processes",
+        "Apply the condition to identify the pure substance as saturated, superheated or subcooled",
+        "Explain the concepts of internal energy and enthalpy",
+        "Interpret property tables for pure substances",
+        "Determine the properties of saturated liquid-vapor mixture, superheated, and subcooled pure substance",
+        "Determine properties of liquids",
+        "Apply the ideal gas law to solve for pressure, temperature or volume"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Apply the principles of conservation of mass and conservation of energy (first law of thermodynamics) to different types of systems",
+      "objectives": [
+        "Apply the conservation of mass principle to closed and open systems",
+        "Calculate the mass flow rate in steady flow systems like nozzles, compressors, turbines, etc",
+        "Calculate boundary work using p-v property diagrams",
+        "Apply the first law of thermodynamics to a closed system like a piston/cylinder arrangement in spark ignition engines, to solve for power or heat transferred",
+        "Apply the first law of thermodynamics to a steady flow systems like a turbine or compressor, nozzle or diffuser, pipes or ducts, to solve for the power and heat transferred",
+        "Sketch the work of open and closed systems on pressure-volume property diagrams"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Analyse the various thermodynamic processes on perfect gases and pure substances",
+      "objectives": [
+        "Classify processes of perfect gases and of pure substances",
+        "Determine initial and final states of processes",
+        "Analyse each process to determine properties and energy involved",
+        "Explain the role of processes in thermodynamic cycles/systems"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Analyse heat engine cycles and their thermodynamic efficiency",
+      "objectives": [
+        "Explain the main characteristics of heat engines with graphical illustration",
+        "Discuss the second law of thermodynamics",
+        "Calculate the thermal efficiency as applied to engine cycle",
+        "Calculate entropy for different types of processes",
+        "Explain the concept of reversibility and irreversibility as it pertains to the second law",
+        "Analyse the Carnot engine and the limits of thermal efficiency",
+        "Identify the processes of the Otto and gas turbine cycles and associated thermal efficiencies",
+        "Solve for thermal efficiency, compression and expansion work, and engine power"
+      ]
+    }
+  ],
+  "weeklySchedule": [
+    {
+      "week": 1,
+      "topics": [
+        "Set up your WileyPLUS Account",
+        "Review the Syllabus",
+        "Pass the Syllabus test",
+        "Thermodynamic System"
+      ]
+    },
+    {
+      "week": 2,
+      "topics": [
+        "Thermodynamic System and State Properties"
+      ]
+    },
+    {
+      "week": 3,
+      "topics": [
+        "Work, Heat, and Power"
+      ]
+    },
+    {
+      "week": 4,
+      "topics": [
+        "Efficiency, Mass Flow, and The First Law of Thermodynamics"
+      ]
+    },
+    {
+      "week": 5,
+      "topics": [
+        "Properties of Pure Substances, Phase Change Processes"
+      ]
+    },
+    {
+      "week": 6,
+      "topics": [
+        "Saturation Tables, Super-heated Tables, Linear Interpolation and Equation of State"
+      ]
+    },
+    {
+      "week": 7,
+      "topics": [
+        "Review and Mid-Term Exam"
+      ]
+    },
+    {
+      "week": 8,
+      "topics": [
+        "Conservation of mass and energy, Introduction to Open Systems, Nozzles and Diffusers"
+      ]
+    },
+    {
+      "week": 9,
+      "topics": [
+        "Specific Heats, Compressors and Turbines"
+      ]
+    },
+    {
+      "week": 10,
+      "topics": [
+        "Closed Systems and Thermodynamic Processes"
+      ]
+    },
+    {
+      "week": 11,
+      "topics": [
+        "Closed Systems and Thermodynamic Processes"
+      ]
+    },
+    {
+      "week": 12,
+      "topics": [
+        "The Second Law of Thermodynamics"
+      ]
+    },
+    {
+      "week": 13,
+      "topics": [
+        "Carnot and Thermodynamic Cycles"
+      ]
+    },
+    {
+      "week": 14,
+      "topics": [
+        "More Cycles and Review"
+      ]
+    },
+    {
+      "week": 15,
+      "topics": [
+        "Final Exam"
+      ]
+    }
+  ],
+  "textbooks": [
+    {
+      "title": "Fundamentals of Engineering Thermodynamics",
+      "author": "M.J. Moran, H.N. Shapiro, D.D. Better, M. B. Bailey",
+      "edition": "Latest",
+      "isbn": "TBA",
+      "publisher": "TBA",
+      "year": "TBA",
+      "required": true
+    }
+  ],
+  "courseStructure": {
+    "delivery": "In-person",
+    "modules": [
+      {
+        "id": 1,
+        "title": "Thermodynamic System and Properties",
+        "components": [
+          "Lecture material - Lecture slides available on D2L",
+          "Tutorial material - Tutorial questions available on D2L",
+          "Module assignment - Completed in D2L under 'Tests'",
+          "Problem Set - Optional, ungraded, found in D2L under 'Student Resources', 'Wiley Plus Problem Sets'",
+          "Module quiz - Completed in D2L under 'Tests'"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Work, Heat, and Power",
+        "components": [
+          "Lecture material - Lecture slides available on D2L",
+          "Tutorial material - Tutorial questions available on D2L",
+          "Module assignment - Completed in D2L under 'Tests'",
+          "Problem Set - Optional, ungraded, found in D2L under 'Student Resources', 'Wiley Plus Problem Sets'",
+          "Module quiz - Completed in D2L under 'Tests'"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Properties of Pure Substances",
+        "components": [
+          "Lecture material - Lecture slides available on D2L",
+          "Tutorial material - Tutorial questions available on D2L",
+          "Module assignment - Completed in D2L under 'Tests'",
+          "Problem Set - Optional, ungraded, found in D2L under 'Student Resources', 'Wiley Plus Problem Sets'",
+          "Module quiz - Completed in D2L under 'Tests'"
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Conservation of Mass and Energy",
+        "components": [
+          "Lecture material - Lecture slides available on D2L",
+          "Tutorial material - Tutorial questions available on D2L",
+          "Module assignment - Completed in D2L under 'Tests'",
+          "Problem Set - Optional, ungraded, found in D2L under 'Student Resources', 'Wiley Plus Problem Sets'",
+          "Module quiz - Completed in D2L under 'Tests'"
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Thermodynamic Processes",
+        "components": [
+          "Lecture material - Lecture slides available on D2L",
+          "Tutorial material - Tutorial questions available on D2L",
+          "Module assignment - Completed in D2L under 'Tests'",
+          "Problem Set - Optional, ungraded, found in D2L under 'Student Resources', 'Wiley Plus Problem Sets'",
+          "Module quiz - Completed in D2L under 'Tests'"
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Heat Engine Cycles and Efficiency",
+        "components": [
+          "Lecture material - Lecture slides available on D2L",
+          "Tutorial material - Tutorial questions available on D2L",
+          "Module assignment - Completed in D2L under 'Tests'",
+          "Problem Set - Optional, ungraded, found in D2L under 'Student Resources', 'Wiley Plus Problem Sets'",
+          "Module quiz - Completed in D2L under 'Tests'"
+        ]
+      }
+    ]
+  },
+  "assignments": {
+    "total": 6,
+    "description": "Module assignments have unlimited attempts and are meant to reinforce the core material presented in class",
+    "weight": 20,
+    "weightPerAssignment": 3.33
+  },
+  "quizzes": {
+    "total": 6,
+    "description": "Module quizzes have two attempts and are meant to check knowledge retention of core material",
+    "weight": 20,
+    "weightPerQuiz": 3.33
+  },
+  "examinations": {
+    "midterm": {
+      "weight": 30,
+      "coverage": "Modules 1-3",
+      "format": "Multiple choice, open book and open notes"
+    },
+    "final": {
+      "weight": 30,
+      "coverage": "Modules 4-6",
+      "format": "Multiple choice, open book and open notes, non-cumulative"
+    }
+  },
+  "wileyPlusProblemSets": {
+    "total": 6,
+    "description": "Very difficult engineering style problems that will cement your knowledge and problem solving skills",
+    "graded": false,
+    "recommended": true,
+    "location": "D2L under 'Student Resources', 'Wiley Plus Problem Sets'"
+  },
+  "policies": {
+    "attendance": "No attendance policy enforced. Students encouraged to attend class sessions",
+    "lateAssignments": "Late assignments will not be accepted under any circumstances. Valid excuses communicated prior to deadline may result in value added to exam grade",
+    "electronicSubmissions": "All submissions must be through D2L test attempts. Email submissions will be deleted and not graded",
+    "gradeNegotiation": "Grade negotiation not tolerated. Attempts will result in 20% penalty on assessment",
+    "intellectualProperty": "Course materials remain sole intellectual property of instructor. No recording or distribution permitted",
+    "academicMisconduct": "Distribution of assignments/quizzes to study sites is prohibited and considered academic misconduct"
+  },
+  "officeHours": "No formal office hours set. Available during tutorial sessions and work sessions for questions",
+  "gradingScale": {
+    "A+": "95-100",
+    "A": "90-94",
+    "A-": "85-89",
+    "B+": "80-84",
+    "B": "75-79",
+    "B-": "70-74",
+    "C+": "65-69",
+    "C": "60-64",
+    "D": "50-59",
+    "F": "0-49"
+  },
+  "importantDates": [
+    {
+      "date": "2024-09-01",
+      "event": "First day of classes",
+      "type": "academic"
+    },
+    {
+      "date": "TBA",
+      "event": "Midterm Exam",
+      "type": "assessment"
+    },
+    {
+      "date": "TBA",
+      "event": "Final Exam",
+      "type": "assessment"
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Thermodynamic System and Properties",
+      "duration": "2 weeks",
+      "topics": [
+        "Thermodynamic system concepts",
+        "System properties classification",
+        "State, equilibrium, and processes",
+        "Forms of energy",
+        "Pressure and temperature measurements",
+        "Zeroth law of thermodynamics",
+        "Temperature scales and conversions"
+      ],
+      "assignments": [
+        {
+          "name": "Module 1 Assignment",
+          "due_date": "TBA",
+          "weight": 3.33,
+          "description": "Reinforcement of thermodynamic system concepts"
+        }
+      ],
+      "quizzes": [
+        {
+          "name": "Module 1 Quiz",
+          "due_date": "TBA",
+          "weight": 3.33,
+          "description": "Knowledge check of thermodynamic system concepts"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Fundamentals of Engineering Thermodynamics",
+          "author": "M.J. Moran, H.N. Shapiro, D.D. Better, M. B. Bailey",
+          "chapter": "Chapters 1-2"
+        },
+        {
+          "type": "Online",
+          "title": "WileyPLUS Problem Sets",
+          "description": "Optional engineering problems for practice"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Work, Heat, and Power",
+      "duration": "2 weeks",
+      "topics": [
+        "Total energy calculations",
+        "Mechanical forms of work",
+        "Power-work relationships",
+        "Heat transfer rates",
+        "Energy conversion efficiency",
+        "Environmental effects of energy"
+      ],
+      "assignments": [
+        {
+          "name": "Module 2 Assignment",
+          "due_date": "TBA",
+          "weight": 3.33,
+          "description": "Work, heat, and power calculations"
+        }
+      ],
+      "quizzes": [
+        {
+          "name": "Module 2 Quiz",
+          "due_date": "TBA",
+          "weight": 3.33,
+          "description": "Work, heat, and power concepts"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Fundamentals of Engineering Thermodynamics",
+          "author": "M.J. Moran, H.N. Shapiro, D.D. Better, M. B. Bailey",
+          "chapter": "Chapters 3-4"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Properties of Pure Substances",
+      "duration": "2 weeks",
+      "topics": [
+        "Phases of pure substances",
+        "Property diagrams for phase changes",
+        "Saturated, superheated, and subcooled states",
+        "Internal energy and enthalpy",
+        "Property tables interpretation",
+        "Ideal gas law applications"
+      ],
+      "assignments": [
+        {
+          "name": "Module 3 Assignment",
+          "due_date": "TBA",
+          "weight": 3.33,
+          "description": "Pure substance property calculations"
+        }
+      ],
+      "quizzes": [
+        {
+          "name": "Module 3 Quiz",
+          "due_date": "TBA",
+          "weight": 3.33,
+          "description": "Pure substance properties"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Fundamentals of Engineering Thermodynamics",
+          "author": "M.J. Moran, H.N. Shapiro, D.D. Better, M. B. Bailey",
+          "chapter": "Chapters 5-6"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Conservation of Mass and Energy",
+      "duration": "2 weeks",
+      "topics": [
+        "Conservation of mass principle",
+        "Mass flow rate calculations",
+        "Boundary work using p-v diagrams",
+        "First law applications to closed systems",
+        "First law applications to steady flow systems",
+        "Work representation on property diagrams"
+      ],
+      "assignments": [
+        {
+          "name": "Module 4 Assignment",
+          "due_date": "TBA",
+          "weight": 3.33,
+          "description": "Conservation principles applications"
+        }
+      ],
+      "quizzes": [
+        {
+          "name": "Module 4 Quiz",
+          "due_date": "TBA",
+          "weight": 3.33,
+          "description": "Conservation of mass and energy"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Fundamentals of Engineering Thermodynamics",
+          "author": "M.J. Moran, H.N. Shapiro, D.D. Better, M. B. Bailey",
+          "chapter": "Chapters 7-8"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Thermodynamic Processes",
+      "duration": "2 weeks",
+      "topics": [
+        "Process classification",
+        "Initial and final state determination",
+        "Process analysis for properties and energy",
+        "Role of processes in cycles"
+      ],
+      "assignments": [
+        {
+          "name": "Module 5 Assignment",
+          "due_date": "TBA",
+          "weight": 3.33,
+          "description": "Thermodynamic process analysis"
+        }
+      ],
+      "quizzes": [
+        {
+          "name": "Module 5 Quiz",
+          "due_date": "TBA",
+          "weight": 3.33,
+          "description": "Thermodynamic processes"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Fundamentals of Engineering Thermodynamics",
+          "author": "M.J. Moran, H.N. Shapiro, D.D. Better, M. B. Bailey",
+          "chapter": "Chapters 9-10"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Heat Engine Cycles and Efficiency",
+      "duration": "2 weeks",
+      "topics": [
+        "Heat engine characteristics",
+        "Second law of thermodynamics",
+        "Thermal efficiency calculations",
+        "Entropy calculations",
+        "Reversibility and irreversibility",
+        "Carnot engine analysis",
+        "Otto and gas turbine cycles",
+        "Engine power calculations"
+      ],
+      "assignments": [
+        {
+          "name": "Module 6 Assignment",
+          "due_date": "TBA",
+          "weight": 3.33,
+          "description": "Heat engine cycle analysis"
+        }
+      ],
+      "quizzes": [
+        {
+          "name": "Module 6 Quiz",
+          "due_date": "TBA",
+          "weight": 3.33,
+          "description": "Heat engine cycles and efficiency"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Fundamentals of Engineering Thermodynamics",
+          "author": "M.J. Moran, H.N. Shapiro, D.D. Better, M. B. Bailey",
+          "chapter": "Chapters 11-12"
+        }
+      ]
+    }
+  ]
+}

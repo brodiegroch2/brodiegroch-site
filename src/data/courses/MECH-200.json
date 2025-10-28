@@ -1,0 +1,589 @@
+{
+  "id": "MECH-200",
+  "name": "Mechanical Engineering Technology Concepts",
+  "code": "MECH-200",
+  "section": "Section D",
+  "credits": 3,
+  "semester": "Fall 2025",
+  "effectiveTerm": "Fall 2025",
+  "timeGuidelines": {
+    "instructionalHours": 90,
+    "description": "The standard instructional time for this course is 90 hours."
+  },
+  "instructor": {
+    "name": "Shaw Kinjo",
+    "email": "shaw.kinjo@sait.ca",
+    "office": "TBA"
+  },
+  "description": "This design course introduces the basic building blocks required for the common core and the three specializations. Using wide-ranging, flexible design reasoning the learner will learn how to set up problems based on a good understanding of the underlying principles, choose a plan to solve them, and present the results. Cross-referenced to the National Technology Benchmarks (NTB).",
+  "courseDescription": {
+    "overview": "This design course introduces the basic building blocks required for the common core and the three specializations. Using wide-ranging, flexible design reasoning the learner will learn how to set up problems based on a good understanding of the underlying principles, choose a plan to solve them, and present the results. Cross-referenced to the National Technology Benchmarks (NTB).",
+    "credits": 3,
+    "timeGuidelines": "The standard instructional time for this course is 90 hours.",
+    "equivalents": ["DSGN 216"]
+  },
+  "prerequisites": [],
+  "equivalents": ["DSGN 216"],
+  "classrooms": {
+    "theory": ["CB022", "CB020"],
+    "lab": ["TF114A"]
+  },
+  "schedule": {
+    "lectures": [
+      {
+        "day": "Wednesday",
+        "time": "03:00 PM - 04:50 PM",
+        "room": "CB020",
+        "type": "Lecture",
+        "building": "Aldred Centre"
+      },
+      {
+        "day": "Friday",
+        "time": "10:00 AM - 11:50 AM",
+        "room": "CB022",
+        "type": "Lecture",
+        "building": "Aldred Centre"
+      }
+    ],
+    "labs": [
+      {
+        "day": "Tuesday",
+        "time": "01:00 PM - 02:50 PM",
+        "room": "TF114A",
+        "type": "Lab",
+        "building": "Thomas Riley Building"
+      }
+    ]
+  },
+  "courseDetails": {
+    "campus": "Main Campus",
+    "scheduleType": "Lecture/Lab",
+    "instructionalMethod": "In Person",
+    "gradeMode": "Normal - Letter Grade",
+    "crn": "21779 (Lecture), 21780 (Lab)",
+    "classBegin": "2025-09-01",
+    "classEnd": "2025-12-17",
+    "hours": 3,
+    "level": "Credit Education"
+  },
+  "assessment": {
+    "assignments": 70,
+    "finalExam": 30,
+    "total": 100,
+    "description": "Course Assessment: Assignments 70%, Final Exam 30%, Total: 100%",
+    "breakdown": {
+      "project1": 15,
+      "project2": 17,
+      "project3": 20,
+      "sketch1": 6,
+      "sketch2": 6,
+      "sketch3": 6,
+      "sketchFinalPart1": 7.5,
+      "sketchFinalPart2": 7.5,
+      "theoryFinalPart1": 7.5,
+      "theoryFinalPart2": 7.5
+    }
+  },
+  "learningOutcomes": [
+    {
+      "id": 1,
+      "title": "Analyse machines in 'socio-technical systems'",
+      "objectives": [
+        "Categorize interactions between people and technology",
+        "Recognize various types of machines",
+        "Interpret material, energy, and signal transformations",
+        "Identify classes of basic functionalities",
+        "Examine existing designs using 'thought elements'"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Apply techniques to broaden the problem",
+      "objectives": [
+        "Recognize problems and constraints hidden in design briefs",
+        "Identify the essential problems",
+        "Identify the essential constraints"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Use 'functional techniques' for initializing technical design efforts",
+      "objectives": [
+        "Analyse problems and constraints for implied functionalities",
+        "Identify the essential functional requirements",
+        "Practice solving simple design problems based on function"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Combine functionalities and methods to generate novel concepts",
+      "objectives": [
+        "Identify basic design methods used by designers and styles",
+        "Compare and contrast rational and creative design methods for suitability in specific situations",
+        "Combine design methods to generate novel solutions that fulfill the design brief through satisfying the essential functional requirements"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Select a concept that best resolves the problem",
+      "objectives": [
+        "Compare and contrast available concepts",
+        "Determine the concept that most efficiently fulfills the essential functional requirements while overcoming problems and constraints",
+        "Illustrate how rational information and creative intuition led to design decisions",
+        "Demonstrate how the selected concept is an optimum design solution"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Present final design concept",
+      "objectives": [
+        "Demonstrate the functionality of the final design concept",
+        "Dramatize how the final design concept will be used",
+        "Illustrate how the design concept embedded into the socio-technical system"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Practice 'design thinking' logic through graphics",
+      "objectives": [
+        "Sketch schematics as a design logic",
+        "Sketch renderings as a design logic",
+        "Sketch projections as a design logic",
+        "Apply intellectual standards to graphics (clarity, accuracy, relevance, logicalness, breadth, precision, significance, completeness, fairness, and depth)"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Perform technical writing that shows design reasoning",
+      "objectives": [
+        "Accurately examine technical documents for design logic",
+        "Produce referenced design reports according to technical writing guidelines",
+        "Apply intellectual standards to writing (clarity, accuracy, relevance, logicalness, breadth, precision, significance, completeness, fairness, and depth)"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Create objects that illustrate design reasoning through physical representations",
+      "objectives": [
+        "Construct physical prototypes as aids for all stages of the design effort",
+        "Compare and contrast materials through experiments",
+        "Compare and contrast functional geometries through experiments",
+        "Categorize materials and processes for life-cycle"
+      ]
+    }
+  ],
+  "weeklySchedule": {
+    "note": "Schedule subject to change",
+    "schedule": [
+      {
+        "week": 1,
+        "projectLabActivities": "Introduction to Project/Lab, Assign Project 1",
+        "theoryTopics": "Introduction to course: Chapters 1 & 2",
+        "visualCommunicationActivities": "Introduction to Visual Comm, Lettering",
+        "assessments": ""
+      },
+      {
+        "week": 2,
+        "projectLabActivities": "Working Lab",
+        "theoryTopics": "Chapters 3 & 4",
+        "visualCommunicationActivities": "Orthographics 1, Assign Sketch 1",
+        "assessments": ""
+      },
+      {
+        "week": 3,
+        "projectLabActivities": "Project 1 Prototype Due",
+        "theoryTopics": "Chapter 5: Identifying Opportunities",
+        "visualCommunicationActivities": "Sketching",
+        "assessments": "Project 1 Prototype Due"
+      },
+      {
+        "week": 4,
+        "projectLabActivities": "Project 1 Due (15%), Assign Project 2",
+        "theoryTopics": "Chapter 6: Clarifying Objectives",
+        "visualCommunicationActivities": "Isometrics 2",
+        "assessments": "Project 1 Due (15%)"
+      },
+      {
+        "week": 5,
+        "projectLabActivities": "",
+        "theoryTopics": "Chapter 7: Establishing Functions",
+        "visualCommunicationActivities": "Sketch 1 Due (6%), Assign Sketch 2",
+        "assessments": "Sketch 1 Due (6%)"
+      },
+      {
+        "week": 6,
+        "projectLabActivities": "Working Lab",
+        "theoryTopics": "Chapter 8: Setting Requirements",
+        "visualCommunicationActivities": "Sketching",
+        "assessments": ""
+      },
+      {
+        "week": 7,
+        "projectLabActivities": "Working Lab",
+        "theoryTopics": "",
+        "visualCommunicationActivities": "Sketch Final Part 1 (7.5%) – In-Class",
+        "assessments": "Sketch Final Part 1 (7.5%)"
+      },
+      {
+        "week": 8,
+        "projectLabActivities": "Project 2 Prototype Due",
+        "theoryTopics": "Theory Final Part 1 (7.5%)",
+        "visualCommunicationActivities": "Sketching",
+        "assessments": "Project 2 Prototype Due, Theory Final Pt 1"
+      },
+      {
+        "week": 9,
+        "projectLabActivities": "Project 2 Due (17%), Assign Project 3",
+        "theoryTopics": "Chapter 9: Determining Characteristics",
+        "visualCommunicationActivities": "Exploded View",
+        "assessments": "Project 2 Due (17%)"
+      },
+      {
+        "week": 10,
+        "projectLabActivities": "Working Lab",
+        "theoryTopics": "Chapter 10: Generating Alternatives",
+        "visualCommunicationActivities": "Sketch 2 Due (6%), Assign Sketch 3",
+        "assessments": "Sketch 2 Due (6%)"
+      },
+      {
+        "week": 11,
+        "projectLabActivities": "Working Lab",
+        "theoryTopics": "Chapter 11: Evaluating Alternatives",
+        "visualCommunicationActivities": "Production Drawings",
+        "assessments": ""
+      },
+      {
+        "week": 12,
+        "projectLabActivities": "Project 3 Prototype Due",
+        "theoryTopics": "Chapter 12: Improving Details",
+        "visualCommunicationActivities": "Sketch Final Part 2 (7.5%) – In-Class",
+        "assessments": "Project 3 Prototype Due, Sketch Final Pt 2"
+      },
+      {
+        "week": 13,
+        "projectLabActivities": "Project 3 Due (20%)",
+        "theoryTopics": "Chapter 13 & 14: Managing / Product Design",
+        "visualCommunicationActivities": "Sketch 3 Due (6%)",
+        "assessments": "Project 3 Due (20%), Sketch 3 Due (6%)"
+      },
+      {
+        "week": 14,
+        "projectLabActivities": "",
+        "theoryTopics": "Theory Final Part 2 (7.5%)",
+        "visualCommunicationActivities": "",
+        "assessments": "Theory Final Part 2 (7.5%)"
+      },
+      {
+        "week": 15,
+        "projectLabActivities": "No Class – Exam Week",
+        "theoryTopics": "",
+        "visualCommunicationActivities": "",
+        "assessments": ""
+      }
+    ]
+  },
+  "textbooks": [
+    {
+      "title": "Engineering Design Methods",
+      "author": "Nigel Cross",
+      "edition": "5th Edition",
+      "isbn": "TBA",
+      "publisher": "TBA",
+      "year": "TBA",
+      "required": true,
+      "note": "Textbook: Engineering Design Methods (5th Edition), Nigel Cross"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Project 1",
+      "weight": 15,
+      "description": "Initial design project focusing on basic design principles",
+      "dueWeek": 4,
+      "prototypeDueWeek": 3,
+      "requirements": [
+        "Apply basic design thinking principles",
+        "Create physical prototype",
+        "Present design concept",
+        "Demonstrate functionality"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Project 2",
+      "weight": 17,
+      "description": "Intermediate design project with expanded scope",
+      "dueWeek": 8,
+      "prototypeDueWeek": 7,
+      "requirements": [
+        "Apply functional techniques",
+        "Generate multiple concepts",
+        "Select optimal solution",
+        "Create detailed prototype"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Project 3",
+      "weight": 20,
+      "description": "Final comprehensive design project",
+      "dueWeek": 12,
+      "prototypeDueWeek": 11,
+      "requirements": [
+        "Complete design process from problem identification to solution",
+        "Apply all learned design methods",
+        "Create comprehensive prototype",
+        "Present final design with full documentation"
+      ]
+    }
+  ],
+  "visualCommunicationActivities": [
+    {
+      "id": 1,
+      "name": "Sketch 1",
+      "weight": 6,
+      "description": "Orthographics and basic sketching",
+      "dueWeek": 5,
+      "type": "Drawing"
+    },
+    {
+      "id": 2,
+      "name": "Sketch 2",
+      "weight": 6,
+      "description": "Isometric drawings and exploded views",
+      "dueWeek": 8,
+      "type": "Drawing"
+    },
+    {
+      "id": 3,
+      "name": "Sketch 3",
+      "weight": 6,
+      "description": "Production drawings",
+      "dueWeek": 11,
+      "type": "Drawing"
+    },
+    {
+      "id": 4,
+      "name": "Sketch Final Part 1",
+      "weight": 7.5,
+      "description": "Comprehensive sketching assessment - Part 1",
+      "dueWeek": 6,
+      "type": "In-Class Assessment"
+    },
+    {
+      "id": 5,
+      "name": "Sketch Final Part 2",
+      "weight": 7.5,
+      "description": "Comprehensive sketching assessment - Part 2",
+      "dueWeek": 10,
+      "type": "In-Class Assessment"
+    }
+  ],
+  "theoryAssessments": [
+    {
+      "id": 1,
+      "name": "Theory Final Part 1",
+      "weight": 7.5,
+      "description": "Theory assessment covering chapters 1-8",
+      "dueWeek": 7,
+      "coverage": "Chapters 1-8"
+    },
+    {
+      "id": 2,
+      "name": "Theory Final Part 2",
+      "weight": 7.5,
+      "description": "Theory assessment covering chapters 9-14",
+      "dueWeek": 13,
+      "coverage": "Chapters 9-14"
+    }
+  ],
+  "importantDates": [
+    {
+      "date": "TBA",
+      "event": "First day of classes",
+      "type": "academic"
+    },
+    {
+      "date": "TBA",
+      "event": "Project 1 Due",
+      "type": "assessment"
+    },
+    {
+      "date": "TBA",
+      "event": "Project 2 Due",
+      "type": "assessment"
+    },
+    {
+      "date": "TBA",
+      "event": "Project 3 Due",
+      "type": "assessment"
+    },
+    {
+      "date": "TBA",
+      "event": "Final Exam Week",
+      "type": "assessment"
+    }
+  ],
+  "otherCourseInformation": {
+    "additionalRequirements": "This course is subject to the Mechanical Engineering Technology (MET) Program Student Guide",
+    "attendancePolicy": "Manufacturing & Automation has an Attendance Policy for its Programs. This Policy can be viewed at the following link: M&A Student Engagement Policy"
+  },
+  "saitPolicies": {
+    "gradingScale": {
+      "title": "AC 3.1.1 Grading Progression Procedure",
+      "url": "http://www.sait.ca/Documents/About SAIT/Administration/Policies and Procedures/AC.3.1.1 Grading and Progression Procedure.pdf",
+      "description": "For information on the SAIT Grading Scale, please visit policy AC 3.1.1 Grading Progression Procedure"
+    },
+    "academicPolicies": {
+      "title": "SAIT Academic Policies",
+      "url": "www.sait.ca/about-sait/administration/policies-and-procedures/academic-student",
+      "description": "For information on SAIT Academic Policies, please visit"
+    }
+  },
+  "requiredCoursePublications": {
+    "note": "Please see SAIT Bookstore for current textbook edition"
+  },
+  "copyright": {
+    "notice": "© 2015 - 2021, Southern Alberta Institute of Technology (SAIT). All Rights Reserved.",
+    "intellectualProperty": "This document and materials herein are protected by applicable intellectual property laws. Unauthorized reproduction and distribution of this publication in whole or part is prohibited."
+  },
+  "policies": {
+    "attendance": "Manufacturing & Automation has an Attendance Policy for its Programs. This Policy can be viewed at the following link: M&A Student Engagement Policy",
+    "gradingScale": "AC 3.1.1 Grading Progression Procedure",
+    "gradingScaleUrl": "http://www.sait.ca/Documents/About SAIT/Administration/Policies and Procedures/AC.3.1.1 Grading and Progression Procedure.pdf",
+    "academicPolicies": "www.sait.ca/about-sait/administration/policies-and-procedures/academic-student",
+    "additionalRequirements": "This course is subject to the Mechanical Engineering Technology (MET) Program Student Guide"
+  },
+  "gradingScale": {
+    "A+": "95-100",
+    "A": "90-94",
+    "A-": "85-89",
+    "B+": "80-84",
+    "B": "75-79",
+    "B-": "70-74",
+    "C+": "65-69",
+    "C": "60-64",
+    "D": "50-59",
+    "F": "0-49"
+  },
+  "modules": [
+    {
+      "id": 1,
+      "title": "Introduction to Design and Visual Communication",
+      "duration": "2 weeks",
+      "topics": [
+        "Introduction to course concepts",
+        "Design thinking fundamentals",
+        "Visual communication basics",
+        "Lettering techniques",
+        "Orthographic projections"
+      ],
+      "chapters": ["Chapter 1", "Chapter 2"],
+      "assignments": [
+        {
+          "name": "Project 1 Assignment",
+          "due_date": "TBA",
+          "weight": 15,
+          "description": "Initial design project"
+        },
+        {
+          "name": "Sketch 1 Assignment",
+          "due_date": "TBA",
+          "weight": 6,
+          "description": "Orthographics and lettering"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Engineering Design Methods",
+          "author": "Nigel Cross",
+          "chapter": "Chapters 1-2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Problem Identification and Opportunity Recognition",
+      "duration": "2 weeks",
+      "topics": [
+        "Identifying design opportunities",
+        "Clarifying objectives",
+        "Establishing functions",
+        "Setting requirements"
+      ],
+      "chapters": ["Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8"],
+      "assignments": [
+        {
+          "name": "Project 1 Prototype",
+          "due_date": "TBA",
+          "weight": 0,
+          "description": "Physical prototype for Project 1"
+        },
+        {
+          "name": "Project 1 Final",
+          "due_date": "TBA",
+          "weight": 15,
+          "description": "Final submission of Project 1"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Engineering Design Methods",
+          "author": "Nigel Cross",
+          "chapter": "Chapters 3-8"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Concept Generation and Evaluation",
+      "duration": "4 weeks",
+      "topics": [
+        "Determining characteristics",
+        "Generating alternatives",
+        "Evaluating alternatives",
+        "Improving details",
+        "Managing design process",
+        "Product design considerations"
+      ],
+      "chapters": ["Chapter 9", "Chapter 10", "Chapter 11", "Chapter 12", "Chapter 13", "Chapter 14"],
+      "assignments": [
+        {
+          "name": "Project 2 Assignment",
+          "due_date": "TBA",
+          "weight": 17,
+          "description": "Intermediate design project"
+        },
+        {
+          "name": "Project 3 Assignment",
+          "due_date": "TBA",
+          "weight": 20,
+          "description": "Final comprehensive design project"
+        },
+        {
+          "name": "Sketch 2 Assignment",
+          "due_date": "TBA",
+          "weight": 6,
+          "description": "Isometric drawings and exploded views"
+        },
+        {
+          "name": "Sketch 3 Assignment",
+          "due_date": "TBA",
+          "weight": 6,
+          "description": "Production drawings"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Engineering Design Methods",
+          "author": "Nigel Cross",
+          "chapter": "Chapters 9-14"
+        }
+      ]
+    }
+  ]
+}

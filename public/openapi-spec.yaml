@@ -93,6 +93,36 @@ components:
           type: string
         Status:
           type: string
+    DetailedCourse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "COMP-213"
+        code:
+          type: string
+          example: "COMP 213"
+        name:
+          type: string
+          example: "Computing for Engineering Technology"
+        credits:
+          type: number
+          example: 3
+        semester:
+          type: string
+          example: "Fall 2025"
+        instructor:
+          type: object
+        description:
+          type: string
+        schedule:
+          type: object
+        learningOutcomes:
+          type: array
+        assessment:
+          type: object
+        modules:
+          type: array
     Error:
       type: object
       properties:
@@ -343,6 +373,145 @@ paths:
                 properties:
                   success:
                     type: boolean
+        "404":
+          description: Course not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # Detailed Courses API
+  /api/courses:
+    get:
+      operationId: getDetailedCourses
+      summary: Get detailed course information
+      description: Retrieve all detailed course JSON files or a specific course by ID
+      tags: [courses]
+      parameters:
+        - name: id
+          in: query
+          description: Optional course ID to retrieve a specific course
+          schema:
+            type: string
+            example: "COMP-213"
+      responses:
+        "200":
+          description: Course or courses retrieved successfully
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - type: array
+                    items:
+                      $ref: '#/components/schemas/DetailedCourse'
+                  - $ref: '#/components/schemas/DetailedCourse'
+        "404":
+          description: Course not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      operationId: createDetailedCourse
+      summary: Create a new detailed course
+      description: Create a new detailed course JSON file with full course information including modules, learning outcomes, and assessment details
+      tags: [courses]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DetailedCourse'
+      responses:
+        "201":
+          description: Course created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DetailedCourse'
+        "400":
+          description: Course already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      operationId: updateDetailedCourse
+      summary: Update a detailed course
+      description: Update an existing detailed course JSON file with new information
+      tags: [courses]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DetailedCourse'
+      responses:
+        "200":
+          description: Course updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DetailedCourse'
+        "404":
+          description: Course not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      operationId: deleteDetailedCourse
+      summary: Delete a detailed course
+      description: Delete a course JSON file by course ID
+      tags: [courses]
+      parameters:
+        - name: id
+          in: query
+          required: true
+          description: Course ID to delete
+          schema:
+            type: string
+            example: "COMP-213"
+      responses:
+        "200":
+          description: Course deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+        "400":
+          description: Course ID is required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         "404":
           description: Course not found
           content:

@@ -1,0 +1,641 @@
+{
+  "id": "MECH-205",
+  "name": "Electro-Mechanical Systems",
+  "code": "MECH-205",
+  "credits": 3,
+  "semester": "Fall 2025",
+  "effectiveTerm": "Fall 2025",
+  "timeGuidelines": {
+    "instructionalHours": 90,
+    "description": "The standard instructional time for the day-time course offering is 90 hours."
+  },
+  "instructor": {
+    "name": "Richard Arndt",
+    "email": "richard.arndt@sait.ca",
+    "office": "TBA"
+  },
+  "description": "Electro-mechanical Systems is an introductory course to the world of automation for manufacturing. The course includes theory and lab activities involving pneumatic, electrical, electro-pneumatic, robotics, and computer control applications. The course design is for the beginner who is new to the various control systems and will benefit all Mechanical Engineering Technologists in the workplace as many companies adopt automation for sustainable growth of evolving and competitive manufacturing industries. Cross-referenced to the National Technology Benchmarks (NTB).",
+  "credits": 3,
+  "timeGuidelines": "The standard instructional time for the day-time course offering is 90 hours.",
+  "effectiveTerm": "Fall 2016/2017",
+  "additionalRequirements": "This course is subject to the Mechanical Engineering Technology (MET) Program Student Guide.",
+  "saitPolicies": {
+    "gradingScale": "http://www.sait.ca/Documents/About SAIT/Administration/Policies and Procedures/AC.3.1.1 Grading and Progression Procedure.pdf",
+    "academicPolicies": "www.sait.ca/about-sait/administration/policies-and-procedures/academic-student"
+  },
+  "prerequisites": [],
+  "classrooms": {
+    "theory": ["TF217", "TT338", "TT340"],
+    "lab": ["TT201"]
+  },
+  "schedule": {
+    "lectures": [
+      {
+        "day": "Monday",
+        "time": "08:00 AM - 10:50 AM",
+        "room": "TT340",
+        "type": "Lecture",
+        "building": "Thomas Riley Building"
+      }
+    ],
+    "labs": [
+      {
+        "day": "Thursday",
+        "time": "08:00 AM - 10:50 AM",
+        "room": "TT201",
+        "type": "Lab",
+        "building": "Thomas Riley Building"
+      }
+    ]
+  },
+  "courseDetails": {
+    "campus": "Main Campus",
+    "scheduleType": "Lecture/Lab",
+    "instructionalMethod": "In Person",
+    "gradeMode": "Normal - Letter Grade",
+    "crn": "21791 (Lecture), 21793 (Lab)",
+    "classBegin": "2025-09-01",
+    "classEnd": "2025-12-17",
+    "hours": 3,
+    "level": "Credit Education"
+  },
+  "assessment": {
+    "quizzesAndAssignments": 20,
+    "labExercises": 50,
+    "midtermExam": 12,
+    "finalExam": 18,
+    "total": 100
+  },
+  "learningOutcomes": [
+    {
+      "id": 1,
+      "title": "Apply Boolean principles to control systems",
+      "objectives": [
+        "Discuss the differences between binary, octal, decimal and hexadecimal number systems",
+        "Convert numeric values from one number system to another",
+        "Describe the characteristics of various Boolean operators",
+        "Construct combinational Boolean expressions",
+        "Interpret binary coded decimal (BCD) values",
+        "Discuss analog to digital (A/D) and digital to analog (D/A) conversions",
+        "Discuss the fundamentals of series and parallel communication"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Interpret electric circuit drawings using industry standard symbols",
+      "objectives": [
+        "Discuss the concepts of voltage, current and resistance",
+        "Identify electric circuit drawing symbols",
+        "Apply Ohm's Law to electric circuits",
+        "Apply Kirchhoff's Voltage Law to electric circuits",
+        "Describe electric power sources",
+        "Apply the Power Law to electric circuits"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Design motor control safety and relay logic circuits using examples",
+      "objectives": [
+        "Construct circuits using switches, buttons, lights, and relays in series and parallel",
+        "Apply standard electrical automation devices in control circuits",
+        "Explain an emergency shutdown electrical safety device used in a circuit application",
+        "Practice troubleshooting skills in each electric circuit application",
+        "Discuss ladder diagram circuits",
+        "Discuss ladder diagram drawing procedures",
+        "Explain mechanical interlock",
+        "Describe control and load device symbols"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Document pneumatic circuits using industry standard symbols",
+      "objectives": [
+        "Discuss pneumatic power",
+        "Identify pneumatic circuit drawing symbols",
+        "Discuss pneumatic drawing procedures",
+        "Identify air source elements",
+        "Explain pneumatic valve, control device and actuator symbols",
+        "Explain the difference between direct and indirect control systems",
+        "Explain the difference between bi-stable and mono-stable directional control valves"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Design a small pneumatic control system for a given application",
+      "objectives": [
+        "Construct circuits using 3/2 way and 5/2 way directional control valves with pistons",
+        "Construct circuits using direct and indirect control systems",
+        "Construct circuits using bi-stable and mono-stable directional control valves",
+        "Construct circuits using pneumatic logic gates in safety and multi-stationed control systems",
+        "Discuss processing elements such as flow control, time delay and pressure sequence valves",
+        "Explain key steps to pneumatic design using a case study",
+        "Practice troubleshooting skills with each pneumatic circuit application"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Interpret electro-pneumatic drawings",
+      "objectives": [
+        "Identify electro-pneumatic circuit drawing symbols",
+        "Discuss electro-pneumatic drawing procedures",
+        "Explain the electro-pneumatic 3/2 way directional control valve elements",
+        "Discuss the difference between the electrical control and pneumatic control drawing symbols for the electric solenoid",
+        "Describe the electric limit switch in four configurations and apply the switch as a feedback device",
+        "Apply a 5/2 way electrically actuated directional control valves in small circuit designs",
+        "Construct trigger and feedback circuits using non-contact proximity sensors"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Design an electro-pneumatic control system for a given application",
+      "objectives": [
+        "Apply a non-contact, magnetically triggered reed switch",
+        "Apply a vacuum/pressure sensor in a small circuit application",
+        "Practice using air and power shutdown safety systems",
+        "Study a practical list of steps to solving circuit design applications using a case study",
+        "Create and build an electro-pneumatic solution to a given problem",
+        "Practice troubleshooting skills in each electro-pneumatic circuit application"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Explain safe installations of PLC applications in the workplace",
+      "objectives": [
+        "Interpret PLC circuit drawing symbols",
+        "Discuss PLC drawing procedures",
+        "Discuss the purpose of a PLC",
+        "Describe a list of questions to ask when deciding on a PLC purchase",
+        "Explain a PLC and it's structure",
+        "Identify the inputs and outputs of a PLC",
+        "Describe typical modes of program operations",
+        "Practice communications between personal and industrial computers"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Program a PLC using fundamental codes",
+      "objectives": [
+        "Open the application software to program a PLC",
+        "Practice program editing techniques",
+        "Describe and use commands such as one-shot, time-delay, and set/reset latches",
+        "Discuss basic Boolean statements such as AND, OR and NOT",
+        "Apply Boolean logic to programming relay ladder logic",
+        "Explain PLC configurations and expansion modules",
+        "Identify processor status and other memory area configurations",
+        "Describe PLC troubleshooting techniques to solve problems"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Explain robot applications for the manufacturing workplace",
+      "objectives": [
+        "Discuss a brief history of robotics in industry",
+        "Describe a work cell",
+        "Explain the basic layout of a robot in a work cell",
+        "Apply safe practices when working near or around robotic arms",
+        "Locate safe zones of robotic arm installations",
+        "Describe the robot controller and the display options",
+        "Locate the teach pendant and the safety enable switch for manual movement operations",
+        "Explain robot axes, work envelopes, payload and degrees of freedom",
+        "Discuss tool path collision models and discuss safe tool movement practices",
+        "Describe tooling and tool co-ordinates"
+      ]
+    }
+  ],
+  "weeklySchedule": {
+    "note": "Schedule subject to change",
+    "classrooms": {
+      "theory": "TF217, TT338, TT340",
+      "lab": "TT201"
+    },
+    "schedule": [
+      {
+        "week": 1,
+        "monday": "1-Sep",
+        "friday": "5-Sep",
+        "theoryTopic": "Electrical Principles",
+        "assessment": "Lab 0"
+      },
+      {
+        "week": 2,
+        "monday": "8-Sep",
+        "friday": "12-Sep",
+        "theoryTopic": "Kirchhoff's Laws",
+        "assessment": "Lab 1, Quiz 2a"
+      },
+      {
+        "week": 3,
+        "monday": "15-Sep",
+        "friday": "19-Sep",
+        "theoryTopic": "Boolean Principles",
+        "assessment": "Lab 2a, Quiz 2b"
+      },
+      {
+        "week": 4,
+        "monday": "22-Sep",
+        "friday": "26-Sep",
+        "theoryTopic": "Boolean Logic",
+        "assessment": "Lab 2b, Quiz 2c"
+      },
+      {
+        "week": 5,
+        "monday": "29-Sep",
+        "friday": "3-Oct",
+        "theoryTopic": "Switches",
+        "assessment": "Lab 3a, Quiz 1a"
+      },
+      {
+        "week": 6,
+        "monday": "6-Oct",
+        "friday": "10-Oct",
+        "theoryTopic": "Relays",
+        "assessment": "Lab 3b, Quiz 1b"
+      },
+      {
+        "week": 7,
+        "monday": "13-Oct",
+        "friday": "17-Oct",
+        "theoryTopic": "Sensors",
+        "assessment": "Lab 3c"
+      },
+      {
+        "week": 8,
+        "monday": "20-Oct",
+        "friday": "24-Oct",
+        "theoryTopic": "Pneumatic Principles",
+        "assessment": "Lab 4, Quiz 3a"
+      },
+      {
+        "week": 9,
+        "monday": "27-Oct",
+        "friday": "31-Oct",
+        "theoryTopic": "Midterm",
+        "assessment": "Lab 5, Quiz 3b"
+      },
+      {
+        "week": 10,
+        "monday": "3-Nov",
+        "friday": "7-Nov",
+        "theoryTopic": "Electro Pneumatics",
+        "assessment": "Lab 6, Midterm"
+      },
+      {
+        "week": "N/A",
+        "monday": "10-Nov",
+        "friday": "14-Nov",
+        "theoryTopic": "Mid-term break",
+        "assessment": "Quiz 4"
+      },
+      {
+        "week": 11,
+        "monday": "17-Nov",
+        "friday": "21-Nov",
+        "theoryTopic": "PLC Overview",
+        "assessment": "Lab 7, Quiz 5"
+      },
+      {
+        "week": 12,
+        "monday": "24-Nov",
+        "friday": "28-Nov",
+        "theoryTopic": "PLC Hardware",
+        "assessment": "Lab 8, Quiz 8"
+      },
+      {
+        "week": 13,
+        "monday": "1-Dec",
+        "friday": "5-Dec",
+        "theoryTopic": "PLC Programming",
+        "assessment": "Lab 9, Quiz 9"
+      },
+      {
+        "week": 14,
+        "monday": "8-Dec",
+        "friday": "11-Dec",
+        "theoryTopic": "Robotics",
+        "assessment": "Quiz 10"
+      },
+      {
+        "week": 15,
+        "monday": "12-Dec",
+        "friday": "17-Dec",
+        "theoryTopic": "Exam Week",
+        "assessment": "Exam"
+      }
+    ]
+  },
+  "textbooks": [
+    {
+      "title": "Programmable Logic Controllers",
+      "author": "Petruzella, F.D.",
+      "edition": "4th",
+      "isbn": "9780073510880",
+      "publisher": "McGraw Hill",
+      "year": 2011,
+      "required": true
+    }
+  ],
+  "importantDates": [
+    {
+      "date": "2016-09-01",
+      "event": "First day of classes",
+      "type": "academic"
+    },
+    {
+      "date": "2016-09-30",
+      "event": "Statutory Holiday",
+      "type": "holiday"
+    },
+    {
+      "date": "2016-10-13",
+      "event": "Statutory Holiday",
+      "type": "holiday"
+    },
+    {
+      "date": "2016-12-12",
+      "event": "Final Exams commence",
+      "type": "assessment"
+    }
+  ],
+  "policies": {
+    "gradingScale": "AC 3.1.1 Grading Progression Procedure",
+    "gradingScaleUrl": "http://www.sait.ca/Documents/About SAIT/Administration/Policies and Procedures/AC.3.1.1 Grading and Progression Procedure.pdf",
+    "academicPolicies": "www.sait.ca/about-sait/administration/policies-and-procedures/academic-student",
+    "additionalRequirements": "This course is subject to the Mechanical Engineering Technology (MET) Program Student Guide"
+  },
+  "gradingScale": {
+    "A+": "95-100",
+    "A": "90-94",
+    "A-": "85-89",
+    "B+": "80-84",
+    "B": "75-79",
+    "B-": "70-74",
+    "C+": "65-69",
+    "C": "60-64",
+    "D": "50-59",
+    "F": "0-49"
+  },
+  "modules": [
+    {
+      "id": 1,
+      "title": "Electrical Principles and Circuit Analysis",
+      "duration": "2 weeks",
+      "topics": [
+        "Voltage, current, and resistance concepts",
+        "Ohm's Law applications",
+        "Kirchhoff's Laws",
+        "Electric power sources",
+        "Power Law applications"
+      ],
+      "assignments": [
+        {
+          "name": "Lab 0 - Electrical Principles",
+          "due_date": "2016-09-05",
+          "weight": 5,
+          "description": "Introduction to electrical principles and basic circuit analysis"
+        },
+        {
+          "name": "Lab 1 - Kirchhoff's Laws",
+          "due_date": "2016-09-12",
+          "weight": 5,
+          "description": "Practical application of Kirchhoff's voltage and current laws"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Programmable Logic Controllers",
+          "author": "Petruzella, F.D.",
+          "chapter": "Chapters 1-2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Boolean Logic and Digital Systems",
+      "duration": "2 weeks",
+      "topics": [
+        "Binary, octal, decimal, and hexadecimal number systems",
+        "Number system conversions",
+        "Boolean operators and expressions",
+        "BCD values",
+        "A/D and D/A conversions",
+        "Series and parallel communication"
+      ],
+      "assignments": [
+        {
+          "name": "Lab 2a - Boolean Principles",
+          "due_date": "2016-09-19",
+          "weight": 5,
+          "description": "Introduction to Boolean logic and number systems"
+        },
+        {
+          "name": "Lab 2b - Boolean Logic",
+          "due_date": "2016-09-26",
+          "weight": 5,
+          "description": "Advanced Boolean logic applications"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Programmable Logic Controllers",
+          "author": "Petruzella, F.D.",
+          "chapter": "Chapters 3-4"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Motor Control and Relay Logic",
+      "duration": "3 weeks",
+      "topics": [
+        "Switches, buttons, lights, and relays",
+        "Series and parallel circuits",
+        "Electrical automation devices",
+        "Emergency shutdown systems",
+        "Troubleshooting techniques",
+        "Ladder diagrams",
+        "Mechanical interlocks"
+      ],
+      "assignments": [
+        {
+          "name": "Lab 3a - Switches",
+          "due_date": "2016-10-03",
+          "weight": 5,
+          "description": "Switch applications in control circuits"
+        },
+        {
+          "name": "Lab 3b - Relays",
+          "due_date": "2016-10-10",
+          "weight": 5,
+          "description": "Relay logic and control circuits"
+        },
+        {
+          "name": "Lab 3c - Sensors",
+          "due_date": "2016-10-17",
+          "weight": 5,
+          "description": "Sensor applications in control systems"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Programmable Logic Controllers",
+          "author": "Petruzella, F.D.",
+          "chapter": "Chapters 5-6"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Pneumatic Systems",
+      "duration": "2 weeks",
+      "topics": [
+        "Pneumatic power principles",
+        "Pneumatic circuit symbols",
+        "Air source elements",
+        "Valves and actuators",
+        "Direct vs indirect control",
+        "Bi-stable vs mono-stable valves"
+      ],
+      "assignments": [
+        {
+          "name": "Lab 4 - Pneumatic Principles",
+          "due_date": "2016-10-24",
+          "weight": 5,
+          "description": "Introduction to pneumatic systems and components"
+        },
+        {
+          "name": "Lab 5 - Pneumatic Control Systems",
+          "due_date": "2016-10-31",
+          "weight": 5,
+          "description": "Design and construction of pneumatic control systems"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Programmable Logic Controllers",
+          "author": "Petruzella, F.D.",
+          "chapter": "Chapters 7-8"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Electro-Pneumatic Systems",
+      "duration": "2 weeks",
+      "topics": [
+        "Electro-pneumatic symbols",
+        "3/2 way directional control valves",
+        "Electric solenoids",
+        "Limit switches and feedback",
+        "Proximity sensors",
+        "Vacuum/pressure sensors"
+      ],
+      "assignments": [
+        {
+          "name": "Lab 6 - Electro Pneumatics",
+          "due_date": "2016-11-07",
+          "weight": 5,
+          "description": "Integration of electrical and pneumatic systems"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Programmable Logic Controllers",
+          "author": "Petruzella, F.D.",
+          "chapter": "Chapters 9-10"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "PLC Fundamentals",
+      "duration": "2 weeks",
+      "topics": [
+        "PLC purpose and structure",
+        "Inputs and outputs",
+        "Program operations",
+        "Computer communications",
+        "PLC selection criteria"
+      ],
+      "assignments": [
+        {
+          "name": "Lab 7 - PLC Overview",
+          "due_date": "2016-11-21",
+          "weight": 5,
+          "description": "Introduction to PLC systems and applications"
+        },
+        {
+          "name": "Lab 8 - PLC Hardware",
+          "due_date": "2016-11-28",
+          "weight": 5,
+          "description": "PLC hardware components and configurations"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Programmable Logic Controllers",
+          "author": "Petruzella, F.D.",
+          "chapter": "Chapters 11-12"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "PLC Programming",
+      "duration": "1 week",
+      "topics": [
+        "Programming software",
+        "Editing techniques",
+        "One-shot, time-delay, set/reset latches",
+        "Boolean logic in programming",
+        "PLC configurations",
+        "Troubleshooting techniques"
+      ],
+      "assignments": [
+        {
+          "name": "Lab 9 - PLC Programming",
+          "due_date": "2016-12-05",
+          "weight": 5,
+          "description": "PLC programming fundamentals and applications"
+        }
+      ],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Programmable Logic Controllers",
+          "author": "Petruzella, F.D.",
+          "chapter": "Chapters 13-14"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Robotics Applications",
+      "duration": "1 week",
+      "topics": [
+        "History of robotics in industry",
+        "Work cell design",
+        "Robot safety practices",
+        "Robot controller and display",
+        "Teach pendant operations",
+        "Robot axes and work envelopes",
+        "Tool path collision models",
+        "Tooling and coordinates"
+      ],
+      "assignments": [],
+      "resources": [
+        {
+          "type": "Textbook",
+          "title": "Programmable Logic Controllers",
+          "author": "Petruzella, F.D.",
+          "chapter": "Chapters 15-16"
+        }
+      ]
+    }
+  ]
+}
