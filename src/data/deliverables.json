@@ -711,13 +711,10 @@
   },
   {
     "Course ID": "STCS 255",
-    "Category": "Test",
     "Deliverable": "Test 2",
     "Open Date": "",
-    "Close Date": "Nov 2, 2025, 11:59 PM",
+    "Close Date": "",
     "Weight %": "7.5",
-    "Grade %": "",
-    "Letter Grade": "",
     "Status": "pending"
   },
   {
