@@ -219,14 +219,13 @@
   },
   {
     "Course ID": "MECH 205",
-    "Category": "Lab",
     "Deliverable": "Lab 5: Pneumatic Control",
     "Open Date": "Oct 19, 2025 11:59 PM",
     "Close Date": "Nov 9, 2025 11:59 PM",
     "Weight %": "4",
-    "Grade %": "",
-    "Letter Grade": "",
-    "Status": "pending"
+    "Grade %": "89.29",
+    "Letter Grade": "A",
+    "Status": "graded"
   },
   {
     "Course ID": "MECH 205",
