@@ -188,14 +188,13 @@
   },
   {
     "Course ID": "MECH 205",
-    "Category": "Lab",
     "Deliverable": "Lab 3c Pre-Lab Quiz",
     "Open Date": "Oct 5, 2025 11:59 PM",
     "Close Date": "Nov 2, 2025 11:59 PM",
     "Weight %": "1",
-    "Grade %": "",
-    "Letter Grade": "",
-    "Status": "pending"
+    "Grade %": "100",
+    "Letter Grade": "A+",
+    "Status": "graded"
   },
   {
     "Course ID": "MECH 205",
