@@ -451,8 +451,9 @@
     "Course ID": "THRM 200",
     "Deliverable": "Midterm Exam",
     "Open Date": "",
-    "Close Date": "Oct 29, 2025, 11:59 PM",
-    "Status": "submitted"
+    "Grade %": "75",
+    "Letter Grade": "C+",
+    "Status": "graded"
   },
   {
     "Course ID": "THRM 200",
