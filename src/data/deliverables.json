@@ -449,14 +449,10 @@
   },
   {
     "Course ID": "THRM 200",
-    "Category": "Exam",
     "Deliverable": "Midterm Exam",
     "Open Date": "",
     "Close Date": "Oct 29, 2025, 11:59 PM",
-    "Weight %": "",
-    "Grade %": "75",
-    "Letter Grade": "B",
-    "Status": "graded"
+    "Status": "submitted"
   },
   {
     "Course ID": "THRM 200",
@@ -977,9 +973,9 @@
     "Open Date": "Oct 3, 2025 2:00 PM",
     "Close Date": "Oct 1, 2025, 03:50 PM",
     "Weight %": "10",
-    "Grade %": "",
-    "Letter Grade": "",
-    "Status": "submitted"
+    "Grade %": "57.26",
+    "Letter Grade": "C",
+    "Status": "graded"
   },
   {
     "Course ID": "MATH 238",
